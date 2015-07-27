@@ -1,46 +1,10 @@
+// http://blog.thinkst.com/2011/06/simple-graphs-with-arborjs.html
+
 (function(){
 	trace = arbor.etc.trace
 	objmerge = arbor.etc.objmerge
 	objcopy = arbor.etc.objcopy
 	var parse = Parseur().parse
-	
-	// Function to read initializer.csv to set initial setting
-	var readInitial = function(){
-		var res 		= $.ajax({type: 'GET', url: 'data/initializer.csv', async: false}).responseText;
-		var result		= ";------------------------\n;INITIAL SETTINGS\n;------------------------\n";
-		var rows 		= res.split("\n");
-		var headings 	= rows[0].split(";");
-		
-		headings.shift();
-		
-		for (var i=1; i < rows.length; i++){
-			var row 	= rows[i].split(";");
-			var node 	= row[0];
-			var noLink 	= true;
-			
-			for (var j=1; j < row.length; j++){
-				if (parseInt(row[j]) == 1.0){
-					result = result.concat(node, generateProducer(), " -- ", headings[j-1], "\n");
-					noLink = false;
-				}				
-			}
-			
-			if (noLink && node != ''){
-				result = result.concat(node, generateProducer(), "\n");
-			}
-		}
-		
-		return result;
-	}
-	// End read initial setting
-	
-	// Function to generate the producer node
-	var generateProducer = function(){
-		var gen = Math.floor((Math.random() * 100) + 1);
-		
-		return (gen < 35) ? ' {color: red, shape: dot}' : '';
-	}
-	// End generate producer
 
 	var HalfViz = function(elt){
 		var dom = $(elt)
@@ -98,8 +62,18 @@
 
 			newDoc:function(){
 				var content = readInitial();
-				// var content = "; some example nodes\nhello {color:red, label:HELLO}\nworld {color:orange}\n\n; some edges\nhello -> world {color:yellow}\nfoo -> bar {weight:5}\nbar -> baz {weight:2}"
 
+				// var data = {
+				// nodes:{
+				// animals:{'color':'red','shape':'dot','label':'Animals'},
+				// dog:{'color':'green','shape':'dot','label':'dog'},
+				// cat:{'color':'blue','shape':'dot','label':'cat'}
+				// },
+				// edges:{
+				// animals:{ dog:{}, cat:{} }
+				// }
+				// };
+				// sys.graft(data);
 				_code.val(content).focus()
 				$.address.value("")
 				that.updateGraph()
@@ -153,6 +127,10 @@
 				$(window).bind('mouseup', that.released)
 				return false
 			},
+			
+			// clicked:function(e){
+				// console.log('asdad')
+			// },
 			
 			dragged:function(e){
 				var w = dom.width()
