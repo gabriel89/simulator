@@ -64,7 +64,8 @@
 
           // draw a rectangle centered at pt
           var w = 10
-          ctx.fillStyle = (node.data.alone) ? "orange" : "black"
+          //ctx.fillStyle = (node.data.alone) ? "orange" : "black"
+          ctx.fillStyle = (node.data.alone) ? "orange" : console.log('e negru')
           ctx.fillRect(pt.x-w/2, pt.y-w/2, w,w)
         })    			
       },
@@ -80,7 +81,7 @@
             var pos = $(canvas).offset();
             _mouseP = arbor.Point(e.pageX-pos.left, e.pageY-pos.top)
             dragged = particleSystem.nearest(_mouseP);
-
+            console.log('bla');
             if (dragged && dragged.node !== null){
               // while we're dragging, don't let physics move the node
               dragged.node.fixed = true

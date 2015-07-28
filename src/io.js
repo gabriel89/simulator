@@ -17,6 +17,16 @@
 				if (type == 'new'){
 				  $(that).trigger({type:"clear"})
 				}
+				else if (type == 'textingload'){
+					 var div = document.getElementById("dom-target")
+     				 var myData = div.textContent
+				 	 $('#code').val(myData)
+					   $("#code").keypress(function(e){
+					   	e = jQuery.Event("keypress")
+					   	e.which = 13
+						     console.log('update');
+						    }).trigger(e)
+				}
 
 				return false
 			}

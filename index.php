@@ -13,8 +13,8 @@
 <body>
 <div id="dom-target" style="display: none;">
     <?php 
-    $output=$file = file_get_contents('./data.txt', true);
-  echo htmlspecialchars($output); 
+    $output=$file = file_get_contents('data.txt', true);
+    echo htmlspecialchars($output); 
     ?>
 </div>
   <div id="rtfm">
@@ -155,10 +155,10 @@
     <canvas id="viewport" width="800" height="600"></canvas>
     <div id="editor">
       <div class="io">
-        <div class="ctrl"><a href="#" class="start">start</a><a href="#" class="new">reset</a><a href="#" class="new" id="loadTreeData">Click here to load from txt</a> </div>
+        <div class="ctrl"><a href="#" class="start">start</a><a href="#" class="new">reset</a><a href="#" class="textingload" id="loadTreeData">Click here to load from txt</a> </div>
         <ul class="dialog"></ul>
       </div>
-      <textarea id="code" readonly=true></textarea>  
+      <textarea id="code"></textarea>  
     </div>
     <div id="grabber"></div>
   </div>  
@@ -189,13 +189,6 @@
   <!-- the main driver code: start here -->
   <script src="src/customization.js"></script> 
   <script src="src/halfviz.js"></script> 
-  <script>
-  document.getElementById("loadTreeData").onclick = function () {
-      var div = document.getElementById("dom-target");
-      var myData = div.textContent;
-      console.log(myData);
-      };
-</script>
 
   
 </body>
