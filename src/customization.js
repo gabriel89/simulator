@@ -14,19 +14,23 @@ var readInitial = function(){
 		
 		for (var j=1; j < row.length; j++){
 			if (parseInt(row[j]) == 1.0){
-				result = result.concat(node, ((Math.random()<.5) ? generateProducer() : generateDemander()), " -- ", headings[j-1], "\n");
+				result = result.concat(node, generateOccurance(), " -- ", headings[j-1], "\n");
 				noLink = false;
 			}				
 		}
 		
 		if (noLink && node != ''){
-			result = result.concat(node, ((Math.random()<.5) ? generateProducer() : generateDemander()), "\n");
+			result = result.concat(node, generateOccurance(), "\n");
 		}
 	}
 	
 	return result;
 }
 // End read initial setting
+
+var generateOccurance(){
+	return (Math.random()<.5) ? generateProducer() : generateDemander();
+}
 
 // Function to generate the producer node
 var generateProducer = function(){
