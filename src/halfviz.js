@@ -128,10 +128,6 @@
 				return false
 			},
 			
-			// clicked:function(e){
-				// console.log('asdad')
-			// },
-			
 			dragged:function(e){
 				var w = dom.width()
 				that.updateLayout(Math.max(10, Math.min(e.pageX-10, w)) )

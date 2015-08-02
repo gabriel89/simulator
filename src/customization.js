@@ -1,7 +1,10 @@
 // Function to read initializer.csv to set initial setting
+var product_index = 0;
+var was_produced = was_demanded = false;
+
 var readInitial = function(){
 	var res 		= $.ajax({type: 'GET', url: 'data/initializer.csv', async: false}).responseText;
-	var result		= ";------------------------\n;INITIAL SETTINGS\n;------------------------\n";
+	var result		= ";--------------------------------\n;        INITIAL SETTINGS\n;--------------------------------\n";
 	var rows 		= res.split("\n");
 	var headings 	= rows[0].split(";");
 	
@@ -28,18 +31,37 @@ var readInitial = function(){
 }
 // End read initial setting
 
+// Function to generate product number
+var setProduct = function(what){
+	if (what == 'producer'){
+		was_produced = true;
+	}else if (what == 'demander'){
+		was_demanded = true;
+	}
+
+	if (was_demanded && was_produced){
+		was_demanded = was_produced = false;
+		product_index += 1;
+	}
+}
+// End generate product
+
 // Function to generate the producer node
 var generateProducer = function(){
 	var gen = Math.floor((Math.random() * 100) + 1);
+	var node_data = (gen < 30) ? ' {color: red, shape: dot, productID: ' + product_index + ', value: ' + Math.random().toFixed(2) + '}' : '';
 	
-	return (gen < 30) ? ' {color: red, shape: dot, value: 1}' : '';
+	setProduct('producer');
+	return node_data;
 }
 // End generate producer	
 
 // Function to generate the demander node
 var generateDemander = function(){
 	var gen = Math.floor((Math.random() * 100) + 1);
+	var node_data = (gen < 40) ? ' {color: orange, productID: ' + product_index + ', canPay: ' + Math.random().toFixed(2) + '}' : '';	
 	
-	return (gen < 40) ? ' {color: orange}' : '';
+	setProduct('demander');
+	return node_data;
 }
 // End generate demander
