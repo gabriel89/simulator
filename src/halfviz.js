@@ -62,23 +62,13 @@
 
 			newDoc:function(){
 				var content = readInitial();
-
-				// var data = {
-				// nodes:{
-				// animals:{'color':'red','shape':'dot','label':'Animals'},
-				// dog:{'color':'green','shape':'dot','label':'dog'},
-				// cat:{'color':'blue','shape':'dot','label':'cat'}
-				// },
-				// edges:{
-				// animals:{ dog:{}, cat:{} }
-				// }
-				// };
-				// sys.graft(data);
 				_code.val(content).focus()
 				$.address.value("")
 				that.updateGraph()
 				that.resize()
 				_editing = true
+				
+				clearLog();
 			},
 
 			updateGraph:function(e){
