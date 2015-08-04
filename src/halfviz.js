@@ -68,7 +68,7 @@
 				that.resize()
 				_editing = true
 				
-				clearLog();
+				writeInitialLog();
 			},
 
 			updateGraph:function(e){

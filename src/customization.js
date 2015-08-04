@@ -65,3 +65,15 @@ var generateDemander = function(){
 	return node_data;
 }
 // End generate demander
+
+
+// Function to write initial data to the log
+var writeInitialLog = function(content){
+	$.ajax({
+		type: "POST",
+		url: "src/save.php",
+		data: {whatToInsert: content},
+		success: function() {}
+	});
+}
+// End write initial

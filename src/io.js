@@ -17,13 +17,12 @@
 				var button = (e.target.tagName=='A') ? $(e.target) : $(e.target).closest('a')
 				var type = button.attr('class').replace(/\s?(selected|active)\s?/,'')
 				if (type == 'new'){
-				   $(that).trigger({type:"clear"})
-				  $.ajax({
-								url: "../src/clear.php",
-									success: function() {
-										}
-							});
-							return false;
+					$.ajax({
+						url: "src/clear.php",
+						success: function(){}
+					});
+					$(that).trigger({type:"clear"});
+					return false;
 				}
 				else if (type == 'start'){
 					if (startedStatus == 0){
@@ -41,8 +40,7 @@
 								type: "POST",
 								url: "src/save.php",
 								data: {whatToInsert: 'nod' + i + '-- nod' + i*2},
-									
-									success: function() {}
+								success: function() {}
 							});
 							return false;
 							}

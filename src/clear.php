@@ -1,3 +1,2 @@
 <?php
-$fh = fopen( '../data/log.txt', 'w+' );
-fclose($fh);
+file_put_contents('../data/log.txt', '');
