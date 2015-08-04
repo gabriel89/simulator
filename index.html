@@ -157,7 +157,7 @@ var that = {init:function(){dom.find('.ctrl > a').live('click', that.menuClick) 
     <canvas id="viewport" width="800" height="600"></canvas>
     <div id="editor">
       <div class="io">
-        <div class="ctrl" id="buttonsbar"><a href="#" class="start">start</a><a href="#" class="new" id="loadTreeData">reset</a></div>
+        <div class="ctrl" id="buttonsbar"><a href="#" class="start">start</a><a href="#" class="new" id="loadTreeData">reset</a><a href="data/log.c" id="showlog" class="showlogtext">Show log</a></div>
         <ul class="dialog"></ul>
       </div>
       <textarea id="code" readonly=true></textarea>  
@@ -186,6 +186,7 @@ var that = {init:function(){dom.find('.ctrl > a').live('click', that.menuClick) 
   <script src="src/io.js"></script>
   <script src="src/parseur.js"></script>
   <script src="src/renderer.js"></script>
+  <script src="src/jquery.popupWindow.js">
   
   <!-- the main driver code: start here -->
   <script src="src/customization.js"></script> 

@@ -42,9 +42,7 @@
 								url: "src/save.php",
 								data: {whatToInsert: 'nod' + i + '-- nod' + i*2},
 									
-									success: function() {
-										$('.title').html("");
-										}
+									success: function() {}
 							});
 							return false;
 							}
@@ -54,15 +52,20 @@
 						startedStatus = 0;
 					}
 				}
-				else if (type == 'textingload'){
-					 var div = document.getElementById("dom-target")
+				else if (type == 'showlogtext'){
+					 $('#showlog').popupWindow({ 
+						centerBrowser:1,
+						width: 800,
+						height: 700
+					});
+					 /*var div = document.getElementById("dom-target")
      				 var myData = div.textContent
 				 	 $('#code').val(myData)
 					   $("#code").keypress(function(e){
 					   	e = jQuery.Event("keypress")
 					   	e.which = 13
 						     console.log('update');
-						    }).trigger(e)
+						    }).trigger(e)*/
 				}
 
 				return false
