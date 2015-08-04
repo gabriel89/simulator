@@ -3,7 +3,6 @@
 		var dom = $(elt)
 		var _dialog = dom.find('.dialog')
 		var _animating = false
-		var startedStatus = 0
 		var days = 40
 		var dayCounter = 0
 
@@ -16,6 +15,7 @@
 			menuClick:function(e){
 				var button = (e.target.tagName=='A') ? $(e.target) : $(e.target).closest('a')
 				var type = button.attr('class').replace(/\s?(selected|active)\s?/,'')
+				console.log(type);
 				if (type == 'new'){
 					$.ajax({
 						url: "src/clear.php",
@@ -25,37 +25,45 @@
 					return false;
 				}
 				else if (type == 'start'){
-					if (startedStatus == 0){
-						dayCounter++
-						//document.getElementById('buttonsbar').innerHTML = '<a href="#" class="start">stop</a><a href="#" class="new" id="loadTreeData">reset</a>'
-						$('#buttonsbar').html('<a href="#" class="start">stop</a><a href="#" class="new" id="loadTreeData">reset</a>')
+					if ($('#start_stop').data('started')){
+						$('#start_stop').data('started', false).text('stop');
+						// dayCounter++
 						//$('#code').append('----DAY '+dayCounter+'----\n')
-						startedStatus = 1
 						for (i=0; i < days; i++){
 							//console.log('element on step ' +i);
 							//$('#code').append('test' + i + ' -> TEST' +i*2+ '\n')
-							console.log('nod' + i + '-- nod' + i*2)
-							sleep(400)
+							console.log('nod' + i + '-- nod' + i*2);
+							sleep(400);
 							$.ajax({
 								type: "POST",
 								url: "src/save.php",
 								data: {whatToInsert: 'nod' + i + '-- nod' + i*2},
 								success: function() {}
 							});
-							return false;
-							}
+						}
 					} else {
-						document.getElementById('buttonsbar').innerHTML = '<a href="#" class="start">start</a><a href="#" class="new" id="loadTreeData">reset</a>';
+						$('#start_stop').data('started', true).text('start');
 						console.log('stopped');
-						startedStatus = 0;
 					}
 				}
 				else if (type == 'showlogtext'){
-					 $('#showlog').popupWindow({ 
-						centerBrowser:1,
-						width: 800,
-						height: 700
-					});
+					if ($('#showlog').data('showing')){
+						$('#showlog').data('showing', false).text('hide log');
+						
+						// var w = window.open();
+						  // var html = $("#toNewWindow").html();
+
+							// $(w.resizeTo(600,600).document.body).html(html);
+					}else{
+						$('#showlog').data('showing', true).text('show log');
+						console.log('not displayed');
+					}
+					// $('#dialog').dialog(); 
+					// $('#showlog').popupWindow({ 
+						// centerBrowser:1,
+						// width: 800,
+						// height: 700
+					// });
 					 /*var div = document.getElementById("dom-target")
      				 var myData = div.textContent
 				 	 $('#code').val(myData)

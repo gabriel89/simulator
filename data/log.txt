@@ -1,0 +1,324 @@
+;--------------------------------
+;        INITIAL SETTINGS
+;--------------------------------
+n0
+n1 -- n22
+n1 -- n26
+n2 {color: red, shape: dot, productID: 1, value: 0.59} -- n29
+n3 -- n17
+n4 -- n24
+n4 {color: orange, productID: 3, canPay: 0.01} -- n29
+n5 -- n28
+n6 -- n16
+n6 -- n25
+n6 {color: orange, productID: 5, canPay: 0.99} -- n28
+n7 {color: red, shape: dot, productID: 5, value: 0.31} -- n10
+n8
+n9 -- n20
+n10
+n11 -- n15
+n11 {color: orange, productID: 7, canPay: 0.71} -- n19
+n12
+n13 -- n25
+n14 {color: orange, productID: 9, canPay: 0.09} -- n24
+n15 -- n21
+n15 {color: orange, productID: 10, canPay: 0.75} -- n22
+n15 -- n28
+n15 -- n29
+n16 {color: red, shape: dot, productID: 11, value: 0.01} -- n18
+n16 -- n23
+n17
+n18 {color: orange, productID: 12, canPay: 0.95} -- n26
+n18 -- n27
+n19
+n20 -- n28
+n21
+n22 {color: red, shape: dot, productID: 15, value: 0.54}
+n23
+n24 {color: red, shape: dot, productID: 15, value: 0.02}
+n25
+n26
+n27
+n28 -- n29
+n29 {color: orange, productID: 15, canPay: 0.18}
+
+nod0-- nod0
+nod1-- nod2
+nod2-- nod4
+nod3-- nod6
+nod4-- nod8
+nod5-- nod10
+nod6-- nod12
+nod7-- nod14
+nod8-- nod16
+nod9-- nod18
+nod10-- nod20
+nod11-- nod22
+nod12-- nod24
+nod13-- nod26
+nod14-- nod28
+nod15-- nod30
+nod16-- nod32
+nod17-- nod34
+nod18-- nod36
+nod19-- nod38
+nod20-- nod40
+nod21-- nod42
+nod22-- nod44
+nod23-- nod46
+nod24-- nod48
+nod25-- nod50
+nod26-- nod52
+nod27-- nod54
+nod28-- nod56
+nod29-- nod58
+nod30-- nod60
+nod31-- nod62
+nod32-- nod64
+nod33-- nod66
+nod34-- nod68
+nod35-- nod70
+nod36-- nod72
+nod37-- nod74
+nod38-- nod76
+nod39-- nod78
+nod0-- nod0
+nod1-- nod2
+nod2-- nod4
+nod3-- nod6
+nod4-- nod8
+nod5-- nod10
+nod6-- nod12
+nod7-- nod14
+nod8-- nod16
+nod9-- nod18
+nod10-- nod20
+nod11-- nod22
+nod12-- nod24
+nod13-- nod26
+nod14-- nod28
+nod15-- nod30
+nod16-- nod32
+nod17-- nod34
+nod18-- nod36
+nod19-- nod38
+nod20-- nod40
+nod21-- nod42
+nod22-- nod44
+nod23-- nod46
+nod24-- nod48
+nod25-- nod50
+nod26-- nod52
+nod27-- nod54
+nod28-- nod56
+nod29-- nod58
+nod30-- nod60
+nod31-- nod62
+nod32-- nod64
+nod33-- nod66
+nod34-- nod68
+nod35-- nod70
+nod36-- nod72
+nod37-- nod74
+nod38-- nod76
+nod39-- nod78
+nod0-- nod0
+nod1-- nod2
+nod2-- nod4
+nod3-- nod6
+nod4-- nod8
+nod5-- nod10
+nod6-- nod12
+nod7-- nod14
+nod8-- nod16
+nod9-- nod18
+nod10-- nod20
+nod11-- nod22
+nod12-- nod24
+nod13-- nod26
+nod14-- nod28
+nod15-- nod30
+nod16-- nod32
+nod17-- nod34
+nod18-- nod36
+nod19-- nod38
+nod20-- nod40
+nod21-- nod42
+nod22-- nod44
+nod23-- nod46
+nod24-- nod48
+nod25-- nod50
+nod26-- nod52
+nod27-- nod54
+nod28-- nod56
+nod29-- nod58
+nod30-- nod60
+nod31-- nod62
+nod32-- nod64
+nod33-- nod66
+nod34-- nod68
+nod35-- nod70
+nod36-- nod72
+nod37-- nod74
+nod38-- nod76
+nod39-- nod78
+nod0-- nod0
+nod1-- nod2
+nod2-- nod4
+nod3-- nod6
+nod4-- nod8
+nod5-- nod10
+nod6-- nod12
+nod7-- nod14
+nod8-- nod16
+nod9-- nod18
+nod10-- nod20
+nod11-- nod22
+nod12-- nod24
+nod13-- nod26
+nod14-- nod28
+nod15-- nod30
+nod16-- nod32
+nod17-- nod34
+nod18-- nod36
+nod19-- nod38
+nod20-- nod40
+nod21-- nod42
+nod22-- nod44
+nod23-- nod46
+nod24-- nod48
+nod25-- nod50
+nod26-- nod52
+nod27-- nod54
+nod28-- nod56
+nod29-- nod58
+nod30-- nod60
+nod31-- nod62
+nod32-- nod64
+nod33-- nod66
+nod34-- nod68
+nod35-- nod70
+nod36-- nod72
+nod37-- nod74
+nod38-- nod76
+nod39-- nod78
+nod0-- nod0
+nod1-- nod2
+nod2-- nod4
+nod3-- nod6
+nod4-- nod8
+nod5-- nod10
+nod6-- nod12
+nod7-- nod14
+nod8-- nod16
+nod9-- nod18
+nod10-- nod20
+nod11-- nod22
+nod12-- nod24
+nod13-- nod26
+nod14-- nod28
+nod15-- nod30
+nod16-- nod32
+nod17-- nod34
+nod18-- nod36
+nod19-- nod38
+nod20-- nod40
+nod21-- nod42
+nod22-- nod44
+nod23-- nod46
+nod24-- nod48
+nod25-- nod50
+nod26-- nod52
+nod27-- nod54
+nod28-- nod56
+nod29-- nod58
+nod30-- nod60
+nod31-- nod62
+nod32-- nod64
+nod33-- nod66
+nod34-- nod68
+nod35-- nod70
+nod36-- nod72
+nod37-- nod74
+nod38-- nod76
+nod39-- nod78
+nod0-- nod0
+nod1-- nod2
+nod2-- nod4
+nod3-- nod6
+nod4-- nod8
+nod5-- nod10
+nod6-- nod12
+nod7-- nod14
+nod8-- nod16
+nod9-- nod18
+nod10-- nod20
+nod11-- nod22
+nod12-- nod24
+nod13-- nod26
+nod14-- nod28
+nod15-- nod30
+nod16-- nod32
+nod17-- nod34
+nod18-- nod36
+nod19-- nod38
+nod20-- nod40
+nod21-- nod42
+nod22-- nod44
+nod23-- nod46
+nod24-- nod48
+nod25-- nod50
+nod26-- nod52
+nod27-- nod54
+nod28-- nod56
+nod29-- nod58
+nod30-- nod60
+nod31-- nod62
+nod32-- nod64
+nod33-- nod66
+nod34-- nod68
+nod35-- nod70
+nod36-- nod72
+nod37-- nod74
+nod38-- nod76
+nod39-- nod78
+nod0-- nod0
+nod1-- nod2
+nod2-- nod4
+nod3-- nod6
+nod4-- nod8
+nod5-- nod10
+nod6-- nod12
+nod7-- nod14
+nod8-- nod16
+nod9-- nod18
+nod10-- nod20
+nod11-- nod22
+nod12-- nod24
+nod13-- nod26
+nod14-- nod28
+nod15-- nod30
+nod16-- nod32
+nod17-- nod34
+nod18-- nod36
+nod19-- nod38
+nod20-- nod40
+nod21-- nod42
+nod22-- nod44
+nod23-- nod46
+nod24-- nod48
+nod25-- nod50
+nod26-- nod52
+nod27-- nod54
+nod28-- nod56
+nod29-- nod58
+nod30-- nod60
+nod31-- nod62
+nod32-- nod64
+nod33-- nod66
+nod34-- nod68
+nod35-- nod70
+nod36-- nod72
+nod37-- nod74
+nod38-- nod76
+nod39-- nod78

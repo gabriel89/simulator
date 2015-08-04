@@ -157,7 +157,7 @@ var that = {init:function(){dom.find('.ctrl > a').live('click', that.menuClick) 
     <canvas id="viewport" width="800" height="600"></canvas>
     <div id="editor">
       <div class="io">
-        <div class="ctrl" id="buttonsbar"><a href="#" class="start">start</a><a href="#" class="new" id="loadTreeData">reset</a><a href="data/log.txt" id="showlog" class="showlogtext">show log</a></div>
+        <div class="ctrl" id="buttonsbar"><a href="#" data-started="true" id="start_stop" class="start">start</a><a href="#" class="new" id="loadTreeData">reset</a><a href="data/log.txt" id="showlog" data-showing="true" class="showlogtext">show log</a></div>
         <ul class="dialog"></ul>
       </div>
       <textarea id="code" readonly=true></textarea>  
@@ -172,6 +172,9 @@ var that = {init:function(){dom.find('.ctrl > a').live('click', that.menuClick) 
       <li class="friction">friction <span class="frob">20%</span></li>
       <li class="gravity">gravity <span class="toggle">.</span></li>
     </ul>
+  </div>
+  <div id="toNewWindow">
+    <p>Your content here</p>
   </div>
 
 
@@ -191,14 +194,14 @@ var that = {init:function(){dom.find('.ctrl > a').live('click', that.menuClick) 
   <!-- the main driver code: start here -->
   <script src="src/customization.js"></script> 
   <script src="src/halfviz.js"></script> 
+  <!--
   <script>
-  document.getElementById("loadTreeData").onclick = function () {
+	document.getElementById("loadTreeData").onclick = function () {
       var div = document.getElementById("dom-target");
       var myData = div.textContent;
-      console.log(myData);
-      };
-</script>
-
+	};
+  </script>
+-->
   
 </body>
 </html>
