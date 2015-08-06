@@ -5,7 +5,7 @@
 		var _animating = false
 		var days = 40
 		var dayCounter = 0
-
+		var myVar = null
 		var that = {
 			init:function(){
 				dom.find('.ctrl > a').live('click', that.menuClick) 
@@ -15,7 +15,7 @@
 			menuClick:function(e){
 				var button = (e.target.tagName=='A') ? $(e.target) : $(e.target).closest('a')
 				var type = button.attr('class').replace(/\s?(selected|active)\s?/,'')
-				console.log(type);
+				//console.log(type);
 				if (type == 'new'){
 					$.ajax({
 						url: "src/clear.php",
@@ -29,25 +29,34 @@
 						$('#start_stop').data('started', false).text('stop');
 						// dayCounter++
 						//$('#code').append('----DAY '+dayCounter+'----\n')
-						for (i=0; i < days; i++){
+						/*for (i=0; i < days; i++){
 							//console.log('element on step ' +i);
 							//$('#code').append('test' + i + ' -> TEST' +i*2+ '\n')
 							console.log('nod' + i + '-- nod' + i*2);
 							sleep(400);
+							checkifbroken();
 							$.ajax({
 								type: "POST",
 								url: "src/save.php",
 								data: {whatToInsert: 'nod' + i + '-- nod' + i*2},
 								success: function() {}
 							});
-						}
+						}*/
+						myVar = setInterval(function(){ printOnStartClick() }, 1000);
+						printOnStartClick();
+
+
 					} else {
 						$('#start_stop').data('started', true).text('start');
+						clearInterval(myVar);
 						console.log('stopped');
+						//myVar = setInterval(function(){ myTimer() }, 0);
+						//myStopFunction();
 					}
 				}
-				else if (type == 'showlogtext'){
-					if ($('#showlog').data('showing')){
+				/*else if (type == 'showlogtext'){
+
+					/*if ($('#showlog').data('showing')){
 						$('#showlog').data('showing', false).text('hide log');
 						
 						// var w = window.open();
@@ -57,7 +66,7 @@
 					}else{
 						$('#showlog').data('showing', true).text('show log');
 						console.log('not displayed');
-					}
+					}*/
 					// $('#dialog').dialog(); 
 					// $('#showlog').popupWindow({ 
 						// centerBrowser:1,
@@ -71,23 +80,24 @@
 					   	e = jQuery.Event("keypress")
 					   	e.which = 13
 						     console.log('update');
-						    }).trigger(e)*/
-				}
-
-				return false
+						    }).trigger(e)
+				}*/
 			}
 		}
 
 		return that.init()    
 	}
 
-	function sleep(milliseconds) {
-	  var start = new Date().getTime();
-	  for (var i = 0; i < 1e7; i++) {
-	    if ((new Date().getTime() - start) > milliseconds){
-	      break;
-	    }
-	}
-}
-  
-})()
+var i = 1;
+
+function printOnStartClick() {
+    t = 'nod'+i+' -- nod'+i*2;
+    i=i+1;
+    console.log(t);
+    /*$.ajax({
+		type: "POST",
+		url: "src/save.php",
+		data: {t},
+		success: function() {}
+	});*/
+}})()
