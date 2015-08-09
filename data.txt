@@ -1,0 +1,28 @@
+;loaded from text file;
+n0 {color: red, shape: dot, value: 1}
+n1 -- n22
+n1 {color: red, shape: dot, value: 1} -- n26
+n2 {color: red, shape: dot, value: 1} -- n29
+n3 -- n17
+n4 -- n24
+n4 {color: red, shape: dot, value: 1} -- n29
+n5 -- n28
+n6 {color: red, shape: dot, value: 1} -- n16
+n6 {color: orange} -- n25
+n6 -- n28
+n7 -- n10
+n8 {color: red, shape: dot, value: 1}
+n9 {color: orange} -- n20
+n10
+n11 -- n15
+n11 -- n19
+n12
+n13 -- n25
+n14 -- n24
+n15 {color: orange} -- n21
+n15 -- n22
+n15 -- n28
+n15 -- n29
+n16 -- n18
+n16 -- n23
+n17
