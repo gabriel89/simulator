@@ -12,18 +12,15 @@ var readInitial = function(){
 	
 	for (var i=1; i < rows.length; i++){
 		var row 	= rows[i].split(";");
-		var node 	= row[0];
-		var noLink 	= true;
+		var node 	= row[0].replace("\r", "").replace("\n", "");
 		
 		for (var j=1; j < row.length; j++){
-			if (parseInt(row[j]) == 1){
-				result = result.concat(node, ((Math.random()<.5) ? generateProducer() : generateDemander()), " -- ", headings[j-1], "\n");
-				noLink = false;
+			if (parseInt(row[j].replace("\r", "").replace("\n", "")) == 1){
+				var local_heading = headings[j-1].replace("\r", "").replace("\n", "");
+				
+				// result = result.concat(node, ((Math.random()<.5) ? generateProducer() : generateDemander()), " -- ", local_heading, "\n");
+				result = result.concat(node, generateProducer(), " -- ", local_heading, "\n");
 			}				
-		}
-		
-		if (noLink && node != ''){
-			result = result.concat(node, ((Math.random()<.5) ? generateProducer() : generateDemander()), "\n");
 		}
 	}
 	

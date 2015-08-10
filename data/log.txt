@@ -1,220 +1,53 @@
 ;--------------------------------
 ;        INITIAL SETTINGS
 ;--------------------------------
-n0
+n0 -- n5
+n0 -- n22
 n1 -- n22
-n1 {color: orange, productID: 1, canPay: 0.63} -- n26
-n2 {color: orange, productID: 1, canPay: 0.11} -- n29
-n3 -- n17
-n4 -- n24
-n4 {color: red, shape: dot, productID: 1, value: 0.02} -- n29
-n5 {color: red, shape: dot, productID: 2, value: 0.77} -- n28
-n6 {color: red, shape: dot, productID: 2, value: 0.67} -- n16
-n6 -- n25
-n6 -- n28
-n7 {color: orange, productID: 3, canPay: 0.92} -- n10
-n8 {color: orange, productID: 3, canPay: 0.43}
-n9 -- n20
-n10
-n11 -- n15
-n11 {color: red, shape: dot, productID: 5, value: 0.28} -- n19
-n12 {color: red, shape: dot, productID: 5, value: 0.68}
-n13 -- n25
-n14 {color: orange, productID: 5, canPay: 0.52} -- n24
-n15 {color: orange, productID: 6, canPay: 0.95} -- n21
-n15 -- n22
-n15 -- n28
-n15 -- n29
-n16 {color: red, shape: dot, productID: 6, value: 0.79} -- n18
-n16 -- n23
-n17 {color: orange, productID: 7, canPay: 0.81}
-n18 -- n26
-n18 -- n27
-n19
-n20 -- n28
-n21 {color: orange, productID: 8, canPay: 0.29}
-n22
-n23 {color: red, shape: dot, productID: 9, value: 0.40}
-n24
-n25
-n26
-n27
-n28 {color: red, shape: dot, productID: 11, value: 0.40} -- n29
-n29
-
-;--------------------------------
-;        INITIAL SETTINGS
-;--------------------------------
-n0 {color: orange, productID: 0, canPay: 0.81}
-n1 {color: red, shape: dot, productID: 0, value: 0.19} -- n22
-n1 {color: orange, productID: 1, canPay: 0.23} -- n26
-n2 {color: orange, productID: 1, canPay: 0.83} -- n29
-n3 -- n17
+n1 {color: red, shape: dot, productID: 0, value: 0.80} -- n26
+n2 -- n29
+n3 {color: orange, productID: 1, canPay: 0.45} -- n17
 n4 -- n24
 n4 -- n29
-n5 -- n28
-n6 -- n16
-n6 -- n25
-n6 {color: red, shape: dot, productID: 3, value: 0.83} -- n28
-n7 -- n10
-n8
-n9 {color: red, shape: dot, productID: 4, value: 0.11} -- n20
-n10 {color: red, shape: dot, productID: 4, value: 0.48}
-n11 {color: red, shape: dot, productID: 4, value: 0.66} -- n15
-n11 -- n19
-n12
-n13 -- n25
-n14 -- n24
-n15 -- n21
-n15 -- n22
-n15 -- n28
-n15 -- n29
-n16 -- n18
-n16 -- n23
-n17
-n18 {color: red, shape: dot, productID: 7, value: 0.59} -- n26
-n18 {color: orange, productID: 7, canPay: 0.15} -- n27
-n19
-n20 -- n28
-n21
-n22
-n23
-n24 {color: orange, productID: 9, canPay: 0.40}
-n25
-n26 {color: orange, productID: 10, canPay: 0.34}
-n27 {color: red, shape: dot, productID: 10, value: 0.15}
-n28 -- n29
-n29 {color: red, shape: dot, productID: 11, value: 0.17}
-
-;--------------------------------
-;        INITIAL SETTINGS
-;--------------------------------
-n0
-n1 {color: orange, productID: 12, canPay: 0.24} -- n22
-n1 {color: orange, productID: 12, canPay: 0.47} -- n26
-n2 -- n29
-n3 {color: orange, productID: 13, canPay: 0.52} -- n17
-n4 {color: orange, productID: 13, canPay: 0.55} -- n24
-n4 -- n29
-n5 -- n28
-n6 -- n16
-n6 -- n25
-n6 {color: orange, productID: 14, canPay: 0.66} -- n28
-n7 -- n10
-n8
-n9 {color: orange, productID: 15, canPay: 0.81} -- n20
-n10
-n11 {color: red, shape: dot, productID: 15, value: 0.24} -- n15
-n11 -- n19
-n12
-n13 {color: red, shape: dot, productID: 17, value: 0.77} -- n25
-n14 {color: orange, productID: 17, canPay: 0.65} -- n24
-n15 -- n21
-n15 -- n22
-n15 -- n28
-n15 {color: red, shape: dot, productID: 18, value: 0.56} -- n29
-n16 -- n18
-n16 -- n23
-n17 {color: red, shape: dot, productID: 19, value: 0.88}
-n18 {color: orange, productID: 20, canPay: 0.62} -- n26
-n18 -- n27
-n19 {color: red, shape: dot, productID: 21, value: 0.66}
-n20 -- n28
-n21
-n22 {color: orange, productID: 22, canPay: 0.29}
-n23
-n24
-n25
-n26
-n27
-n28 {color: red, shape: dot, productID: 23, value: 0.33} -- n29
-n29 {color: orange, productID: 24, canPay: 0.36}
-
-;--------------------------------
-;        INITIAL SETTINGS
-;--------------------------------
-n0
-n1 -- n22
-n1 -- n26
-n2 {color: red, shape: dot, productID: 24, value: 0.69} -- n29
-n3 {color: orange, productID: 25, canPay: 0.49} -- n17
-n4 {color: orange, productID: 25, canPay: 0.59} -- n24
-n4 {color: red, shape: dot, productID: 25, value: 0.85} -- n29
-n5 {color: orange, productID: 26, canPay: 0.99} -- n28
-n6 -- n16
-n6 -- n25
+n5 {color: red, shape: dot, productID: 2, value: 0.30} -- n28
+n6 {color: orange, productID: 2, canPay: 0.37} -- n16
+n6 {color: orange, productID: 3, canPay: 0.18} -- n25
 n6 -- n28
-n7 -- n10
-n8
+n7 {color: orange, productID: 4, canPay: 0.38} -- n10
+n8 -- n17
+n8 -- n23
+n8 -- n29
 n9 -- n20
-n10
-n11 {color: red, shape: dot, productID: 29, value: 0.49} -- n15
-n11 {color: orange, productID: 29, canPay: 0.06} -- n19
-n12 {color: orange, productID: 30, canPay: 0.27}
-n13 -- n25
-n14 {color: orange, productID: 31, canPay: 0.03} -- n24
-n15 -- n21
-n15 -- n22
-n15 {color: orange, productID: 32, canPay: 0.27} -- n28
-n15 -- n29
-n16 -- n18
-n16 {color: orange, productID: 33, canPay: 0.58} -- n23
-n17
-n18 -- n26
-n18 -- n27
-n19
-n20 -- n28
-n21
-n22
-n23
-n24 {color: red, shape: dot, productID: 36, value: 0.73}
-n25 {color: orange, productID: 36, canPay: 0.04}
-n26 {color: orange, productID: 37, canPay: 0.93}
-n27
-n28 {color: orange, productID: 37, canPay: 0.79} -- n29
-n29 {color: red, shape: dot, productID: 37, value: 0.92}
-
-;--------------------------------
-;        INITIAL SETTINGS
-;--------------------------------
-n0 {color: orange, productID: 38, canPay: 0.69}
-n1 -- n22
-n1 -- n26
-n2 -- n29
-n3 -- n17
-n4 {color: red, shape: dot, productID: 40, value: 0.78} -- n24
-n4 -- n29
-n5 -- n28
-n6 {color: red, shape: dot, productID: 40, value: 0.61} -- n16
-n6 -- n25
-n6 -- n28
-n7 -- n10
-n8 {color: red, shape: dot, productID: 41, value: 0.22}
-n9 {color: orange, productID: 41, canPay: 0.21} -- n20
-n10 {color: red, shape: dot, productID: 42, value: 0.66}
+n10 -- n7n
+10 {color: red, shape: dot, productID: 6, value: 0.21} -- n9
 n11 -- n15
 n11 -- n19
-n12
-n13 -- n25
-n14 {color: red, shape: dot, productID: 43, value: 0.27} -- n24
-n15 -- n21
+n12 -- n0
+n13 {color: orange, productID: 7, canPay: 0.30} -- n25
+n14 {color: orange, productID: 7, canPay: 0.69} -- n24
+n15 {color: orange, productID: 7, canPay: 0.18} -- n21
 n15 -- n22
-n15 {color: red, shape: dot, productID: 44, value: 0.68} -- n28
-n15 {color: orange, productID: 44, canPay: 0.25} -- n29
+n15 -- n28
+n15 -- n29
 n16 -- n18
-n16 -- n23
-n17 {color: orange, productID: 45, canPay: 0.14}
+n16 {color: orange, productID: 9, canPay: 0.44} -- n23
+n17 {color: orange, productID: 9, canPay: 0.97} -- n0
+n17 -- n9
 n18 -- n26
 n18 -- n27
-n19
+n19 -- n12
+n19 {color: red, shape: dot, productID: 10, value: 0.98} -- n17
 n20 -- n28
-n21
-n22
-n23 {color: orange, productID: 48, canPay: 0.93}
-n24
-n25
-n26 {color: orange, productID: 50, canPay: 0.17}
-n27 {color: red, shape: dot, productID: 50, value: 0.08}
-n28 -- n29
-n29 {color: red, shape: dot, productID: 51, value: 0.74}
-
+n21 -- n17
+n22 -- n10
+n22 -- n15
+n23 -- n8
+n23 {color: red, shape: dot, productID: 11, value: 0.34} -- n16
+n24 -- n9n
+25 -- n11
+n25 {color: orange, productID: 11, canPay: 0.54} -- n16
+n26 -- n10
+n27 -- n10
+n27 {color: orange, productID: 12, canPay: 0.27} -- n17
+n28 {color: orange, productID: 13, canPay: 0.97} -- n29
+n29 -- n14

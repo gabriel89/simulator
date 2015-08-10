@@ -1,2 +1,4 @@
 <?php
-file_put_contents('../data/log.txt', '');
+$myTextFileHandler = @fopen("../data/log.txt","r+");
+	@ftruncate($myTextFileHandler, 0);
+?>
