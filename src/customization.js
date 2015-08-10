@@ -17,9 +17,9 @@ var readInitial = function(){
 		for (var j=1; j < row.length; j++){
 			if (parseInt(row[j].replace("\r", "").replace("\n", "")) == 1){
 				var local_heading = headings[j-1].replace("\r", "").replace("\n", "");
-				
-				// result = result.concat(node, ((Math.random()<.5) ? generateProducer() : generateDemander()), " -- ", local_heading, "\n");
-				result = result.concat(node, generateProducer(), " -- ", local_heading, "\n");
+
+				result = result.concat((Math.random()<.5) ? generateProducer(node) : generateDemander(node));
+				result = result.concat(node, " -- ", local_heading, "\n");
 			}				
 		}
 	}
@@ -44,9 +44,9 @@ var setProduct = function(what){
 // End generate product
 
 // Function to generate the producer node
-var generateProducer = function(){
+var generateProducer = function(node){
 	var gen = Math.floor((Math.random() * 100) + 1);
-	var node_data = (gen < 30) ? ' {color: red, shape: dot, productID: ' + product_index + ', value: ' + Math.random().toFixed(2) + '}' : '';
+	var node_data = (gen < 30) ? node + ' {color: red, shape: dot, productID: ' + product_index + ', value: ' + Math.random().toFixed(2) + '}\n' : '';
 	
 	setProduct('producer');
 	return node_data;
@@ -54,9 +54,9 @@ var generateProducer = function(){
 // End generate producer	
 
 // Function to generate the demander node
-var generateDemander = function(){
+var generateDemander = function(node){
 	var gen = Math.floor((Math.random() * 100) + 1);
-	var node_data = (gen < 40) ? ' {color: orange, productID: ' + product_index + ', canPay: ' + Math.random().toFixed(2) + '}' : '';	
+	var node_data = (gen < 40) ? node + ' {color: orange, productID: ' + product_index + ', canPay: ' + Math.random().toFixed(2) + '}\n' : '';	
 	
 	setProduct('demander');
 	return node_data;
