@@ -2,5 +2,5 @@
 $wti = $_POST['whatToInsert'];
 $file = '../data/log.txt';
 $f = fopen ($file, 'a+');
-fwrite($f, $wti . PHP_EOL);
+fwrite($f, $wti);
 fclose($f);

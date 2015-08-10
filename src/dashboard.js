@@ -53,7 +53,7 @@
       update:function(){
         $.each(sys.parameters(), function(param, val){
           if (param=='gravity'){
-            dom.find('.gravity .toggle').text(val?"Center":"Off")
+            dom.find('.gravity .toggle').text(val ? "Off" : "Center")
           }else{
             dom.find('li.'+param).find('.frob')
                                  .text(ordinalize(val, param))

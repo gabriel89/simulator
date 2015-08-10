@@ -66,11 +66,11 @@ var generateDemander = function(node){
 
 // Function to write initial data to the log
 var writeInitialLog = function(content){
-	/*$.ajax({
+	$.ajax({
 		type: "POST",
 		url: "src/save.php",
 		data: {whatToInsert: content},
 		success: function() {}
-	});*/
+	});
 }
 // End write initial

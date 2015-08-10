@@ -11,16 +11,9 @@
 	<link rel="stylesheet" href="style/halfviz.css" type="text/css" charset="utf-8">
 </head>
 <body>
-<div id="dom-target" style="display: none;">
-    <?php 
-    $output=$file = file_get_contents('./data.txt', true);
-  echo htmlspecialchars($output); 
-    ?>
-</div>
   <div id="rtfm">
     <h1><span>the halftone language</span><a href="#">&times;</a></h1>
     <h2><a href="#" class="active">Basics</a><a href="#">Nodes</a><a href="#">Edges</a><a href="#">Styles</a></h2>
-
     <div class='tfs'>
       <div class="basics">
         <p>In the editor to the right you can describe your graph symbolically. As you type, the
@@ -174,16 +167,14 @@ var that = {init:function(){dom.find('.ctrl > a').live('click', that.menuClick) 
   </div>
   <div position="absolute" id="log-popup" class="popup">
     <div class="popup-body">	<span class="popup-exit"></span>
- 
-        <div class="popup-content">
-            	<h2 class="popup-title">Log file for node changes</h2>
-            <?php $text = file_get_contents('data/log.txt'); echo '<textarea rows=30 cols=140 specllcheck="false" style="resize: none;">' . $text . '</textarea>'; ?>
-            <p><small>Press ESC to close this window.</small></align="right"></p>
-        </div>
-    </div>
+      <div class="popup-content">
+        <h2 class="popup-title">Log file for node changes</h2>
+          <textarea rows=30 cols=140 specllcheck="false" id="popuplogcontent" style="resize: none;"></textarea>';
+          <p><small>Press ESC to close this window.</small></align="right"></p>
+      </div>
+  </div>
 </div>
 <div position="absolute" class="popup-overlay"></div>
-
 
   <script src="src/jquery-1.6.1.min.js"></script>
   <script src="src/jquery.address-1.4.min.js"></script>
@@ -202,14 +193,6 @@ var that = {init:function(){dom.find('.ctrl > a').live('click', that.menuClick) 
   <script src="src/customization.js"></script> 
   <script src="src/halfviz.js"></script> 
   <script src="src/logpopup.js"></script>
-  <!--
-  <script>
-	document.getElementById("loadTreeData").onclick = function () {
-      var div = document.getElementById("dom-target");
-      var myData = div.textContent;
-	};
-  </script>
--->
   
 </body>
 </html>
