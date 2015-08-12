@@ -61,14 +61,15 @@
 			*/
 
 			newDoc:function(){
-				var content = readInitial();
-				_code.val(content).focus()
+				readInitial();
+
+				_code.focus()
 				$.address.value("")
 				that.updateGraph()
 				that.resize()
 				_editing = true
-				
-				writeInitialLog(content);
+
+				// 				writeInitialLog(content);
 			},
 
 			updateGraph:function(e){

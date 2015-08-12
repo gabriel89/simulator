@@ -1,4 +1,5 @@
 <?php
-$myTextFileHandler = @fopen("../data/log.txt","r+");
+	$file = $_POST['file']
+	$myTextFileHandler = @fopen($file,"r+");
 	@ftruncate($myTextFileHandler, 0);
 ?>

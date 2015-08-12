@@ -15,12 +15,12 @@
 			menuClick:function(e){
 				var button = (e.target.tagName=='A') ? $(e.target) : $(e.target).closest('a')
 				var type = button.attr('class').replace(/\s?(selected|active)\s?/,'')
+				
 				if (type == 'new'){
 					$.ajax({
 						url: "src/clear.php",
-						success: function(){
-							console.log('teoretic e gol logu');
-						}
+						data: {file: "../data/log.txt"},
+						success: function(){}
 					});
 					$(that).trigger({type:"clear"});
 					return false;
@@ -61,7 +61,7 @@
 		$.ajax({
 			type: "POST",
 			url: "src/save.php",
-			data: {whatToInsert: content},
+			data: {whatToInsert: content, file: '../data/log.txt', action: 'a+'},
 			success: function() {}
 		});
 	}
