@@ -23,6 +23,11 @@
 						success: function(){}
 					});
 					$(that).trigger({type:"clear"});
+					
+					var e = jQuery.Event("keydown");
+					e.which = 50; // # Some key code value
+					$("#code").trigger(e);
+					// $('#code').blur(); 
 					return false;
 				}
 				else if (type == 'start'){

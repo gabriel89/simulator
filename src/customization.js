@@ -3,6 +3,7 @@ var product_index = 0;
 var was_produced = was_demanded = false;
 
 var readInitial = function(){
+	var arbor			= ''
 	var content         = '';
 	var initializer 	= $.ajax({type: 'GET', url: 'data/initializer.csv', async: false});
 	var initializerSize = initializer.getResponseHeader('Content-Length');
@@ -28,7 +29,9 @@ var readInitial = function(){
 	    		$.ajax({
 					url: "src/clear.php",
 					data: {file: '../data/data.txt'},
-					success: function(){}
+					success: function(){
+						console.log('a clear-uit');
+					}
 				});
 
 	    		// write in data size and object
@@ -37,20 +40,21 @@ var readInitial = function(){
 					type: "POST",
 					url: "src/save.php",
 					data: {whatToInsert: initializerSize + "\n" + content, file: '../data/data.txt', action: 'w+'},
-					success: function() {}
+					success: function() {
+						console.log('a modificat');
+					}
 				});
 	    	}
 
-	    	$('#code').val(createLinks(content));
+	    	arbor = ";--------------------------------\n;        INITIAL SETTINGS\n;--------------------------------\n" + createLinks(content);
+	    	$('#code').val(arbor);
 	    }
 	});
-
-	console.log(x);
 }
 // End read initial setting
 
 var readInit = function(content){
-	var rows 		= content.responseText.split("\n");
+	var rows 		= content.split("\n");
 	var headings 	= rows[0].split(";");
 	var result 		= {};
 
@@ -59,8 +63,9 @@ var readInit = function(content){
 	for (var i=1; i < rows.length; i++){
 		var links = ''
 		var row   = rows[i].split(";");
-		var node  = row[0].replace("\r", "").replace("\n", "");
-		
+		var rowNode  = row[0].replace("\r", "").replace("\n", "");
+
+
 		for (var j=1; j < row.length; j++){
 			if (parseInt(row[j].replace("\r", "").replace("\n", "")) == 1){
 				var local_heading = headings[j-1].replace("\r", "").replace("\n", "");
@@ -69,13 +74,14 @@ var readInit = function(content){
 			}				
 		}
 
-		if (node){
+		if (rowNode){
 			links = links.replace(/(^\s*,)|(,\s*$)/g, '');
 
-			result[node] = {linkTo: links, producer: (Math.random()<.3), money: Math.random(), productID: 43}
+			result[rowNode] = {linkTo: links, producer: (Math.random()<.3), money: Math.random(), productID: 43}
 			createLinks(content);
 		}
 	}
+
 
 	return result
 }
@@ -87,13 +93,14 @@ var createLinks = function(content){
 	$.each(content, function(node, attr){
 		linkContent = '';
 
+
 		// set node visual properties
 		if (attr['producer']){
 			linkContent = 'color: red, shape: dot';
 		}
 
+		//console.log(attr);
 		links = links.concat(node, '{' + linkContent + '}', "\n");
-
 		// set links
 		$.each(attr['linkTo'].split(','), function(index, localNode){
 			links = links.concat(node, '--', localNode, "\n");
