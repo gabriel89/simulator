@@ -19,7 +19,7 @@
 				if (type == 'new'){
 					$.ajax({
 						url: "src/clear.php",
-						data: {file: "../data/log.txt"},
+						data: {file: "/data/log.txt"},
 						success: function(){}
 					});
 					$(that).trigger({type:"clear"});

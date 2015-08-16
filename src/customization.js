@@ -16,37 +16,38 @@ var readInitial = function(){
 	    	var size = e.split("\n");
 
 	    	if ((size[0].replace("\r", "").replace("\n", "")) == initializerSize){
-	    		console.log('reading from data.txt');
+	    		console.log('reading from data.txt ('+(size[0].replace("\r", "").replace("\n", ""))+' == '+initializerSize+')');
 	    		content = jQuery.parseJSON(size[1]);
 
 	    	}else{
-	    		console.log('creating fresh set of data');
+	    		console.log('creating fresh set of data ('+(size[0].replace("\r", "").replace("\n", ""))+' != '+initializerSize+')');
 
 	    		// read from initializer
-	    		content = readInit(initializer);
+	    		content = readInit(initializer.responseText);
 
 	    		// truncate data.txt
 	    		$.ajax({
 					url: "src/clear.php",
+					async: false,
 					data: {file: '../data/data.txt'},
 					success: function(){
-						console.log('a clear-uit');
+						console.log('cleared data from data.txt');
 					}
 				});
 
 	    		// write in data size and object
-	    		content = JSON.stringify(content);
 	    		$.ajax({
 					type: "POST",
 					url: "src/save.php",
-					data: {whatToInsert: initializerSize + "\n" + content, file: '../data/data.txt', action: 'w+'},
+					async: false,
+					data: {whatToInsert: initializerSize + "\n" + JSON.stringify(content), file: '../data/data.txt', action: 'w+'},
 					success: function() {
-						console.log('a modificat');
+						console.log('added fresh content to data.txt');
 					}
 				});
 	    	}
 
-	    	arbor = ";--------------------------------\n;        INITIAL SETTINGS\n;--------------------------------\n" + createLinks(content);
+	    	arbor = ";--------------------------------\n;        INITIAL SETTINGS\n;--------------------------------\n" + createVisual(content);
 	    	$('#code').val(arbor);
 	    }
 	});
@@ -78,29 +79,27 @@ var readInit = function(content){
 			links = links.replace(/(^\s*,)|(,\s*$)/g, '');
 
 			result[rowNode] = {linkTo: links, producer: (Math.random()<.3), money: Math.random(), productID: 43}
-			createLinks(content);
+			// createVisual(content);
 		}
 	}
-
 
 	return result
 }
 
-var createLinks = function(content){
+var createVisual = function(content){
 	var links = '';
 	var linkContent = '';
 
 	$.each(content, function(node, attr){
 		linkContent = '';
 
-
 		// set node visual properties
 		if (attr['producer']){
 			linkContent = 'color: red, shape: dot';
 		}
 
-		//console.log(attr);
 		links = links.concat(node, '{' + linkContent + '}', "\n");
+
 		// set links
 		$.each(attr['linkTo'].split(','), function(index, localNode){
 			links = links.concat(node, '--', localNode, "\n");
