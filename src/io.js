@@ -50,23 +50,23 @@
 		return that.init()    
 	}
 
-	var i = 1;
+	var iterator = 1;
 	function printOnStartClick() {
-		var header = "\n;--------------------------------\n;        ITERATION " + i + "\n;--------------------------------\n";
+		var header = "\n;--------------------------------\n;        ITERATION " + iterator + "\n;--------------------------------\n";
 		var content = ''
 
-		content = 'nod' + i + ' -- nod' + i*2;
-		i += 1;
+		content = 'nod' + iterator + ' -- nod' + iterator*2;
+		iterator += 1;
 
-		addToLog(header);
-		addToLog(content + "\n");
+		addToLog(header, 'a+');
+		addToLog(content + "\n", 'a+');
 	}
 
-	function addToLog(content){
+	function addToLog(content, action){
 		$.ajax({
 			type: "POST",
 			url: "src/save.php",
-			data: {whatToInsert: content, file: '../data/log.txt', action: 'a+'},
+			data: {whatToInsert: content, file: '../data/log.txt', action: action},
 			success: function() {}
 		});
 	}

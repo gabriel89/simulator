@@ -1,40 +1,84 @@
-
 ;--------------------------------
-;        ITERATION 1
+;        INITIAL SETTINGS
 ;--------------------------------
-nod1 -- nod2
-
-;--------------------------------
-;        ITERATION 2
-;--------------------------------
-nod2 -- nod4
-
-;--------------------------------
-;        ITERATION 3
-;--------------------------------
-nod3 -- nod6
-
-;--------------------------------
-;        ITERATION 4
-;--------------------------------
-nod4 -- nod8
-
-;--------------------------------
-;        ITERATION 5
-;--------------------------------
-nod5 -- nod10
-
-;--------------------------------
-;        ITERATION 6
-;--------------------------------
-nod6 -- nod12
-
-;--------------------------------
-;        ITERATION 1
-;--------------------------------
-nod1 -- nod2
-
-;--------------------------------
-;        ITERATION 2
-;--------------------------------
-nod2 -- nod4
+n0{money:25.81668507773429, product:P4(0.04)}
+n0--n5
+n0--n22
+n1{color: red, shape: dot, money:28.344786330126226, product:P2(0.26)}
+n1--n22
+n1--n26
+n2{money:81.27195951528847, product:P2(0.26)}
+n2--n29
+n3{money:63.09169018641114, product:P1(0.78)}
+n3--n17
+n4{color: red, shape: dot, money:96.4060531463474, product:P4(0.04)}
+n4--n24
+n4--n29
+n5{money:54.558440553955734, product:P4(0.04)}
+n5--n28
+n6{money:60.130177275277674, product:P1(0.78)}
+n6--n16
+n6--n25
+n6--n28
+n7{money:16.216137073934078, product:P4(0.04)}
+n7--n10
+n8{money:23.314418829977512, product:P3(0.53)}
+n8--n17
+n8--n23
+n8--n29
+n9{color: red, shape: dot, money:37.47936901636422, product:P2(0.26)}
+n9--n20
+n10{color: red, shape: dot, money:65.48250773921609, product:P1(0.78)}
+n10--n7
+n10--n9
+n11{money:36.7243108805269, product:P1(0.78)}
+n11--n15
+n11--n19
+n12{color: red, shape: dot, money:26.342003419995308, product:P1(0.78)}
+n12--n0
+n13{color: red, shape: dot, money:81.50815076660365, product:P4(0.04)}
+n13--n25
+n14{color: red, shape: dot, money:0.30484257731586695, product:P4(0.04)}
+n14--n24
+n15{money:27.61843481566757, product:P3(0.53)}
+n15--n21
+n15--n22
+n15--n28
+n15--n29
+n16{money:0.1481127692386508, product:P3(0.53)}
+n16--n18
+n16--n23
+n17{color: red, shape: dot, money:91.63144344929606, product:P0(1.00)}
+n17--n0
+n17--n9
+n18{money:0.1980569213628769, product:P3(0.53)}
+n18--n26
+n18--n27
+n19{money:10.249380464665592, product:P0(1.00)}
+n19--n12
+n19--n17
+n20{color: red, shape: dot, money:74.29899917915463, product:P0(1.00)}
+n20--n28
+n21{color: red, shape: dot, money:52.84514098893851, product:P4(0.04)}
+n21--n17
+n22{money:92.70736430771649, product:P0(1.00)}
+n22--n10
+n22--n15
+n23{money:82.55327865481377, product:P2(0.26)}
+n23--n8
+n23--n16
+n24{money:6.072986614890397, product:P4(0.04)}
+n24--n9
+n25{color: red, shape: dot, money:17.604206642135978, product:P0(1.00)}
+n25--n11
+n25--n16
+n26{color: red, shape: dot, money:99.21516601461917, product:P1(0.78)}
+n26--n10
+n27{money:28.981263819150627, product:P2(0.26)}
+n27--n10
+n27--n17
+n28{color: red, shape: dot, money:60.336256423033774, product:P2(0.26)}
+n28--n29
+n29{money:25.650495965965092, product:P4(0.04)}
+n29--n6
+n29--n14
