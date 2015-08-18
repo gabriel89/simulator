@@ -87,7 +87,7 @@ var readInit = function(content){
 		if (rowNode){
 			links = links.replace(/(^\s*,)|(,\s*$)/g, '');
 
-			result[rowNode] = {linkTo: links, producer: (Math.random()<.3), money: Math.random().toFixed(2)*10, product: products[Math.floor(Math.random() * productsCount) + 0]  }
+			result[rowNode] = {linkTo: links, producer: (Math.random()<.3), money: Math.random().toFixed(2)*10, needsProduct: products[Math.floor(Math.random() * productsCount) + 0]  }
 		}
 	}
 
@@ -107,13 +107,13 @@ var createVisual = function(content){
 		}
 
 		nodeProperty += 'money:' + attr['money'];
-		nodeProperty += ', product:' + attr['product']['name'] + '(' + attr['product']['value'] + ')';
+		nodeProperty += ', needsProduct:' + attr['needsProduct']['name'] + '(' + attr['needsProduct']['value'] + ')';
 
-		links = links.concat(node, '{' + nodeProperty + '}', "\n");
+		links = links.concat(node, '{' + nodeProperty + '}', "\n\n");
 
 		// set links
 		$.each(attr['linkTo'].split(','), function(index, localNode){
-			links = links.concat(node, '--', localNode, "\n");
+			links = links.concat(node, '--', localNode, "\n\n");
 		});
 	});
 
