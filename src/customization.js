@@ -12,13 +12,10 @@ var readInitial = function(){
 	var initializer 	= $.ajax({type: 'GET', url: 'data/initializer.csv', async: false});
 	var initializerSize = initializer.getResponseHeader('Content-Length');
 
-	generateProducts();
-
 	var x = $.ajax({
 	    url: 'data/arbor.txt',
 	    type: 'GET',
 	    async: false,
-	    error: function() {},
 	    success: function(e) {
 	    	var size = e.split("\n");
 
@@ -68,12 +65,15 @@ var readInit = function(content){
 	var headings 	= rows[0].split(";");
 	var result 		= {};
 
+	generateProducts();
+
 	headings.shift();
 
 	for (var i=1; i < rows.length; i++){
-		var links = ''
-		var row   = rows[i].split(";");
-		var rowNode  = row[0].replace("\r", "").replace("\n", "");
+		var localProd 	= ''
+		var links 		= ''
+		var row   		= rows[i].split(";");
+		var rowNode  	= row[0].replace("\r", "").replace("\n", "");
 
 
 		for (var j=1; j < row.length; j++){
@@ -85,17 +85,18 @@ var readInit = function(content){
 		}
 
 		if (rowNode){
-			links = links.replace(/(^\s*,)|(,\s*$)/g, '');
+			links 	= links.replace(/(^\s*,)|(,\s*$)/g, '');
+			product = products[Math.floor(Math.random() * productsCount) + 0];
 
-			result[rowNode] = {linkTo: links, producer: (Math.random()<.3), money: Math.random().toFixed(2)*10, needsProduct: products[Math.floor(Math.random() * productsCount) + 0]  }
-		}
+			result[rowNode] = {linkTo: links, producer: (Math.random()<.3), money: (Math.floor(Math.random() * 30) + 0.57), needsProduct: {'name': product.name, 'value': product.value} }
+		}  
 	}
 
 	return result
 }
 
 var createVisual = function(content){
-	var links = '';
+	var links 		= '';
 	var linkContent = '';
 
 	$.each(content, function(node, attr){
@@ -126,8 +127,7 @@ var writeInitialLog = function(content, action){
 		type: "POST",
 		async: false,
 		url: "src/save.php",
-		data: {whatToInsert: content, file: '../data/log.txt', action: action},
-		success: function() {}
+		data: {whatToInsert: content, file: '../data/log.txt', action: action}
 	});
 }
 // End write initial
@@ -142,8 +142,7 @@ function generateProducts(){
 		type: "POST",
 		async: false,
 		url: "src/save.php",
-		data: {whatToInsert: JSON.stringify(products), file: '../data/products.txt', action: 'w+'},
-		success: function() {}
+		data: {whatToInsert: JSON.stringify(products), file: '../data/products.txt', action: 'w+'}
 	});
 }
 // end generate products

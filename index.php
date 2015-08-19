@@ -149,7 +149,7 @@ var that = {init:function(){dom.find('.ctrl > a').live('click', that.menuClick) 
     <canvas id="viewport" width="800" height="600"></canvas>
     <div id="editor">
       <div class="io">
-        <div class="ctrl" id="buttonsbar"><a href="#" data-started="true" id="start_stop" class="start">start</a><a href="#" class="new" id="loadTreeData">reset</a><a href ="#" id="popup_window" data-popup-target="#log-popup" class="showlogtext">show log</a></div>
+        <div class="ctrl" id="buttonsbar"><a href="#" data-started="true" id="start_stop" class="start">start</a><a href="#" class="new" id="loadTreeData">reset</a><a href ="#" id="popup_window" data-popup-target="#log-popup" class="showlogtext">show log</a><a href="#" class="ForceInit">load init</a></div>
         <ul class="dialog"></ul>
       </div>
       <textarea id="code" readonly=true></textarea>  
