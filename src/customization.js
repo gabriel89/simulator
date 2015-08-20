@@ -17,43 +17,12 @@ var readInitial = function(){
 	    type: 'GET',
 	    async: false,
 	    success: function(e) {
-	    	var size = e.split("\n");
+	    	console.log('reading from arbor.txt');
 
-	    	if ((size[0].replace("\r", "").replace("\n", "")) == initializerSize){
-	    		console.log('reading from arbor.txt ('+(size[0].replace("\r", "").replace("\n", ""))+' == '+initializerSize+')');
-	    		content = jQuery.parseJSON(size[1]);
-
-	    	}else{
-	    		console.log('creating fresh set of data ('+(size[0].replace("\r", "").replace("\n", ""))+' != '+initializerSize+')');
-
-	    		// read from initializer
-	    		content = readInit(initializer.responseText);
-
-	    		// truncate arbor.txt
-	    		$.ajax({
-					url: "src/clear.php",
-					async: false,
-					data: {file: '../data/arbor.txt'},
-					success: function(){
-						console.log('cleared data from arbor.txt');
-					}
-				});
-
-	    		// write in data size and object
-	    		$.ajax({
-					type: "POST",
-					url: "src/save.php",
-					async: false,
-					data: {whatToInsert: initializerSize + "\n" + JSON.stringify(content), file: '../data/arbor.txt', action: 'w+'},
-					success: function() {
-						console.log('added fresh content to arbor.txt');
-					}
-				});
-	    	}
-
-	    	arbor = ";--------------------------------\n;        INITIAL SETTINGS\n;--------------------------------\n" + createVisual(content);
+	    	arbor = createVisual(jQuery.parseJSON(e));
 
 	    	writeInitialLog(arbor, 'w+');
+
 	    	$('#code').val(arbor);
 	    }
 	});
@@ -85,9 +54,8 @@ var readInit = function(content){
 		}
 
 		if (rowNode){
-			links 	= links.replace(/(^\s*,)|(,\s*$)/g, '');
-			product = products[Math.floor(Math.random() * productsCount) + 0];
-
+			links 			= links.replace(/(^\s*,)|(,\s*$)/g, '');
+			product 		= products[Math.floor(Math.random() * productsCount) + 0];
 			result[rowNode] = {linkTo: links, producer: (Math.random()<.3), money: (Math.floor(Math.random() * 30) + 0.57), needsProduct: {'name': product.name, 'value': product.value} }
 		}  
 	}
@@ -133,6 +101,8 @@ var writeInitialLog = function(content, action){
 // End write initial
 
 // function to generate products and their values
+
+
 function generateProducts(){
 	for(var local=0; local < productsCount; local++){
 		products[local] = {name: 'P'+local, value: Math.random().toFixed(2)};
@@ -145,6 +115,9 @@ function generateProducts(){
 		data: {whatToInsert: JSON.stringify(products), file: '../data/products.txt', action: 'w+'}
 	});
 }
+
+
+
 // end generate products
 
 

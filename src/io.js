@@ -1,13 +1,16 @@
 (function(){
 	IO = function(elt){
+		var days 			= 40 //set cycle number
+
 		var dom 			= $(elt)
 		var _dialog 		= dom.find('.dialog')
 		var _animating 		= false
 		var dayCounter 		= 0
+		var fileContent 	= ''
+		var io_arbor 		= ''
 		var myVar 			= null
 		var that 			= ''
-		var days 			= 40 //set cycle number
-		
+
 		that = {
 			init:function(){
 				dom.find('.ctrl > a').live('click', that.menuClick) 
@@ -20,8 +23,9 @@
 				
 				if (type == 'new'){
 					$.ajax({
+						type: 'POST',
 						url: "src/clear.php",
-						data: {file: "/data/log.txt"},
+						data: {file: "../data/log.txt", },
 						success: function(){}
 					});
 					$(that).trigger({type:"clear"});
@@ -30,9 +34,6 @@
 					return false;
 				}
 				else if (type == 'start'){
-					var fileContent 	= ''
-					var arborSize 		= ''
-					var arbor 			= ''
 
 					if ($('#start_stop').data('started')){
 						// set html property
@@ -42,23 +43,22 @@
 						console.log('started');
 
 						// read arbor.txt content
-						fileContent 	= $.ajax({type: 'GET', url: 'data/arbor.txt', async: false}).responseText.split("\n");
-						arborSize 		= fileContent[0];
-						arbor 			= jQuery.parseJSON(fileContent[1]);
+						fileContent 	= $.ajax({type: 'GET', url: 'data/arbor.txt', async: false}).responseText;
+						io_arbor 		= jQuery.parseJSON(fileContent);
 
-						console.log(arbor);
+						console.log(io_arbor);
 
 						// start cycle
 						myVar = setInterval(function(){ printOnStartClick() }, 1000);
 						printOnStartClick();
 					} else {
-						console.log(arbor); //arbor is not global enough so this will be always empty. need to fix this
+						console.log(io_arbor);
 
 						// set html property
 						$('#start_stop').data('started', true).text('start');
 
 						// write new content to arbor.txt
-						$.ajax({type: "POST", url: "src/save.php", async: false, data: {whatToInsert: arborSize + "\n" + JSON.stringify(arbor), file: '../data/arbor.txt', action: 'w+'}});
+						$.ajax({type: "POST", url: "src/save.php", async: false, data: {whatToInsert: JSON.stringify(io_arbor), file: '../data/arbor.txt', action: 'w+'}});
 
 						// end cycle
 						clearInterval(myVar);
@@ -68,13 +68,19 @@
 				else if (type == 'showlogtext') {
 					$('#popuplogcontent').val($.ajax({type: 'GET', url: 'data/log.txt', async: false}).responseText);
 				}
+				// reads from initializer and stores it in the arbor.txt on load-link
 				else if (type == 'ForceInit') {
 					var initializer = $.ajax({type: 'GET', url: 'data/initializer.csv', async: false});
-					var abb = readInit(initializer.responseText);
-					//var acc = createVisual(abb);
-					var arbor = ";--------------------------------\n;        INITIAL SETTINGS\n;--------------------------------\n" + createVisual(abb);
-			    	$('#code').val(arbor);
-			    	renderTree();			    	
+					var ri = readInit(initializer.responseText);
+			    	$.ajax({
+					type: "POST",
+					url: "src/save.php",
+					async: false,
+					data: {whatToInsert: JSON.stringify(ri), file: '../data/arbor.txt', action: 'w+'},
+					success: function() {
+						console.log('Loaded fresh data from initializer.csv in arbor.txt');
+					}
+				});	    	
 				}
 			}
 		}

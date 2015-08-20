@@ -1,37 +1,34 @@
-;--------------------------------
-;        INITIAL SETTINGS
-;--------------------------------
-n0{money:22.57, needsProduct:P0(0.48)}
+n0{money:21.57, needsProduct:P0(0.31)}
 
 n0--n5
 
 n0--n22
 
-n1{money:25.57, needsProduct:P1(0.45)}
+n1{money:24.57, needsProduct:P2(0.09)}
 
 n1--n22
 
 n1--n26
 
-n2{money:5.57, needsProduct:P0(0.48)}
+n2{color: red, shape: dot, money:20.57, needsProduct:P3(0.33)}
 
 n2--n29
 
-n3{money:1.5699999999999998, needsProduct:P2(0.33)}
+n3{money:17.57, needsProduct:P3(0.33)}
 
 n3--n17
 
-n4{color: red, shape: dot, money:9.57, needsProduct:P3(0.64)}
+n4{color: red, shape: dot, money:1.5699999999999998, needsProduct:P0(0.31)}
 
 n4--n24
 
 n4--n29
 
-n5{color: red, shape: dot, money:25.57, needsProduct:P3(0.64)}
+n5{color: red, shape: dot, money:2.57, needsProduct:P2(0.09)}
 
 n5--n28
 
-n6{money:28.57, needsProduct:P4(0.69)}
+n6{money:0.57, needsProduct:P1(0.76)}
 
 n6--n16
 
@@ -39,11 +36,11 @@ n6--n25
 
 n6--n28
 
-n7{money:19.57, needsProduct:P1(0.45)}
+n7{color: red, shape: dot, money:7.57, needsProduct:P3(0.33)}
 
 n7--n10
 
-n8{money:10.57, needsProduct:P2(0.33)}
+n8{money:4.57, needsProduct:P4(0.65)}
 
 n8--n17
 
@@ -51,35 +48,35 @@ n8--n23
 
 n8--n29
 
-n9{money:6.57, needsProduct:P2(0.33)}
+n9{money:20.57, needsProduct:P2(0.09)}
 
 n9--n20
 
-n10{money:6.57, needsProduct:P1(0.45)}
+n10{money:15.57, needsProduct:P1(0.76)}
 
 n10--n7
 
 n10--n9
 
-n11{money:15.57, needsProduct:P0(0.48)}
+n11{money:23.57, needsProduct:P4(0.65)}
 
 n11--n15
 
 n11--n19
 
-n12{money:25.57, needsProduct:P0(0.48)}
+n12{money:24.57, needsProduct:P1(0.76)}
 
 n12--n0
 
-n13{money:22.57, needsProduct:P4(0.69)}
+n13{money:5.57, needsProduct:P3(0.33)}
 
 n13--n25
 
-n14{money:18.57, needsProduct:P2(0.33)}
+n14{money:7.57, needsProduct:P1(0.76)}
 
 n14--n24
 
-n15{money:10.57, needsProduct:P1(0.45)}
+n15{money:26.57, needsProduct:P0(0.31)}
 
 n15--n21
 
@@ -89,75 +86,75 @@ n15--n28
 
 n15--n29
 
-n16{money:13.57, needsProduct:P2(0.33)}
+n16{color: red, shape: dot, money:4.57, needsProduct:P4(0.65)}
 
 n16--n18
 
 n16--n23
 
-n17{money:17.57, needsProduct:P0(0.48)}
+n17{money:11.57, needsProduct:P0(0.31)}
 
 n17--n0
 
 n17--n9
 
-n18{color: red, shape: dot, money:21.57, needsProduct:P1(0.45)}
+n18{money:17.57, needsProduct:P2(0.09)}
 
 n18--n26
 
 n18--n27
 
-n19{color: red, shape: dot, money:22.57, needsProduct:P0(0.48)}
+n19{money:0.57, needsProduct:P3(0.33)}
 
 n19--n12
 
 n19--n17
 
-n20{money:14.57, needsProduct:P0(0.48)}
+n20{money:13.57, needsProduct:P4(0.65)}
 
 n20--n28
 
-n21{money:17.57, needsProduct:P2(0.33)}
+n21{money:22.57, needsProduct:P2(0.09)}
 
 n21--n17
 
-n22{money:18.57, needsProduct:P2(0.33)}
+n22{money:9.57, needsProduct:P3(0.33)}
 
 n22--n10
 
 n22--n15
 
-n23{money:10.57, needsProduct:P1(0.45)}
+n23{color: red, shape: dot, money:13.57, needsProduct:P4(0.65)}
 
 n23--n8
 
 n23--n16
 
-n24{money:22.57, needsProduct:P3(0.64)}
+n24{money:19.57, needsProduct:P1(0.76)}
 
 n24--n9
 
-n25{color: red, shape: dot, money:21.57, needsProduct:P3(0.64)}
+n25{money:8.57, needsProduct:P2(0.09)}
 
 n25--n11
 
 n25--n16
 
-n26{money:26.57, needsProduct:P3(0.64)}
+n26{money:24.57, needsProduct:P1(0.76)}
 
 n26--n10
 
-n27{money:7.57, needsProduct:P1(0.45)}
+n27{money:7.57, needsProduct:P1(0.76)}
 
 n27--n10
 
 n27--n17
 
-n28{money:27.57, needsProduct:P4(0.69)}
+n28{money:25.57, needsProduct:P4(0.65)}
 
 n28--n29
 
-n29{money:24.57, needsProduct:P3(0.64)}
+n29{money:18.57, needsProduct:P1(0.76)}
 
 n29--n6
 
