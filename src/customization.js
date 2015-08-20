@@ -73,6 +73,8 @@ var createVisual = function(content){
 		// set node visual properties
 		if (attr['producer']){
 			nodeProperty += 'color: red, shape: dot, ';
+			// nodeProperty += ', needsProduct:' + attr['needsProduct']['name'] + '(' + attr['needsProduct']['value'] + ')';
+			// add 'has product here'
 		}
 
 		nodeProperty += 'money:' + attr['money'];

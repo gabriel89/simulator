@@ -1,4 +1,6 @@
 (function(){
+	var io_arbor = ''
+
 	IO = function(elt){
 		var days 			= 40 //set cycle number
 
@@ -7,7 +9,6 @@
 		var _animating 		= false
 		var dayCounter 		= 0
 		var fileContent 	= ''
-		var io_arbor 		= ''
 		var myVar 			= null
 		var that 			= ''
 
@@ -46,14 +47,10 @@
 						fileContent 	= $.ajax({type: 'GET', url: 'data/arbor.txt', async: false}).responseText;
 						io_arbor 		= jQuery.parseJSON(fileContent);
 
-						console.log(io_arbor);
-
 						// start cycle
 						myVar = setInterval(function(){ printOnStartClick() }, 1000);
 						printOnStartClick();
 					} else {
-						console.log(io_arbor);
-
 						// set html property
 						$('#start_stop').data('started', true).text('start');
 
@@ -77,9 +74,8 @@
 					url: "src/save.php",
 					async: false,
 					data: {whatToInsert: JSON.stringify(ri), file: '../data/arbor.txt', action: 'w+'},
-					success: function() {
-						console.log('Loaded fresh data from initializer.csv in arbor.txt');
-					}
+					success: function() {console.log('Loaded fresh data from initializer.csv in arbor.txt');},
+					error: function() {console.log('Error loading fresh data from initializer.csv in arbor.txt');}
 				});	    	
 				}
 			}
@@ -101,7 +97,18 @@
 		addToLog(content + "\n", 'a+');
 
 		// broadcast each node's needs
+		console.log(io_arbor);
 
+		for (key in io_arbor) {
+			var local = io_arbor[key];
+
+			if (local.producer){
+				console.log('I am producer, selling '+local.hasProduct);		
+			}else{
+				console.log('I am node '+key+', searching for '+local.needsProduct+' in my neighbours: '+local.linkTo);		
+			}
+		  
+		}
 	}
 
 	function renderTree() {
