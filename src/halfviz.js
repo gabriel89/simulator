@@ -61,15 +61,13 @@
 			*/
 
 			newDoc:function(){
-				readInitial();
+				$('#code').val(readArbor());
 
 				_code.focus()
 				$.address.value("")
 				that.updateGraph()
 				that.resize()
-				_editing = true
-
-				// 				writeInitialLog(content);
+				// _editing = true
 			},
 
 			updateGraph:function(e){

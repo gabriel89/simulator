@@ -5,14 +5,11 @@ var products = {};
 
 var was_produced = was_demanded = false;
 
-// Function to read initializer.csv to set initial setting
-var readInitial = function(){
-	var arbor			= ''
-	var content         = '';
-	var initializer 	= $.ajax({type: 'GET', url: 'data/initializer.csv', async: false});
-	var initializerSize = initializer.getResponseHeader('Content-Length');
+// Function to read settings from arbor.txt
+var readArbor = function(){
+	var arbor = '';
 
-	var x = $.ajax({
+	$.ajax({
 	    url: 'data/arbor.txt',
 	    type: 'GET',
 	    async: false,
@@ -21,15 +18,17 @@ var readInitial = function(){
 
 	    	arbor = createVisual(jQuery.parseJSON(e));
 
-	    	writeInitialLog(arbor, 'w+');
-
-	    	$('#code').val(arbor);
+	    	writeInitialLog('arbor', 'w+');
 	    }
 	});
-}
-// End read initial setting
 
-var readInit = function(content){
+	return arbor;
+}
+// End read arbor.txt
+
+// read fro CSV the initial data (directional)
+// TODO: check consistency before using it
+var readCSV_D = function(content){
 	var rows 		= content.split("\n");
 	var headings 	= rows[0].split(";");
 	var result 		= {};
@@ -39,11 +38,9 @@ var readInit = function(content){
 	headings.shift();
 
 	for (var i=1; i < rows.length; i++){
-		var localProd 	= ''
 		var links 		= ''
 		var row   		= rows[i].split(";");
 		var rowNode  	= row[0].replace("\r", "").replace("\n", "");
-
 
 		for (var j=1; j < row.length; j++){
 			if (parseInt(row[j].replace("\r", "").replace("\n", "")) == 1){
@@ -63,36 +60,90 @@ var readInit = function(content){
 	return result
 }
 
+// read fro CSV the initial data (non-directional)
+var readCSV_ND = function(content){
+	var rows 		= content.split("\n");
+	var headings 	= rows[0].split(";");
+	var headingsArr = [];
+	var result 		= {};
+
+	generateProducts();
+
+	// pop empty element from the list
+	headings.shift(); 
+
+	// create object from array
+	headingsArr = toObjectArray(headings);
+
+	// pop headings from the list
+	rows.shift();
+
+	for (key in rows){
+		var row   		= rows[key].split(";");
+		var rowNode  	= row[0].replace("\r", "").replace("\n", ""); 
+
+		// pop row[0] from the list
+		row.shift();
+
+		for (key2 in row){
+			if (parseInt(row[key2].replace("\r", "").replace("\n", "")) == 1){
+				var local_heading = headings[key2].replace("\r", "").replace("\n", "");
+
+				if (rowNode && rowNode != ''){
+					headingsArr[local_heading] += (headingsArr[local_heading] == '') ? rowNode : ',' + rowNode;
+				}
+			}
+		}
+	}
+
+	for (key in headingsArr) {
+		product 	= products[Math.floor(Math.random() * productsCount) + 0];
+		linkTo 		= headingsArr[key];
+		product 	= {'name': product.name, 'value': product.value};
+		producer 	= Math.random()<.3;
+		money 		= Math.floor(Math.random() * 30) + 0.57;
+
+		result[key] = {linkTo: linkTo, producer: producer, money: money};
+		if (producer)
+			result[key].hasProduct 	= product;
+		else
+			result[key].needsProduct = product;
+	}
+
+	return result
+}
+
 var createVisual = function(content){
-	var links 		= '';
-	var linkContent = '';
+	var visual = '';
 
 	$.each(content, function(node, attr){
 		nodeProperty = '';
 
 		// set node visual properties
 		if (attr['producer']){
-			nodeProperty += 'color: red, shape: dot, ';
-			// nodeProperty += ', needsProduct:' + attr['needsProduct']['name'] + '(' + attr['needsProduct']['value'] + ')';
-			// add 'has product here'
-		}
+			nodeProperty += 'color:red, shape:dot, hasProduct:' + attr['hasProduct']['name'] + '(' + attr['hasProduct']['value'] + ')';
+		}else
+			nodeProperty += 'needsProduct:' + attr['needsProduct']['name'] + '(' + attr['needsProduct']['value'] + ')';
+		nodeProperty += ', money:' + attr['money'];
 
-		nodeProperty += 'money:' + attr['money'];
-		nodeProperty += ', needsProduct:' + attr['needsProduct']['name'] + '(' + attr['needsProduct']['value'] + ')';
-
-		links = links.concat(node, '{' + nodeProperty + '}', "\n\n");
+		// add node properties to the rest of the arbor
+		visual = visual.concat(node, '{' + nodeProperty + '}', "\n\n");
 
 		// set links
-		$.each(attr['linkTo'].split(','), function(index, localNode){
-			links = links.concat(node, '--', localNode, "\n\n");
-		});
+		if (attr['linkTo'] != ''){
+			$.each(attr['linkTo'].split(','), function(index, localNode){
+				visual = visual.concat(node, '--', localNode, "\n\n");
+			});
+		}
 	});
 
-	return links;
+	return visual;
 }
 
 // Function to write initial data to the log
 var writeInitialLog = function(content, action){
+	content = ";--------------------------------\n;        INITIAL SETTINGS\n;--------------------------------\n" + content
+
 	$.ajax({
 		type: "POST",
 		async: false,
@@ -103,8 +154,6 @@ var writeInitialLog = function(content, action){
 // End write initial
 
 // function to generate products and their values
-
-
 function generateProducts(){
 	for(var local=0; local < productsCount; local++){
 		products[local] = {name: 'P'+local, value: Math.random().toFixed(2)};
@@ -117,12 +166,18 @@ function generateProducts(){
 		data: {whatToInsert: JSON.stringify(products), file: '../data/products.txt', action: 'w+'}
 	});
 }
-
-
-
 // end generate products
 
+// function to create object from an array of headings
+function toObjectArray(arr) {
+	var rv = [];
 
+	for (key in arr) {
+		rv[arr[key].replace("\r", "").replace("\n", "")] = '';
+	}
+
+	return rv;
+}
 
 
 
