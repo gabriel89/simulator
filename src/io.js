@@ -97,19 +97,14 @@
 		addToLog(content + "\n\n", 'a+');
 
 		// broadcast each node's needs
-		// for (key in io_arbor) {
-		// 	var local = io_arbor[key];
+		for (key in io_arbor) {
+			var local = io_arbor[key];
 
-		// 	if (local.producer){
-		// 		console.log('I am producer, selling '+local.needsProduct.name);		
-		// 	}else if (key.length <= 2) {
-		// 		console.log('I am node '+key+', searching for '+local.needsProduct.name+' in my neighbours: '+local.linkTo);		
-		// 	}else {
-		// 		var asker = local.linkTo[0] + local.linkTo[1] + local.linkTo[2]; //getting the chars of linkTo
-		// 		console.log('I am node '+key+', searching for '+local.needsProduct.name+' in my neighbours: '+local.linkTo+ ' BUT not looking at ' + asker);			
-				
-		// 	}  
-		// }
+			if (!local.producer){
+				searchNeighbours(io_arbor, key);
+				// console.log('I am node '+key+', searching for '+local.needsProduct.name+' in my neighbours: '+local.linkTo);		
+			}
+		}
 	}
 
 	function renderTree() {
@@ -125,5 +120,10 @@
 			data: {whatToInsert: content, file: '../data/log.txt', action: action},
 			success: function() {}
 		});
+	}
+
+	// function to check "node"-s neighbours if they have what "node" needs
+	function searchNeighbours(arbor, node){
+		
 	}
 })()

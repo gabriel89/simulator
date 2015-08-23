@@ -91,6 +91,8 @@ var readCSV_ND = function(content){
 
 				if (rowNode && rowNode != ''){
 					headingsArr[local_heading] += (headingsArr[local_heading] == '') ? rowNode : ',' + rowNode;
+					// also add the inverse of it to have the linkTo attribute set
+					headingsArr[rowNode] += (headingsArr[rowNode] == '') ? local_heading : ',' + local_heading;
 				}
 			}
 		}
@@ -132,7 +134,13 @@ var createVisual = function(content){
 		// set links
 		if (attr['linkTo'] != ''){
 			$.each(attr['linkTo'].split(','), function(index, localNode){
-				visual = visual.concat(node, '--', localNode, "\n\n");
+				v1 = node + '--' + localNode;
+				v2 = localNode + '--' + node;
+
+				// only add the link if none of the permutations have been added so far to avoid duplicate links
+				// this only works (?) in case of non-directed graphs
+				if (!(visual.indexOf(v1) > -1) && !(visual.indexOf(v2) > -1))
+					visual = visual.concat(v1, "\n\n");
 			});
 		}
 	});
