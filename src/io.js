@@ -94,7 +94,7 @@
 		iterator += 1;
 
 		addToLog(header, 'a+');
-		addToLog(content + "\n", 'a+');
+		addToLog(content + "\n\n", 'a+');
 
 		// broadcast each node's needs
 		// for (key in io_arbor) {

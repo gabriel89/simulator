@@ -18,7 +18,7 @@ var readArbor = function(){
 
 	    	arbor = createVisual(jQuery.parseJSON(e));
 
-	    	writeInitialLog('arbor', 'w+');
+	    	writeInitialLog(arbor, 'w+');
 	    }
 	});
 
