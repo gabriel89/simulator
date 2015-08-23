@@ -32,10 +32,10 @@
 					$(that).trigger({type:"clear"});
 					
 					renderTree();
+					
 					return false;
 				}
 				else if (type == 'start'){
-
 					if ($('#start_stop').data('started')){
 						// set html property
 						$('#start_stop').data('started', false).text('stop');
@@ -68,15 +68,15 @@
 				// reads from initializer and stores it in the arbor.txt on load-link
 				else if (type == 'ForceInit') {
 					var initializer = $.ajax({type: 'GET', url: 'data/initializer.csv', async: false});
-					var ri = readInit(initializer.responseText);
+					var ri = readCSV_ND(initializer.responseText);
 			    	$.ajax({
-					type: "POST",
-					url: "src/save.php",
-					async: false,
-					data: {whatToInsert: JSON.stringify(ri), file: '../data/arbor.txt', action: 'w+'},
-					success: function() {console.log('Loaded fresh data from initializer.csv in arbor.txt');},
-					error: function() {console.log('Error loading fresh data from initializer.csv in arbor.txt');}
-				});	    	
+						type: "POST",
+						url: "src/save.php",
+						async: false,
+						data: {whatToInsert: JSON.stringify(ri), file: '../data/arbor.txt', action: 'w+'},
+						success: function() {console.log('Loaded fresh data from initializer.csv in arbor.txt');},
+						error: function() {console.log('Error loading fresh data from initializer.csv in arbor.txt');}
+					});	    	
 				}
 			}
 		}
@@ -94,20 +94,16 @@
 		iterator += 1;
 
 		addToLog(header, 'a+');
-		addToLog(content + "\n", 'a+');
+		addToLog(content + "\n\n", 'a+');
 
 		// broadcast each node's needs
-		console.log(io_arbor);
-
 		for (key in io_arbor) {
 			var local = io_arbor[key];
 
-			if (local.producer){
-				console.log('I am producer, selling '+local.hasProduct);		
-			}else{
-				console.log('I am node '+key+', searching for '+local.needsProduct+' in my neighbours: '+local.linkTo);		
+			if (!local.producer){
+				searchNeighbours(io_arbor, key);
+				// console.log('I am node '+key+', searching for '+local.needsProduct.name+' in my neighbours: '+local.linkTo);		
 			}
-		  
 		}
 	}
 
@@ -124,5 +120,10 @@
 			data: {whatToInsert: content, file: '../data/log.txt', action: action},
 			success: function() {}
 		});
+	}
+
+	// function to check "node"-s neighbours if they have what "node" needs
+	function searchNeighbours(arbor, node){
+		
 	}
 })()
