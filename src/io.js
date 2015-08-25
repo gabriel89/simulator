@@ -48,7 +48,7 @@
 						io_arbor 		= jQuery.parseJSON(fileContent);
 
 						// start cycle
-						myVar = setInterval(function(){ printOnStartClick() }, 1000);
+						// myVar = setInterval(function(){ printOnStartClick() }, 1000);
 						printOnStartClick();
 					} else {
 						// set html property
@@ -101,8 +101,7 @@
 			var local = io_arbor[key];
 
 			if (!local.producer){
-				searchNeighbours(io_arbor, key);
-				// console.log('I am node '+key+', searching for '+local.needsProduct.name+' in my neighbours: '+local.linkTo);		
+				searchNeighbours(io_arbor, key, '');
 			}
 		}
 	}
@@ -123,7 +122,22 @@
 	}
 
 	// function to check "node"-s neighbours if they have what "node" needs
-	function searchNeighbours(arbor, node){
-		
+	// cNode = current node
+	// pNode = parent node
+	function searchNeighbours(arbor, cNode, pNode){
+		var thisNode = arbor[cNode];
+
+		$.each(thisNode.linkTo.split(','), function(index, localNode){
+			if (cNode != '')
+				console.log('For ' + localNode + 'parent is: '+cNode);
+
+			// check to see if cNode is set and is not the same as the localNode, to avoid backwards referencing
+			if ((cNode != '') && (cNode != localNode)){
+				// also check that the following node has a linkTo property, else it will error out later on in the function
+				if (arbor[localNode]){
+					searchNeighbours(arbor, localNode, cNode);
+				}
+			}
+		});
 	}
 })()
