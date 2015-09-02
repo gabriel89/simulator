@@ -1,5 +1,7 @@
 (function(){
 	var io_arbor = ''
+	var maxDist = 0
+	var localDist = 0
 
 	IO = function(elt){
 		var days 			= 40 //set cycle number
@@ -97,11 +99,18 @@
 		addToLog(content + "\n\n", 'a+');
 
 		// broadcast each node's needs
-		for (key in io_arbor) {
-			var local = io_arbor[key];
+		for (iterator in io_arbor) {
+			maxDist += 1;
+			localDist = 0;
 
-			if (!local.producer){
-				searchNeighbours(io_arbor, key, '');
+			console.log('Checking max ' + maxDist + ' nodes');
+
+			for (key in io_arbor) {
+				var local = io_arbor[key];
+
+				if (!local.producer){
+					searchNeighbours(io_arbor, key, '');
+				}
 			}
 		}
 	}
@@ -127,17 +136,28 @@
 	function searchNeighbours(arbor, cNode, pNode){
 		var thisNode = arbor[cNode];
 
-		$.each(thisNode.linkTo.split(','), function(index, localNode){
-			if (cNode != '')
-				console.log('For ' + localNode + 'parent is: '+cNode);
+		localDist += 1;
 
-			// check to see if cNode is set and is not the same as the localNode, to avoid backwards referencing
-			if ((cNode != '') && (cNode != localNode)){
-				// also check that the following node has a linkTo property, else it will error out later on in the function
-				if (arbor[localNode]){
-					searchNeighbours(arbor, localNode, cNode);
-				}
+		if (localDist <= maxDist){
+			if (pNode == ''){
+				console.log ('Starting at parent node '+cNode);
+			}else{
+				thisNode['path'] = pNode;
+				console.log ('Continuing on path '+thisNode['path']);
 			}
-		});
+
+			$.each(thisNode.linkTo.split(','), function(index, localNode){
+				// if (cNode != '')
+				// 	console.log('For ' + localNode + 'parent is: '+cNode);
+
+				// check to see if cNode is set and is not the same as the localNode, to avoid backwards referencing
+				if ((cNode != '') && (cNode != localNode)){
+					// also check that the following node has a linkTo property, else it will error out later on in the function
+					if (arbor[localNode]){
+						searchNeighbours(arbor, localNode, cNode);
+					}
+				}
+			});
+		}
 	}
 })()
