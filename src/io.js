@@ -1,7 +1,8 @@
 (function(){
-	var io_arbor = ''
-	var maxDist = 0
-	var localDist = 0
+	var io_arbor = '';
+	var maxDist = 0;
+	var localDist = 0;
+	var nodePath = [];
 
 	IO = function(elt){
 		var days 			= 40 //set cycle number
@@ -103,7 +104,7 @@
 			maxDist += 1;
 			localDist = 0;
 
-			console.log('Checking max ' + maxDist + ' nodes');
+			//console.log('Checking max ' + maxDist + ' nodes');
 
 			for (key in io_arbor) {
 				var local = io_arbor[key];
@@ -125,10 +126,15 @@
 		$.ajax({
 			type: "POST",
 			url: "src/save.php",
-			data: {whatToInsert: content, file: '../data/log.txt', action: action},
-			success: function() {}
+			data: {whatToInsert: content, file: '../data/log.txt', action: action}
 		});
 	}
+
+
+	// function genMatrix(cNode, pNode) {
+	// 	nodePath[cNode][pNode] = true
+	// 	nodePath[pNode][cNode] = true
+	// }
 
 	// function to check "node"-s neighbours if they have what "node" needs
 	// cNode = current node
@@ -139,25 +145,28 @@
 		localDist += 1;
 
 		if (localDist <= maxDist){
-			if (pNode == ''){
-				console.log ('Starting at parent node '+cNode);
-			}else{
-				thisNode['path'] = pNode;
-				console.log ('Continuing on path '+thisNode['path']);
-			}
+			// if (pNode == ''){
+			// 	console.log('dedesubt de pnode');
 
-			$.each(thisNode.linkTo.split(','), function(index, localNode){
-				// if (cNode != '')
-				// 	console.log('For ' + localNode + 'parent is: '+cNode);
-
-				// check to see if cNode is set and is not the same as the localNode, to avoid backwards referencing
-				if ((cNode != '') && (cNode != localNode)){
-					// also check that the following node has a linkTo property, else it will error out later on in the function
-					if (arbor[localNode]){
-						searchNeighbours(arbor, localNode, cNode);
+			// } else {
+				$.each(thisNode.linkTo.split(','), function(index, localNode){
+					// check to see if cNode is set and is not the same as the localNode, to avoid backwards referencing
+					if ((cNode != '') && (cNode != localNode)){
+						$.ajax({
+							type: "POST",
+							url: "src/matrix.php",
+							async: false,
+							data: {cNode: cNode, pNode: pNode},
+							succes: function(e) {console.log('this shit is done');},
+							error: function() {console.log('2');}
+						});
+						// also check that the following node has a linkTo property, else it will error out later on in the function
+						if (arbor[localNode]){
+							searchNeighbours(arbor, localNode, cNode);
+						}
 					}
-				}
-			});
+				});
+			// }
 		}
 	}
 })()
