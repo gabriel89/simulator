@@ -47,12 +47,25 @@
 						console.log('started');
 
 						// read arbor.txt content
-						fileContent 	= $.ajax({type: 'GET', url: 'data/arbor.txt', async: false}).responseText;
-						io_arbor 		= jQuery.parseJSON(fileContent);
+						fileContent = $.ajax({ 	type: 'POST', 
+												url: 'src/backbone.php', 
+												async: false,
+												success: function(data) {
+													console.log(data);
+												},
+												error: function(data) {
+													console.log('error');
+													console.log(data);
+												},
+											});
+
+
+						// fileContent 	= $.ajax({type: 'GET', url: 'data/arbor.txt', async: false}).responseText;
+						// io_arbor 		= jQuery.parseJSON(fileContent);
 
 						// start cycle
 						// myVar = setInterval(function(){ printOnStartClick() }, 1000);
-						printOnStartClick();
+						// printOnStartClick();
 					} else {
 						// set html property
 						$('#start_stop').data('started', true).text('start');
@@ -70,16 +83,15 @@
 				}
 				// reads from initializer and stores it in the arbor.txt on load-link
 				else if (type == 'ForceInit') {
-					var initializer = $.ajax({type: 'GET', url: 'data/initializer.csv', async: false});
-					var ri = readCSV_ND(initializer.responseText);
-			    	$.ajax({
+					// var initializer = $.ajax({type: 'GET', url: 'data/initializer.csv', async: false});
+					// var ri = readCSV_ND(initializer.responseText);
+					$.ajax({
 						type: "POST",
-						url: "src/save.php",
+						url: "src/php_files/create_initial_arbor.php",
 						async: false,
-						data: {whatToInsert: JSON.stringify(ri), file: '../data/arbor.txt', action: 'w+'},
-						success: function() {console.log('Loaded fresh data from initializer.csv in arbor.txt');},
-						error: function() {console.log('Error loading fresh data from initializer.csv in arbor.txt');}
-					});	    	
+						success: function() {console.log('Loaded fresh data from initializer.csv into datase');},
+						error: function() {console.log('Error loading fresh data from initializer.csv into database');}
+					});
 				}
 			}
 		}
@@ -89,6 +101,9 @@
 
 	var iterator = 1;
 	function printOnStartClick() {
+
+		// ajax call here with io_arbor as param
+
 		// print headers in log
 		var header = "\n;--------------------------------\n;        ITERATION " + iterator + "\n;--------------------------------\n";
 		var content = ''
@@ -129,12 +144,6 @@
 			data: {whatToInsert: content, file: '../data/log.txt', action: action}
 		});
 	}
-
-
-	// function genMatrix(cNode, pNode) {
-	// 	nodePath[cNode][pNode] = true
-	// 	nodePath[pNode][cNode] = true
-	// }
 
 	// function to check "node"-s neighbours if they have what "node" needs
 	// cNode = current node

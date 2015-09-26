@@ -60,60 +60,60 @@ var readCSV_D = function(content){
 	return result
 }
 
-// read fro CSV the initial data (non-directional)
-var readCSV_ND = function(content){
-	var rows 		= content.split("\n");
-	var headings 	= rows[0].split(";");
-	var headingsArr = [];
-	var result 		= {};
+// // read fro CSV the initial data (non-directional)
+// var readCSV_ND = function(content){
+// 	var rows 		= content.split("\n");
+// 	var headings 	= rows[0].split(";");
+// 	var headingsArr = [];
+// 	var result 		= {};
 
-	generateProducts();
+// 	generateProducts();
 
-	// pop empty element from the list
-	headings.shift(); 
+// 	// pop empty element from the list
+// 	headings.shift(); 
 
-	// create object from array
-	headingsArr = toObjectArray(headings);
+// 	// create object from array
+// 	headingsArr = toObjectArray(headings);
 
-	// pop headings from the list
-	rows.shift();
+// 	// pop headings from the list
+// 	rows.shift();
 
-	for (key in rows){
-		var row   		= rows[key].split(";");
-		var rowNode  	= row[0].replace("\r", "").replace("\n", ""); 
+// 	for (key in rows){
+// 		var row   		= rows[key].split(";");
+// 		var rowNode  	= row[0].replace("\r", "").replace("\n", ""); 
 
-		// pop row[0] from the list
-		row.shift();
+// 		// pop row[0] from the list
+// 		row.shift();
 
-		for (key2 in row){
-			if (parseInt(row[key2].replace("\r", "").replace("\n", "")) == 1){
-				var local_heading = headings[key2].replace("\r", "").replace("\n", "");
+// 		for (key2 in row){
+// 			if (parseInt(row[key2].replace("\r", "").replace("\n", "")) == 1){
+// 				var local_heading = headings[key2].replace("\r", "").replace("\n", "");
 
-				if (rowNode && rowNode != ''){
-					headingsArr[local_heading] += (headingsArr[local_heading] == '') ? rowNode : ',' + rowNode;
-					// also add the inverse of it to have the linkTo attribute set
-					headingsArr[rowNode] += (headingsArr[rowNode] == '') ? local_heading : ',' + local_heading;
-				}
-			}
-		}
-	}
+// 				if (rowNode && rowNode != ''){
+// 					headingsArr[local_heading] += (headingsArr[local_heading] == '') ? rowNode : ',' + rowNode;
+// 					// also add the inverse of it to have the linkTo attribute set
+// 					headingsArr[rowNode] += (headingsArr[rowNode] == '') ? local_heading : ',' + local_heading;
+// 				}
+// 			}
+// 		}
+// 	}
 
-	for (key in headingsArr) {
-		product 	= products[Math.floor(Math.random() * productsCount) + 0];
-		linkTo 		= headingsArr[key];
-		product 	= {'name': product.name, 'value': product.value};
-		producer 	= Math.random()<.3;
-		money 		= Math.floor(Math.random() * 30) + 0.57;
+// 	for (key in headingsArr) {
+// 		product 	= products[Math.floor(Math.random() * productsCount) + 0];
+// 		linkTo 		= headingsArr[key];
+// 		product 	= {'name': product.name, 'value': product.value};
+// 		producer 	= Math.random()<.3;
+// 		money 		= Math.floor(Math.random() * 30) + 0.57;
 
-		result[key] = {linkTo: linkTo, producer: producer, money: money};
-		if (producer)
-			result[key].hasProduct 	= product;
-		else
-			result[key].needsProduct = product;
-	}
+// 		result[key] = {linkTo: linkTo, producer: producer, money: money};
+// 		if (producer)
+// 			result[key].hasProduct 	= product;
+// 		else
+// 			result[key].needsProduct = product;
+// 	}
 
-	return result
-}
+// 	return result
+// }
 
 var createVisual = function(content){
 	var visual = '';
@@ -161,31 +161,31 @@ var writeInitialLog = function(content, action){
 }
 // End write initial
 
-// function to generate products and their values
-function generateProducts(){
-	for(var local=0; local < productsCount; local++){
-		products[local] = {name: 'P'+local, value: Math.random().toFixed(2)};
-	}
+// // function to generate products and their values
+// function generateProducts(){
+// 	for(var local=0; local < productsCount; local++){
+// 		products[local] = {name: 'P'+local, value: Math.random().toFixed(2)};
+// 	}
 
-	$.ajax({
-		type: "POST",
-		async: false,
-		url: "src/save.php",
-		data: {whatToInsert: JSON.stringify(products), file: '../data/products.txt', action: 'w+'}
-	});
-}
-// end generate products
+// 	$.ajax({
+// 		type: "POST",
+// 		async: false,
+// 		url: "src/save.php",
+// 		data: {whatToInsert: JSON.stringify(products), file: '../data/products.txt', action: 'w+'}
+// 	});
+// }
+// // end generate products
 
-// function to create object from an array of headings
-function toObjectArray(arr) {
-	var rv = [];
+// // function to create object from an array of headings
+// function toObjectArray(arr) {
+// 	var rv = [];
 
-	for (key in arr) {
-		rv[arr[key].replace("\r", "").replace("\n", "")] = '';
-	}
+// 	for (key in arr) {
+// 		rv[arr[key].replace("\r", "").replace("\n", "")] = '';
+// 	}
 
-	return rv;
-}
+// 	return rv;
+// }
 
 
 
