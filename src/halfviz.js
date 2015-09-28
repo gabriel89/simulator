@@ -61,7 +61,16 @@
 			*/
 
 			newDoc:function(){
-				$('#code').val(readArbor());
+				$.ajax({
+				    url: 'src/php_files/create_visual.php',
+				    type: 'GET',
+				    async: false,
+				    success: function(arbor) {
+				    	console.log('Reading arbor-structure from DB and writing inital log');
+				    	$('#code').val(arbor);
+				   	},
+					error: function() {console.log('Error reading DB structure');}
+				});
 
 				_code.focus()
 				$.address.value("")

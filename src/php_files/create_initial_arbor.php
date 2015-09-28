@@ -1,4 +1,8 @@
 <?php
+	// include files
+	include_once ('sql_execute.php');
+
+	// connect to DB
 	$servername = "localhost";
 	$username 	= "sim";
 	$password 	= "sim";
@@ -16,14 +20,16 @@
 	mysqli_query($con,'TRUNCATE TABLE products');
 	mysqli_query($con,'TRUNCATE TABLE nodes');
 
+
 	$file 	= file_get_contents('../../data/initializer.csv');
 	$csv 	= read_CSV ($file, $con);
 
-
+	// close connection
 	$con->close();
 
+	// ----------------------------------------------------------------------------------------------------------
 
-
+	// function to read from csv file
 	function read_CSV ($content, $con){
 		$rows 			= explode ("\n", $content);
 		$headings 		= explode (";", $rows[0]);
@@ -45,7 +51,7 @@
 			$has_prod 			= $has_prod_search->fetch_assoc()['name'];
 			$needs_prod 		= $needs_prod_search->fetch_assoc()['name'];
 
-			execute_sql($con, "INSERT INTO nodes (name, needs_product, has_product, money) VALUES ('".$value."', '".$needs_prod."', '".$has_prod."', '".frand(10)."')");
+			execute_sql('<create_initial_arbor.php>', $con, "INSERT INTO nodes (name, needs_product, has_product, money) VALUES ('".$value."', '".$needs_prod."', '".$has_prod."', '".frand(10)."')");
 		}
 
 		// also add the links
@@ -61,10 +67,10 @@
 					$local_heading = str_replace ("\r" , "" , str_replace ("\n" , "" , $headings[$i_key]));
 
 					if (trim ($rowNode) != ''){
-						execute_sql($con, "UPDATE nodes SET link_to = CONCAT_WS(',', link_to, '".$rowNode."') WHERE name = '".$local_heading."'");
+						execute_sql('<create_initial_arbor.php>', $con, "UPDATE nodes SET link_to = CONCAT_WS(',', link_to, '".$rowNode."') WHERE name = '".$local_heading."'");
 						
 						// also add the inverse of it to have the linkTo attribute set
-						execute_sql($con, "UPDATE nodes SET link_to = CONCAT_WS(',', link_to, '".$local_heading."') WHERE name = '".$rowNode."'");
+						execute_sql('<create_initial_arbor.php>', $con, "UPDATE nodes SET link_to = CONCAT_WS(',', link_to, '".$local_heading."') WHERE name = '".$rowNode."'");
 					}
 				}
 			}
@@ -84,17 +90,7 @@
 		$prod_count = 7;
 
 		for ($i = 0; $i < $prod_count; $i++) {
-			execute_sql($con, "INSERT INTO products (name, value) VALUES ('P".$i."', '".frand()."')");
+			execute_sql('<create_initial_arbor.php>', $con, "INSERT INTO products (name, value) VALUES ('P".$i."', '".frand()."')");
 		}
 	}
 	// end generate products
-
-	// sql insert and error handling
-	function execute_sql($con, $sql){
-		if ($con->query($sql) !== TRUE) {
-			echo "<create_initial_arbor.php> Error: " . $sql . "<br>" . $con->error;
-		}
-	}
-
-
-
