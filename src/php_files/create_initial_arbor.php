@@ -9,7 +9,7 @@
 	$dbname 	= "sim";
 
 	// Create connection
-	$con = new mysqli($servername, $username, $password, $dbname);
+	$con = new mysqli ($servername, $username, $password, $dbname);
 
 	// Check connection
 	if ($con->connect_error) {
@@ -17,11 +17,11 @@
 	}
 
 	// truncate tables
-	mysqli_query($con,'TRUNCATE TABLE products');
-	mysqli_query($con,'TRUNCATE TABLE nodes');
+	mysqli_query ($con,'TRUNCATE TABLE products');
+	mysqli_query ($con,'TRUNCATE TABLE nodes');
 
 
-	$file 	= file_get_contents('../../data/initializer.csv');
+	$file 	= file_get_contents ('../../data/initializer.csv');
 	$csv 	= read_CSV ($file, $con);
 
 	// close connection

@@ -84,8 +84,14 @@
 		    url: 'src/php_files/simulator.php',
 		    type: 'GET',
 		    async: false,
-		    success: function() {console.log('Running simulation');},
-			error: function() {console.log('Error running simulation');}
+		    success: function(e) {console.log('Running simulation'); console.log(e)},
+			error: function(e) {console.log('Error running simulation');}
 		});
+	}
+
+	function renderTree() {
+		var e = jQuery.Event("keydown");
+		e.which = 13;
+		$("#code").trigger(e);
 	}
 })()

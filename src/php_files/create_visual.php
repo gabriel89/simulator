@@ -9,7 +9,7 @@
 	$dbname 	= "sim";
 
 	// Create connection
-	$con = new mysqli($servername, $username, $password, $dbname);
+	$con = new mysqli ($servername, $username, $password, $dbname);
 
 	// Check connection
 	if ($con->connect_error) {
@@ -17,8 +17,8 @@
 	}
 
 	// retrieve a list of products and nodes
-	$nodes 		= execute_sql_and_return('<create_visual.php>', $con, "SELECT * FROM nodes");
-	$products 	= execute_sql_and_return('<create_visual.php>', $con, "SELECT name, value FROM products");
+	$nodes 		= execute_sql_and_return ('<create_visual.php>', $con, "SELECT * FROM nodes");
+	$products 	= execute_sql_and_return ('<create_visual.php>', $con, "SELECT name, value FROM products");
 
 	// retrieve procedural arbor to be able to visualize it
 	$arbor = createVisual ($nodes, createArrayFromObject ($products));
@@ -27,7 +27,7 @@
 	writeInitialLog ($arbor);
 
 	// close connection
-	$con->close();
+	$con->close ();
 
 	echo $arbor;
 
@@ -37,7 +37,7 @@
 	function createVisual ($nodes, $products) {
 		$visual = '';
 
-		while ($row = mysqli_fetch_assoc($nodes)) {
+		while ($row = mysqli_fetch_assoc ($nodes)) {
 			$visual .= $row['name'] . '{';
 
 			// check if node is producer
