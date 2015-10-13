@@ -34,16 +34,41 @@
 
 	// function to start the simulator iterating over the nodes in the graph
 	function startSim ($con) {
+		consumerPhase ($con);
+		economicPhase ($con);
+	}
+
+	// function to treat information related
+	function consumerPhase ($con) {
 		$nodes = execute_sql_and_return ('<simulator.php>', $con, "SELECT * FROM nodes");
+		while ($row = mysqli_fetch_assoc ($nodes)) {
+			// set producer to "true"
+			$row['is_producer'] = 1;
 
-		updateConsumer ($nodes);
+			$possibleBuyers = getPossibleBuyers ($con, $nodes, $row);
 
+			// set producer to "false"
+			$row['is_producer'] = 0;
+
+		}
+	}
+
+	// function to return a list of possible buyers using the basic Dijkstra's algorithm
+	function getPossibleBuyers ($con, $nodes, $row) {
+		// http://codereview.stackexchange.com/questions/75641/dijkstras-algorithm-in-php
+		// http://stackoverflow.com/questions/6598791/how-to-optimize-dijkstra-code-in-php
+		// http://stackoverflow.com/questions/4867716/more-than-640-000-elements-in-the-array-memory-problem-dijkstra
+		// https://en.wikipedia.org/wiki/Dijkstra's_algorithm
+	}
+
+	// function to treat economic phase
+	function economicPhase ($con) {
+		updateRevenue ();
 		decideUponInvestment ();
 	}
 
+	function updateRevenue () {
 
-	// function to update the consumer list
-	function updateConsumer () {
 	}
 
 	// function to decide upon investment options

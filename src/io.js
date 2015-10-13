@@ -4,8 +4,6 @@
 	// var nodePath = [];
 
 	IO = function(elt){
-		var days 			= 40 //set cycle number
-
 		var dom 			= $(elt)
 		var _dialog 		= dom.find('.dialog')
 		var _animating 		= false
