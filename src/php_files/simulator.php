@@ -42,10 +42,14 @@
 	function consumerPhase ($con) {
 		$nodes = execute_sql_and_return ('<simulator.php>', $con, "SELECT * FROM nodes");
 		while ($row = mysqli_fetch_assoc ($nodes)) {
+
+			//print_r($row);
 			// set producer to "true"
 			$row['is_producer'] = 1;
 
 			$possibleBuyers = getPossibleBuyers ($con, $nodes, $row);
+
+			print_r($possibleBuyers);
 
 			// set producer to "false"
 			$row['is_producer'] = 0;
@@ -55,10 +59,13 @@
 
 	// function to return a list of possible buyers using the basic Dijkstra's algorithm
 	function getPossibleBuyers ($con, $nodes, $row) {
+		$list = '';
 		// http://codereview.stackexchange.com/questions/75641/dijkstras-algorithm-in-php
 		// http://stackoverflow.com/questions/6598791/how-to-optimize-dijkstra-code-in-php
 		// http://stackoverflow.com/questions/4867716/more-than-640-000-elements-in-the-array-memory-problem-dijkstra
 		// https://en.wikipedia.org/wiki/Dijkstra's_algorithm
+
+		return $list;
 	}
 
 	// function to treat economic phase
