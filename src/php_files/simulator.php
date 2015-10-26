@@ -48,17 +48,22 @@
 			$row['is_producer'] = 1;
 
 			// get a list of possible buyers
+			// will return an array, where each index is the name of the node, and the value is a list of nodes representing the neighbours
 			$buyers = execute_sql_and_return ('<simulator.php>', $con, "SELECT name, link_to FROM nodes WHERE needs_product='".$row['has_product']."'");
 			while ($buy = mysqli_fetch_assoc ($buyers)) {
 				$possibleBuyers[$buy['name']] = $buy['link_to'];
 			}
 
+			// testing the result, optional
 			print_r($possibleBuyers);
 
 
-			$possibleBuyers = getPossibleBuyers ($con, $nodes, $row);
+			// using the returned vector, get the shortest paths
+			// must contain a list of nodes, where the parent node is $row['name']
+			$shortestPaths = getShortestPaths ($con, $row, $nodes, $possibleBuyers);
 
-			print_r($possibleBuyers);
+			// testing the result, optional
+			print_r($shortestPaths);
 
 			// set producer to "false"
 			$row['is_producer'] = 0;
@@ -66,8 +71,8 @@
 		}
 	}
 
-	// function to return a list of possible buyers using the basic Dijkstra's algorithm
-	function getPossibleBuyers ($con, $nodes, $row) {
+	// function to return a list of shortest pathds to the respective $row['name'] node (which is the seller)
+	function getShortestPaths ($con, $row, $nodes, $buyers) {
 		$list = [];
 		// http://codereview.stackexchange.com/questions/75641/dijkstras-algorithm-in-php
 		// http://stackoverflow.com/questions/6598791/how-to-optimize-dijkstra-code-in-php
