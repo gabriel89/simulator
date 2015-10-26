@@ -27,7 +27,7 @@
 
 	// function to set iteration number of the 
 	function prepareSim ($exec_count, $con) {
-		for ($exec_iterator = 0; $exec_iterator < $exec_count; $exec_iterator ++){
+		for ($exec_iterator = 0; $exec_iterator < $exec_count; $exec_iterator++){
 			startSim ($con);
 		}
 	}
@@ -57,10 +57,9 @@
 			// testing the result, optional
 			print_r($possibleBuyers);
 
-
 			// using the returned vector, get the shortest paths
 			// must contain a list of nodes, where the parent node is $row['name']
-			$shortestPaths = getShortestPaths ($con, $row, $nodes, $possibleBuyers);
+			$shortestPaths = getShortestPath ($con, $row, $nodes, $possibleBuyers);
 
 			// testing the result, optional
 			print_r($shortestPaths);
@@ -72,7 +71,7 @@
 	}
 
 	// function to return a list of shortest pathds to the respective $row['name'] node (which is the seller)
-	function getShortestPaths ($con, $row, $nodes, $buyers) {
+	function getShortestPath ($con, $row, $nodes, $buyers) {
 		$list = [];
 		// http://codereview.stackexchange.com/questions/75641/dijkstras-algorithm-in-php
 		// http://stackoverflow.com/questions/6598791/how-to-optimize-dijkstra-code-in-php
@@ -81,6 +80,10 @@
 		// https://github.com/phpmasterdotcom/DataStructuresForPHPDevs/blob/master/Graphs/graph-dijkstra.php
 		// http://odino.org/the-shortest-path-problem-in-php-demystifying-dijkstra-s-algorithm/
 
+
+		foreach ($buyers as $cosumerNode => $neighbours){
+			//trb calc de la $row['name'] la $consumerNode 
+		}
 
 
 

@@ -1,4 +1,237 @@
 ;--------------------------------
 ;        INITIAL SETTINGS
 ;--------------------------------
-n0{hasProduct: [P2 (0.94)], needsProduct: [P1 (8.25)], money: 27.8}n0--n5n0--n22n0--n12n0--n17n1{hasProduct: [P0 (1.76)], needsProduct: [P6 (0.24)], money: 15.6}n1--n22n1--n26n2{hasProduct: [P4 (6.89)], needsProduct: [P0 (1.76)], money: 65.9}n2--n29n3{hasProduct: [P6 (0.24)], needsProduct: [P0 (1.76)], money: 84.9}n3--n17n4{hasProduct: [P2 (0.94)], needsProduct: [P5 (0.44)], money: 40.8}n4--n24n4--n29n5{hasProduct: [P4 (6.89)], needsProduct: [P2 (0.94)], money: 10.2}n5--n0n5--n28n6{hasProduct: [P4 (6.89)], needsProduct: [P5 (0.44)], money: 7}n6--n16n6--n25n6--n28n6--n29n7{hasProduct: [P3 (5)], needsProduct: [P1 (8.25)], money: 86.2}n7--n10n8{hasProduct: [P6 (0.24)], needsProduct: [P4 (6.89)], money: 18.9}n8--n17n8--n23n8--n29n9{hasProduct: [P6 (0.24)], needsProduct: [P3 (5)], money: 52.6}n9--n20n9--n10n9--n17n9--n24n10{hasProduct: [P3 (5)], needsProduct: [P5 (0.44)], money: 16.6}n10--n7n10--n9n10--n22n10--n26n10--n27n11{hasProduct: [P1 (8.25)], needsProduct: [P3 (5)], money: 45.2}n11--n15n11--n19n11--n25n12{hasProduct: [P4 (6.89)], needsProduct: [P1 (8.25)], money: 65.2}n12--n0n12--n19n13{hasProduct: [P4 (6.89)], needsProduct: [P5 (0.44)], money: 25.4}n13--n25n14{hasProduct: [P0 (1.76)], needsProduct: [P0 (1.76)], money: 69}n14--n24n14--n29n15{hasProduct: [P4 (6.89)], needsProduct: [P2 (0.94)], money: 46.4}n15--n11n15--n21n15--n22n15--n28n15--n29n16{hasProduct: [P2 (0.94)], needsProduct: [P3 (5)], money: 81.3}n16--n6n16--n18n16--n23n16--n25n17{hasProduct: [P5 (0.44)], needsProduct: [P3 (5)], money: 60.9}n17--n3n17--n8n17--n0n17--n9n17--n19n17--n21n17--n27n18{hasProduct: [P5 (0.44)], needsProduct: [P4 (6.89)], money: 34}n18--n16n18--n26n18--n27n19{hasProduct: [P2 (0.94)], needsProduct: [P5 (0.44)], money: 17.2}n19--n11n19--n12n19--n17n20{hasProduct: [P1 (8.25)], needsProduct: [P6 (0.24)], money: 80.7}n20--n9n20--n28n21{hasProduct: [P5 (0.44)], needsProduct: [P2 (0.94)], money: 71.2}n21--n15n21--n17n22{hasProduct: [P5 (0.44)], needsProduct: [P2 (0.94)], money: 44.7}n22--n0n22--n1n22--n15n22--n10n23{hasProduct: [P5 (0.44)], needsProduct: [P6 (0.24)], money: 55.3}n23--n8n23--n16n24{hasProduct: [P5 (0.44)], needsProduct: [P4 (6.89)], money: 74.7}n24--n4n24--n14n24--n9n25{hasProduct: [P2 (0.94)], needsProduct: [P3 (5)], money: 48.5}n25--n6n25--n13n25--n11n25--n16n26{hasProduct: [P3 (5)], needsProduct: [P4 (6.89)], money: 42.9}n26--n1n26--n18n26--n10n27{hasProduct: [P6 (0.24)], needsProduct: [P5 (0.44)], money: 75.2}n27--n18n27--n10n27--n17n28{hasProduct: [P0 (1.76)], needsProduct: [P0 (1.76)], money: 56.4}n28--n5n28--n6n28--n15n28--n20n28--n29n29{hasProduct: [P0 (1.76)], needsProduct: [P1 (8.25)], money: 86.2}
+n0{hasProduct: [P3 (6.86)], needsProduct: [P1 (6.46)], money: 77.8}
+
+n0--n5
+
+n0--n22
+
+n0--n12
+
+n0--n17
+
+n1{hasProduct: [P6 (3.48)], needsProduct: [P2 (2.11)], money: 49}
+
+n1--n22
+
+n1--n26
+
+n2{hasProduct: [P6 (3.48)], needsProduct: [P6 (3.48)], money: 77.2}
+
+n2--n29
+
+n3{hasProduct: [P0 (6.13)], needsProduct: [P2 (2.11)], money: 34.3}
+
+n3--n17
+
+n4{hasProduct: [P1 (6.46)], needsProduct: [P3 (6.86)], money: 21}
+
+n4--n24
+
+n4--n29
+
+n5{hasProduct: [P2 (2.11)], needsProduct: [P3 (6.86)], money: 84.3}
+
+n5--n0
+
+n5--n28
+
+n6{hasProduct: [P4 (4.58)], needsProduct: [P3 (6.86)], money: 0}
+
+n6--n16
+
+n6--n25
+
+n6--n28
+
+n6--n29
+
+n7{hasProduct: [P4 (4.58)], needsProduct: [P4 (4.58)], money: 0.6}
+
+n7--n10
+
+n8{hasProduct: [P1 (6.46)], needsProduct: [P3 (6.86)], money: 55.7}
+
+n8--n17
+
+n8--n23
+
+n8--n29
+
+n9{hasProduct: [P3 (6.86)], needsProduct: [P3 (6.86)], money: 40.3}
+
+n9--n20
+
+n9--n10
+
+n9--n17
+
+n9--n24
+
+n10{hasProduct: [P4 (4.58)], needsProduct: [P4 (4.58)], money: 40.7}
+
+n10--n7
+
+n10--n9
+
+n10--n22
+
+n10--n26
+
+n10--n27
+
+n11{hasProduct: [P2 (2.11)], needsProduct: [P4 (4.58)], money: 27.5}
+
+n11--n15
+
+n11--n19
+
+n11--n25
+
+n12{hasProduct: [P6 (3.48)], needsProduct: [P6 (3.48)], money: 55.9}
+
+n12--n0
+
+n12--n19
+
+n13{hasProduct: [P0 (6.13)], needsProduct: [P1 (6.46)], money: 1.1}
+
+n13--n25
+
+n14{hasProduct: [P4 (4.58)], needsProduct: [P0 (6.13)], money: 52.7}
+
+n14--n24
+
+n14--n29
+
+n15{hasProduct: [P1 (6.46)], needsProduct: [P4 (4.58)], money: 69.5}
+
+n15--n11
+
+n15--n21
+
+n15--n22
+
+n15--n28
+
+n15--n29
+
+n16{hasProduct: [P4 (4.58)], needsProduct: [P2 (2.11)], money: 43.5}
+
+n16--n6
+
+n16--n18
+
+n16--n23
+
+n16--n25
+
+n17{hasProduct: [P0 (6.13)], needsProduct: [P4 (4.58)], money: 87.6}
+
+n17--n3
+
+n17--n8
+
+n17--n0
+
+n17--n9
+
+n17--n19
+
+n17--n21
+
+n17--n27
+
+n18{hasProduct: [P2 (2.11)], needsProduct: [P4 (4.58)], money: 1.5}
+
+n18--n16
+
+n18--n26
+
+n18--n27
+
+n19{hasProduct: [P6 (3.48)], needsProduct: [P2 (2.11)], money: 2.1}
+
+n19--n11
+
+n19--n12
+
+n19--n17
+
+n20{hasProduct: [P4 (4.58)], needsProduct: [P5 (0.8)], money: 45.3}
+
+n20--n9
+
+n20--n28
+
+n21{hasProduct: [P0 (6.13)], needsProduct: [P3 (6.86)], money: 61}
+
+n21--n15
+
+n21--n17
+
+n22{hasProduct: [P4 (4.58)], needsProduct: [P2 (2.11)], money: 88.3}
+
+n22--n0
+
+n22--n1
+
+n22--n15
+
+n22--n10
+
+n23{hasProduct: [P6 (3.48)], needsProduct: [P6 (3.48)], money: 80.6}
+
+n23--n8
+
+n23--n16
+
+n24{hasProduct: [P2 (2.11)], needsProduct: [P4 (4.58)], money: 72.2}
+
+n24--n4
+
+n24--n14
+
+n24--n9
+
+n25{hasProduct: [P4 (4.58)], needsProduct: [P2 (2.11)], money: 64.5}
+
+n25--n6
+
+n25--n13
+
+n25--n11
+
+n25--n16
+
+n26{hasProduct: [P6 (3.48)], needsProduct: [P1 (6.46)], money: 81.3}
+
+n26--n1
+
+n26--n18
+
+n26--n10
+
+n27{hasProduct: [P4 (4.58)], needsProduct: [P0 (6.13)], money: 30.9}
+
+n27--n18
+
+n27--n10
+
+n27--n17
+
+n28{hasProduct: [P1 (6.46)], needsProduct: [P3 (6.86)], money: 74.4}
+
+n28--n5
+
+n28--n6
+
+n28--n15
+
+n28--n20
+
+n28--n29
+
+n29{hasProduct: [P5 (0.8)], needsProduct: [P3 (6.86)], money: 34}
+
