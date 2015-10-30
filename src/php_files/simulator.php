@@ -17,7 +17,7 @@
 	}
 
 	// start simulator by setting the execution number
-	prepareSim (10, $con);
+	prepareSim (1, $con);
 
 	// close connection
 	$con->close ();
@@ -55,19 +55,20 @@
 			}
 
 			// testing the result, optional
-			print_r($possibleBuyers);
+			//rint_r($possibleBuyers);
 
 			// using the returned vector, get the shortest paths
 			// must contain a list of nodes, where the parent node is $row['name']
-			$shortestPaths = getShortestPath ($con, $row, $nodes, $possibleBuyers);
+			// $shortestPaths = getShortestPath ($con, $row, $nodes, $possibleBuyers);
 
 			// testing the result, optional
-			print_r($shortestPaths);
+			//print_r($shortestPaths);
 
 			// set producer to "false"
 			$row['is_producer'] = 0;
 
 		}
+		$my_r = getShortestPath ($con, $row, $nodes, $possibleBuyers);
 	}
 
 	// function to return a list of shortest pathds to the respective $row['name'] node (which is the seller)
@@ -79,19 +80,70 @@
 		// https://en.wikipedia.org/wiki/Dijkstra's_algorithm
 		// https://github.com/phpmasterdotcom/DataStructuresForPHPDevs/blob/master/Graphs/graph-dijkstra.php
 		// http://odino.org/the-shortest-path-problem-in-php-demystifying-dijkstra-s-algorithm/
-
+		$visited =array();
+		foreach($nodes as $nd){
+			$visited[$nd['name']] = 0;
+		}
+		$myres = updatePath ("n0", $nodes, nodeOf("n0", $nodes), nodeOf("n19", $nodes), nodeOf("x", $nodes), "n0", $visited);
+		$file = fopen("../../data/log.txt", "a");
+		$myres = explode(",", $myres);
+		$myres = array_reverse($myres);
+		$myres = implode(",", $myres);
+		fwrite($file, $myres . "\n");
+		fclose($file);
 
 		foreach ($buyers as $cosumerNode => $neighbours){
 			//trb calc de la $row['name'] la $consumerNode 
 		}
 
-
-
-
-
-
-
 		return $list;
+	}
+
+	function nodeOf($name, $nodes){
+		foreach($nodes as $node){
+			if($node['name'] == $name){
+				return $node;
+			}
+		}
+		return NULL;
+	}
+
+	// used to determine the path from one node to another using an adapted version of DIJKSTRA'S SHORTEST PATH
+	// $start is the node from where we are searching for new nodes
+	// $end is the destination node | it has the same VALUE at each iteration, regardless of $start's value
+	// $result is the string containing the path | has default value of ""
+	// $visited is a hash table having KEY = node name and VALUE = 1 / 0 (depending if the node was visited before or not)
+	function updatePath ($origin, $nodes, $start, $end, $prev, $result, $visited){
+		if($start == NULL){
+			return "NO WAEH, JOSE";
+		}else{
+		// find neighbours of $start
+		$nbrs = $start['link_to']; // take neighbour list of $start
+		$nbrs = explode(",", $nbrs);
+		foreach($nbrs as $nbr){
+			//check if $nbr was visited before
+			if($prev['name'] == $nbr){
+			}
+			else if($visited[$nbr] != 1){
+				if($start['name'] == $origin){
+					$result = "$origin";
+				}
+				// if NOT VISITED, add it to the path
+				$result = implode(",", array ($nbr, $result));
+				$visited[$nbr] = 1;
+
+				// if $nbr is the node where we want to end up, we return the full path
+				if($nbr == $end['name']){
+					return $result;
+				}
+				// if $nbr is different from the destination node, we continue the path search through its neighbours
+				return updatePath ($origin, $nodes, nodeOf($nbr, $nodes), $end, $start, $result, $visited);
+			}
+		}
+		// if we get here, then either all nodes were visited and the destination was not reached
+		// OR we have reached a dead end node (node whose neighbours were all visited)
+		$result = "";
+		}
 	}
 
 	// function to treat economic phase
