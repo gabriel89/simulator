@@ -1,7 +1,7 @@
 ;--------------------------------
 ;        INITIAL SETTINGS
 ;--------------------------------
-n0{hasProduct: [P3 (6.86)], needsProduct: [P1 (6.46)], money: 77.8}
+n0{hasProduct: [P0 (8.42)], needsProduct: [P6 (1.67)], money: 81.2}
 
 n0--n5
 
@@ -11,33 +11,33 @@ n0--n12
 
 n0--n17
 
-n1{hasProduct: [P6 (3.48)], needsProduct: [P2 (2.11)], money: 49}
+n1{hasProduct: [P5 (5.9)], needsProduct: [P3 (4.39)], money: 33.9}
 
 n1--n22
 
 n1--n26
 
-n2{hasProduct: [P6 (3.48)], needsProduct: [P6 (3.48)], money: 77.2}
+n2{hasProduct: [P0 (8.42)], needsProduct: [P0 (8.42)], money: 32.6}
 
 n2--n29
 
-n3{hasProduct: [P0 (6.13)], needsProduct: [P2 (2.11)], money: 34.3}
+n3{hasProduct: [P4 (1.27)], needsProduct: [P1 (0.63)], money: 29.3}
 
 n3--n17
 
-n4{hasProduct: [P1 (6.46)], needsProduct: [P3 (6.86)], money: 21}
+n4{hasProduct: [P2 (0.09)], needsProduct: [P3 (4.39)], money: 1.1}
 
 n4--n24
 
 n4--n29
 
-n5{hasProduct: [P2 (2.11)], needsProduct: [P3 (6.86)], money: 84.3}
+n5{hasProduct: [P5 (5.9)], needsProduct: [P1 (0.63)], money: 88.6}
 
 n5--n0
 
 n5--n28
 
-n6{hasProduct: [P4 (4.58)], needsProduct: [P3 (6.86)], money: 0}
+n6{hasProduct: [P4 (1.27)], needsProduct: [P5 (5.9)], money: 63.5}
 
 n6--n16
 
@@ -47,11 +47,11 @@ n6--n28
 
 n6--n29
 
-n7{hasProduct: [P4 (4.58)], needsProduct: [P4 (4.58)], money: 0.6}
+n7{hasProduct: [P3 (4.39)], needsProduct: [P3 (4.39)], money: 36.7}
 
 n7--n10
 
-n8{hasProduct: [P1 (6.46)], needsProduct: [P3 (6.86)], money: 55.7}
+n8{hasProduct: [P1 (0.63)], needsProduct: [P2 (0.09)], money: 58.1}
 
 n8--n17
 
@@ -59,7 +59,7 @@ n8--n23
 
 n8--n29
 
-n9{hasProduct: [P3 (6.86)], needsProduct: [P3 (6.86)], money: 40.3}
+n9{hasProduct: [P6 (1.67)], needsProduct: [P2 (0.09)], money: 56}
 
 n9--n20
 
@@ -69,7 +69,7 @@ n9--n17
 
 n9--n24
 
-n10{hasProduct: [P4 (4.58)], needsProduct: [P4 (4.58)], money: 40.7}
+n10{hasProduct: [P4 (1.27)], needsProduct: [P0 (8.42)], money: 5.1}
 
 n10--n7
 
@@ -81,7 +81,7 @@ n10--n26
 
 n10--n27
 
-n11{hasProduct: [P2 (2.11)], needsProduct: [P4 (4.58)], money: 27.5}
+n11{hasProduct: [P4 (1.27)], needsProduct: [P4 (1.27)], money: 14.2}
 
 n11--n15
 
@@ -89,23 +89,23 @@ n11--n19
 
 n11--n25
 
-n12{hasProduct: [P6 (3.48)], needsProduct: [P6 (3.48)], money: 55.9}
+n12{hasProduct: [P2 (0.09)], needsProduct: [P6 (1.67)], money: 9.1}
 
 n12--n0
 
 n12--n19
 
-n13{hasProduct: [P0 (6.13)], needsProduct: [P1 (6.46)], money: 1.1}
+n13{hasProduct: [P5 (5.9)], needsProduct: [P0 (8.42)], money: 79.4}
 
 n13--n25
 
-n14{hasProduct: [P4 (4.58)], needsProduct: [P0 (6.13)], money: 52.7}
+n14{hasProduct: [P5 (5.9)], needsProduct: [P2 (0.09)], money: 22}
 
 n14--n24
 
 n14--n29
 
-n15{hasProduct: [P1 (6.46)], needsProduct: [P4 (4.58)], money: 69.5}
+n15{hasProduct: [P0 (8.42)], needsProduct: [P1 (0.63)], money: 89.2}
 
 n15--n11
 
@@ -117,7 +117,7 @@ n15--n28
 
 n15--n29
 
-n16{hasProduct: [P4 (4.58)], needsProduct: [P2 (2.11)], money: 43.5}
+n16{hasProduct: [P0 (8.42)], needsProduct: [P0 (8.42)], money: 67.8}
 
 n16--n6
 
@@ -127,7 +127,7 @@ n16--n23
 
 n16--n25
 
-n17{hasProduct: [P0 (6.13)], needsProduct: [P4 (4.58)], money: 87.6}
+n17{hasProduct: [P6 (1.67)], needsProduct: [P2 (0.09)], money: 40.6}
 
 n17--n3
 
@@ -143,7 +143,7 @@ n17--n21
 
 n17--n27
 
-n18{hasProduct: [P2 (2.11)], needsProduct: [P4 (4.58)], money: 1.5}
+n18{hasProduct: [P2 (0.09)], needsProduct: [P5 (5.9)], money: 31.7}
 
 n18--n16
 
@@ -151,7 +151,7 @@ n18--n26
 
 n18--n27
 
-n19{hasProduct: [P6 (3.48)], needsProduct: [P2 (2.11)], money: 2.1}
+n19{hasProduct: [P2 (0.09)], needsProduct: [P5 (5.9)], money: 86}
 
 n19--n11
 
@@ -159,19 +159,19 @@ n19--n12
 
 n19--n17
 
-n20{hasProduct: [P4 (4.58)], needsProduct: [P5 (0.8)], money: 45.3}
+n20{hasProduct: [P1 (0.63)], needsProduct: [P0 (8.42)], money: 62.7}
 
 n20--n9
 
 n20--n28
 
-n21{hasProduct: [P0 (6.13)], needsProduct: [P3 (6.86)], money: 61}
+n21{hasProduct: [P3 (4.39)], needsProduct: [P3 (4.39)], money: 62.6}
 
 n21--n15
 
 n21--n17
 
-n22{hasProduct: [P4 (4.58)], needsProduct: [P2 (2.11)], money: 88.3}
+n22{hasProduct: [P0 (8.42)], needsProduct: [P1 (0.63)], money: 37.9}
 
 n22--n0
 
@@ -181,13 +181,13 @@ n22--n15
 
 n22--n10
 
-n23{hasProduct: [P6 (3.48)], needsProduct: [P6 (3.48)], money: 80.6}
+n23{hasProduct: [P1 (0.63)], needsProduct: [P4 (1.27)], money: 33.6}
 
 n23--n8
 
 n23--n16
 
-n24{hasProduct: [P2 (2.11)], needsProduct: [P4 (4.58)], money: 72.2}
+n24{hasProduct: [P5 (5.9)], needsProduct: [P4 (1.27)], money: 21.1}
 
 n24--n4
 
@@ -195,7 +195,7 @@ n24--n14
 
 n24--n9
 
-n25{hasProduct: [P4 (4.58)], needsProduct: [P2 (2.11)], money: 64.5}
+n25{hasProduct: [P1 (0.63)], needsProduct: [P1 (0.63)], money: 21.7}
 
 n25--n6
 
@@ -205,7 +205,7 @@ n25--n11
 
 n25--n16
 
-n26{hasProduct: [P6 (3.48)], needsProduct: [P1 (6.46)], money: 81.3}
+n26{hasProduct: [P6 (1.67)], needsProduct: [P3 (4.39)], money: 14}
 
 n26--n1
 
@@ -213,7 +213,7 @@ n26--n18
 
 n26--n10
 
-n27{hasProduct: [P4 (4.58)], needsProduct: [P0 (6.13)], money: 30.9}
+n27{hasProduct: [P3 (4.39)], needsProduct: [P0 (8.42)], money: 42.2}
 
 n27--n18
 
@@ -221,7 +221,7 @@ n27--n10
 
 n27--n17
 
-n28{hasProduct: [P1 (6.46)], needsProduct: [P3 (6.86)], money: 74.4}
+n28{hasProduct: [P6 (1.67)], needsProduct: [P3 (4.39)], money: 11.1}
 
 n28--n5
 
@@ -233,5 +233,5 @@ n28--n20
 
 n28--n29
 
-n29{hasProduct: [P5 (0.8)], needsProduct: [P3 (6.86)], money: 34}
+n29{hasProduct: [P6 (1.67)], needsProduct: [P1 (0.63)], money: 76.1}
 

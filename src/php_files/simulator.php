@@ -49,7 +49,7 @@
 
 			// get a list of possible buyers
 			// will return an array, where each index is the name of the node, and the value is a list of nodes representing the neighbours
-			$buyers = execute_sql_and_return ('<simulator.php>', $con, "SELECT name, link_to FROM nodes WHERE needs_product='".$row['has_product']."'");
+			$buyers = execute_sql_and_return ('<simulator.php>', $con, "SELECT name, link_to FROM nodes WHERE (needs_product = '".$row['has_product']."') AND (name <> '".$row['name']."')");
 			while ($buy = mysqli_fetch_assoc ($buyers)) {
 				$possibleBuyers[$buy['name']] = $buy['link_to'];
 			}
