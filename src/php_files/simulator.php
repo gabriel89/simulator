@@ -24,6 +24,7 @@
 
 	// ----------------------------------------------------------------------------------------------------------
 
+	$Q = []; //global declaration of heap
 
 	// function to set iteration number of the 
 	function prepareSim ($exec_count, $con) {
@@ -42,108 +43,41 @@
 	function consumerPhase ($con) {
 		$possibleBuyers = [];
 		$nodes 			= execute_sql_and_return ('<simulator.php>', $con, "SELECT * FROM nodes");
-
-		while ($row = mysqli_fetch_assoc ($nodes)) {
+		
+		while ($row = mysqli_fetch_assoc($nodes)) {
 			// set producer to "true"
 			$row['is_producer'] = 1;
-
+			print_r("\n" . $row['name'] . "\n");
 			// get a list of possible buyers
 			// will return an array, where each index is the name of the node, and the value is a list of nodes representing the neighbours
 			$buyers = execute_sql_and_return ('<simulator.php>', $con, "SELECT name, link_to FROM nodes WHERE (needs_product = '".$row['has_product']."') AND (name <> '".$row['name']."')");
-			while ($buy = mysqli_fetch_assoc ($buyers)) {
-				$possibleBuyers[$buy['name']] = $buy['link_to'];
-			}
-
+			
+			getShortestPath($con, $row, $nodes, $buyers);
 			// testing the result, optional
 			//rint_r($possibleBuyers);
 
 			// using the returned vector, get the shortest paths
 			// must contain a list of nodes, where the parent node is $row['name']
-			// $shortestPaths = getShortestPath ($con, $row, $nodes, $possibleBuyers);
 
 			// testing the result, optional
-			//print_r($shortestPaths);
+			//var_dump($shortestPaths);
 
 			// set producer to "false"
 			$row['is_producer'] = 0;
 
 		}
-		$my_r = getShortestPath ($con, $row, $nodes, $possibleBuyers);
 	}
 
 	// function to return a list of shortest pathds to the respective $row['name'] node (which is the seller)
 	function getShortestPath ($con, $row, $nodes, $buyers) {
 		$list = [];
-		// http://codereview.stackexchange.com/questions/75641/dijkstras-algorithm-in-php
-		// http://stackoverflow.com/questions/6598791/how-to-optimize-dijkstra-code-in-php
-		// http://stackoverflow.com/questions/4867716/more-than-640-000-elements-in-the-array-memory-problem-dijkstra
-		// https://en.wikipedia.org/wiki/Dijkstra's_algorithm
-		// https://github.com/phpmasterdotcom/DataStructuresForPHPDevs/blob/master/Graphs/graph-dijkstra.php
-		// http://odino.org/the-shortest-path-problem-in-php-demystifying-dijkstra-s-algorithm/
-		$visited =array();
-		foreach($nodes as $nd){
-			$visited[$nd['name']] = 0;
-		}
-		$myres = updatePath ("n0", $nodes, nodeOf("n0", $nodes), nodeOf("n19", $nodes), nodeOf("x", $nodes), "n0", $visited);
-		$file = fopen("../../data/log.txt", "a");
-		$myres = explode(",", $myres);
-		$myres = array_reverse($myres);
-		$myres = implode(",", $myres);
-		fwrite($file, $myres . "\n");
-		fclose($file);
 
-		foreach ($buyers as $cosumerNode => $neighbours){
-			//trb calc de la $row['name'] la $consumerNode 
+		foreach ($buyers as $cosumerNode){
+			$myres = BFS ($Q, $nodes, "n1", "n6");
 		}
+		$list = array_merge($list, [$my_res]);
 
 		return $list;
-	}
-
-	function nodeOf($name, $nodes){
-		foreach($nodes as $node){
-			if($node['name'] == $name){
-				return $node;
-			}
-		}
-		return NULL;
-	}
-
-	// used to determine the path from one node to another using an adapted version of DIJKSTRA'S SHORTEST PATH
-	// $start is the node from where we are searching for new nodes
-	// $end is the destination node | it has the same VALUE at each iteration, regardless of $start's value
-	// $result is the string containing the path | has default value of ""
-	// $visited is a hash table having KEY = node name and VALUE = 1 / 0 (depending if the node was visited before or not)
-	function updatePath ($origin, $nodes, $start, $end, $prev, $result, $visited){
-		if($start == NULL){
-			return "NO WAEH, JOSE";
-		}else{
-		// find neighbours of $start
-		$nbrs = $start['link_to']; // take neighbour list of $start
-		$nbrs = explode(",", $nbrs);
-		foreach($nbrs as $nbr){
-			//check if $nbr was visited before
-			if($prev['name'] == $nbr){
-			}
-			else if($visited[$nbr] != 1){
-				if($start['name'] == $origin){
-					$result = "$origin";
-				}
-				// if NOT VISITED, add it to the path
-				$result = implode(",", array ($nbr, $result));
-				$visited[$nbr] = 1;
-
-				// if $nbr is the node where we want to end up, we return the full path
-				if($nbr == $end['name']){
-					return $result;
-				}
-				// if $nbr is different from the destination node, we continue the path search through its neighbours
-				return updatePath ($origin, $nodes, nodeOf($nbr, $nodes), $end, $start, $result, $visited);
-			}
-		}
-		// if we get here, then either all nodes were visited and the destination was not reached
-		// OR we have reached a dead end node (node whose neighbours were all visited)
-		$result = "";
-		}
 	}
 
 	// function to treat economic phase
@@ -179,8 +113,93 @@
 		fclose ($file);
 	}
 
+	// implementation of BREADTH-FIRST-SEARCH algorithm for unweighted graphs
+	//	&$Q -> global variable reprezenting the heap containing parent nodes, indexed by child nodes
+	//	$Q structure : $Q[$child_node] -> $parent_node
+	//	function will determin shortest path from $source to $end and return a string cointaining the path
+	function BFS (&$Q, $nodes, $source, $end){
+		// heap resetting ; the value for each node, except $source, will have its parent set to 0 (for testing)
+		$Q = array();
+		foreach ($nodes as $nd){
+			$Q[$nd['name']] = 0;
+		}
+		//	the $source node will always have its parent set to itself ; this is the condition for ending the path search
+		$Q[$source] = $source;
 
+		// step 1 : populate the heap according to BFS algorithm
+		BFS_populate_heap($Q, $nodes, $source, $end);
+		
+		// step 2 : verify the heap to reconstruct the path
+		$result = BFS_get_path($Q, $source, $end);
 
+		return $result;
+	}
 
+	//	function to populate the heap according to BFS
+	//	$Q 				-> global heap
+	//	$nodes 			-> hash table containing all the nodes of the graph
+	//	$start_nodes 	-> list of nodes for which in the current iteration we search for neighbours
+	//	$end 			-> the target node for which we are look for the path ; used for recursion loop exit
+	function BFS_populate_heap(&$Q, $nodes, $start_nodes, $end){
+		//	test if target node has been visited ; if yes, then the heap population can end
+		if($Q[$end] !== 0){
+			return;
+		//	if the target node has not been reached, continue to populate the heap
+		}else {
+			// turn the starting node list into an array for iteration
+			$starts = explode(",", $start_nodes);
+			//	prepare the next set of starting nodes (this will consist of a list of the unvisited neighbours of this set of starting nodes)
+			$start_next = "";
 
+			//	for every starting node, we search through all neighbours
+			foreach($starts as $st_node){
+				//	find the node adjacent to the name of this starting node
+				$st_node_neighbours = nodeOf($st_node, $nodes);
+				//	retrieve the list of its neighbours
+				$st_node_neighbours = $st_node_neighbours['link_to'];
+				//	transform the list into array for iteration
+				$s_n_n = explode(",", $st_node_neighbours);
+				$st_node_neighbours = [];
+				//	filter out previously visited nodes
+				foreach($s_n_n as $snn){
+					if($Q[$snn] === 0){
+						$st_node_neighbours = array_merge($st_node_neighbours, [$snn]);
+					}
+				}
+				// at this point, $st_node_neighbours contains all the neighbours of $st_node that HAVE NOT BEEN visited before
+				//	iterate through these neighbours
+				foreach($st_node_neighbours as $snn){
+					//	set the parent of this neighbour to $st_node
+					$Q[$snn] = $st_node;
+					//	add this neighbour to the next set of starting nodes
+					$start_next = $start_next . "," . $snn;
+				}
+			}
+			//	due to concatenation with the starting value of $start_next which was "", an extra ',' is present in the list -> correction
+			$start_next = substr($start_next, 1);
+			//	recursive call of function on the next set of starting nodes (the neighbours that were visited this iteration)
+			BFS_populate_heap($Q, $nodes, $start_next, $end);
+		}
+	}
 
+	//	function to return the shortest path from $start to $end
+	function BFS_get_path($Q, $start, $end){
+		//	if $end's parent is itself, return $end ; this means we've reached the source node as it is the only one with this property
+		if($Q[$end] === $end){
+			return $end;
+		}
+		//	get $end's parent from the heap
+		$p_node = $Q[$end];
+		//	recursive call of function using $end's parent
+		$parent = BFS_get_path($Q, $start, $p_node);
+		return $parent . "," . $end;
+	}
+
+	//	function to return the node corresponding to the name of $node_name
+	function nodeOf($node_name, $nodes){
+		foreach($nodes as $nd){
+			if($node_name === $nd['name']){
+				return $nd;
+			}
+		}
+	}
