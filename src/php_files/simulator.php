@@ -44,15 +44,17 @@
 		$possibleBuyers = [];
 		$nodes 			= execute_sql_and_return ('<simulator.php>', $con, "SELECT * FROM nodes");
 		
-		while ($row = mysqli_fetch_assoc($nodes)) {
+		while ($row = mysqli_fetch_assoc ($nodes)) {
 			// set producer to "true"
 			$row['is_producer'] = 1;
-			print_r("\n" . $row['name'] . "\n");
+			print_r($row);
 			// get a list of possible buyers
 			// will return an array, where each index is the name of the node, and the value is a list of nodes representing the neighbours
 			$buyers = execute_sql_and_return ('<simulator.php>', $con, "SELECT name, link_to FROM nodes WHERE (needs_product = '".$row['has_product']."') AND (name <> '".$row['name']."')");
-			
-			getShortestPath($con, $row, $nodes, $buyers);
+			//	find path to each potential buyer and return array containing them
+			$path_list = getShortestPath($con, $row, $nodes, $buyers);
+
+			//addToLog(implode("\n", $path_list));
 			// testing the result, optional
 			//rint_r($possibleBuyers);
 
@@ -72,8 +74,9 @@
 	function getShortestPath ($con, $row, $nodes, $buyers) {
 		$list = [];
 
-		foreach ($buyers as $cosumerNode){
-			$myres = BFS ($Q, $nodes, "n1", "n6");
+		//	for each potential buyer, find the shortest path and add it to the list
+		while ($consumerNode = mysqli_fetch_assoc ($buyers)){
+			$my_res = BFS ($Q, $nodes, $row['name'], $consumerNode['name']);
 		}
 		$list = array_merge($list, [$my_res]);
 
@@ -128,7 +131,7 @@
 
 		// step 1 : populate the heap according to BFS algorithm
 		BFS_populate_heap($Q, $nodes, $source, $end);
-		
+		addToLog("\n#" . implode(",", $Q));
 		// step 2 : verify the heap to reconstruct the path
 		$result = BFS_get_path($Q, $source, $end);
 
@@ -141,11 +144,8 @@
 	//	$start_nodes 	-> list of nodes for which in the current iteration we search for neighbours
 	//	$end 			-> the target node for which we are look for the path ; used for recursion loop exit
 	function BFS_populate_heap(&$Q, $nodes, $start_nodes, $end){
-		//	test if target node has been visited ; if yes, then the heap population can end
-		if($Q[$end] !== 0){
-			return;
-		//	if the target node has not been reached, continue to populate the heap
-		}else {
+		//	test if the heap is full; this will ensure that for the same $source node, the function isn't recalled unnecessarily
+		if (!BFS_check_full_heap($Q)) {
 			// turn the starting node list into an array for iteration
 			$starts = explode(",", $start_nodes);
 			//	prepare the next set of starting nodes (this will consist of a list of the unvisited neighbours of this set of starting nodes)
@@ -202,4 +202,13 @@
 				return $nd;
 			}
 		}
+	}
+
+	function BFS_check_full_heap ($Q){
+		foreach ($Q as $my_q){
+			if($my_q === 0)
+			return FALSE;
+		}
+
+		return TRUE;
 	}
