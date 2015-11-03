@@ -42,8 +42,11 @@
 	// function to treat information related
 	function consumerPhase ($con) {
 		$possibleBuyers = [];
+
 		$nodes 			= execute_sql_and_return ('<simulator.php>', $con, "SELECT * FROM nodes");
+
 		$nodes2 = [];
+
 		while($nodes2[] = mysqli_fetch_assoc ($nodes));
 		array_pop ($nodes2);
 		/*
@@ -72,12 +75,17 @@
 
 		}*/
 		foreach($nodes as $nd){
+
 			$buyers2 = [];
 			$buyers = execute_sql_and_return ('<simulator.php>', $con, "SELECT name FROM nodes WHERE (needs_product = '".$nd['has_product']."') AND (name <> '".$nd['name']."')");
+
 			while($buyers2[] = mysqli_fetch_assoc($buyers));
 			array_pop ($buyers2);
+			
 			print_r($buyers2);
+
 			$list = [];
+
 			foreach($buyers2 as $byr){
 				$list = array_merge ($list, array(BFS ($Q, $nodes2, $nd['name'], $byr['name'])));
 			}
