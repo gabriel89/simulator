@@ -1,8 +1,4 @@
 (function(){
-	// var maxDist = 0;
-	// var localDist = 0;
-	// var nodePath = [];
-
 	IO = function(elt){
 		var dom 			= $(elt)
 		var _dialog 		= dom.find('.dialog')

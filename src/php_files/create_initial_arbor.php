@@ -20,7 +20,6 @@
 	mysqli_query ($con,'TRUNCATE TABLE products');
 	mysqli_query ($con,'TRUNCATE TABLE nodes');
 
-
 	$file 	= file_get_contents ('../../data/initializer.csv');
 	$csv 	= read_CSV ($file, $con);
 
@@ -35,10 +34,9 @@
 		$headings 		= explode (";", $rows[0]);
 		$headingsArr 	= [];
 
-		generateProducts($con);
-
+		generateProducts ($con);
 		// pop empty element from the list
-		array_shift($headings);
+		array_shift ($headings);
 
 		// pop headings from the list
 		array_shift($rows);
