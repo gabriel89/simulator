@@ -71,7 +71,7 @@
 		// for each potential buyer, find the shortest path and add it to the list
 		while ($consumerNode = mysqli_fetch_assoc ($buyers)){
 			$my_res = BFS ($Q, $nodes, $row['name'], $consumerNode['name']);
-			$list 	= array_merge($list, $my_res);
+			$list 	= array_merge ($list, [$my_res]);
 		}
 
 		return $list;
