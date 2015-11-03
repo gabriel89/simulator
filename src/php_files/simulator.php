@@ -42,52 +42,24 @@
 	// function to treat information related
 	function consumerPhase ($con) {
 		$possibleBuyers = [];
-
+		$nodes_array 	= [];
 		$nodes 			= execute_sql_and_return ('<simulator.php>', $con, "SELECT * FROM nodes");
 
-		$nodes2 = [];
+		while ($nodes_array[] = mysqli_fetch_assoc ($nodes) );
 
-		while($nodes2[] = mysqli_fetch_assoc ($nodes));
-		array_pop ($nodes2);
-		/*
-		while ($row = mysqli_fetch_assoc ($nodes)) {
-			// set producer to "true"
-			$row['is_producer'] = 1;
-			print_r($row);
-			// get a list of possible buyers
-			// will return an array, where each index is the name of the node, and the value is a list of nodes representing the neighbours
-			$buyers = execute_sql_and_return ('<simulator.php>', $con, "SELECT name, link_to FROM nodes WHERE (needs_product = '".$row['has_product']."') AND (name <> '".$row['name']."')");
-			//	find path to each potential buyer and return array containing them
-			$path_list = getShortestPath($con, $row, $nodes, $buyers);
+		array_pop ($nodes_array);
 
-			//addToLog(implode("\n", $path_list));
-			// testing the result, optional
-			//rint_r($possibleBuyers);
+		foreach ($nodes as $node){
+			$list 			= [];
+			$buyers_array 	= [];
+			$buyers 		= execute_sql_and_return ('<simulator.php>', $con, "SELECT name FROM nodes WHERE (needs_product = '".$node['has_product']."') AND (name <> '".$node['name']."')");
 
-			// using the returned vector, get the shortest paths
-			// must contain a list of nodes, where the parent node is $row['name']
+			while ($buyers_array[] = mysqli_fetch_assoc ($buyers));
 
-			// testing the result, optional
-			//var_dump($shortestPaths);
+			array_pop ($buyers_array);
 
-			// set producer to "false"
-			$row['is_producer'] = 0;
-
-		}*/
-		foreach($nodes as $nd){
-
-			$buyers2 = [];
-			$buyers = execute_sql_and_return ('<simulator.php>', $con, "SELECT name FROM nodes WHERE (needs_product = '".$nd['has_product']."') AND (name <> '".$nd['name']."')");
-
-			while($buyers2[] = mysqli_fetch_assoc($buyers));
-			array_pop ($buyers2);
-			
-			print_r($buyers2);
-
-			$list = [];
-
-			foreach($buyers2 as $byr){
-				$list = array_merge ($list, array(BFS ($Q, $nodes2, $nd['name'], $byr['name'])));
+			foreach($buyers_array as $buyer){
+				$list = array_merge ($list, array(BFS ($Q, $nodes_array, $node['name'], $buyer['name'])));
 			}
 		}
 	}
