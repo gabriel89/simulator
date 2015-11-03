@@ -49,6 +49,8 @@
 
 		array_pop ($nodes_array);
 
+		reset($nodes_array);
+
 		foreach ($nodes as $node){
 			$list 			= [];
 			$buyers_array 	= [];
@@ -58,9 +60,13 @@
 
 			array_pop ($buyers_array);
 
+			reset ($buyers_array);
+
 			foreach($buyers_array as $buyer){
 				$list = array_merge ($list, array(BFS ($Q, $nodes_array, $node['name'], $buyer['name'])));
 			}
+
+			addToLog("\n\n" . implode("\n", $list));
 		}
 	}
 
@@ -125,7 +131,6 @@
 
 		// step 1 : populate the heap according to BFS algorithm
 		BFS_populate_heap($Q, $nodes, $source, $end);
-		addToLog("\n#" . implode(",", $Q));
 		// step 2 : verify the heap to reconstruct the path
 		$result = BFS_get_path($Q, $source, $end);
 
