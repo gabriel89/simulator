@@ -29,7 +29,7 @@
 	// ----------------------------------------------------------------------------------------------------------
 
 	// function to read from csv file
-	function read_CSV ($content, $con){
+	function read_CSV ($content, $con) {
 		$rows 			= explode ("\n", $content);
 		$headings 		= explode (";", $rows[0]);
 
@@ -44,12 +44,12 @@
 		// add nodes to table, with extra data for each node
 		foreach ($headings as $value){
 			// select a random product
-			$has_prod_search 	= $con->query("SELECT name FROM products ORDER BY RAND() LIMIT 1");
-			$needs_prod_search 	= $con->query("SELECT name FROM products ORDER BY RAND() LIMIT 1");
+			$has_prod_search 	= $con->query ("SELECT name FROM products ORDER BY RAND() LIMIT 1");
+			$needs_prod_search 	= $con->query ("SELECT name FROM products ORDER BY RAND() LIMIT 1");
 			$has_prod 			= $has_prod_search->fetch_assoc()['name'];
 			$needs_prod 		= $needs_prod_search->fetch_assoc()['name'];
 
-			execute_sql('<create_initial_arbor.php>', $con, "INSERT INTO nodes (name, needs_product, has_product, money) VALUES ('".trim ($value)."', '".trim ($needs_prod)."', '".trim ($has_prod)."', '".frand(10)."')");
+			execute_sql('<create_initial_arbor.php>', $con, "INSERT INTO nodes (name, needs_product, needs_product_count, has_product, has_product_count, money) VALUES ('".trim ($value)."', '".trim ($needs_prod)."', '".frand (10)."', '".trim ($has_prod)."', '".frand (10)."', '".frand(10)."')");
 		}
 
 		// also add the links
@@ -60,17 +60,17 @@
 			// pop row[0], which represents the node, from the list
 			array_shift($row);
 
-			foreach ($row as $i_key => $i_value){
-				if (intval (str_replace ("\r" , "" , str_replace ("\n" , "" , $row[$i_key]))) == 1){
+			foreach ($row as $i_key => $i_value) {
+				if (intval (str_replace ("\r" , "" , str_replace ("\n" , "" , $row[$i_key]))) == 1) {
 					$local_heading = str_replace ("\r" , "" , str_replace ("\n" , "" , $headings[$i_key]));
 
 					if (trim ($rowNode) != ''){
 						$node = preventDuplicate ($con, trim ($rowNode), trim ($local_heading));
-						execute_sql('<create_initial_arbor.php>', $con, "UPDATE nodes SET link_to = '".$node."' WHERE name = '".$local_heading."'");
+						execute_sql ('<create_initial_arbor.php>', $con, "UPDATE nodes SET link_to = '".$node."' WHERE name = '".$local_heading."'");
 						
 						// also add the inverse of it to have the linkTo attribute set
 						$node = preventDuplicate ($con, trim ($local_heading), trim ($rowNode));
-						execute_sql('<create_initial_arbor.php>', $con, "UPDATE nodes SET link_to = '".$node."' WHERE name = '".$rowNode."'");
+						execute_sql ('<create_initial_arbor.php>', $con, "UPDATE nodes SET link_to = '".$node."' WHERE name = '".$rowNode."'");
 					}
 				}
 			}
