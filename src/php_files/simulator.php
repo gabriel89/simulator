@@ -52,6 +52,7 @@
 		reset($nodes_array);
 
 		foreach ($nodes as $node){
+			$Q = [];
 			$list 			= [];
 			$buyers_array 	= [];
 			$buyers 		= execute_sql_and_return ('<simulator.php>', $con, "SELECT name FROM nodes WHERE (needs_product = '".$node['has_product']."') AND (name <> '".$node['name']."')");
@@ -78,6 +79,7 @@
 		while ($consumerNode = mysqli_fetch_assoc ($buyers)){
 			$my_res = BFS ($Q, $nodes, $row['name'], $consumerNode['name']);
 		}
+
 		$list = array_merge($list, [$my_res]);
 
 		return $list;
@@ -121,16 +123,18 @@
 	//	$Q structure : $Q[$child_node] -> $parent_node
 	//	function will determin shortest path from $source to $end and return a string cointaining the path
 	function BFS (&$Q, $nodes, $source, $end){
+		
 		// heap resetting ; the value for each node, except $source, will have its parent set to 0 (for testing)
-		$Q = [];
 		foreach ($nodes as $nd){
 			$Q[$nd['name']] = 0;
 		}
+
 		//	the $source node will always have its parent set to itself ; this is the condition for ending the path search
 		$Q[$source] = $source;
 
 		// step 1 : populate the heap according to BFS algorithm
 		BFS_populate_heap($Q, $nodes, $source, $end);
+
 		// step 2 : verify the heap to reconstruct the path
 		$result = BFS_get_path($Q, $source, $end);
 
@@ -143,39 +147,52 @@
 	//	$start_nodes 	-> list of nodes for which in the current iteration we search for neighbours
 	//	$end 			-> the target node for which we are look for the path ; used for recursion loop exit
 	function BFS_populate_heap(&$Q, $nodes, $start_nodes, $end){
+
 		//	test if the heap is full; this will ensure that for the same $source node, the function isn't recalled unnecessarily
 		if (!BFS_check_full_heap($Q)) {
+
 			// turn the starting node list into an array for iteration
 			$starts = explode(",", $start_nodes);
+
 			//	prepare the next set of starting nodes (this will consist of a list of the unvisited neighbours of this set of starting nodes)
 			$start_next = "";
 
 			//	for every starting node, we search through all neighbours
 			foreach($starts as $st_node){
+
 				//	find the node adjacent to the name of this starting node
 				$st_node_neighbours = nodeOf($st_node, $nodes);
+
 				//	retrieve the list of its neighbours
 				$st_node_neighbours = $st_node_neighbours['link_to'];
+
 				//	transform the list into array for iteration
 				$s_n_n = explode(",", $st_node_neighbours);
 				$st_node_neighbours = [];
+
 				//	filter out previously visited nodes
 				foreach($s_n_n as $snn){
+
 					if($Q[$snn] === 0){
 						$st_node_neighbours = array_merge($st_node_neighbours, [$snn]);
 					}
 				}
+
 				// at this point, $st_node_neighbours contains all the neighbours of $st_node that HAVE NOT BEEN visited before
 				//	iterate through these neighbours
 				foreach($st_node_neighbours as $snn){
+
 					//	set the parent of this neighbour to $st_node
 					$Q[$snn] = $st_node;
+
 					//	add this neighbour to the next set of starting nodes
 					$start_next = $start_next . "," . $snn;
 				}
 			}
+
 			//	due to concatenation with the starting value of $start_next which was "", an extra ',' is present in the list -> correction
 			$start_next = substr($start_next, 1);
+
 			//	recursive call of function on the next set of starting nodes (the neighbours that were visited this iteration)
 			BFS_populate_heap($Q, $nodes, $start_next, $end);
 		}
@@ -183,20 +200,26 @@
 
 	//	function to return the shortest path from $start to $end
 	function BFS_get_path($Q, $start, $end){
+
 		//	if $end's parent is itself, return $end ; this means we've reached the source node as it is the only one with this property
 		if($Q[$end] === $end){
 			return $end;
 		}
+
 		//	get $end's parent from the heap
 		$p_node = $Q[$end];
+
 		//	recursive call of function using $end's parent
 		$parent = BFS_get_path($Q, $start, $p_node);
+
 		return $parent . "," . $end;
 	}
 
 	//	function to return the node corresponding to the name of $node_name
 	function nodeOf($node_name, $nodes){
+
 		foreach($nodes as $nd){
+
 			if($node_name === $nd['name']){
 				return $nd;
 			}
@@ -204,9 +227,11 @@
 	}
 
 	function BFS_check_full_heap ($Q){
+
 		foreach ($Q as $my_q){
+
 			if($my_q === 0)
-			return FALSE;
+				return FALSE;
 		}
 
 		return TRUE;
