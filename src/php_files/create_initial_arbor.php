@@ -32,9 +32,9 @@
 	function read_CSV ($content, $con){
 		$rows 			= explode ("\n", $content);
 		$headings 		= explode (";", $rows[0]);
-		$headingsArr 	= [];
 
 		generateProducts ($con);
+		
 		// pop empty element from the list
 		array_shift ($headings);
 
@@ -76,6 +76,9 @@
 			}
 		}
 
+		// unset large array to free up memory
+		unset ($rows);
+		unset ($headings);
 	}
 
 	// function to prevent duplicated nodes to being added into the link_to fields
@@ -83,8 +86,8 @@
 		$node_search 	= $con->query("SELECT link_to FROM nodes WHERE name = '".$row_node."' LIMIT 1");
 		$link_to 		= $node_search->fetch_assoc()['link_to'];
 		$link_to 		= explode(',', $link_to);
+		$add 			= true;
 
-		$add = true;
 		foreach ($link_to as $key => $value) {
 			if ($value == $to_add) {
 				$add = false;
@@ -95,14 +98,17 @@
 			array_push ($link_to, $to_add);
 		}
 
+		// unset large array to free up memory
+		unset ($node_search);
+
 		return trim (implode (',', $link_to), ',');
 	}
 
 	// random floating-point generator
 	function frand ($modifier = 1, $min = 0, $max = 9, $decimals = 2) {
-	 	$scale = pow(10, $decimals);
+	 	$scale = pow (10, $decimals);
 
-		return (mt_rand($min * $scale, $max * $scale) / $scale) * $modifier;
+		return (mt_rand ($min * $scale, $max * $scale) / $scale) * $modifier;
 	}
 
 	// function to generate products and their values

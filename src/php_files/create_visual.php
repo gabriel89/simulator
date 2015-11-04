@@ -78,7 +78,7 @@
 			$visual .= "}\n\n";
 
 			// set links
-			if (isset ($row['link_to'])){
+			if (isset ($row['link_to'])) {
 				foreach (explode(',', $row['link_to']) as $value) {
 					$visual .= $row['name'] . "--$value\n\n";
 				}
@@ -105,6 +105,7 @@
 		$content = ";--------------------------------\n;        INITIAL SETTINGS\n;--------------------------------\n$content";
 
 		$file = fopen ('../../data/log.txt', 'w+');
+		
 		fwrite ($file, $content);
 		fclose ($file);
 	}

@@ -39,36 +39,19 @@
 		economicPhase ($con);
 	}
 
-	// function to treat information related
+	// function to treat information related to the consumer phase
 	function consumerPhase ($con) {
-		$possibleBuyers = [];
-		$nodes_array 	= [];
-		$nodes 			= execute_sql_and_return ('<simulator.php>', $con, "SELECT * FROM nodes");
+		// retrieve all nodes from the DB
+		$nodes = execute_sql_and_return ('<simulator.php>', $con, "SELECT * FROM nodes");
 
-		while ($nodes_array[] = mysqli_fetch_assoc ($nodes) );
+		// retrieve a list of lists representing an economic path from producer to consumer
+		$consumer_path = getConsumerPath ($con, $nodes);
 
-		array_pop ($nodes_array);
+		// make transaction for each possible consumer
+		finalizeTransaction ($con, $nodes, $consumer_path);
 
-		reset($nodes_array);
-
-		foreach ($nodes as $node){
-			$Q = [];
-			$list 			= [];
-			$buyers_array 	= [];
-			$buyers 		= execute_sql_and_return ('<simulator.php>', $con, "SELECT name FROM nodes WHERE (needs_product = '".$node['has_product']."') AND (name <> '".$node['name']."')");
-
-			while ($buyers_array[] = mysqli_fetch_assoc ($buyers));
-
-			array_pop ($buyers_array);
-
-			reset ($buyers_array);
-
-			foreach($buyers_array as $buyer){
-				$list = array_merge ($list, array(BFS ($Q, $nodes_array, $node['name'], $buyer['name'])));
-			}
-
-			addToLog("\n\n" . implode("\n", $list));
-		}
+		// unset $consumer_path array once it is not used anymore
+		unset ($consumer_path);
 	}
 
 	// function to return a list of shortest pathds to the respective $row['name'] node (which is the seller)
@@ -80,7 +63,7 @@
 			$my_res = BFS ($Q, $nodes, $row['name'], $consumerNode['name']);
 		}
 
-		$list = array_merge($list, [$my_res]);
+		$list = array_merge ($list, [$my_res]);
 
 		return $list;
 	}
@@ -88,6 +71,7 @@
 	// function to treat economic phase
 	function economicPhase ($con) {
 		updateRevenue ();
+
 		decideUponInvestment ();
 	}
 
@@ -118,12 +102,58 @@
 		fclose ($file);
 	}
 
+	function getConsumerPath ($con, $nodes) {
+		$consumer_path 	= [];
+		$nodes_array 	= [];
+
+		while ($nodes_array[] = mysqli_fetch_assoc ($nodes) );
+
+		array_pop ($nodes_array);
+
+		reset ($nodes_array);
+
+		foreach ($nodes as $node) {
+			$Q = [];
+			$list 			= [];
+			$buyers_array 	= [];
+			$buyers 		= execute_sql_and_return ('<simulator.php>', $con, "SELECT name FROM nodes WHERE (needs_product = '".$node['has_product']."') AND (name <> '".$node['name']."')");
+
+			while ($buyers_array[] = mysqli_fetch_assoc ($buyers));
+
+			array_pop ($buyers_array);
+
+			reset ($buyers_array);
+
+			foreach($buyers_array as $buyer){
+				$list = array_merge ($list, array (BFS ($Q, $nodes_array, $node['name'], $buyer['name'])));
+			}
+			
+			$consumer_path = array_merge ($consumer_path, $list);
+
+			addToLog("\n\n" . implode("\n", $list));
+		}
+
+		// unset large arrays that are not used anymore
+		unset ($nodes_array);
+
+		return $consumer_path;
+	}
+
+	// function to finalize transaction:
+	// for each element of $consumer_path we need to sell the product from the producer (first node) to the consumer (last node)
+	// each intermediate node will add a personal profit to the total value of the previous node, thus product final price = initial price + profit node1 + profit node2 + ...
+	function finalizeTransaction ($con, $nodes, $consumer_path) {
+		// hard-coded the initial price, but this needs to be retrieved from each producer dynamically
+		$price = 100;
+
+		$price = calculateNewPrice ($price);
+	}
+
 	// implementation of BREADTH-FIRST-SEARCH algorithm for unweighted graphs
-	//	&$Q -> global variable reprezenting the heap containing parent nodes, indexed by child nodes
-	//	$Q structure : $Q[$child_node] -> $parent_node
-	//	function will determin shortest path from $source to $end and return a string cointaining the path
-	function BFS (&$Q, $nodes, $source, $end){
-		
+	// &$Q -> global variable reprezenting the heap containing parent nodes, indexed by child nodes
+	// $Q structure : $Q[$child_node] -> $parent_node
+	// function will determin shortest path from $source to $end and return a string cointaining the path
+	function BFS (&$Q, $nodes, $source, $end) {
 		// heap resetting ; the value for each node, except $source, will have its parent set to 0 (for testing)
 		foreach ($nodes as $nd){
 			$Q[$nd['name']] = 0;
@@ -141,21 +171,27 @@
 		return $result;
 	}
 
+	function calculateNewPrice ($old_price) {
+		// constant profit expressed in percentage (%) of $old_price
+		$personal_profit = 10;
+
+		return ($personal_profit / 100) * $old_price;
+	}
+
 	//	function to populate the heap according to BFS
 	//	$Q 				-> global heap
 	//	$nodes 			-> hash table containing all the nodes of the graph
 	//	$start_nodes 	-> list of nodes for which in the current iteration we search for neighbours
 	//	$end 			-> the target node for which we are look for the path ; used for recursion loop exit
-	function BFS_populate_heap(&$Q, $nodes, $start_nodes, $end){
-
+	function BFS_populate_heap(&$Q, $nodes, $start_nodes, $end) {
 		//	test if the heap is full; this will ensure that for the same $source node, the function isn't recalled unnecessarily
 		if (!BFS_check_full_heap($Q)) {
 
 			// turn the starting node list into an array for iteration
-			$starts = explode(",", $start_nodes);
+			$starts = explode(',', $start_nodes);
 
 			//	prepare the next set of starting nodes (this will consist of a list of the unvisited neighbours of this set of starting nodes)
-			$start_next = "";
+			$start_next = '';
 
 			//	for every starting node, we search through all neighbours
 			foreach($starts as $st_node){
@@ -171,38 +207,35 @@
 				$st_node_neighbours = [];
 
 				//	filter out previously visited nodes
-				foreach($s_n_n as $snn){
-
-					if($Q[$snn] === 0){
+				foreach ($s_n_n as $snn) {
+					if ($Q[$snn] === 0) {
 						$st_node_neighbours = array_merge($st_node_neighbours, [$snn]);
 					}
 				}
 
 				// at this point, $st_node_neighbours contains all the neighbours of $st_node that HAVE NOT BEEN visited before
-				//	iterate through these neighbours
-				foreach($st_node_neighbours as $snn){
-
+				// iterate through these neighbours
+				foreach ($st_node_neighbours as $snn) {
 					//	set the parent of this neighbour to $st_node
 					$Q[$snn] = $st_node;
 
 					//	add this neighbour to the next set of starting nodes
-					$start_next = $start_next . "," . $snn;
+					$start_next = $start_next . ',' . $snn;
 				}
 			}
 
-			//	due to concatenation with the starting value of $start_next which was "", an extra ',' is present in the list -> correction
-			$start_next = substr($start_next, 1);
+			// due to concatenation with the starting value of $start_next which was "", an extra ',' is present in the list -> correction
+			$start_next = substr ($start_next, 1);
 
-			//	recursive call of function on the next set of starting nodes (the neighbours that were visited this iteration)
+			// recursive call of function on the next set of starting nodes (the neighbours that were visited this iteration)
 			BFS_populate_heap($Q, $nodes, $start_next, $end);
 		}
 	}
 
 	//	function to return the shortest path from $start to $end
-	function BFS_get_path($Q, $start, $end){
-
+	function BFS_get_path ($Q, $start, $end) {
 		//	if $end's parent is itself, return $end ; this means we've reached the source node as it is the only one with this property
-		if($Q[$end] === $end){
+		if ($Q[$end] === $end) {
 			return $end;
 		}
 
@@ -216,21 +249,17 @@
 	}
 
 	//	function to return the node corresponding to the name of $node_name
-	function nodeOf($node_name, $nodes){
-
-		foreach($nodes as $nd){
-
-			if($node_name === $nd['name']){
+	function nodeOf ($node_name, $nodes) {
+		foreach ($nodes as $nd) {
+			if ($node_name === $nd['name']) {
 				return $nd;
 			}
 		}
 	}
 
-	function BFS_check_full_heap ($Q){
-
-		foreach ($Q as $my_q){
-
-			if($my_q === 0)
+	function BFS_check_full_heap ($Q) {
+		foreach ($Q as $my_q) {
+			if ($my_q === 0)
 				return FALSE;
 		}
 
