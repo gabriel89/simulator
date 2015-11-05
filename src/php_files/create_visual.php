@@ -102,7 +102,7 @@
 
 	// Function to write initial data to the log
 	function writeInitialLog ($content){
-		$content = ";--------------------------------\n;        INITIAL SETTINGS\n;--------------------------------\n$content";
+		$content = ";--------------------------------\n;        INITIAL SETTINGS\n;--------------------------------\n\n$content";
 
 		$file = fopen ('../../data/log.txt', 'w+');
 		

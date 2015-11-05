@@ -39,7 +39,7 @@
 						// print status
 						console.log('Clicked on START');
 
-						myVar = setInterval(function(){ printOnStartClick() }, 1000);
+						// myVar = setInterval(function(){ printOnStartClick() }, 1000);
 						printOnStartClick();
 					} else {
 						// set html property
@@ -76,10 +76,15 @@
 	function printOnStartClick() {
 		$.ajax({
 		    url: 'src/php_files/simulator.php',
-		    type: 'GET',
+		    type: 'POST',
 		    async: false,
-		    success: function(e) {console.log('Running simulation'); console.log(e)},
-			error: function(e) {console.log('Error running simulation');}
+		    success: function(e) {
+		    	console.log('Running simulation');
+		    	console.log(e);
+		    },
+			error: function(e) {
+				console.log('Error running simulation');
+			}
 		});
 	}
 

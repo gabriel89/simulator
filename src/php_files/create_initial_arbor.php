@@ -1,6 +1,7 @@
 <?php
 	// include files
 	include_once ('sql_execute.php');
+	include_once ('common_functions.php');
 
 	// connect to DB
 	$servername = "localhost";
@@ -49,7 +50,7 @@
 			$has_prod 			= $has_prod_search->fetch_assoc()['name'];
 			$needs_prod 		= $needs_prod_search->fetch_assoc()['name'];
 
-			execute_sql('<create_initial_arbor.php>', $con, "INSERT INTO nodes (name, needs_product, needs_product_count, has_product, has_product_count, money) VALUES ('".trim ($value)."', '".trim ($needs_prod)."', '".frand (10)."', '".trim ($has_prod)."', '".frand (10)."', '".frand(10)."')");
+			execute_sql('<create_initial_arbor.php>', $con, "INSERT INTO nodes (name, needs_product, needs_product_count, has_product, has_product_count, money) VALUES ('".trim ($value)."', '".trim ($needs_prod)."', '".frand (10)."', '".trim ($has_prod)."', '".frand (10)."', '".frand (10)."')");
 		}
 
 		// also add the links
@@ -102,13 +103,6 @@
 		unset ($node_search);
 
 		return trim (implode (',', $link_to), ',');
-	}
-
-	// random floating-point generator
-	function frand ($modifier = 1, $min = 0, $max = 9, $decimals = 2) {
-	 	$scale = pow (10, $decimals);
-
-		return (mt_rand ($min * $scale, $max * $scale) / $scale) * $modifier;
 	}
 
 	// function to generate products and their values

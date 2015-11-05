@@ -1,6 +1,7 @@
 <?php
 	// include files
 	include_once ('sql_execute.php');
+	include_once ('common_functions.php');
 
 	// connect to DB
 	$servername = "localhost";
@@ -17,7 +18,7 @@
 	}
 
 	// start simulator by setting the execution number
-	prepareSim (1, $con);
+	prepareSim (10, $con);
 
 	// close connection
 	$con->close ();
@@ -28,22 +29,34 @@
 
 	// function to set iteration number of the 
 	function prepareSim ($exec_count, $con) {
-		for ($exec_iterator = 0; $exec_iterator < $exec_count; $exec_iterator++){
-			startSim ($con);
+		addToLog ("\n;--------------------------------\n;        STARTING SIMULATOR\n;--------------------------------\n");
+
+		// calculate pay-day recurrence
+		$pay_day = floor ($exec_count / 12);
+
+		for ($exec_iterator = 1; $exec_iterator <= $exec_count; $exec_iterator++) {
+			// retrieve all nodes from the DB
+			$nodes = execute_sql_and_return ('<simulator.php>', $con, "SELECT * FROM nodes");
+
+			if (($pay_day > 25) && ($exec_iterator % $pay_day == 0)) {
+			    payDay ($con, $nodes);
+			}
+			
+			startSim ($con, $nodes, $exec_iterator, $exec_count);
 		}
 	}
 
 	// function to start the simulator iterating over the nodes in the graph
-	function startSim ($con) {
-		consumerPhase ($con);
-		economicPhase ($con);
+	function startSim ($con, $nodes, $exec_iterator, $exec_count) {
+		addToLog ("\n\n;--------------------------------\n;        SIMULATOR PHASE $exec_iterator/$exec_count\n;--------------------------------");
+		print_r ("On phase $exec_iterator/$exec_count\n");
+
+		consumerPhase ($con, $nodes);
+		economicPhase ($con, $nodes);
 	}
 
 	// function to treat information related to the consumer phase
-	function consumerPhase ($con) {
-		// retrieve all nodes from the DB
-		$nodes = execute_sql_and_return ('<simulator.php>', $con, "SELECT * FROM nodes");
-
+	function consumerPhase ($con, $nodes) {
 		// retrieve a list of lists representing an economic path from producer to consumer
 		$consumer_path = getConsumerPath ($con, $nodes);
 
@@ -69,7 +82,7 @@
 	}
 
 	// function to treat economic phase
-	function economicPhase ($con) {
+	function economicPhase ($con, $nodes) {
 		updateRevenue ();
 
 		decideUponInvestment ();
@@ -106,7 +119,7 @@
 		$consumer_path 	= [];
 		$nodes_array 	= [];
 
-		while ($nodes_array[] = mysqli_fetch_assoc ($nodes) );
+		while ($nodes_array[] = mysqli_fetch_assoc ($nodes));
 
 		array_pop ($nodes_array);
 
@@ -124,7 +137,7 @@
 
 			reset ($buyers_array);
 
-			foreach($buyers_array as $buyer){
+			foreach ($buyers_array as $buyer){
 				$list = array_merge ($list, array (BFS ($Q, $nodes_array, $node['name'], $buyer['name'])));
 			}
 			
@@ -171,11 +184,22 @@
 		return $result;
 	}
 
+	// function to calculate the new price of a product, factoring in the old price + individual profit
 	function calculateNewPrice ($old_price) {
 		// constant profit expressed in percentage (%) of $old_price
 		$personal_profit = 10;
 
 		return ($personal_profit / 100) * $old_price;
+	}
+
+	// function to update money for each node
+	function payDay ($con, $nodes) {
+		addToLog ("\n\n;--------------------------------\n;        PAYDAY\n;--------------------------------");
+
+		while ($node = mysqli_fetch_assoc ($nodes)) {
+			execute_sql ('<simulator.php>', $con, "UPDATE nodes SET money = '".($node['money'] + frand (10))."' WHERE id = '".$node['id']."'");
+		}
+
 	}
 
 	//	function to populate the heap according to BFS
