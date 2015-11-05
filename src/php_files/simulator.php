@@ -38,7 +38,8 @@
 			// retrieve all nodes from the DB
 			$nodes = execute_sql_and_return ('<simulator.php>', $con, "SELECT * FROM nodes");
 
-			if (($pay_day > 25) && ($exec_iterator % $pay_day == 0)) {
+			// make sure we refresh the money only in 1/12th of the total number of iteration
+			if (($pay_day > ($exec_count / 12)) && ($exec_iterator % $pay_day == 0)) {
 			    payDay ($con, $nodes);
 			}
 			
