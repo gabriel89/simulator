@@ -120,11 +120,9 @@
 		$consumer_path 	= [];
 		$nodes_array 	= [];
 
-		while ($nodes_array[] = mysqli_fetch_assoc ($nodes));
-
-		array_pop ($nodes_array);
-
-		reset ($nodes_array);
+		foreach ($nodes as $nd){
+			$nodes_array = array_merge ($nodes_array, [$nd]);
+		}
 
 		foreach ($nodes as $node) {
 			$Q = [];
@@ -132,11 +130,9 @@
 			$buyers_array 	= [];
 			$buyers 		= execute_sql_and_return ('<simulator.php>', $con, "SELECT name FROM nodes WHERE (needs_product = '".$node['has_product']."') AND (name <> '".$node['name']."')");
 
-			while ($buyers_array[] = mysqli_fetch_assoc ($buyers));
-
-			array_pop ($buyers_array);
-
-			reset ($buyers_array);
+			foreach ($buyers as $nd){
+				$buyers_array = array_merge ($buyers_array, [$nd]);
+			}
 
 			foreach ($buyers_array as $buyer){
 				$list = array_merge ($list, array (BFS ($Q, $nodes_array, $node['name'], $buyer['name'])));
@@ -174,104 +170,140 @@
 			$path_nodes = explode(",", $current_path);
 
 			// retrieve seller and buyer nodes from path
-			$seller_index = indexTo ($path_nodes[0], $nodes_array);	
+			$seller_node = &$nodes_array[indexTo ($path_nodes[0], $nodes_array)];	
 			
 			
 			//	check if the seller_node still has product to sell
-			if ($nodes_array[$seller_index]['has_product_count'] > 0) {
-				$buyer_index = indexTo ($path_nodes[0], $nodes_array);
+			if ($seller_node['has_product_count'] > 0) {
+				$rev = array_reverse ($path_nodes);
+				$buyer_node = &$nodes_array[indexTo ($rev[0], $nodes_array)];
+				unset ($rev);
 
-				if($nodes_array[$buyer_index]['needs_product_count'] == 0){
+				if($buyer_node['needs_product_count'] == 0){
 					// this buyer node no longer needs products
-					$transaction_log .= $nodes_array[$buyer_index]['name'] . " no longer needs any products\n\n";
+					$transaction_log .= $buyer_node['name'] . " no longer needs any products\n\n";
 				} else {
 					// retrieve product the seller_node wants to sell
-					$product = execute_sql_and_return ('<simulator.php>', $con, "SELECT name, value FROM products WHERE name = '" . $nodes_array[$seller_index]['has_product'] . "'");
+					$product = execute_sql_and_return ('<simulator.php>', $con, "SELECT name, value FROM products WHERE name = '" . $seller_node['has_product'] . "'");
 					$product = mysqli_fetch_array($product);
 
 
-					$transaction_log .= $nodes_array[$seller_index]['name'] . " wants to sells to " . $nodes_array[$buyer_index]['name'] . "\n";
+					$transaction_log .= $seller_node['name'] . " wants to sells to " . $buyer_node['name'] . "\n";
 					//	set initial transaction cost 
 					$transaction_cost_piece = $product['value'];
 
-					$transaction_log .= $nodes_array[$seller_index]['name'] . " sets initial piece cost to " . $transaction_cost_piece . "\n";
+					//	check if buyer can afford product
+					$max_affordable_quantity = (int) ($buyer_node['money'] / $transaction_cost_piece);
 
-					//	determine final transaction cost
-					foreach ($path_nodes as $intermediary){
-
-						//	cost will be increased by 0.1 for each intermediary node involved in the transaction
-						if($intermediary !== $nodes_array[$seller_index]['name'] && $intermediary !== $nodes_array[$buyer_index]['name']){
-							$profit_interm = $transaction_cost_piece * 0.1;
-							$transaction_cost_piece = $transaction_cost_piece + $profit_interm;
-
-							$transaction_log .= $intermediary . " mediates transaction, raising piece cost to " . $transaction_cost_piece . "\n";
-						}
-					}
-
-					//	at this point, the final transaction cost per piece is known and the buyer node will buy as much product as it can without going broke
-					// the maximum quantity buyer_node can afford without going broke
-					$max_affordable_quantity = floor ($nodes_array[$buyer_index]['money'] / $transaction_cost_piece);
-					$desired_amount = $nodes_array[$buyer_index]['needs_product_count'] - $max_affordable_quantity;
-					
-					if($desired_amount < 0){
-						//	if buyer needs less than he can afford, try to buy it all
-						$desired_amount = $nodes_array[$buyer_index]['needs_product_count'];
+					if($max_affordable_quantity === 0){
+						//	buyer cannot afford to buy anymore products
+						$transaction_log .= $buyer_node['name'] . " cannot afford any more purchases\n\n";
 					} else {
-						//	if buyer needs more than he can afford, try to buy as much as he can
-						$desired_amount = $max_affordable_quantity;
-					}
 
-					// difference between amount the seller has and amount the buyer wishes to buy
-					$amount_to_buy = $nodes_array[$seller_index]['has_product_count'] - $desired_amount;
-					
-					if($amount_to_buy < 0) {
-						// if $amount_remaining is negative, then the seller_node has less product than buyer needs, so he sells out
-						$amount_to_buy = $nodes_array[$seller_index]['has_product_count'];
-					} else {
-						// if $amount_remaining is positive or 0, then the seller has at least the amount the buyer wants to buy
-						$amount_to_buy = $desired_amount;
-					}
+						$transaction_log .= $seller_node['name'] . " sets initial piece cost to " . $transaction_cost_piece . "\n";
 
-					//	execute transaction : 	seller_node sells the quantity and receives the money, as does every intermediary node
-					//							buyer_node receives the quantity and spends the money
-					$final_cost = $amount_to_buy * $transaction_cost_piece;
-					$nodes_array[$buyer_index]['money'] -= $final_cost;
-					$nodes_array[$buyer_index]['needs_product_count'] -= $amount_to_buy;
+						//	determine final transaction cost
+						foreach ($path_nodes as $intermediary){
 
-					$transaction_log .= $nodes_array[$buyer_index]['name'] . " buys " . $amount_to_buy . " products from " . $nodes_array[$seller_index]['name'] . " for a total cost of " . $final_cost . "\n";
+							//	cost will be increased by 0.1 for each intermediary node involved in the transaction
+							if($intermediary !== $seller_node['name'] && $intermediary !== $buyer_node['name']){
+								$profit_interm = $transaction_cost_piece * 0.1;
+								$transaction_cost_piece = $transaction_cost_piece + $profit_interm;
 
-					//	foreach intermediary node we need to calculate its cut of the total profit (which is 0.1 * the profit of the previous intermediary node)
-					$path_nodes = array_reverse ($path_nodes);
-					foreach ($path_nodes as $intermediary){
-
-						//	each intermediary node involved in the transaction will receive 10% of the final cost
-						if($intermediary !== $nodes_array[$seller_index]['name'] && $intermediary !== $nodes_array[$buyer_index]['name']){
-							$inter_index = indexTo ($intermediary, $nodes_array);
-							$interm_profit = ($final_cost / 11);
-							$nodes_array[$inter_index]['money'] += $interm_profit;
-							$final_cost -= $interm_profit;
-
-							$transaction_log .= $intermediary . " receives sum of " . $interm_profit . " for mediation\n";
+								$transaction_log .= $intermediary . " mediates transaction, raising piece cost to " . $transaction_cost_piece . "\n";
+							}
 						}
+
+						//	at this point, the final transaction cost per piece is known and the buyer node will buy as much product as it can without going broke
+						// the maximum quantity buyer_node can afford without going broke
+						
+						$desired_amount = $buyer_node['needs_product_count'] - $max_affordable_quantity;
+						
+						if($desired_amount < 0){
+							//	if buyer needs less than he can afford, try to buy it all
+							$desired_amount = $buyer_node['needs_product_count'];
+						} else {
+							//	if buyer needs more than he can afford, try to buy as much as he can
+							$desired_amount = $max_affordable_quantity;
+						}
+
+						// difference between amount the seller has and amount the buyer wishes to buy
+						$amount_to_buy = $seller_node['has_product_count'] - $desired_amount;
+						
+						if($amount_to_buy < 0) {
+							// if $amount_remaining is negative, then the seller_node has less product than buyer needs, so he sells out
+							$amount_to_buy = $seller_node['has_product_count'];
+						} else {
+							// if $amount_remaining is positive or 0, then the seller has at least the amount the buyer wants to buy
+							$amount_to_buy = $desired_amount;
+						}
+
+						//	execute transaction : 	seller_node sells the quantity and receives the money, as does every intermediary node
+						//							buyer_node receives the quantity and spends the money
+						$final_cost = $amount_to_buy * $transaction_cost_piece;
+						$buyer_node['money'] -= $final_cost;
+						$buyer_node['needs_product_count'] -= $amount_to_buy;
+
+						$transaction_log .= $buyer_node['name'] . " buys " . $amount_to_buy . " products from " . $seller_node['name'] . " for a total cost of " . $final_cost . "\n";
+
+						//	foreach intermediary node we need to calculate its cut of the total profit (which is 0.1 * the profit of the previous intermediary node)
+						$path_nodes = array_reverse ($path_nodes);
+						foreach ($path_nodes as $intermediary){
+
+							//	each intermediary node involved in the transaction will receive 10% of the final cost
+							if($intermediary !== $seller_node['name'] && $intermediary !== $buyer_node['name']){
+								$inter_node = &$nodes_array[indexTo ($intermediary, $nodes_array)];
+								$interm_profit = ($final_cost / 11);
+								$inter_node['money'] += $interm_profit;
+								$final_cost -= $interm_profit;
+
+								$transaction_log .= $intermediary . " receives sum of " . $interm_profit . " for mediation\n";
+							}
+						}
+
+						$seller_node['money'] += $final_cost;
+						$seller_node['has_product_count'] -= $amount_to_buy; 
+
+						$transaction_log .= $seller_node['name'] . " receives final payment of " . $final_cost . "\n\n";
 					}
-
-					$nodes_array[$seller_index]['money'] += $final_cost;
-					$nodes_array[$seller_index]['has_product_count'] -= $amount_to_buy; 
-
-					$transaction_log .= $nodes_array[$seller_index]['name'] . " receives final payment of " . $final_cost . "\n\n";
 				}
-			} else $transaction_log .= $nodes_array[$seller_index]['name'] . " has sold out\n\n";
+			} else $transaction_log .= $seller_node['name'] . " has sold out\n\n";
 
-			//print_r($transaction_log);
+			print_r($transaction_log);
 		}
+		christmas_phase($con, $nodes_array);
 
 		//	update database with new values for money and product quantities
+		update_post_tranzaction ($con, $nodes_array);
+
+		//print_r("Updated database\n\n");
+		payDay ($con, $nodes_array);
+		$nodes = execute_sql_and_return ('<simulator.php>', $con, "SELECT * FROM nodes");
+		
+		$price = calculateNewPrice ($price);
+	}
+
+	//	update database with new values of product counts and moneys
+	function update_post_tranzaction ($con, $nodes_array){
 		foreach($nodes_array as $nd){
 			execute_sql_and_return('<simulator.php>', $con, "UPDATE nodes SET has_product_count = ".$nd['has_product_count'].", needs_product_count = ".$nd['needs_product_count'].", money = ".$nd['money']." WHERE name = '" . $nd['name']. "'");
 		}
-		//print_r("Updated database\n\n");
-		
-		$price = calculateNewPrice ($price);
+	}
+
+	function christmas_phase($con, &$nodes_array){
+		print_r("\n\nIT'S CHRISTMAS DAY! EVERYBODY GETS STUFF\n");
+		foreach ($nodes_array as &$nd){
+			// get product that $nd sells
+			$product = execute_sql_and_return ('<simulator.php>', $con, "SELECT value FROM products WHERE name = '" . $nd['has_product'] . "'");
+			$product = mysqli_fetch_array($product);
+			// update has_product_count for each node
+			$production_buget = $nd['money'] / 4;
+			$production_count = (int) ($production_buget / $product['value']);
+			$added_product_count = (int) (mt_rand (0, $production_count));
+			$nd['has_product_count'] += $added_product_count;
+			print_r($nd['name'] . " has produced " . $added_product_count . " of " . $nd['has_product'] . "\n");
+		}
+		print_r("\n\n");
 	}
 
 	// implementation of BREADTH-FIRST-SEARCH algorithm for unweighted graphs
@@ -280,15 +312,24 @@
 	// function will determin shortest path from $source to $end and return a string cointaining the path
 	function BFS (&$Q, $nodes, $source, $end) {
 		// heap resetting ; the value for each node, except $source, will have its parent set to 0 (for testing)
+		$nodes_array = [];
 		foreach ($nodes as $nd){
 			$Q[$nd['name']] = 0;
+			$nodes_array 	= array_merge ($nodes_array, [$nd]);
 		}
 
+		//	for all isolated nodes, initialize heap value with itself
+		foreach ($nodes_array as $nd){
+			if ($nd['link_to'] === "" || $nd['link_to'] === NULL){
+				$Q[$nd['name']] = $nd['name'];
+			}
+		}
+		
 		//	the $source node will always have its parent set to itself ; this is the condition for ending the path search
 		$Q[$source] = $source;
 
 		// step 1 : populate the heap according to BFS algorithm
-		BFS_populate_heap($Q, $nodes, $source, $end);
+		BFS_populate_heap($Q, $nodes_array, $source, $end);
 
 		// step 2 : verify the heap to reconstruct the path
 		$result = BFS_get_path($Q, $source, $end);
@@ -308,8 +349,8 @@
 	function payDay ($con, $nodes) {
 		addToLog ("\n\n;--------------------------------\n;        PAYDAY\n;--------------------------------");
 
-		while ($node = mysqli_fetch_assoc ($nodes)) {
-			execute_sql ('<simulator.php>', $con, "UPDATE nodes SET money = '".($node['money'] + frand (10))."' WHERE id = '".$node['id']."'");
+		foreach ($nodes as $node) {
+			execute_sql ('<simulator.php>', $con, "UPDATE nodes SET money = '".($node['money'] + frand (20))."' WHERE id = '".$node['id']."'");
 		}
 
 	}
@@ -322,7 +363,6 @@
 	function BFS_populate_heap(&$Q, $nodes, $start_nodes, $end) {
 		//	test if the heap is full; this will ensure that for the same $source node, the function isn't recalled unnecessarily
 		if (!BFS_check_full_heap($Q)) {
-
 			// turn the starting node list into an array for iteration
 			$starts = explode(',', $start_nodes);
 
@@ -333,7 +373,7 @@
 			foreach($starts as $st_node){
 
 				//	find the node adjacent to the name of this starting node
-				$st_node_neighbours = nodeOf($st_node, $nodes);
+				$st_node_neighbours = $nodes[indexTo ($st_node, $nodes)];
 
 				//	retrieve the list of its neighbours
 				$st_node_neighbours = $st_node_neighbours['link_to'];
@@ -396,7 +436,8 @@
 	function indexTo ($node_name, $nodes) {
 		$max_size = sizeof ($nodes);
 		for ($i = 0; $i < $max_size; $i++){
-			if ($node_name === $nodes[$i]['name']) {
+			$nd = &$nodes[$i];
+			if ($node_name === $nd['name']) {
 				return $i;
 			}
 		}

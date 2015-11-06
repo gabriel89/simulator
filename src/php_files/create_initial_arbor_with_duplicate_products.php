@@ -80,29 +80,6 @@
 		// unset large array to free up memory
 		unset ($rows);
 		unset ($headings);
-
-		$nodes = execute_sql_and_return ('<create_initial_arbor.php>', $con, "SELECT name, needs_product, has_product FROM nodes WHERE needs_product = has_product");
-		$nodes_array = [];
-		foreach($nodes as $nd){
-			$nodes_array = array_merge ($nodes_array, [$nd]);
-		}
-		$prods = execute_sql_and_return ('<create_initial_arbor.php>', $con, "SELECT name FROM products");
-		$prods_array = [];
-		foreach($prods_array as $nd){
-			$prods_array = array_merge ($nodes_array, [$nd]);
-		}
-
-		foreach($nodes_array as $node){
-			$node['needs_product'] = getNewProduct ($node, $prods_array);
-			execute_sql ('<create_initial_arbor.php>', $con, "UPDATE nodes SET needs_product='" . $node['needs_product'] . "' WHERE name='" . $node['name'] . "'");
-		}
-	}
-
-	function getNewProduct($node, $products){
-		$new_pindex = (int) mt_rand(0, sizeof($products));
-		if($products[$new_pindex] !== $node['needs_product'])
-			return $products[$new_pindex];
-		return getNewProduct($node, $products);
 	}
 
 	// function to prevent duplicated nodes to being added into the link_to fields
