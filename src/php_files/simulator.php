@@ -337,7 +337,7 @@
 		// constant profit expressed in percentage (%) of $old_price
 		$personal_profit = 10;
 
-		return ($personal_profit / 100) * $old_price + $old_price;
+		return $old_price + (($personal_profit / 100) * $old_price);
 	}
 
 	// function to update money for each node
