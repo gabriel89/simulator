@@ -152,9 +152,7 @@
 	// function to finalize transaction:
 	// for each element of $consumer_path we need to sell the product from the producer (first node) to the consumer (last node)
 	// each intermediate node will add a personal profit to the total value of the previous node, thus product final price = initial price + profit node1 + profit node2 + ...
-	function finalizeTransaction ($con, &$nodes, $consumer_path) {
-		// hard-coded the initial price, but this needs to be retrieved from each producer dynamically
-		$price 				= 100;
+	function finalizeTransaction ($con, $nodes, $consumer_path) {
 		$nodes_array = [];
 		foreach($nodes as $nd){
 			$nodes_array = array_merge ($nodes_array, [$nd]);
@@ -207,8 +205,7 @@
 
 							//	cost will be increased by 0.1 for each intermediary node involved in the transaction
 							if($intermediary !== $seller_node['name'] && $intermediary !== $buyer_node['name']){
-								$profit_interm = $transaction_cost_piece * 0.1;
-								$transaction_cost_piece = $transaction_cost_piece + $profit_interm;
+								$transaction_cost_piece = calculateNewPrice ($transaction_cost_piece);
 
 								$transaction_log .= $intermediary . " mediates transaction, raising piece cost to " . $transaction_cost_piece . "\n";
 							}
@@ -271,7 +268,7 @@
 
 			print_r($transaction_log);
 		}
-		christmas_phase($con, $nodes_array);
+		//christmas_phase($con, $nodes_array);
 
 		//	update database with new values for money and product quantities
 		update_post_tranzaction ($con, $nodes_array);
@@ -279,8 +276,6 @@
 		//print_r("Updated database\n\n");
 		payDay ($con, $nodes_array);
 		$nodes = execute_sql_and_return ('<simulator.php>', $con, "SELECT * FROM nodes");
-		
-		$price = calculateNewPrice ($price);
 	}
 
 	//	update database with new values of product counts and moneys
@@ -342,7 +337,7 @@
 		// constant profit expressed in percentage (%) of $old_price
 		$personal_profit = 10;
 
-		return ($personal_profit / 100) * $old_price;
+		return ($personal_profit / 100) * $old_price + $old_price;
 	}
 
 	// function to update money for each node
