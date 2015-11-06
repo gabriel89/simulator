@@ -35,13 +35,13 @@
 		$pay_day = floor ($exec_count / 12);
 
 		for ($exec_iterator = 1; $exec_iterator <= $exec_count; $exec_iterator++) {
-			// retrieve all nodes from the DB
-			$nodes = execute_sql_and_return ('<simulator.php>', $con, "SELECT * FROM nodes");
-
 			// make sure we refresh the money only in 1/12th of the total number of iteration
 			if (($pay_day > ($exec_count / 12)) && ($exec_iterator % $pay_day == 0)) {
 			    payDay ($con, $nodes);
 			}
+
+			// retrieve all nodes from the DB
+			$nodes = execute_sql_and_return ('<simulator.php>', $con, "SELECT * FROM nodes");
 			
 			startSim ($con, $nodes, $exec_iterator, $exec_count);
 		}
@@ -190,7 +190,7 @@
 		// constant profit expressed in percentage (%) of $old_price
 		$personal_profit = 10;
 
-		return ($personal_profit / 100) * $old_price;
+		return $old_price + (($personal_profit / 100) * $old_price);
 	}
 
 	// function to update money for each node
