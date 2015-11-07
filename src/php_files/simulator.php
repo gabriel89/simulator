@@ -27,11 +27,9 @@
 
 	// ----------------------------------------------------------------------------------------------------------
 
-	$Q = []; //global declaration of heap
-
 	// function to set iteration number of the 
 	function prepareSim ($exec_count, $con) {
-		addToLog ("\n;--------------------------------\n;        STARTING SIMULATOR\n;--------------------------------\n\n\n");
+		addToLog ("\n\n\n\n\n\n\n\n\n\n\n;--------------------------------\n;        STARTING SIMULATOR\n;--------------------------------\n\n\n");
 
 		// calculate pay-day recurrence
 		$pay_day = floor ($exec_count / 12);

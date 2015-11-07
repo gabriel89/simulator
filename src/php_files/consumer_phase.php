@@ -1,4 +1,6 @@
 <?php
+	//global declaration of heap
+	$Q = []; 
 
 	function getConsumerPath ($con, $nodes) {
 		addToLog ("\n\n\n;--------------------------------\n;        ESTABLISHING TRANSACTION PATH\n;--------------------------------");
@@ -80,7 +82,7 @@
 					$transaction_cost_piece = $product['value'];
 
 					//	check if buyer can afford product
-					$max_affordable_quantity = (int) ($buyer_node['money'] / $transaction_cost_piece);
+					$max_affordable_quantity = ($transaction_cost_piece === 0) ? 0 : (int) ($buyer_node['money'] / $transaction_cost_piece);
 
 					if($max_affordable_quantity === 0){
 						//	buyer cannot afford to buy anymore products
@@ -166,10 +168,6 @@
 
 		//	update database with new values for money and product quantities
 		update_post_tranzaction ($con, $nodes_array);
-
-		//print_r("Updated database\n\n");
-		payDay ($con, $nodes_array);
-		$nodes = execute_sql_and_return ('<simulator.php>', $con, "SELECT * FROM nodes");
 	}
 
 	//	update database with new values of product counts and moneys
