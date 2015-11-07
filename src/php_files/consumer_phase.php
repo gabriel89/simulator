@@ -84,7 +84,7 @@
 					//	check if buyer can afford product
 					$max_affordable_quantity = ($transaction_cost_piece === 0) ? 0 : (int) ($buyer_node['money'] / $transaction_cost_piece);
 
-					if($max_affordable_quantity === 0){
+					if ($max_affordable_quantity === 0) {
 						//	buyer cannot afford to buy anymore products
 						$transaction_log .= $buyer_node['name'] . " can't afford any more purchases\n\n";
 
