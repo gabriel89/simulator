@@ -5,3 +5,12 @@
 
 		return (mt_rand ($min * $scale, $max * $scale) / $scale) * $modifier;
 	}
+
+	// function to write to log important events on every cycle
+	function addToLog ($content){
+		$file = fopen ('../../data/log.txt', 'a+');
+
+		fwrite ($file, $content);
+		fclose ($file);
+	}
+

@@ -1,0 +1,5741 @@
+;--------------------------------
+;        INITIAL SETTINGS
+;--------------------------------
+
+n0{hasProduct: [P5 (1.49)], needsProduct: [P2 (5.74)], money: 47.7}
+
+n0--n5
+
+n0--n22
+
+n0--n12
+
+n0--n17
+
+n1{hasProduct: [P5 (1.49)], needsProduct: [P5 (1.49)], money: 55.8}
+
+n1--n22
+
+n1--n26
+
+n2{hasProduct: [P5 (1.49)], needsProduct: [P2 (5.74)], money: 3.5}
+
+n2--n29
+
+n3{hasProduct: [P6 (2.63)], needsProduct: [P4 (8.95)], money: 73}
+
+n3--n17
+
+n4{hasProduct: [P0 (6.86)], needsProduct: [P5 (1.49)], money: 73.5}
+
+n4--n24
+
+n4--n29
+
+n5{hasProduct: [P0 (6.86)], needsProduct: [P1 (2.18)], money: 53.3}
+
+n5--n0
+
+n5--n28
+
+n6{hasProduct: [P5 (1.49)], needsProduct: [P5 (1.49)], money: 35.9}
+
+n6--n16
+
+n6--n25
+
+n6--n28
+
+n6--n29
+
+n7{hasProduct: [P6 (2.63)], needsProduct: [P6 (2.63)], money: 80.7}
+
+n7--n10
+
+n7--n30
+
+n8{hasProduct: [P0 (6.86)], needsProduct: [P4 (8.95)], money: 40.1}
+
+n8--n17
+
+n8--n23
+
+n8--n29
+
+n9{hasProduct: [P6 (2.63)], needsProduct: [P3 (5.37)], money: 89.7}
+
+n9--n20
+
+n9--n10
+
+n9--n17
+
+n9--n24
+
+n10{hasProduct: [P0 (6.86)], needsProduct: [P0 (6.86)], money: 61.3}
+
+n10--n7
+
+n10--n9
+
+n10--n22
+
+n10--n26
+
+n10--n27
+
+n11{hasProduct: [P2 (5.74)], needsProduct: [P1 (2.18)], money: 6.9}
+
+n11--n15
+
+n11--n19
+
+n11--n25
+
+n12{hasProduct: [P4 (8.95)], needsProduct: [P3 (5.37)], money: 82.2}
+
+n12--n0
+
+n12--n19
+
+n13{hasProduct: [P2 (5.74)], needsProduct: [P0 (6.86)], money: 85.3}
+
+n13--n25
+
+n14{hasProduct: [P2 (5.74)], needsProduct: [P2 (5.74)], money: 48.6}
+
+n14--n24
+
+n14--n29
+
+n15{hasProduct: [P4 (8.95)], needsProduct: [P5 (1.49)], money: 46.8}
+
+n15--n11
+
+n15--n21
+
+n15--n22
+
+n15--n28
+
+n15--n29
+
+n16{hasProduct: [P6 (2.63)], needsProduct: [P0 (6.86)], money: 17.9}
+
+n16--n6
+
+n16--n18
+
+n16--n23
+
+n16--n25
+
+n17{hasProduct: [P4 (8.95)], needsProduct: [P3 (5.37)], money: 4.7}
+
+n17--n3
+
+n17--n8
+
+n17--n0
+
+n17--n9
+
+n17--n19
+
+n17--n21
+
+n17--n27
+
+n18{hasProduct: [P4 (8.95)], needsProduct: [P4 (8.95)], money: 85.2}
+
+n18--n16
+
+n18--n26
+
+n18--n27
+
+n19{hasProduct: [P3 (5.37)], needsProduct: [P6 (2.63)], money: 51.5}
+
+n19--n11
+
+n19--n12
+
+n19--n17
+
+n20{hasProduct: [P4 (8.95)], needsProduct: [P4 (8.95)], money: 6.4}
+
+n20--n9
+
+n20--n28
+
+n21{hasProduct: [P6 (2.63)], needsProduct: [P2 (5.74)], money: 32.4}
+
+n21--n15
+
+n21--n17
+
+n22{hasProduct: [P6 (2.63)], needsProduct: [P3 (5.37)], money: 23.3}
+
+n22--n0
+
+n22--n1
+
+n22--n15
+
+n22--n10
+
+n23{hasProduct: [P2 (5.74)], needsProduct: [P6 (2.63)], money: 33}
+
+n23--n8
+
+n23--n16
+
+n24{hasProduct: [P4 (8.95)], needsProduct: [P5 (1.49)], money: 1}
+
+n24--n4
+
+n24--n14
+
+n24--n9
+
+n25{hasProduct: [P3 (5.37)], needsProduct: [P0 (6.86)], money: 24}
+
+n25--n6
+
+n25--n13
+
+n25--n11
+
+n25--n16
+
+n26{hasProduct: [P6 (2.63)], needsProduct: [P3 (5.37)], money: 42.7}
+
+n26--n1
+
+n26--n18
+
+n26--n10
+
+n27{hasProduct: [P1 (2.18)], needsProduct: [P4 (8.95)], money: 89.3}
+
+n27--n18
+
+n27--n10
+
+n27--n17
+
+n28{hasProduct: [P3 (5.37)], needsProduct: [P1 (2.18)], money: 73.8}
+
+n28--n5
+
+n28--n6
+
+n28--n15
+
+n28--n20
+
+n28--n29
+
+n29{hasProduct: [P4 (8.95)], needsProduct: [P6 (2.63)], money: 67.7}
+
+n29--n2
+
+n29--n4
+
+n29--n8
+
+n29--n15
+
+n29--n28
+
+n29--n6
+
+n29--n14
+
+n30{hasProduct: [P5 (1.49)], needsProduct: [P6 (2.63)], money: 5.1}
+
+n30--n7
+
+
+;--------------------------------
+;        STARTING SIMULATOR
+;--------------------------------
+
+
+;--------------------------------
+;        SIMULATOR PHASE 1/10
+;--------------------------------
+
+
+;--------------------------------
+;        ESTABLISHING TRANSACTION PATH
+;--------------------------------
+
+n0 -> n22 -> n1
+n0 -> n5 -> n28 -> n29 -> n4
+n0 -> n5 -> n28 -> n6
+n0 -> n22 -> n15
+n0 -> n17 -> n9 -> n24
+
+n1 -> n22 -> n15 -> n29 -> n4
+n1 -> n22 -> n15 -> n28 -> n6
+n1 -> n22 -> n15
+n1 -> n22 -> n10 -> n9 -> n24
+
+n2 -> n29 -> n15 -> n22 -> n1
+n2 -> n29 -> n4
+n2 -> n29 -> n6
+n2 -> n29 -> n15
+n2 -> n29 -> n4 -> n24
+
+n3 -> n17 -> n9 -> n10 -> n7
+n3 -> n17 -> n19
+n3 -> n17 -> n8 -> n23
+n3 -> n17 -> n8 -> n29
+n3 -> n17 -> n9 -> n10 -> n7 -> n30
+
+n4 -> n24 -> n9 -> n10
+n4 -> n29 -> n6 -> n25 -> n13
+n4 -> n29 -> n6 -> n16
+n4 -> n29 -> n6 -> n25
+
+n5 -> n0 -> n22 -> n10
+n5 -> n28 -> n6 -> n25 -> n13
+n5 -> n28 -> n6 -> n16
+n5 -> n28 -> n6 -> n25
+
+n6 -> n16 -> n18 -> n26 -> n1
+n6 -> n29 -> n4
+n6 -> n28 -> n15
+n6 -> n29 -> n4 -> n24
+
+n7 -> n10 -> n9 -> n17 -> n19
+n7 -> n10 -> n9 -> n17 -> n8 -> n23
+n7 -> n10 -> n22 -> n15 -> n29
+n7 -> n30
+
+n8 -> n17 -> n9 -> n10
+n8 -> n23 -> n16 -> n25 -> n13
+n8 -> n23 -> n16
+n8 -> n23 -> n16 -> n25
+
+n9 -> n10 -> n7
+n9 -> n17 -> n19
+n9 -> n17 -> n8 -> n23
+n9 -> n20 -> n28 -> n29
+n9 -> n10 -> n7 -> n30
+
+n10 -> n22 -> n15 -> n11 -> n25 -> n13
+n10 -> n26 -> n18 -> n16
+n10 -> n22 -> n15 -> n11 -> n25
+
+n11 -> n15 -> n22 -> n0
+n11 -> n15 -> n29 -> n2
+n11 -> n15 -> n29 -> n14
+n11 -> n15 -> n21
+
+n12 -> n0 -> n17 -> n3
+n12 -> n0 -> n17 -> n8
+n12 -> n0 -> n17 -> n27 -> n18
+n12 -> n0 -> n5 -> n28 -> n20
+n12 -> n0 -> n17 -> n27
+
+n13 -> n25 -> n6 -> n28 -> n5 -> n0
+n13 -> n25 -> n6 -> n29 -> n2
+n13 -> n25 -> n6 -> n29 -> n14
+n13 -> n25 -> n11 -> n15 -> n21
+
+n14 -> n24 -> n9 -> n17 -> n0
+n14 -> n29 -> n2
+n14 -> n29 -> n15 -> n21
+
+n15 -> n21 -> n17 -> n3
+n15 -> n29 -> n8
+n15 -> n11 -> n25 -> n16 -> n18
+n15 -> n28 -> n20
+n15 -> n21 -> n17 -> n27
+
+n16 -> n18 -> n26 -> n10 -> n7
+n16 -> n25 -> n11 -> n19
+n16 -> n23
+n16 -> n6 -> n29
+n16 -> n18 -> n26 -> n10 -> n7 -> n30
+
+n17 -> n3
+n17 -> n8
+n17 -> n27 -> n18
+n17 -> n9 -> n20
+n17 -> n27
+
+n18 -> n27 -> n17 -> n3
+n18 -> n16 -> n23 -> n8
+n18 -> n16 -> n6 -> n28 -> n20
+n18 -> n27
+
+n19 -> n17 -> n9
+n19 -> n12
+n19 -> n17
+n19 -> n11 -> n15 -> n22
+n19 -> n17 -> n9 -> n10 -> n26
+
+n20 -> n9 -> n17 -> n3
+n20 -> n9 -> n17 -> n8
+n20 -> n9 -> n10 -> n26 -> n18
+n20 -> n9 -> n10 -> n27
+
+n21 -> n15 -> n22 -> n10 -> n7
+n21 -> n17 -> n19
+n21 -> n17 -> n8 -> n23
+n21 -> n15 -> n29
+n21 -> n15 -> n22 -> n10 -> n7 -> n30
+
+n22 -> n10 -> n7
+n22 -> n0 -> n12 -> n19
+n22 -> n0 -> n17 -> n8 -> n23
+n22 -> n15 -> n29
+n22 -> n10 -> n7 -> n30
+
+n23 -> n8 -> n17 -> n0
+n23 -> n8 -> n29 -> n2
+n23 -> n8 -> n29 -> n14
+n23 -> n8 -> n17 -> n21
+
+n24 -> n9 -> n17 -> n3
+n24 -> n4 -> n29 -> n8
+n24 -> n9 -> n10 -> n26 -> n18
+n24 -> n9 -> n20
+n24 -> n9 -> n10 -> n27
+
+n25 -> n6 -> n28 -> n20 -> n9
+n25 -> n11 -> n19 -> n12
+n25 -> n11 -> n19 -> n17
+n25 -> n11 -> n15 -> n22
+n25 -> n16 -> n18 -> n26
+
+n26 -> n10 -> n7
+n26 -> n18 -> n27 -> n17 -> n19
+n26 -> n18 -> n16 -> n23
+n26 -> n1 -> n22 -> n15 -> n29
+n26 -> n10 -> n7 -> n30
+
+n27 -> n17 -> n0 -> n5
+n27 -> n17 -> n19 -> n11
+n27 -> n18 -> n16 -> n6 -> n28
+
+n28 -> n20 -> n9
+n28 -> n5 -> n0 -> n12
+n28 -> n5 -> n0 -> n17
+n28 -> n15 -> n22
+n28 -> n6 -> n16 -> n18 -> n26
+
+n29 -> n8 -> n17 -> n3
+n29 -> n8
+n29 -> n6 -> n16 -> n18
+n29 -> n28 -> n20
+n29 -> n8 -> n17 -> n27
+
+n30 -> n7 -> n10 -> n22 -> n1
+n30 -> n7 -> n10 -> n9 -> n24 -> n4
+n30 -> n7 -> n10 -> n9 -> n20 -> n28 -> n6
+n30 -> n7 -> n10 -> n22 -> n15
+n30 -> n7 -> n10 -> n9 -> n24
+
+
+;--------------------------------
+;        FINALIZING TRANSACTIONS
+;--------------------------------
+
+n0 wants to sells to n1
+n0 sets initial cost/unit to 1.49
+n22 mediates transaction, raising cost/unit to 1.639
+n1 buys 13 units of P5 from n0 for a total cost of 21.307
+n22 receives sum of 1.937 for mediation
+n0 receives final payment of 19.37 (total wealth: 67.07)
+
+n0 has sold out
+
+n1 wants to sells to n4
+n1 sets initial cost/unit to 1.49
+n22 mediates transaction, raising cost/unit to 1.639
+n15 mediates transaction, raising cost/unit to 1.8029
+n29 mediates transaction, raising cost/unit to 1.98319
+n4 buys 32 units of P5 from n1 for a total cost of 63.46208
+n29 receives sum of 5.76928 for mediation
+n15 receives sum of 5.2448 for mediation
+n22 receives sum of 4.768 for mediation
+n1 receives final payment of 47.68 (total wealth: 82.173)
+
+n1 wants to sells to n6
+n1 sets initial cost/unit to 1.49
+n22 mediates transaction, raising cost/unit to 1.639
+n15 mediates transaction, raising cost/unit to 1.8029
+n28 mediates transaction, raising cost/unit to 1.98319
+n6 buys 24 units of P5 from n1 for a total cost of 47.59656
+n28 receives sum of 4.32696 for mediation
+n15 receives sum of 3.9336 for mediation
+n22 receives sum of 3.576 for mediation
+n1 receives final payment of 35.76 (total wealth: 117.933)
+
+n1 wants to sells to n15
+n1 sets initial cost/unit to 1.49
+n22 mediates transaction, raising cost/unit to 1.639
+n15 buys 9 units of P5 from n1 for a total cost of 14.751
+n22 receives sum of 1.341 for mediation
+n1 receives final payment of 13.41 (total wealth: 131.343)
+
+n1 has sold out
+
+n2 wants to sells to n1
+n2 sets initial cost/unit to 1.49
+n29 mediates transaction, raising cost/unit to 1.639
+n15 mediates transaction, raising cost/unit to 1.8029
+n22 mediates transaction, raising cost/unit to 1.98319
+n1 buys 38 units of P5 from n2 for a total cost of 75.36122
+n22 receives sum of 6.85102 for mediation
+n15 receives sum of 6.2282 for mediation
+n29 receives sum of 5.662 for mediation
+n2 receives final payment of 56.62 (total wealth: 60.12)
+
+n4 no longer needs any products
+
+n2 wants to sells to n6
+n2 sets initial cost/unit to 1.49
+n29 mediates transaction, raising cost/unit to 1.639
+n6 buys -7 units of P5 from n2 for a total cost of -11.473
+n29 receives sum of -1.043 for mediation
+n2 receives final payment of -10.43 (total wealth: 49.69)
+
+n15 no longer needs any products
+
+n2 wants to sells to n24
+n24 can't afford any more purchases
+
+n3 wants to sells to n7
+n3 sets initial cost/unit to 2.63
+n17 mediates transaction, raising cost/unit to 2.893
+n9 mediates transaction, raising cost/unit to 3.1823
+n10 mediates transaction, raising cost/unit to 3.50053
+n7 buys 30 units of P6 from n3 for a total cost of 105.0159
+n10 receives sum of 9.5469 for mediation
+n9 receives sum of 8.679 for mediation
+n17 receives sum of 7.89 for mediation
+n3 receives final payment of 78.9 (total wealth: 151.9)
+
+n3 wants to sells to n19
+n3 sets initial cost/unit to 2.63
+n17 mediates transaction, raising cost/unit to 2.893
+n19 buys 9 units of P6 from n3 for a total cost of 26.037
+n17 receives sum of 2.367 for mediation
+n3 receives final payment of 23.67 (total wealth: 175.57)
+
+n3 has sold out
+
+n4 wants to sells to n10
+n4 sets initial cost/unit to 6.86
+n24 mediates transaction, raising cost/unit to 7.546
+n9 mediates transaction, raising cost/unit to 8.3006
+n10 buys 10 units of P0 from n4 for a total cost of 83.006
+n9 receives sum of 7.546 for mediation
+n24 receives sum of 6.86 for mediation
+n4 receives final payment of 68.6 (total wealth: 78.63792)
+
+n4 wants to sells to n13
+n4 sets initial cost/unit to 6.86
+n29 mediates transaction, raising cost/unit to 7.546
+n6 mediates transaction, raising cost/unit to 8.3006
+n25 mediates transaction, raising cost/unit to 9.13066
+n13 buys 12 units of P0 from n4 for a total cost of 109.56792
+n25 receives sum of 9.96072 for mediation
+n6 receives sum of 9.0552 for mediation
+n29 receives sum of 8.232 for mediation
+n4 receives final payment of 82.32 (total wealth: 160.95792)
+
+n4 wants to sells to n16
+n4 sets initial cost/unit to 6.86
+n29 mediates transaction, raising cost/unit to 7.546
+n6 mediates transaction, raising cost/unit to 8.3006
+n16 buys 2 units of P0 from n4 for a total cost of 16.6012
+n6 receives sum of 1.5092 for mediation
+n29 receives sum of 1.372 for mediation
+n4 receives final payment of 13.72 (total wealth: 174.67792)
+
+n4 wants to sells to n25
+n4 sets initial cost/unit to 6.86
+n29 mediates transaction, raising cost/unit to 7.546
+n6 mediates transaction, raising cost/unit to 8.3006
+n25 buys 3 units of P0 from n4 for a total cost of 24.9018
+n6 receives sum of 2.2638 for mediation
+n29 receives sum of 2.058 for mediation
+n4 receives final payment of 20.58 (total wealth: 195.25792)
+
+n5 wants to sells to n10
+n5 sets initial cost/unit to 6.86
+n0 mediates transaction, raising cost/unit to 7.546
+n22 mediates transaction, raising cost/unit to 8.3006
+n10 buys -1 units of P0 from n5 for a total cost of -8.3006
+n22 receives sum of -0.7546 for mediation
+n0 receives sum of -0.686 for mediation
+n5 receives final payment of -6.86 (total wealth: 46.44)
+
+n5 wants to sells to n13
+n5 sets initial cost/unit to 6.86
+n28 mediates transaction, raising cost/unit to 7.546
+n6 mediates transaction, raising cost/unit to 8.3006
+n25 mediates transaction, raising cost/unit to 9.13066
+n13 buys -3 units of P0 from n5 for a total cost of -27.39198
+n25 receives sum of -2.49018 for mediation
+n6 receives sum of -2.2638 for mediation
+n28 receives sum of -2.058 for mediation
+n5 receives final payment of -20.58 (total wealth: 25.86)
+
+n5 wants to sells to n16
+n16 can't afford any more purchases
+
+n25 no longer needs any products
+
+n1 no longer needs any products
+
+n4 no longer needs any products
+
+n15 no longer needs any products
+
+n6 wants to sells to n24
+n6 sets initial cost/unit to 1.49
+n29 mediates transaction, raising cost/unit to 1.639
+n4 mediates transaction, raising cost/unit to 1.8029
+n24 buys 5 units of P5 from n6 for a total cost of 9.0145
+n4 receives sum of 0.8195 for mediation
+n29 receives sum of 0.745 for mediation
+n6 receives final payment of 7.45 (total wealth: 17.79084)
+
+n7 wants to sells to n19
+n7 sets initial cost/unit to 2.63
+n10 mediates transaction, raising cost/unit to 2.893
+n9 mediates transaction, raising cost/unit to 3.1823
+n17 mediates transaction, raising cost/unit to 3.50053
+n19 buys 6 units of P6 from n7 for a total cost of 21.00318
+n17 receives sum of 1.90938 for mediation
+n9 receives sum of 1.7358 for mediation
+n10 receives sum of 1.578 for mediation
+n7 receives final payment of 15.78 (total wealth: -8.5359)
+
+n7 wants to sells to n23
+n7 sets initial cost/unit to 2.63
+n10 mediates transaction, raising cost/unit to 2.893
+n9 mediates transaction, raising cost/unit to 3.1823
+n17 mediates transaction, raising cost/unit to 3.50053
+n8 mediates transaction, raising cost/unit to 3.850583
+n23 buys 12 units of P6 from n7 for a total cost of 46.206996
+n8 receives sum of 4.200636 for mediation
+n17 receives sum of 3.81876 for mediation
+n9 receives sum of 3.4716 for mediation
+n10 receives sum of 3.156 for mediation
+n7 receives final payment of 31.56 (total wealth: 23.0241)
+
+n7 wants to sells to n29
+n7 sets initial cost/unit to 2.63
+n10 mediates transaction, raising cost/unit to 2.893
+n22 mediates transaction, raising cost/unit to 3.1823
+n15 mediates transaction, raising cost/unit to 3.50053
+n29 buys 34 units of P6 from n7 for a total cost of 119.01802
+n15 receives sum of 10.81982 for mediation
+n22 receives sum of 9.8362 for mediation
+n10 receives sum of 8.942 for mediation
+n7 receives final payment of 89.42 (total wealth: 112.4441)
+
+n7 wants to sells to n30
+n7 sets initial cost/unit to 2.63
+n30 buys 1 units of P6 from n7 for a total cost of 2.63
+n7 receives final payment of 2.63 (total wealth: 115.0741)
+
+n8 wants to sells to n10
+n8 sets initial cost/unit to 6.86
+n17 mediates transaction, raising cost/unit to 7.546
+n9 mediates transaction, raising cost/unit to 8.3006
+n10 buys 1 units of P0 from n8 for a total cost of 8.3006
+n9 receives sum of 0.7546 for mediation
+n17 receives sum of 0.686 for mediation
+n8 receives final payment of 6.86 (total wealth: 51.160636)
+
+n8 wants to sells to n13
+n13 can't afford any more purchases
+
+n8 wants to sells to n16
+n16 can't afford any more purchases
+
+n25 no longer needs any products
+
+n9 wants to sells to n7
+n9 sets initial cost/unit to 2.63
+n10 mediates transaction, raising cost/unit to 2.893
+n7 buys 10 units of P6 from n9 for a total cost of 28.93
+n10 receives sum of 2.63 for mediation
+n9 receives final payment of 26.3 (total wealth: 138.187)
+
+n19 no longer needs any products
+
+n9 wants to sells to n23
+n9 sets initial cost/unit to 2.63
+n17 mediates transaction, raising cost/unit to 2.893
+n8 mediates transaction, raising cost/unit to 3.1823
+n23 buys -5 units of P6 from n9 for a total cost of -15.9115
+n8 receives sum of -1.4465 for mediation
+n17 receives sum of -1.315 for mediation
+n9 receives final payment of -13.15 (total wealth: 125.037)
+
+n9 wants to sells to n29
+n9 sets initial cost/unit to 2.63
+n20 mediates transaction, raising cost/unit to 2.893
+n28 mediates transaction, raising cost/unit to 3.1823
+n29 buys -10 units of P6 from n9 for a total cost of -31.823
+n28 receives sum of -2.893 for mediation
+n20 receives sum of -2.63 for mediation
+n9 receives final payment of -26.3 (total wealth: 98.737)
+
+n9 wants to sells to n30
+n30 can't afford any more purchases
+
+n10 wants to sells to n13
+n13 can't afford any more purchases
+
+n10 wants to sells to n16
+n16 can't afford any more purchases
+
+n25 no longer needs any products
+
+n11 wants to sells to n0
+n11 sets initial cost/unit to 5.74
+n15 mediates transaction, raising cost/unit to 6.314
+n22 mediates transaction, raising cost/unit to 6.9454
+n0 buys 11 units of P2 from n11 for a total cost of 76.3994
+n22 receives sum of 6.9454 for mediation
+n15 receives sum of 6.314 for mediation
+n11 receives final payment of 63.14 (total wealth: 70.04)
+
+n11 wants to sells to n2
+n11 sets initial cost/unit to 5.74
+n15 mediates transaction, raising cost/unit to 6.314
+n29 mediates transaction, raising cost/unit to 6.9454
+n2 buys 8 units of P2 from n11 for a total cost of 55.5632
+n29 receives sum of 5.0512 for mediation
+n15 receives sum of 4.592 for mediation
+n11 receives final payment of 45.92 (total wealth: 115.96)
+
+n11 wants to sells to n14
+n11 sets initial cost/unit to 5.74
+n15 mediates transaction, raising cost/unit to 6.314
+n29 mediates transaction, raising cost/unit to 6.9454
+n14 buys 8 units of P2 from n11 for a total cost of 55.5632
+n29 receives sum of 5.0512 for mediation
+n15 receives sum of 4.592 for mediation
+n11 receives final payment of 45.92 (total wealth: 161.88)
+
+n11 has sold out
+
+n12 wants to sells to n3
+n12 sets initial cost/unit to 8.95
+n0 mediates transaction, raising cost/unit to 9.845
+n17 mediates transaction, raising cost/unit to 10.8295
+n3 buys 19 units of P4 from n12 for a total cost of 205.7605
+n17 receives sum of 18.7055 for mediation
+n0 receives sum of 17.005 for mediation
+n12 receives final payment of 170.05 (total wealth: 252.25)
+
+n12 wants to sells to n8
+n12 sets initial cost/unit to 8.95
+n0 mediates transaction, raising cost/unit to 9.845
+n17 mediates transaction, raising cost/unit to 10.8295
+n8 buys 5 units of P4 from n12 for a total cost of 54.1475
+n17 receives sum of 4.9225 for mediation
+n0 receives sum of 4.475 for mediation
+n12 receives final payment of 44.75 (total wealth: 297)
+
+n12 wants to sells to n18
+n12 sets initial cost/unit to 8.95
+n0 mediates transaction, raising cost/unit to 9.845
+n17 mediates transaction, raising cost/unit to 10.8295
+n27 mediates transaction, raising cost/unit to 11.91245
+n18 buys 9 units of P4 from n12 for a total cost of 107.21205
+n27 receives sum of 9.74655 for mediation
+n17 receives sum of 8.8605 for mediation
+n0 receives sum of 8.055 for mediation
+n12 receives final payment of 80.55 (total wealth: 377.55)
+
+n12 wants to sells to n20
+n20 can't afford any more purchases
+
+n12 wants to sells to n27
+n12 sets initial cost/unit to 8.95
+n0 mediates transaction, raising cost/unit to 9.845
+n17 mediates transaction, raising cost/unit to 10.8295
+n27 buys 11 units of P4 from n12 for a total cost of 119.1245
+n17 receives sum of 10.8295 for mediation
+n0 receives sum of 9.845 for mediation
+n12 receives final payment of 98.45 (total wealth: 476)
+
+n13 wants to sells to n0
+n13 sets initial cost/unit to 5.74
+n25 mediates transaction, raising cost/unit to 6.314
+n6 mediates transaction, raising cost/unit to 6.9454
+n28 mediates transaction, raising cost/unit to 7.63994
+n5 mediates transaction, raising cost/unit to 8.403934
+n0 buys 5 units of P2 from n13 for a total cost of 42.01967
+n5 receives sum of 3.81997 for mediation
+n28 receives sum of 3.4727 for mediation
+n6 receives sum of 3.157 for mediation
+n25 receives sum of 2.87 for mediation
+n13 receives final payment of 28.7 (total wealth: 31.82406)
+
+n13 wants to sells to n2
+n13 sets initial cost/unit to 5.74
+n25 mediates transaction, raising cost/unit to 6.314
+n6 mediates transaction, raising cost/unit to 6.9454
+n29 mediates transaction, raising cost/unit to 7.63994
+n2 buys -1 units of P2 from n13 for a total cost of -7.63994
+n29 receives sum of -0.69454 for mediation
+n6 receives sum of -0.6314 for mediation
+n25 receives sum of -0.574 for mediation
+n13 receives final payment of -5.74 (total wealth: 26.08406)
+
+n13 wants to sells to n14
+n13 sets initial cost/unit to 5.74
+n25 mediates transaction, raising cost/unit to 6.314
+n6 mediates transaction, raising cost/unit to 6.9454
+n29 mediates transaction, raising cost/unit to 7.63994
+n14 buys -1 units of P2 from n13 for a total cost of -7.63994
+n29 receives sum of -0.69454 for mediation
+n6 receives sum of -0.6314 for mediation
+n25 receives sum of -0.574 for mediation
+n13 receives final payment of -5.74 (total wealth: 20.34406)
+
+n13 wants to sells to n21
+n13 sets initial cost/unit to 5.74
+n25 mediates transaction, raising cost/unit to 6.314
+n11 mediates transaction, raising cost/unit to 6.9454
+n15 mediates transaction, raising cost/unit to 7.63994
+n21 buys 5 units of P2 from n13 for a total cost of 38.1997
+n15 receives sum of 3.4727 for mediation
+n11 receives sum of 3.157 for mediation
+n25 receives sum of 2.87 for mediation
+n13 receives final payment of 28.7 (total wealth: 49.04406)
+
+n14 wants to sells to n0
+n14 sets initial cost/unit to 5.74
+n24 mediates transaction, raising cost/unit to 6.314
+n9 mediates transaction, raising cost/unit to 6.9454
+n17 mediates transaction, raising cost/unit to 7.63994
+n0 buys -2 units of P2 from n14 for a total cost of -15.27988
+n17 receives sum of -1.38908 for mediation
+n9 receives sum of -1.2628 for mediation
+n24 receives sum of -1.148 for mediation
+n14 receives final payment of -11.48 (total wealth: -10.80326)
+
+n14 wants to sells to n2
+n2 can't afford any more purchases
+
+n14 wants to sells to n21
+n14 sets initial cost/unit to 5.74
+n29 mediates transaction, raising cost/unit to 6.314
+n15 mediates transaction, raising cost/unit to 6.9454
+n21 buys -1 units of P2 from n14 for a total cost of -6.9454
+n15 receives sum of -0.6314 for mediation
+n29 receives sum of -0.574 for mediation
+n14 receives final payment of -5.74 (total wealth: -16.54326)
+
+n15 wants to sells to n3
+n15 sets initial cost/unit to 8.95
+n21 mediates transaction, raising cost/unit to 9.845
+n17 mediates transaction, raising cost/unit to 10.8295
+n3 buys -3 units of P4 from n15 for a total cost of -32.4885
+n17 receives sum of -2.9535 for mediation
+n21 receives sum of -2.685 for mediation
+n15 receives final payment of -26.85 (total wealth: 49.76472)
+
+n15 wants to sells to n8
+n8 can't afford any more purchases
+
+n15 wants to sells to n18
+n15 sets initial cost/unit to 8.95
+n11 mediates transaction, raising cost/unit to 9.845
+n25 mediates transaction, raising cost/unit to 10.8295
+n16 mediates transaction, raising cost/unit to 11.91245
+n18 buys -2 units of P4 from n15 for a total cost of -23.8249
+n16 receives sum of -2.1659 for mediation
+n25 receives sum of -1.969 for mediation
+n11 receives sum of -1.79 for mediation
+n15 receives final payment of -17.9 (total wealth: 31.86472)
+
+n15 wants to sells to n20
+n20 can't afford any more purchases
+
+n15 wants to sells to n27
+n15 sets initial cost/unit to 8.95
+n21 mediates transaction, raising cost/unit to 9.845
+n17 mediates transaction, raising cost/unit to 10.8295
+n27 buys -2 units of P4 from n15 for a total cost of -21.659
+n17 receives sum of -1.969 for mediation
+n21 receives sum of -1.79 for mediation
+n15 receives final payment of -17.9 (total wealth: 13.96472)
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n16 wants to sells to n23
+n16 sets initial cost/unit to 2.63
+n23 buys 1 units of P6 from n16 for a total cost of 2.63
+n16 receives final payment of 2.63 (total wealth: 1.7629)
+
+n16 wants to sells to n29
+n16 sets initial cost/unit to 2.63
+n6 mediates transaction, raising cost/unit to 2.893
+n29 buys 4 units of P6 from n16 for a total cost of 11.572
+n6 receives sum of 1.052 for mediation
+n16 receives final payment of 10.52 (total wealth: 12.2829)
+
+n16 wants to sells to n30
+n30 can't afford any more purchases
+
+n17 wants to sells to n3
+n3 can't afford any more purchases
+
+n17 wants to sells to n8
+n8 can't afford any more purchases
+
+n17 wants to sells to n18
+n18 can't afford any more purchases
+
+n17 wants to sells to n20
+n20 can't afford any more purchases
+
+n17 wants to sells to n27
+n27 can't afford any more purchases
+
+n18 wants to sells to n3
+n3 can't afford any more purchases
+
+n18 wants to sells to n8
+n8 can't afford any more purchases
+
+n18 wants to sells to n20
+n20 can't afford any more purchases
+
+n18 wants to sells to n27
+n27 can't afford any more purchases
+
+n19 wants to sells to n9
+n19 sets initial cost/unit to 5.37
+n17 mediates transaction, raising cost/unit to 5.907
+n9 buys 18 units of P3 from n19 for a total cost of 106.326
+n17 receives sum of 9.666 for mediation
+n19 receives final payment of 96.66 (total wealth: 101.11982)
+
+n19 wants to sells to n12
+n19 sets initial cost/unit to 5.37
+n12 buys 3 units of P3 from n19 for a total cost of 16.11
+n19 receives final payment of 16.11 (total wealth: 117.22982)
+
+n19 wants to sells to n17
+n19 sets initial cost/unit to 5.37
+n17 buys 12 units of P3 from n19 for a total cost of 64.44
+n19 receives final payment of 64.44 (total wealth: 181.66982)
+
+n19 has sold out
+
+n20 wants to sells to n3
+n3 can't afford any more purchases
+
+n20 wants to sells to n8
+n8 can't afford any more purchases
+
+n20 wants to sells to n18
+n18 can't afford any more purchases
+
+n20 wants to sells to n27
+n27 can't afford any more purchases
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n21 wants to sells to n23
+n23 can't afford any more purchases
+
+n21 wants to sells to n29
+n29 can't afford any more purchases
+
+n21 wants to sells to n30
+n30 can't afford any more purchases
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n22 wants to sells to n23
+n23 can't afford any more purchases
+
+n22 wants to sells to n29
+n29 can't afford any more purchases
+
+n22 wants to sells to n30
+n30 can't afford any more purchases
+
+n23 wants to sells to n0
+n0 can't afford any more purchases
+
+n23 wants to sells to n2
+n2 can't afford any more purchases
+
+n23 wants to sells to n14
+n23 sets initial cost/unit to 5.74
+n8 mediates transaction, raising cost/unit to 6.314
+n29 mediates transaction, raising cost/unit to 6.9454
+n14 buys -2 units of P2 from n23 for a total cost of -13.8908
+n29 receives sum of -1.2628 for mediation
+n8 receives sum of -1.148 for mediation
+n23 receives final payment of -11.48 (total wealth: -11.405496)
+
+n23 wants to sells to n21
+n21 can't afford any more purchases
+
+n24 wants to sells to n3
+n3 can't afford any more purchases
+
+n24 wants to sells to n8
+n8 can't afford any more purchases
+
+n24 wants to sells to n18
+n18 can't afford any more purchases
+
+n24 wants to sells to n20
+n20 can't afford any more purchases
+
+n24 wants to sells to n27
+n27 can't afford any more purchases
+
+n25 wants to sells to n9
+n25 sets initial cost/unit to 5.37
+n6 mediates transaction, raising cost/unit to 5.907
+n28 mediates transaction, raising cost/unit to 6.4977
+n20 mediates transaction, raising cost/unit to 7.14747
+n9 buys -1 units of P3 from n25 for a total cost of -7.14747
+n20 receives sum of -0.64977 for mediation
+n28 receives sum of -0.5907 for mediation
+n6 receives sum of -0.537 for mediation
+n25 receives final payment of -5.37 (total wealth: 3.82174)
+
+n12 no longer needs any products
+
+n25 wants to sells to n17
+n17 can't afford any more purchases
+
+n25 wants to sells to n22
+n25 sets initial cost/unit to 5.37
+n11 mediates transaction, raising cost/unit to 5.907
+n15 mediates transaction, raising cost/unit to 6.4977
+n22 buys 10 units of P3 from n25 for a total cost of 64.977
+n15 receives sum of 5.907 for mediation
+n11 receives sum of 5.37 for mediation
+n25 receives final payment of 53.7 (total wealth: 57.52174)
+
+n25 wants to sells to n26
+n25 sets initial cost/unit to 5.37
+n16 mediates transaction, raising cost/unit to 5.907
+n18 mediates transaction, raising cost/unit to 6.4977
+n26 buys 7 units of P3 from n25 for a total cost of 45.4839
+n18 receives sum of 4.1349 for mediation
+n16 receives sum of 3.759 for mediation
+n25 receives final payment of 37.59 (total wealth: 95.11174)
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n26 wants to sells to n23
+n26 sets initial cost/unit to 2.63
+n18 mediates transaction, raising cost/unit to 2.893
+n16 mediates transaction, raising cost/unit to 3.1823
+n23 buys -4 units of P6 from n26 for a total cost of -12.7292
+n16 receives sum of -1.1572 for mediation
+n18 receives sum of -1.052 for mediation
+n26 receives final payment of -10.52 (total wealth: -13.3039)
+
+n26 wants to sells to n29
+n29 can't afford any more purchases
+
+n26 wants to sells to n30
+n30 can't afford any more purchases
+
+n27 wants to sells to n5
+n27 sets initial cost/unit to 2.18
+n17 mediates transaction, raising cost/unit to 2.398
+n0 mediates transaction, raising cost/unit to 2.6378
+n5 buys 13 units of P1 from n27 for a total cost of 34.2914
+n0 receives sum of 3.1174 for mediation
+n17 receives sum of 2.834 for mediation
+n27 receives final payment of 28.34 (total wealth: 29.92105)
+
+n27 wants to sells to n11
+n27 sets initial cost/unit to 2.18
+n17 mediates transaction, raising cost/unit to 2.398
+n19 mediates transaction, raising cost/unit to 2.6378
+n11 buys 35 units of P1 from n27 for a total cost of 92.323
+n19 receives sum of 8.393 for mediation
+n17 receives sum of 7.63 for mediation
+n27 receives final payment of 76.3 (total wealth: 106.22105)
+
+n27 wants to sells to n28
+n27 sets initial cost/unit to 2.18
+n18 mediates transaction, raising cost/unit to 2.398
+n16 mediates transaction, raising cost/unit to 2.6378
+n6 mediates transaction, raising cost/unit to 2.90158
+n28 buys 20 units of P1 from n27 for a total cost of 58.0316
+n6 receives sum of 5.2756 for mediation
+n16 receives sum of 4.796 for mediation
+n18 receives sum of 4.36 for mediation
+n27 receives final payment of 43.6 (total wealth: 149.82105)
+
+n28 wants to sells to n9
+n9 can't afford any more purchases
+
+n12 no longer needs any products
+
+n28 wants to sells to n17
+n28 sets initial cost/unit to 5.37
+n5 mediates transaction, raising cost/unit to 5.907
+n0 mediates transaction, raising cost/unit to 6.4977
+n17 buys 2 units of P3 from n28 for a total cost of 12.9954
+n0 receives sum of 1.1814 for mediation
+n5 receives sum of 1.074 for mediation
+n28 receives final payment of 10.74 (total wealth: 28.76636)
+
+n28 wants to sells to n22
+n28 sets initial cost/unit to 5.37
+n15 mediates transaction, raising cost/unit to 5.907
+n22 buys -1 units of P3 from n28 for a total cost of -5.907
+n15 receives sum of -0.537 for mediation
+n28 receives final payment of -5.37 (total wealth: 23.39636)
+
+n28 wants to sells to n26
+n28 sets initial cost/unit to 5.37
+n6 mediates transaction, raising cost/unit to 5.907
+n16 mediates transaction, raising cost/unit to 6.4977
+n18 mediates transaction, raising cost/unit to 7.14747
+n26 buys -2 units of P3 from n28 for a total cost of -14.29494
+n18 receives sum of -1.29954 for mediation
+n16 receives sum of -1.1814 for mediation
+n6 receives sum of -1.074 for mediation
+n28 receives final payment of -10.74 (total wealth: 12.65636)
+
+n29 has sold out
+
+n1 no longer needs any products
+
+n4 no longer needs any products
+
+n30 wants to sells to n6
+n30 sets initial cost/unit to 1.49
+n7 mediates transaction, raising cost/unit to 1.639
+n10 mediates transaction, raising cost/unit to 1.8029
+n9 mediates transaction, raising cost/unit to 1.98319
+n20 mediates transaction, raising cost/unit to 2.181509
+n28 mediates transaction, raising cost/unit to 2.3996599
+n6 buys 15 units of P5 from n30 for a total cost of 35.9948985
+n28 receives sum of 3.2722635 for mediation
+n20 receives sum of 2.974785 for mediation
+n9 receives sum of 2.70435 for mediation
+n10 receives sum of 2.4585 for mediation
+n7 receives sum of 2.235 for mediation
+n30 receives final payment of 22.35 (total wealth: 24.82)
+
+n15 no longer needs any products
+
+n30 wants to sells to n24
+n30 sets initial cost/unit to 1.49
+n7 mediates transaction, raising cost/unit to 1.639
+n10 mediates transaction, raising cost/unit to 1.8029
+n9 mediates transaction, raising cost/unit to 1.98319
+n24 buys -1 units of P5 from n30 for a total cost of -1.98319
+n9 receives sum of -0.18029 for mediation
+n10 receives sum of -0.1639 for mediation
+n7 receives sum of -0.149 for mediation
+n30 receives final payment of -1.49 (total wealth: 23.33)
+
+;--------------------------------
+;        PAYDAY
+;--------------------------------
+
+
+
+
+
+
+
+
+
+
+;--------------------------------
+;        SIMULATOR PHASE 2/10
+;--------------------------------
+
+
+;--------------------------------
+;        ESTABLISHING TRANSACTION PATH
+;--------------------------------
+
+n0 -> n22 -> n1
+n0 -> n5 -> n28 -> n29 -> n4
+n0 -> n5 -> n28 -> n6
+n0 -> n22 -> n15
+n0 -> n17 -> n9 -> n24
+
+n1 -> n22 -> n15 -> n29 -> n4
+n1 -> n22 -> n15 -> n28 -> n6
+n1 -> n22 -> n15
+n1 -> n22 -> n10 -> n9 -> n24
+
+n2 -> n29 -> n15 -> n22 -> n1
+n2 -> n29 -> n4
+n2 -> n29 -> n6
+n2 -> n29 -> n15
+n2 -> n29 -> n4 -> n24
+
+n3 -> n17 -> n9 -> n10 -> n7
+n3 -> n17 -> n19
+n3 -> n17 -> n8 -> n23
+n3 -> n17 -> n8 -> n29
+n3 -> n17 -> n9 -> n10 -> n7 -> n30
+
+n4 -> n24 -> n9 -> n10
+n4 -> n29 -> n6 -> n25 -> n13
+n4 -> n29 -> n6 -> n16
+n4 -> n29 -> n6 -> n25
+
+n5 -> n0 -> n22 -> n10
+n5 -> n28 -> n6 -> n25 -> n13
+n5 -> n28 -> n6 -> n16
+n5 -> n28 -> n6 -> n25
+
+n6 -> n16 -> n18 -> n26 -> n1
+n6 -> n29 -> n4
+n6 -> n28 -> n15
+n6 -> n29 -> n4 -> n24
+
+n7 -> n10 -> n9 -> n17 -> n19
+n7 -> n10 -> n9 -> n17 -> n8 -> n23
+n7 -> n10 -> n22 -> n15 -> n29
+n7 -> n30
+
+n8 -> n17 -> n9 -> n10
+n8 -> n23 -> n16 -> n25 -> n13
+n8 -> n23 -> n16
+n8 -> n23 -> n16 -> n25
+
+n9 -> n10 -> n7
+n9 -> n17 -> n19
+n9 -> n17 -> n8 -> n23
+n9 -> n20 -> n28 -> n29
+n9 -> n10 -> n7 -> n30
+
+n10 -> n22 -> n15 -> n11 -> n25 -> n13
+n10 -> n26 -> n18 -> n16
+n10 -> n22 -> n15 -> n11 -> n25
+
+n11 -> n15 -> n22 -> n0
+n11 -> n15 -> n29 -> n2
+n11 -> n15 -> n29 -> n14
+n11 -> n15 -> n21
+
+n12 -> n0 -> n17 -> n3
+n12 -> n0 -> n17 -> n8
+n12 -> n0 -> n17 -> n27 -> n18
+n12 -> n0 -> n5 -> n28 -> n20
+n12 -> n0 -> n17 -> n27
+
+n13 -> n25 -> n6 -> n28 -> n5 -> n0
+n13 -> n25 -> n6 -> n29 -> n2
+n13 -> n25 -> n6 -> n29 -> n14
+n13 -> n25 -> n11 -> n15 -> n21
+
+n14 -> n24 -> n9 -> n17 -> n0
+n14 -> n29 -> n2
+n14 -> n29 -> n15 -> n21
+
+n15 -> n21 -> n17 -> n3
+n15 -> n29 -> n8
+n15 -> n11 -> n25 -> n16 -> n18
+n15 -> n28 -> n20
+n15 -> n21 -> n17 -> n27
+
+n16 -> n18 -> n26 -> n10 -> n7
+n16 -> n25 -> n11 -> n19
+n16 -> n23
+n16 -> n6 -> n29
+n16 -> n18 -> n26 -> n10 -> n7 -> n30
+
+n17 -> n3
+n17 -> n8
+n17 -> n27 -> n18
+n17 -> n9 -> n20
+n17 -> n27
+
+n18 -> n27 -> n17 -> n3
+n18 -> n16 -> n23 -> n8
+n18 -> n16 -> n6 -> n28 -> n20
+n18 -> n27
+
+n19 -> n17 -> n9
+n19 -> n12
+n19 -> n17
+n19 -> n11 -> n15 -> n22
+n19 -> n17 -> n9 -> n10 -> n26
+
+n20 -> n9 -> n17 -> n3
+n20 -> n9 -> n17 -> n8
+n20 -> n9 -> n10 -> n26 -> n18
+n20 -> n9 -> n10 -> n27
+
+n21 -> n15 -> n22 -> n10 -> n7
+n21 -> n17 -> n19
+n21 -> n17 -> n8 -> n23
+n21 -> n15 -> n29
+n21 -> n15 -> n22 -> n10 -> n7 -> n30
+
+n22 -> n10 -> n7
+n22 -> n0 -> n12 -> n19
+n22 -> n0 -> n17 -> n8 -> n23
+n22 -> n15 -> n29
+n22 -> n10 -> n7 -> n30
+
+n23 -> n8 -> n17 -> n0
+n23 -> n8 -> n29 -> n2
+n23 -> n8 -> n29 -> n14
+n23 -> n8 -> n17 -> n21
+
+n24 -> n9 -> n17 -> n3
+n24 -> n4 -> n29 -> n8
+n24 -> n9 -> n10 -> n26 -> n18
+n24 -> n9 -> n20
+n24 -> n9 -> n10 -> n27
+
+n25 -> n6 -> n28 -> n20 -> n9
+n25 -> n11 -> n19 -> n12
+n25 -> n11 -> n19 -> n17
+n25 -> n11 -> n15 -> n22
+n25 -> n16 -> n18 -> n26
+
+n26 -> n10 -> n7
+n26 -> n18 -> n27 -> n17 -> n19
+n26 -> n18 -> n16 -> n23
+n26 -> n1 -> n22 -> n15 -> n29
+n26 -> n10 -> n7 -> n30
+
+n27 -> n17 -> n0 -> n5
+n27 -> n17 -> n19 -> n11
+n27 -> n18 -> n16 -> n6 -> n28
+
+n28 -> n20 -> n9
+n28 -> n5 -> n0 -> n12
+n28 -> n5 -> n0 -> n17
+n28 -> n15 -> n22
+n28 -> n6 -> n16 -> n18 -> n26
+
+n29 -> n8 -> n17 -> n3
+n29 -> n8
+n29 -> n6 -> n16 -> n18
+n29 -> n28 -> n20
+n29 -> n8 -> n17 -> n27
+
+n30 -> n7 -> n10 -> n22 -> n1
+n30 -> n7 -> n10 -> n9 -> n24 -> n4
+n30 -> n7 -> n10 -> n9 -> n20 -> n28 -> n6
+n30 -> n7 -> n10 -> n22 -> n15
+n30 -> n7 -> n10 -> n9 -> n24
+
+
+;--------------------------------
+;        FINALIZING TRANSACTIONS
+;--------------------------------
+
+n0 has sold out
+
+n1 has sold out
+
+n2 wants to sells to n1
+n2 sets initial cost/unit to 1.49
+n29 mediates transaction, raising cost/unit to 1.639
+n15 mediates transaction, raising cost/unit to 1.8029
+n22 mediates transaction, raising cost/unit to 1.98319
+n1 buys 0 units of P5 from n2 for a total cost of 0
+n22 receives sum of 0 for mediation
+n15 receives sum of 0 for mediation
+n29 receives sum of 0 for mediation
+n2 receives final payment of 0 (total wealth: 54.5667)
+
+n2 wants to sells to n4
+n2 sets initial cost/unit to 1.49
+n29 mediates transaction, raising cost/unit to 1.639
+n4 buys 0 units of P5 from n2 for a total cost of 0
+n29 receives sum of 0 for mediation
+n2 receives final payment of 0 (total wealth: 54.5667)
+
+n2 wants to sells to n6
+n6 can't afford any more purchases
+
+n2 wants to sells to n15
+n2 sets initial cost/unit to 1.49
+n29 mediates transaction, raising cost/unit to 1.639
+n15 buys 0 units of P5 from n2 for a total cost of 0
+n29 receives sum of 0 for mediation
+n2 receives final payment of 0 (total wealth: 54.5667)
+
+n2 wants to sells to n24
+n2 sets initial cost/unit to 1.49
+n29 mediates transaction, raising cost/unit to 1.639
+n4 mediates transaction, raising cost/unit to 1.8029
+n24 buys 32 units of P5 from n2 for a total cost of 57.6928
+n4 receives sum of 5.2448 for mediation
+n29 receives sum of 4.768 for mediation
+n2 receives final payment of 47.68 (total wealth: 102.2467)
+
+n3 has sold out
+
+n4 wants to sells to n10
+n4 sets initial cost/unit to 6.86
+n24 mediates transaction, raising cost/unit to 7.546
+n9 mediates transaction, raising cost/unit to 8.3006
+n10 buys 18 units of P0 from n4 for a total cost of 149.4108
+n9 receives sum of 13.5828 for mediation
+n24 receives sum of 12.348 for mediation
+n4 receives final payment of 123.48 (total wealth: 350.0018)
+
+n4 wants to sells to n13
+n4 sets initial cost/unit to 6.86
+n29 mediates transaction, raising cost/unit to 7.546
+n6 mediates transaction, raising cost/unit to 8.3006
+n25 mediates transaction, raising cost/unit to 9.13066
+n13 buys 18 units of P0 from n4 for a total cost of 164.35188
+n25 receives sum of 14.94108 for mediation
+n6 receives sum of 13.5828 for mediation
+n29 receives sum of 12.348 for mediation
+n4 receives final payment of 123.48 (total wealth: 473.4818)
+
+n4 wants to sells to n16
+n4 sets initial cost/unit to 6.86
+n29 mediates transaction, raising cost/unit to 7.546
+n6 mediates transaction, raising cost/unit to 8.3006
+n16 buys 6 units of P0 from n4 for a total cost of 49.8036
+n6 receives sum of 4.5276 for mediation
+n29 receives sum of 4.116 for mediation
+n4 receives final payment of 41.16 (total wealth: 514.6418)
+
+n4 wants to sells to n25
+n4 sets initial cost/unit to 6.86
+n29 mediates transaction, raising cost/unit to 7.546
+n6 mediates transaction, raising cost/unit to 8.3006
+n25 buys 0 units of P0 from n4 for a total cost of 0
+n6 receives sum of 0 for mediation
+n29 receives sum of 0 for mediation
+n4 receives final payment of 0 (total wealth: 514.6418)
+
+n5 wants to sells to n10
+n5 sets initial cost/unit to 6.86
+n0 mediates transaction, raising cost/unit to 7.546
+n22 mediates transaction, raising cost/unit to 8.3006
+n10 buys -2 units of P0 from n5 for a total cost of -16.6012
+n22 receives sum of -1.5092 for mediation
+n0 receives sum of -1.372 for mediation
+n5 receives final payment of -13.72 (total wealth: 79.1426)
+
+n5 wants to sells to n13
+n5 sets initial cost/unit to 6.86
+n28 mediates transaction, raising cost/unit to 7.546
+n6 mediates transaction, raising cost/unit to 8.3006
+n25 mediates transaction, raising cost/unit to 9.13066
+n13 buys -5 units of P0 from n5 for a total cost of -45.6533
+n25 receives sum of -4.1503 for mediation
+n6 receives sum of -3.773 for mediation
+n28 receives sum of -3.43 for mediation
+n5 receives final payment of -34.3 (total wealth: 44.8426)
+
+n5 wants to sells to n16
+n16 can't afford any more purchases
+
+n25 no longer needs any products
+
+n1 no longer needs any products
+
+n4 no longer needs any products
+
+n15 no longer needs any products
+
+n6 wants to sells to n24
+n6 sets initial cost/unit to 1.49
+n29 mediates transaction, raising cost/unit to 1.639
+n4 mediates transaction, raising cost/unit to 1.8029
+n24 buys 11 units of P5 from n6 for a total cost of 19.8319
+n4 receives sum of 1.8029 for mediation
+n29 receives sum of 1.639 for mediation
+n6 receives final payment of 16.39 (total wealth: 30.334141)
+
+n7 wants to sells to n19
+n7 sets initial cost/unit to 2.63
+n10 mediates transaction, raising cost/unit to 2.893
+n9 mediates transaction, raising cost/unit to 3.1823
+n17 mediates transaction, raising cost/unit to 3.50053
+n19 buys 0 units of P6 from n7 for a total cost of 0
+n17 receives sum of 0 for mediation
+n9 receives sum of 0 for mediation
+n10 receives sum of 0 for mediation
+n7 receives final payment of 0 (total wealth: 166.23)
+
+n7 wants to sells to n23
+n7 sets initial cost/unit to 2.63
+n10 mediates transaction, raising cost/unit to 2.893
+n9 mediates transaction, raising cost/unit to 3.1823
+n17 mediates transaction, raising cost/unit to 3.50053
+n8 mediates transaction, raising cost/unit to 3.850583
+n23 buys 32 units of P6 from n7 for a total cost of 123.218656
+n8 receives sum of 11.201696 for mediation
+n17 receives sum of 10.18336 for mediation
+n9 receives sum of 9.2576 for mediation
+n10 receives sum of 8.416 for mediation
+n7 receives final payment of 84.16 (total wealth: 250.39)
+
+n7 has sold out
+
+n8 wants to sells to n10
+n10 can't afford any more purchases
+
+n8 wants to sells to n13
+n8 sets initial cost/unit to 6.86
+n23 mediates transaction, raising cost/unit to 7.546
+n16 mediates transaction, raising cost/unit to 8.3006
+n25 mediates transaction, raising cost/unit to 9.13066
+n13 buys 1 units of P0 from n8 for a total cost of 9.13066
+n25 receives sum of 0.83006 for mediation
+n16 receives sum of 0.7546 for mediation
+n23 receives sum of 0.686 for mediation
+n8 receives final payment of 6.86 (total wealth: 13.480336)
+
+n8 wants to sells to n16
+n16 can't afford any more purchases
+
+n25 no longer needs any products
+
+n9 wants to sells to n7
+n9 sets initial cost/unit to 2.63
+n10 mediates transaction, raising cost/unit to 2.893
+n7 buys 0 units of P6 from n9 for a total cost of 0
+n10 receives sum of 0 for mediation
+n9 receives final payment of 0 (total wealth: 133.0604)
+
+n19 no longer needs any products
+
+n9 wants to sells to n23
+n9 sets initial cost/unit to 2.63
+n17 mediates transaction, raising cost/unit to 2.893
+n8 mediates transaction, raising cost/unit to 3.1823
+n23 buys -2 units of P6 from n9 for a total cost of -6.3646
+n8 receives sum of -0.5786 for mediation
+n17 receives sum of -0.526 for mediation
+n9 receives final payment of -5.26 (total wealth: 127.8004)
+
+n9 wants to sells to n29
+n9 sets initial cost/unit to 2.63
+n20 mediates transaction, raising cost/unit to 2.893
+n28 mediates transaction, raising cost/unit to 3.1823
+n29 buys 57 units of P6 from n9 for a total cost of 181.3911
+n28 receives sum of 16.4901 for mediation
+n20 receives sum of 14.991 for mediation
+n9 receives final payment of 149.91 (total wealth: 277.7104)
+
+n9 has sold out
+
+n10 wants to sells to n13
+n13 can't afford any more purchases
+
+n10 wants to sells to n16
+n16 can't afford any more purchases
+
+n25 no longer needs any products
+
+n11 has sold out
+
+n12 wants to sells to n3
+n12 sets initial cost/unit to 8.95
+n0 mediates transaction, raising cost/unit to 9.845
+n17 mediates transaction, raising cost/unit to 10.8295
+n3 buys 2 units of P4 from n12 for a total cost of 21.659
+n17 receives sum of 1.969 for mediation
+n0 receives sum of 1.79 for mediation
+n12 receives final payment of 17.9 (total wealth: 571.39)
+
+n12 wants to sells to n8
+n12 sets initial cost/unit to 8.95
+n0 mediates transaction, raising cost/unit to 9.845
+n17 mediates transaction, raising cost/unit to 10.8295
+n8 buys 1 units of P4 from n12 for a total cost of 10.8295
+n17 receives sum of 0.9845 for mediation
+n0 receives sum of 0.895 for mediation
+n12 receives final payment of 8.95 (total wealth: 580.34)
+
+n12 wants to sells to n18
+n12 sets initial cost/unit to 8.95
+n0 mediates transaction, raising cost/unit to 9.845
+n17 mediates transaction, raising cost/unit to 10.8295
+n27 mediates transaction, raising cost/unit to 11.91245
+n18 buys 4 units of P4 from n12 for a total cost of 47.6498
+n27 receives sum of 4.3318 for mediation
+n17 receives sum of 3.938 for mediation
+n0 receives sum of 3.58 for mediation
+n12 receives final payment of 35.8 (total wealth: 616.14)
+
+n12 has sold out
+
+n13 wants to sells to n0
+n13 sets initial cost/unit to 5.74
+n25 mediates transaction, raising cost/unit to 6.314
+n6 mediates transaction, raising cost/unit to 6.9454
+n28 mediates transaction, raising cost/unit to 7.63994
+n5 mediates transaction, raising cost/unit to 8.403934
+n0 buys 6 units of P2 from n13 for a total cost of 50.423604
+n5 receives sum of 4.583964 for mediation
+n28 receives sum of 4.16724 for mediation
+n6 receives sum of 3.7884 for mediation
+n25 receives sum of 3.444 for mediation
+n13 receives final payment of 34.44 (total wealth: 33.65476)
+
+n13 has sold out
+
+n14 wants to sells to n0
+n14 sets initial cost/unit to 5.74
+n24 mediates transaction, raising cost/unit to 6.314
+n9 mediates transaction, raising cost/unit to 6.9454
+n17 mediates transaction, raising cost/unit to 7.63994
+n0 buys 15 units of P2 from n14 for a total cost of 114.5991
+n17 receives sum of 10.4181 for mediation
+n9 receives sum of 9.471 for mediation
+n24 receives sum of 8.61 for mediation
+n14 receives final payment of 86.1 (total wealth: 254.048)
+
+n14 wants to sells to n2
+n14 sets initial cost/unit to 5.74
+n29 mediates transaction, raising cost/unit to 6.314
+n2 buys 17 units of P2 from n14 for a total cost of 107.338
+n29 receives sum of 9.758 for mediation
+n14 receives final payment of 97.58 (total wealth: 351.628)
+
+n14 wants to sells to n21
+n14 sets initial cost/unit to 5.74
+n29 mediates transaction, raising cost/unit to 6.314
+n15 mediates transaction, raising cost/unit to 6.9454
+n21 buys 9 units of P2 from n14 for a total cost of 62.5086
+n15 receives sum of 5.6826 for mediation
+n29 receives sum of 5.166 for mediation
+n14 receives final payment of 51.66 (total wealth: 403.288)
+
+n15 wants to sells to n3
+n3 can't afford any more purchases
+
+n15 wants to sells to n8
+n8 can't afford any more purchases
+
+n15 wants to sells to n18
+n15 sets initial cost/unit to 8.95
+n11 mediates transaction, raising cost/unit to 9.845
+n25 mediates transaction, raising cost/unit to 10.8295
+n16 mediates transaction, raising cost/unit to 11.91245
+n18 buys 6 units of P4 from n15 for a total cost of 71.4747
+n16 receives sum of 6.4977 for mediation
+n25 receives sum of 5.907 for mediation
+n11 receives sum of 5.37 for mediation
+n15 receives final payment of 53.7 (total wealth: 81.3173)
+
+n15 wants to sells to n20
+n15 sets initial cost/unit to 8.95
+n28 mediates transaction, raising cost/unit to 9.845
+n20 buys 10 units of P4 from n15 for a total cost of 98.45
+n28 receives sum of 8.95 for mediation
+n15 receives final payment of 89.5 (total wealth: 170.8173)
+
+n15 wants to sells to n27
+n15 sets initial cost/unit to 8.95
+n21 mediates transaction, raising cost/unit to 9.845
+n17 mediates transaction, raising cost/unit to 10.8295
+n27 buys 2 units of P4 from n15 for a total cost of 21.659
+n17 receives sum of 1.969 for mediation
+n21 receives sum of 1.79 for mediation
+n15 receives final payment of 17.9 (total wealth: 188.7173)
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n16 wants to sells to n23
+n23 can't afford any more purchases
+
+n16 wants to sells to n29
+n16 sets initial cost/unit to 2.63
+n6 mediates transaction, raising cost/unit to 2.893
+n29 buys -3 units of P6 from n16 for a total cost of -8.679
+n6 receives sum of -0.789 for mediation
+n16 receives final payment of -7.89 (total wealth: -5.942)
+
+n16 wants to sells to n30
+n16 sets initial cost/unit to 2.63
+n18 mediates transaction, raising cost/unit to 2.893
+n26 mediates transaction, raising cost/unit to 3.1823
+n10 mediates transaction, raising cost/unit to 3.50053
+n7 mediates transaction, raising cost/unit to 3.850583
+n30 buys 10 units of P6 from n16 for a total cost of 38.50583
+n7 receives sum of 3.50053 for mediation
+n10 receives sum of 3.1823 for mediation
+n26 receives sum of 2.893 for mediation
+n18 receives sum of 2.63 for mediation
+n16 receives final payment of 26.3 (total wealth: 20.358)
+
+n17 wants to sells to n3
+n3 can't afford any more purchases
+
+n17 wants to sells to n8
+n8 can't afford any more purchases
+
+n17 wants to sells to n18
+n17 sets initial cost/unit to 8.95
+n27 mediates transaction, raising cost/unit to 9.845
+n18 buys -1 units of P4 from n17 for a total cost of -9.845
+n27 receives sum of -0.895 for mediation
+n17 receives final payment of -8.95 (total wealth: 171.94296)
+
+n20 no longer needs any products
+
+n17 wants to sells to n27
+n17 sets initial cost/unit to 8.95
+n27 buys 25 units of P4 from n17 for a total cost of 223.75
+n17 receives final payment of 223.75 (total wealth: 395.69296)
+
+n18 wants to sells to n3
+n3 can't afford any more purchases
+
+n18 wants to sells to n8
+n8 can't afford any more purchases
+
+n20 no longer needs any products
+
+n18 wants to sells to n27
+n27 can't afford any more purchases
+
+n19 has sold out
+
+n20 wants to sells to n3
+n3 can't afford any more purchases
+
+n20 wants to sells to n8
+n8 can't afford any more purchases
+
+n20 wants to sells to n18
+n18 can't afford any more purchases
+
+n20 wants to sells to n27
+n27 can't afford any more purchases
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n21 wants to sells to n23
+n23 can't afford any more purchases
+
+n21 wants to sells to n29
+n29 can't afford any more purchases
+
+n21 wants to sells to n30
+n21 sets initial cost/unit to 2.63
+n15 mediates transaction, raising cost/unit to 2.893
+n22 mediates transaction, raising cost/unit to 3.1823
+n10 mediates transaction, raising cost/unit to 3.50053
+n7 mediates transaction, raising cost/unit to 3.850583
+n30 buys -3 units of P6 from n21 for a total cost of -11.551749
+n7 receives sum of -1.050159 for mediation
+n10 receives sum of -0.95469 for mediation
+n22 receives sum of -0.8679 for mediation
+n15 receives sum of -0.789 for mediation
+n21 receives final payment of -7.89 (total wealth: -14.5379)
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n22 wants to sells to n23
+n23 can't afford any more purchases
+
+n22 wants to sells to n29
+n29 can't afford any more purchases
+
+n22 wants to sells to n30
+n30 can't afford any more purchases
+
+n23 wants to sells to n0
+n23 sets initial cost/unit to 5.74
+n8 mediates transaction, raising cost/unit to 6.314
+n17 mediates transaction, raising cost/unit to 6.9454
+n0 buys -4 units of P2 from n23 for a total cost of -27.7816
+n17 receives sum of -2.5256 for mediation
+n8 receives sum of -2.296 for mediation
+n23 receives final payment of -22.96 (total wealth: -22.004056)
+
+n23 wants to sells to n2
+n2 can't afford any more purchases
+
+n23 wants to sells to n14
+n23 sets initial cost/unit to 5.74
+n8 mediates transaction, raising cost/unit to 6.314
+n29 mediates transaction, raising cost/unit to 6.9454
+n14 buys 47 units of P2 from n23 for a total cost of 326.4338
+n29 receives sum of 29.6758 for mediation
+n8 receives sum of 26.978 for mediation
+n23 receives final payment of 269.78 (total wealth: 247.775944)
+
+n23 has sold out
+
+n24 wants to sells to n3
+n3 can't afford any more purchases
+
+n24 wants to sells to n8
+n24 sets initial cost/unit to 8.95
+n4 mediates transaction, raising cost/unit to 9.845
+n29 mediates transaction, raising cost/unit to 10.8295
+n8 buys 2 units of P4 from n24 for a total cost of 21.659
+n29 receives sum of 1.969 for mediation
+n4 receives sum of 1.79 for mediation
+n24 receives final payment of 17.9 (total wealth: 91.2143)
+
+n24 wants to sells to n18
+n18 can't afford any more purchases
+
+n20 no longer needs any products
+
+n24 wants to sells to n27
+n27 can't afford any more purchases
+
+n25 wants to sells to n9
+n25 sets initial cost/unit to 5.37
+n6 mediates transaction, raising cost/unit to 5.907
+n28 mediates transaction, raising cost/unit to 6.4977
+n20 mediates transaction, raising cost/unit to 7.14747
+n9 buys 19 units of P3 from n25 for a total cost of 135.80193
+n20 receives sum of 12.34563 for mediation
+n28 receives sum of 11.2233 for mediation
+n6 receives sum of 10.203 for mediation
+n25 receives final payment of 102.03 (total wealth: 224.11384)
+
+n25 has sold out
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n26 wants to sells to n23
+n26 sets initial cost/unit to 2.63
+n18 mediates transaction, raising cost/unit to 2.893
+n16 mediates transaction, raising cost/unit to 3.1823
+n23 buys 48 units of P6 from n26 for a total cost of 152.7504
+n16 receives sum of 13.8864 for mediation
+n18 receives sum of 12.624 for mediation
+n26 receives final payment of 126.24 (total wealth: 276.124)
+
+n26 wants to sells to n29
+n26 sets initial cost/unit to 2.63
+n1 mediates transaction, raising cost/unit to 2.893
+n22 mediates transaction, raising cost/unit to 3.1823
+n15 mediates transaction, raising cost/unit to 3.50053
+n29 buys 5 units of P6 from n26 for a total cost of 17.50265
+n15 receives sum of 1.59115 for mediation
+n22 receives sum of 1.4465 for mediation
+n1 receives sum of 1.315 for mediation
+n26 receives final payment of 13.15 (total wealth: 289.274)
+
+n26 wants to sells to n30
+n30 can't afford any more purchases
+
+n27 has sold out
+
+n28 wants to sells to n9
+n28 sets initial cost/unit to 5.37
+n20 mediates transaction, raising cost/unit to 5.907
+n9 buys 17 units of P3 from n28 for a total cost of 100.419
+n20 receives sum of 9.129 for mediation
+n28 receives final payment of 91.29 (total wealth: 310.01964)
+
+n28 has sold out
+
+n29 has sold out
+
+n1 no longer needs any products
+
+n4 no longer needs any products
+
+n30 wants to sells to n6
+n30 sets initial cost/unit to 1.49
+n7 mediates transaction, raising cost/unit to 1.639
+n10 mediates transaction, raising cost/unit to 1.8029
+n9 mediates transaction, raising cost/unit to 1.98319
+n20 mediates transaction, raising cost/unit to 2.181509
+n28 mediates transaction, raising cost/unit to 2.3996599
+n6 buys 0 units of P5 from n30 for a total cost of 0
+n28 receives sum of 0 for mediation
+n20 receives sum of 0 for mediation
+n9 receives sum of 0 for mediation
+n10 receives sum of 0 for mediation
+n7 receives sum of 0 for mediation
+n30 receives final payment of 0 (total wealth: 1.375919)
+
+n15 no longer needs any products
+
+n24 no longer needs any products
+
+;--------------------------------
+;        PAYDAY
+;--------------------------------
+
+
+
+
+
+
+
+
+
+
+;--------------------------------
+;        SIMULATOR PHASE 3/10
+;--------------------------------
+
+
+;--------------------------------
+;        ESTABLISHING TRANSACTION PATH
+;--------------------------------
+
+n0 -> n22 -> n1
+n0 -> n5 -> n28 -> n29 -> n4
+n0 -> n5 -> n28 -> n6
+n0 -> n22 -> n15
+n0 -> n17 -> n9 -> n24
+
+n1 -> n22 -> n15 -> n29 -> n4
+n1 -> n22 -> n15 -> n28 -> n6
+n1 -> n22 -> n15
+n1 -> n22 -> n10 -> n9 -> n24
+
+n2 -> n29 -> n15 -> n22 -> n1
+n2 -> n29 -> n4
+n2 -> n29 -> n6
+n2 -> n29 -> n15
+n2 -> n29 -> n4 -> n24
+
+n3 -> n17 -> n9 -> n10 -> n7
+n3 -> n17 -> n19
+n3 -> n17 -> n8 -> n23
+n3 -> n17 -> n8 -> n29
+n3 -> n17 -> n9 -> n10 -> n7 -> n30
+
+n4 -> n24 -> n9 -> n10
+n4 -> n29 -> n6 -> n25 -> n13
+n4 -> n29 -> n6 -> n16
+n4 -> n29 -> n6 -> n25
+
+n5 -> n0 -> n22 -> n10
+n5 -> n28 -> n6 -> n25 -> n13
+n5 -> n28 -> n6 -> n16
+n5 -> n28 -> n6 -> n25
+
+n6 -> n16 -> n18 -> n26 -> n1
+n6 -> n29 -> n4
+n6 -> n28 -> n15
+n6 -> n29 -> n4 -> n24
+
+n7 -> n10 -> n9 -> n17 -> n19
+n7 -> n10 -> n9 -> n17 -> n8 -> n23
+n7 -> n10 -> n22 -> n15 -> n29
+n7 -> n30
+
+n8 -> n17 -> n9 -> n10
+n8 -> n23 -> n16 -> n25 -> n13
+n8 -> n23 -> n16
+n8 -> n23 -> n16 -> n25
+
+n9 -> n10 -> n7
+n9 -> n17 -> n19
+n9 -> n17 -> n8 -> n23
+n9 -> n20 -> n28 -> n29
+n9 -> n10 -> n7 -> n30
+
+n10 -> n22 -> n15 -> n11 -> n25 -> n13
+n10 -> n26 -> n18 -> n16
+n10 -> n22 -> n15 -> n11 -> n25
+
+n11 -> n15 -> n22 -> n0
+n11 -> n15 -> n29 -> n2
+n11 -> n15 -> n29 -> n14
+n11 -> n15 -> n21
+
+n12 -> n0 -> n17 -> n3
+n12 -> n0 -> n17 -> n8
+n12 -> n0 -> n17 -> n27 -> n18
+n12 -> n0 -> n5 -> n28 -> n20
+n12 -> n0 -> n17 -> n27
+
+n13 -> n25 -> n6 -> n28 -> n5 -> n0
+n13 -> n25 -> n6 -> n29 -> n2
+n13 -> n25 -> n6 -> n29 -> n14
+n13 -> n25 -> n11 -> n15 -> n21
+
+n14 -> n24 -> n9 -> n17 -> n0
+n14 -> n29 -> n2
+n14 -> n29 -> n15 -> n21
+
+n15 -> n21 -> n17 -> n3
+n15 -> n29 -> n8
+n15 -> n11 -> n25 -> n16 -> n18
+n15 -> n28 -> n20
+n15 -> n21 -> n17 -> n27
+
+n16 -> n18 -> n26 -> n10 -> n7
+n16 -> n25 -> n11 -> n19
+n16 -> n23
+n16 -> n6 -> n29
+n16 -> n18 -> n26 -> n10 -> n7 -> n30
+
+n17 -> n3
+n17 -> n8
+n17 -> n27 -> n18
+n17 -> n9 -> n20
+n17 -> n27
+
+n18 -> n27 -> n17 -> n3
+n18 -> n16 -> n23 -> n8
+n18 -> n16 -> n6 -> n28 -> n20
+n18 -> n27
+
+n19 -> n17 -> n9
+n19 -> n12
+n19 -> n17
+n19 -> n11 -> n15 -> n22
+n19 -> n17 -> n9 -> n10 -> n26
+
+n20 -> n9 -> n17 -> n3
+n20 -> n9 -> n17 -> n8
+n20 -> n9 -> n10 -> n26 -> n18
+n20 -> n9 -> n10 -> n27
+
+n21 -> n15 -> n22 -> n10 -> n7
+n21 -> n17 -> n19
+n21 -> n17 -> n8 -> n23
+n21 -> n15 -> n29
+n21 -> n15 -> n22 -> n10 -> n7 -> n30
+
+n22 -> n10 -> n7
+n22 -> n0 -> n12 -> n19
+n22 -> n0 -> n17 -> n8 -> n23
+n22 -> n15 -> n29
+n22 -> n10 -> n7 -> n30
+
+n23 -> n8 -> n17 -> n0
+n23 -> n8 -> n29 -> n2
+n23 -> n8 -> n29 -> n14
+n23 -> n8 -> n17 -> n21
+
+n24 -> n9 -> n17 -> n3
+n24 -> n4 -> n29 -> n8
+n24 -> n9 -> n10 -> n26 -> n18
+n24 -> n9 -> n20
+n24 -> n9 -> n10 -> n27
+
+n25 -> n6 -> n28 -> n20 -> n9
+n25 -> n11 -> n19 -> n12
+n25 -> n11 -> n19 -> n17
+n25 -> n11 -> n15 -> n22
+n25 -> n16 -> n18 -> n26
+
+n26 -> n10 -> n7
+n26 -> n18 -> n27 -> n17 -> n19
+n26 -> n18 -> n16 -> n23
+n26 -> n1 -> n22 -> n15 -> n29
+n26 -> n10 -> n7 -> n30
+
+n27 -> n17 -> n0 -> n5
+n27 -> n17 -> n19 -> n11
+n27 -> n18 -> n16 -> n6 -> n28
+
+n28 -> n20 -> n9
+n28 -> n5 -> n0 -> n12
+n28 -> n5 -> n0 -> n17
+n28 -> n15 -> n22
+n28 -> n6 -> n16 -> n18 -> n26
+
+n29 -> n8 -> n17 -> n3
+n29 -> n8
+n29 -> n6 -> n16 -> n18
+n29 -> n28 -> n20
+n29 -> n8 -> n17 -> n27
+
+n30 -> n7 -> n10 -> n22 -> n1
+n30 -> n7 -> n10 -> n9 -> n24 -> n4
+n30 -> n7 -> n10 -> n9 -> n20 -> n28 -> n6
+n30 -> n7 -> n10 -> n22 -> n15
+n30 -> n7 -> n10 -> n9 -> n24
+
+
+;--------------------------------
+;        FINALIZING TRANSACTIONS
+;--------------------------------
+
+n0 has sold out
+
+n1 has sold out
+
+n2 has sold out
+
+n3 has sold out
+
+n4 wants to sells to n10
+n4 sets initial cost/unit to 6.86
+n24 mediates transaction, raising cost/unit to 7.546
+n9 mediates transaction, raising cost/unit to 8.3006
+n10 buys 3 units of P0 from n4 for a total cost of 24.9018
+n9 receives sum of 2.2638 for mediation
+n24 receives sum of 2.058 for mediation
+n4 receives final payment of 20.58 (total wealth: 683.615)
+
+n4 has sold out
+
+n5 wants to sells to n10
+n5 sets initial cost/unit to 6.86
+n0 mediates transaction, raising cost/unit to 7.546
+n22 mediates transaction, raising cost/unit to 8.3006
+n10 buys 15 units of P0 from n5 for a total cost of 124.509
+n22 receives sum of 11.319 for mediation
+n0 receives sum of 10.29 for mediation
+n5 receives final payment of 102.9 (total wealth: 330.127)
+
+n5 wants to sells to n13
+n5 sets initial cost/unit to 6.86
+n28 mediates transaction, raising cost/unit to 7.546
+n6 mediates transaction, raising cost/unit to 8.3006
+n25 mediates transaction, raising cost/unit to 9.13066
+n13 buys 22 units of P0 from n5 for a total cost of 200.87452
+n25 receives sum of 18.26132 for mediation
+n6 receives sum of 16.6012 for mediation
+n28 receives sum of 15.092 for mediation
+n5 receives final payment of 150.92 (total wealth: 481.047)
+
+n5 wants to sells to n16
+n5 sets initial cost/unit to 6.86
+n28 mediates transaction, raising cost/unit to 7.546
+n6 mediates transaction, raising cost/unit to 8.3006
+n16 buys 27 units of P0 from n5 for a total cost of 224.1162
+n6 receives sum of 20.3742 for mediation
+n28 receives sum of 18.522 for mediation
+n5 receives final payment of 185.22 (total wealth: 666.267)
+
+n5 wants to sells to n25
+n5 sets initial cost/unit to 6.86
+n28 mediates transaction, raising cost/unit to 7.546
+n6 mediates transaction, raising cost/unit to 8.3006
+n25 buys 0 units of P0 from n5 for a total cost of 0
+n6 receives sum of 0 for mediation
+n28 receives sum of 0 for mediation
+n5 receives final payment of 0 (total wealth: 666.267)
+
+n6 wants to sells to n1
+n6 sets initial cost/unit to 1.49
+n16 mediates transaction, raising cost/unit to 1.639
+n18 mediates transaction, raising cost/unit to 1.8029
+n26 mediates transaction, raising cost/unit to 1.98319
+n1 buys 0 units of P5 from n6 for a total cost of 0
+n26 receives sum of 0 for mediation
+n18 receives sum of 0 for mediation
+n16 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 172.9124)
+
+n6 wants to sells to n4
+n6 sets initial cost/unit to 1.49
+n29 mediates transaction, raising cost/unit to 1.639
+n4 buys 0 units of P5 from n6 for a total cost of 0
+n29 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 172.9124)
+
+n6 wants to sells to n15
+n6 sets initial cost/unit to 1.49
+n28 mediates transaction, raising cost/unit to 1.639
+n15 buys 0 units of P5 from n6 for a total cost of 0
+n28 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 172.9124)
+
+n6 wants to sells to n24
+n6 sets initial cost/unit to 1.49
+n29 mediates transaction, raising cost/unit to 1.639
+n4 mediates transaction, raising cost/unit to 1.8029
+n24 buys 0 units of P5 from n6 for a total cost of 0
+n4 receives sum of 0 for mediation
+n29 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 172.9124)
+
+n7 has sold out
+
+n8 wants to sells to n10
+n8 sets initial cost/unit to 6.86
+n17 mediates transaction, raising cost/unit to 7.546
+n9 mediates transaction, raising cost/unit to 8.3006
+n10 buys -2 units of P0 from n8 for a total cost of -16.6012
+n9 receives sum of -1.5092 for mediation
+n17 receives sum of -1.372 for mediation
+n8 receives final payment of -13.72 (total wealth: 141.975)
+
+n8 wants to sells to n13
+n8 sets initial cost/unit to 6.86
+n23 mediates transaction, raising cost/unit to 7.546
+n16 mediates transaction, raising cost/unit to 8.3006
+n25 mediates transaction, raising cost/unit to 9.13066
+n13 buys -6 units of P0 from n8 for a total cost of -54.78396
+n25 receives sum of -4.98036 for mediation
+n16 receives sum of -4.5276 for mediation
+n23 receives sum of -4.116 for mediation
+n8 receives final payment of -41.16 (total wealth: 100.815)
+
+n8 wants to sells to n16
+n8 sets initial cost/unit to 6.86
+n23 mediates transaction, raising cost/unit to 7.546
+n16 buys -5 units of P0 from n8 for a total cost of -37.73
+n23 receives sum of -3.43 for mediation
+n8 receives final payment of -34.3 (total wealth: 66.515)
+
+n25 no longer needs any products
+
+n9 has sold out
+
+n10 wants to sells to n13
+n10 sets initial cost/unit to 6.86
+n22 mediates transaction, raising cost/unit to 7.546
+n15 mediates transaction, raising cost/unit to 8.3006
+n11 mediates transaction, raising cost/unit to 9.13066
+n25 mediates transaction, raising cost/unit to 10.043726
+n13 buys 1 units of P0 from n10 for a total cost of 10.043726
+n25 receives sum of 0.913066 for mediation
+n11 receives sum of 0.83006 for mediation
+n15 receives sum of 0.7546 for mediation
+n22 receives sum of 0.686 for mediation
+n10 receives final payment of 6.86 (total wealth: 7.5254)
+
+n10 wants to sells to n16
+n16 can't afford any more purchases
+
+n25 no longer needs any products
+
+n11 has sold out
+
+n12 has sold out
+
+n13 has sold out
+
+n14 wants to sells to n0
+n14 sets initial cost/unit to 5.74
+n24 mediates transaction, raising cost/unit to 6.314
+n9 mediates transaction, raising cost/unit to 6.9454
+n17 mediates transaction, raising cost/unit to 7.63994
+n0 buys 19 units of P2 from n14 for a total cost of 145.15886
+n17 receives sum of 13.19626 for mediation
+n9 receives sum of 11.9966 for mediation
+n24 receives sum of 10.906 for mediation
+n14 receives final payment of 109.06 (total wealth: 222.314)
+
+n14 wants to sells to n2
+n14 sets initial cost/unit to 5.74
+n29 mediates transaction, raising cost/unit to 6.314
+n2 buys 9 units of P2 from n14 for a total cost of 56.826
+n29 receives sum of 5.166 for mediation
+n14 receives final payment of 51.66 (total wealth: 273.974)
+
+n14 wants to sells to n21
+n14 sets initial cost/unit to 5.74
+n29 mediates transaction, raising cost/unit to 6.314
+n15 mediates transaction, raising cost/unit to 6.9454
+n21 buys 11 units of P2 from n14 for a total cost of 76.3994
+n15 receives sum of 6.9454 for mediation
+n29 receives sum of 6.314 for mediation
+n14 receives final payment of 63.14 (total wealth: 337.114)
+
+n15 has sold out
+
+n16 wants to sells to n7
+n16 sets initial cost/unit to 2.63
+n18 mediates transaction, raising cost/unit to 2.893
+n26 mediates transaction, raising cost/unit to 3.1823
+n10 mediates transaction, raising cost/unit to 3.50053
+n7 buys 0 units of P6 from n16 for a total cost of 0
+n10 receives sum of 0 for mediation
+n26 receives sum of 0 for mediation
+n18 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: -2.6698)
+
+n16 wants to sells to n19
+n16 sets initial cost/unit to 2.63
+n25 mediates transaction, raising cost/unit to 2.893
+n11 mediates transaction, raising cost/unit to 3.1823
+n19 buys 0 units of P6 from n16 for a total cost of 0
+n11 receives sum of 0 for mediation
+n25 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: -2.6698)
+
+n16 wants to sells to n23
+n16 sets initial cost/unit to 2.63
+n23 buys 0 units of P6 from n16 for a total cost of 0
+n16 receives final payment of 0 (total wealth: -2.6698)
+
+n16 wants to sells to n29
+n16 sets initial cost/unit to 2.63
+n6 mediates transaction, raising cost/unit to 2.893
+n29 buys 0 units of P6 from n16 for a total cost of 0
+n6 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: -2.6698)
+
+n16 wants to sells to n30
+n16 sets initial cost/unit to 2.63
+n18 mediates transaction, raising cost/unit to 2.893
+n26 mediates transaction, raising cost/unit to 3.1823
+n10 mediates transaction, raising cost/unit to 3.50053
+n7 mediates transaction, raising cost/unit to 3.850583
+n30 buys 19 units of P6 from n16 for a total cost of 73.161077
+n7 receives sum of 6.651007 for mediation
+n10 receives sum of 6.04637 for mediation
+n26 receives sum of 5.4967 for mediation
+n18 receives sum of 4.997 for mediation
+n16 receives final payment of 49.97 (total wealth: 47.3002)
+
+n17 wants to sells to n3
+n17 sets initial cost/unit to 8.95
+n3 buys 11 units of P4 from n17 for a total cost of 98.45
+n17 receives final payment of 98.45 (total wealth: 601.64126)
+
+n17 has sold out
+
+n18 wants to sells to n3
+n18 sets initial cost/unit to 8.95
+n27 mediates transaction, raising cost/unit to 9.845
+n17 mediates transaction, raising cost/unit to 10.8295
+n3 buys 2 units of P4 from n18 for a total cost of 21.659
+n17 receives sum of 1.969 for mediation
+n27 receives sum of 1.79 for mediation
+n18 receives final payment of 17.9 (total wealth: 101.2275)
+
+n18 wants to sells to n8
+n18 sets initial cost/unit to 8.95
+n16 mediates transaction, raising cost/unit to 9.845
+n23 mediates transaction, raising cost/unit to 10.8295
+n8 buys 7 units of P4 from n18 for a total cost of 75.8065
+n23 receives sum of 6.8915 for mediation
+n16 receives sum of 6.265 for mediation
+n18 receives final payment of 62.65 (total wealth: 163.8775)
+
+n18 wants to sells to n20
+n18 sets initial cost/unit to 8.95
+n16 mediates transaction, raising cost/unit to 9.845
+n6 mediates transaction, raising cost/unit to 10.8295
+n28 mediates transaction, raising cost/unit to 11.91245
+n20 buys 0 units of P4 from n18 for a total cost of 0
+n28 receives sum of 0 for mediation
+n6 receives sum of 0 for mediation
+n16 receives sum of 0 for mediation
+n18 receives final payment of 0 (total wealth: 163.8775)
+
+n18 wants to sells to n27
+n18 sets initial cost/unit to 8.95
+n27 buys 16 units of P4 from n18 for a total cost of 143.2
+n18 receives final payment of 143.2 (total wealth: 307.0775)
+
+n19 has sold out
+
+n20 wants to sells to n3
+n3 can't afford any more purchases
+
+n20 wants to sells to n8
+n20 sets initial cost/unit to 8.95
+n9 mediates transaction, raising cost/unit to 9.845
+n17 mediates transaction, raising cost/unit to 10.8295
+n8 buys -1 units of P4 from n20 for a total cost of -10.8295
+n17 receives sum of -0.9845 for mediation
+n9 receives sum of -0.895 for mediation
+n20 receives final payment of -8.95 (total wealth: 133.161)
+
+n20 wants to sells to n18
+n20 sets initial cost/unit to 8.95
+n9 mediates transaction, raising cost/unit to 9.845
+n10 mediates transaction, raising cost/unit to 10.8295
+n26 mediates transaction, raising cost/unit to 11.91245
+n18 buys 34 units of P4 from n20 for a total cost of 405.0233
+n26 receives sum of 36.8203 for mediation
+n10 receives sum of 33.473 for mediation
+n9 receives sum of 30.43 for mediation
+n20 receives final payment of 304.3 (total wealth: 437.461)
+
+n20 wants to sells to n27
+n27 can't afford any more purchases
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n23 no longer needs any products
+
+n29 no longer needs any products
+
+n30 no longer needs any products
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n23 no longer needs any products
+
+n29 no longer needs any products
+
+n30 no longer needs any products
+
+n23 has sold out
+
+n24 wants to sells to n3
+n3 can't afford any more purchases
+
+n24 wants to sells to n8
+n8 can't afford any more purchases
+
+n24 wants to sells to n18
+n24 sets initial cost/unit to 8.95
+n9 mediates transaction, raising cost/unit to 9.845
+n10 mediates transaction, raising cost/unit to 10.8295
+n26 mediates transaction, raising cost/unit to 11.91245
+n18 buys -10 units of P4 from n24 for a total cost of -119.1245
+n26 receives sum of -10.8295 for mediation
+n10 receives sum of -9.845 for mediation
+n9 receives sum of -8.95 for mediation
+n24 receives final payment of -89.5 (total wealth: 70.278)
+
+n20 no longer needs any products
+
+n24 wants to sells to n27
+n27 can't afford any more purchases
+
+n25 has sold out
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n23 no longer needs any products
+
+n29 no longer needs any products
+
+n30 no longer needs any products
+
+n27 has sold out
+
+n28 has sold out
+
+n29 has sold out
+
+n1 no longer needs any products
+
+n4 no longer needs any products
+
+n30 wants to sells to n6
+n30 sets initial cost/unit to 1.49
+n7 mediates transaction, raising cost/unit to 1.639
+n10 mediates transaction, raising cost/unit to 1.8029
+n9 mediates transaction, raising cost/unit to 1.98319
+n20 mediates transaction, raising cost/unit to 2.181509
+n28 mediates transaction, raising cost/unit to 2.3996599
+n6 buys 0 units of P5 from n30 for a total cost of 0
+n28 receives sum of 0 for mediation
+n20 receives sum of 0 for mediation
+n9 receives sum of 0 for mediation
+n10 receives sum of 0 for mediation
+n7 receives sum of 0 for mediation
+n30 receives final payment of 0 (total wealth: 44.614923)
+
+n15 no longer needs any products
+
+n24 no longer needs any products
+
+;--------------------------------
+;        PAYDAY
+;--------------------------------
+
+
+
+
+
+
+
+
+
+
+;--------------------------------
+;        SIMULATOR PHASE 4/10
+;--------------------------------
+
+
+;--------------------------------
+;        ESTABLISHING TRANSACTION PATH
+;--------------------------------
+
+n0 -> n22 -> n1
+n0 -> n5 -> n28 -> n29 -> n4
+n0 -> n5 -> n28 -> n6
+n0 -> n22 -> n15
+n0 -> n17 -> n9 -> n24
+
+n1 -> n22 -> n15 -> n29 -> n4
+n1 -> n22 -> n15 -> n28 -> n6
+n1 -> n22 -> n15
+n1 -> n22 -> n10 -> n9 -> n24
+
+n2 -> n29 -> n15 -> n22 -> n1
+n2 -> n29 -> n4
+n2 -> n29 -> n6
+n2 -> n29 -> n15
+n2 -> n29 -> n4 -> n24
+
+n3 -> n17 -> n9 -> n10 -> n7
+n3 -> n17 -> n19
+n3 -> n17 -> n8 -> n23
+n3 -> n17 -> n8 -> n29
+n3 -> n17 -> n9 -> n10 -> n7 -> n30
+
+n4 -> n24 -> n9 -> n10
+n4 -> n29 -> n6 -> n25 -> n13
+n4 -> n29 -> n6 -> n16
+n4 -> n29 -> n6 -> n25
+
+n5 -> n0 -> n22 -> n10
+n5 -> n28 -> n6 -> n25 -> n13
+n5 -> n28 -> n6 -> n16
+n5 -> n28 -> n6 -> n25
+
+n6 -> n16 -> n18 -> n26 -> n1
+n6 -> n29 -> n4
+n6 -> n28 -> n15
+n6 -> n29 -> n4 -> n24
+
+n7 -> n10 -> n9 -> n17 -> n19
+n7 -> n10 -> n9 -> n17 -> n8 -> n23
+n7 -> n10 -> n22 -> n15 -> n29
+n7 -> n30
+
+n8 -> n17 -> n9 -> n10
+n8 -> n23 -> n16 -> n25 -> n13
+n8 -> n23 -> n16
+n8 -> n23 -> n16 -> n25
+
+n9 -> n10 -> n7
+n9 -> n17 -> n19
+n9 -> n17 -> n8 -> n23
+n9 -> n20 -> n28 -> n29
+n9 -> n10 -> n7 -> n30
+
+n10 -> n22 -> n15 -> n11 -> n25 -> n13
+n10 -> n26 -> n18 -> n16
+n10 -> n22 -> n15 -> n11 -> n25
+
+n11 -> n15 -> n22 -> n0
+n11 -> n15 -> n29 -> n2
+n11 -> n15 -> n29 -> n14
+n11 -> n15 -> n21
+
+n12 -> n0 -> n17 -> n3
+n12 -> n0 -> n17 -> n8
+n12 -> n0 -> n17 -> n27 -> n18
+n12 -> n0 -> n5 -> n28 -> n20
+n12 -> n0 -> n17 -> n27
+
+n13 -> n25 -> n6 -> n28 -> n5 -> n0
+n13 -> n25 -> n6 -> n29 -> n2
+n13 -> n25 -> n6 -> n29 -> n14
+n13 -> n25 -> n11 -> n15 -> n21
+
+n14 -> n24 -> n9 -> n17 -> n0
+n14 -> n29 -> n2
+n14 -> n29 -> n15 -> n21
+
+n15 -> n21 -> n17 -> n3
+n15 -> n29 -> n8
+n15 -> n11 -> n25 -> n16 -> n18
+n15 -> n28 -> n20
+n15 -> n21 -> n17 -> n27
+
+n16 -> n18 -> n26 -> n10 -> n7
+n16 -> n25 -> n11 -> n19
+n16 -> n23
+n16 -> n6 -> n29
+n16 -> n18 -> n26 -> n10 -> n7 -> n30
+
+n17 -> n3
+n17 -> n8
+n17 -> n27 -> n18
+n17 -> n9 -> n20
+n17 -> n27
+
+n18 -> n27 -> n17 -> n3
+n18 -> n16 -> n23 -> n8
+n18 -> n16 -> n6 -> n28 -> n20
+n18 -> n27
+
+n19 -> n17 -> n9
+n19 -> n12
+n19 -> n17
+n19 -> n11 -> n15 -> n22
+n19 -> n17 -> n9 -> n10 -> n26
+
+n20 -> n9 -> n17 -> n3
+n20 -> n9 -> n17 -> n8
+n20 -> n9 -> n10 -> n26 -> n18
+n20 -> n9 -> n10 -> n27
+
+n21 -> n15 -> n22 -> n10 -> n7
+n21 -> n17 -> n19
+n21 -> n17 -> n8 -> n23
+n21 -> n15 -> n29
+n21 -> n15 -> n22 -> n10 -> n7 -> n30
+
+n22 -> n10 -> n7
+n22 -> n0 -> n12 -> n19
+n22 -> n0 -> n17 -> n8 -> n23
+n22 -> n15 -> n29
+n22 -> n10 -> n7 -> n30
+
+n23 -> n8 -> n17 -> n0
+n23 -> n8 -> n29 -> n2
+n23 -> n8 -> n29 -> n14
+n23 -> n8 -> n17 -> n21
+
+n24 -> n9 -> n17 -> n3
+n24 -> n4 -> n29 -> n8
+n24 -> n9 -> n10 -> n26 -> n18
+n24 -> n9 -> n20
+n24 -> n9 -> n10 -> n27
+
+n25 -> n6 -> n28 -> n20 -> n9
+n25 -> n11 -> n19 -> n12
+n25 -> n11 -> n19 -> n17
+n25 -> n11 -> n15 -> n22
+n25 -> n16 -> n18 -> n26
+
+n26 -> n10 -> n7
+n26 -> n18 -> n27 -> n17 -> n19
+n26 -> n18 -> n16 -> n23
+n26 -> n1 -> n22 -> n15 -> n29
+n26 -> n10 -> n7 -> n30
+
+n27 -> n17 -> n0 -> n5
+n27 -> n17 -> n19 -> n11
+n27 -> n18 -> n16 -> n6 -> n28
+
+n28 -> n20 -> n9
+n28 -> n5 -> n0 -> n12
+n28 -> n5 -> n0 -> n17
+n28 -> n15 -> n22
+n28 -> n6 -> n16 -> n18 -> n26
+
+n29 -> n8 -> n17 -> n3
+n29 -> n8
+n29 -> n6 -> n16 -> n18
+n29 -> n28 -> n20
+n29 -> n8 -> n17 -> n27
+
+n30 -> n7 -> n10 -> n22 -> n1
+n30 -> n7 -> n10 -> n9 -> n24 -> n4
+n30 -> n7 -> n10 -> n9 -> n20 -> n28 -> n6
+n30 -> n7 -> n10 -> n22 -> n15
+n30 -> n7 -> n10 -> n9 -> n24
+
+
+;--------------------------------
+;        FINALIZING TRANSACTIONS
+;--------------------------------
+
+n0 has sold out
+
+n1 has sold out
+
+n2 has sold out
+
+n3 has sold out
+
+n4 has sold out
+
+n5 wants to sells to n10
+n5 sets initial cost/unit to 6.86
+n0 mediates transaction, raising cost/unit to 7.546
+n22 mediates transaction, raising cost/unit to 8.3006
+n10 buys 4 units of P0 from n5 for a total cost of 33.2024
+n22 receives sum of 3.0184 for mediation
+n0 receives sum of 2.744 for mediation
+n5 receives final payment of 27.44 (total wealth: 779.907)
+
+n5 has sold out
+
+n6 wants to sells to n1
+n6 sets initial cost/unit to 1.49
+n16 mediates transaction, raising cost/unit to 1.639
+n18 mediates transaction, raising cost/unit to 1.8029
+n26 mediates transaction, raising cost/unit to 1.98319
+n1 buys 0 units of P5 from n6 for a total cost of 0
+n26 receives sum of 0 for mediation
+n18 receives sum of 0 for mediation
+n16 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 352.712)
+
+n6 wants to sells to n4
+n6 sets initial cost/unit to 1.49
+n29 mediates transaction, raising cost/unit to 1.639
+n4 buys 0 units of P5 from n6 for a total cost of 0
+n29 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 352.712)
+
+n6 wants to sells to n15
+n6 sets initial cost/unit to 1.49
+n28 mediates transaction, raising cost/unit to 1.639
+n15 buys 0 units of P5 from n6 for a total cost of 0
+n28 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 352.712)
+
+n6 wants to sells to n24
+n6 sets initial cost/unit to 1.49
+n29 mediates transaction, raising cost/unit to 1.639
+n4 mediates transaction, raising cost/unit to 1.8029
+n24 buys 0 units of P5 from n6 for a total cost of 0
+n4 receives sum of 0 for mediation
+n29 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 352.712)
+
+n7 has sold out
+
+n8 wants to sells to n10
+n8 sets initial cost/unit to 6.86
+n17 mediates transaction, raising cost/unit to 7.546
+n9 mediates transaction, raising cost/unit to 8.3006
+n10 buys 22 units of P0 from n8 for a total cost of 182.6132
+n9 receives sum of 16.6012 for mediation
+n17 receives sum of 15.092 for mediation
+n8 receives final payment of 150.92 (total wealth: 317.258)
+
+n8 wants to sells to n13
+n8 sets initial cost/unit to 6.86
+n23 mediates transaction, raising cost/unit to 7.546
+n16 mediates transaction, raising cost/unit to 8.3006
+n25 mediates transaction, raising cost/unit to 9.13066
+n13 buys 1 units of P0 from n8 for a total cost of 9.13066
+n25 receives sum of 0.83006 for mediation
+n16 receives sum of 0.7546 for mediation
+n23 receives sum of 0.686 for mediation
+n8 receives final payment of 6.86 (total wealth: 324.118)
+
+n8 has sold out
+
+n9 has sold out
+
+n10 wants to sells to n13
+n10 sets initial cost/unit to 6.86
+n22 mediates transaction, raising cost/unit to 7.546
+n15 mediates transaction, raising cost/unit to 8.3006
+n11 mediates transaction, raising cost/unit to 9.13066
+n25 mediates transaction, raising cost/unit to 10.043726
+n13 buys 20 units of P0 from n10 for a total cost of 200.87452
+n25 receives sum of 18.26132 for mediation
+n11 receives sum of 16.6012 for mediation
+n15 receives sum of 15.092 for mediation
+n22 receives sum of 13.72 for mediation
+n10 receives final payment of 137.2 (total wealth: 111.3844)
+
+n10 wants to sells to n16
+n10 sets initial cost/unit to 6.86
+n26 mediates transaction, raising cost/unit to 7.546
+n18 mediates transaction, raising cost/unit to 8.3006
+n16 buys 18 units of P0 from n10 for a total cost of 149.4108
+n18 receives sum of 13.5828 for mediation
+n26 receives sum of 12.348 for mediation
+n10 receives final payment of 123.48 (total wealth: 234.8644)
+
+n10 wants to sells to n25
+n10 sets initial cost/unit to 6.86
+n22 mediates transaction, raising cost/unit to 7.546
+n15 mediates transaction, raising cost/unit to 8.3006
+n11 mediates transaction, raising cost/unit to 9.13066
+n25 buys 0 units of P0 from n10 for a total cost of 0
+n11 receives sum of 0 for mediation
+n15 receives sum of 0 for mediation
+n22 receives sum of 0 for mediation
+n10 receives final payment of 0 (total wealth: 234.8644)
+
+n11 has sold out
+
+n12 has sold out
+
+n13 has sold out
+
+n14 has sold out
+
+n15 has sold out
+
+n16 wants to sells to n7
+n16 sets initial cost/unit to 2.63
+n18 mediates transaction, raising cost/unit to 2.893
+n26 mediates transaction, raising cost/unit to 3.1823
+n10 mediates transaction, raising cost/unit to 3.50053
+n7 buys 0 units of P6 from n16 for a total cost of 0
+n10 receives sum of 0 for mediation
+n26 receives sum of 0 for mediation
+n18 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 63.5088)
+
+n16 wants to sells to n19
+n16 sets initial cost/unit to 2.63
+n25 mediates transaction, raising cost/unit to 2.893
+n11 mediates transaction, raising cost/unit to 3.1823
+n19 buys 0 units of P6 from n16 for a total cost of 0
+n11 receives sum of 0 for mediation
+n25 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 63.5088)
+
+n16 wants to sells to n23
+n16 sets initial cost/unit to 2.63
+n23 buys 0 units of P6 from n16 for a total cost of 0
+n16 receives final payment of 0 (total wealth: 63.5088)
+
+n16 wants to sells to n29
+n16 sets initial cost/unit to 2.63
+n6 mediates transaction, raising cost/unit to 2.893
+n29 buys 0 units of P6 from n16 for a total cost of 0
+n6 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 63.5088)
+
+n16 wants to sells to n30
+n16 sets initial cost/unit to 2.63
+n18 mediates transaction, raising cost/unit to 2.893
+n26 mediates transaction, raising cost/unit to 3.1823
+n10 mediates transaction, raising cost/unit to 3.50053
+n7 mediates transaction, raising cost/unit to 3.850583
+n30 buys 0 units of P6 from n16 for a total cost of 0
+n7 receives sum of 0 for mediation
+n10 receives sum of 0 for mediation
+n26 receives sum of 0 for mediation
+n18 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 63.5088)
+
+n17 has sold out
+
+n18 wants to sells to n3
+n18 sets initial cost/unit to 8.95
+n27 mediates transaction, raising cost/unit to 9.845
+n17 mediates transaction, raising cost/unit to 10.8295
+n3 buys 1 units of P4 from n18 for a total cost of 10.8295
+n17 receives sum of 0.9845 for mediation
+n27 receives sum of 0.895 for mediation
+n18 receives final payment of 8.95 (total wealth: 123.5118)
+
+n18 wants to sells to n8
+n18 sets initial cost/unit to 8.95
+n16 mediates transaction, raising cost/unit to 9.845
+n23 mediates transaction, raising cost/unit to 10.8295
+n8 buys 10 units of P4 from n18 for a total cost of 108.295
+n23 receives sum of 9.845 for mediation
+n16 receives sum of 8.95 for mediation
+n18 receives final payment of 89.5 (total wealth: 213.0118)
+
+n18 wants to sells to n20
+n18 sets initial cost/unit to 8.95
+n16 mediates transaction, raising cost/unit to 9.845
+n6 mediates transaction, raising cost/unit to 10.8295
+n28 mediates transaction, raising cost/unit to 11.91245
+n20 buys 0 units of P4 from n18 for a total cost of 0
+n28 receives sum of 0 for mediation
+n6 receives sum of 0 for mediation
+n16 receives sum of 0 for mediation
+n18 receives final payment of 0 (total wealth: 213.0118)
+
+n18 wants to sells to n27
+n18 sets initial cost/unit to 8.95
+n27 buys 11 units of P4 from n18 for a total cost of 98.45
+n18 receives final payment of 98.45 (total wealth: 311.4618)
+
+n19 has sold out
+
+n20 wants to sells to n3
+n3 can't afford any more purchases
+
+n8 no longer needs any products
+
+n20 wants to sells to n18
+n20 sets initial cost/unit to 8.95
+n9 mediates transaction, raising cost/unit to 9.845
+n10 mediates transaction, raising cost/unit to 10.8295
+n26 mediates transaction, raising cost/unit to 11.91245
+n18 buys 10 units of P4 from n20 for a total cost of 119.1245
+n26 receives sum of 10.8295 for mediation
+n10 receives sum of 9.845 for mediation
+n9 receives sum of 8.95 for mediation
+n20 receives final payment of 89.5 (total wealth: 579.361)
+
+n20 has sold out
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n23 no longer needs any products
+
+n29 no longer needs any products
+
+n30 no longer needs any products
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n23 no longer needs any products
+
+n29 no longer needs any products
+
+n30 no longer needs any products
+
+n23 has sold out
+
+n24 wants to sells to n3
+n3 can't afford any more purchases
+
+n8 no longer needs any products
+
+n24 wants to sells to n18
+n24 sets initial cost/unit to 8.95
+n9 mediates transaction, raising cost/unit to 9.845
+n10 mediates transaction, raising cost/unit to 10.8295
+n26 mediates transaction, raising cost/unit to 11.91245
+n18 buys 3 units of P4 from n24 for a total cost of 35.73735
+n26 receives sum of 3.24885 for mediation
+n10 receives sum of 2.9535 for mediation
+n9 receives sum of 2.685 for mediation
+n24 receives final payment of 26.85 (total wealth: 185.528)
+
+n20 no longer needs any products
+
+n24 wants to sells to n27
+n27 can't afford any more purchases
+
+n25 has sold out
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n23 no longer needs any products
+
+n29 no longer needs any products
+
+n30 no longer needs any products
+
+n27 has sold out
+
+n28 has sold out
+
+n29 has sold out
+
+n1 no longer needs any products
+
+n4 no longer needs any products
+
+n30 wants to sells to n6
+n30 sets initial cost/unit to 1.49
+n7 mediates transaction, raising cost/unit to 1.639
+n10 mediates transaction, raising cost/unit to 1.8029
+n9 mediates transaction, raising cost/unit to 1.98319
+n20 mediates transaction, raising cost/unit to 2.181509
+n28 mediates transaction, raising cost/unit to 2.3996599
+n6 buys 0 units of P5 from n30 for a total cost of 0
+n28 receives sum of 0 for mediation
+n20 receives sum of 0 for mediation
+n9 receives sum of 0 for mediation
+n10 receives sum of 0 for mediation
+n7 receives sum of 0 for mediation
+n30 receives final payment of 0 (total wealth: 125.215)
+
+n15 no longer needs any products
+
+n24 no longer needs any products
+
+;--------------------------------
+;        PAYDAY
+;--------------------------------
+
+
+
+
+
+
+
+
+
+
+;--------------------------------
+;        SIMULATOR PHASE 5/10
+;--------------------------------
+
+
+;--------------------------------
+;        ESTABLISHING TRANSACTION PATH
+;--------------------------------
+
+n0 -> n22 -> n1
+n0 -> n5 -> n28 -> n29 -> n4
+n0 -> n5 -> n28 -> n6
+n0 -> n22 -> n15
+n0 -> n17 -> n9 -> n24
+
+n1 -> n22 -> n15 -> n29 -> n4
+n1 -> n22 -> n15 -> n28 -> n6
+n1 -> n22 -> n15
+n1 -> n22 -> n10 -> n9 -> n24
+
+n2 -> n29 -> n15 -> n22 -> n1
+n2 -> n29 -> n4
+n2 -> n29 -> n6
+n2 -> n29 -> n15
+n2 -> n29 -> n4 -> n24
+
+n3 -> n17 -> n9 -> n10 -> n7
+n3 -> n17 -> n19
+n3 -> n17 -> n8 -> n23
+n3 -> n17 -> n8 -> n29
+n3 -> n17 -> n9 -> n10 -> n7 -> n30
+
+n4 -> n24 -> n9 -> n10
+n4 -> n29 -> n6 -> n25 -> n13
+n4 -> n29 -> n6 -> n16
+n4 -> n29 -> n6 -> n25
+
+n5 -> n0 -> n22 -> n10
+n5 -> n28 -> n6 -> n25 -> n13
+n5 -> n28 -> n6 -> n16
+n5 -> n28 -> n6 -> n25
+
+n6 -> n16 -> n18 -> n26 -> n1
+n6 -> n29 -> n4
+n6 -> n28 -> n15
+n6 -> n29 -> n4 -> n24
+
+n7 -> n10 -> n9 -> n17 -> n19
+n7 -> n10 -> n9 -> n17 -> n8 -> n23
+n7 -> n10 -> n22 -> n15 -> n29
+n7 -> n30
+
+n8 -> n17 -> n9 -> n10
+n8 -> n23 -> n16 -> n25 -> n13
+n8 -> n23 -> n16
+n8 -> n23 -> n16 -> n25
+
+n9 -> n10 -> n7
+n9 -> n17 -> n19
+n9 -> n17 -> n8 -> n23
+n9 -> n20 -> n28 -> n29
+n9 -> n10 -> n7 -> n30
+
+n10 -> n22 -> n15 -> n11 -> n25 -> n13
+n10 -> n26 -> n18 -> n16
+n10 -> n22 -> n15 -> n11 -> n25
+
+n11 -> n15 -> n22 -> n0
+n11 -> n15 -> n29 -> n2
+n11 -> n15 -> n29 -> n14
+n11 -> n15 -> n21
+
+n12 -> n0 -> n17 -> n3
+n12 -> n0 -> n17 -> n8
+n12 -> n0 -> n17 -> n27 -> n18
+n12 -> n0 -> n5 -> n28 -> n20
+n12 -> n0 -> n17 -> n27
+
+n13 -> n25 -> n6 -> n28 -> n5 -> n0
+n13 -> n25 -> n6 -> n29 -> n2
+n13 -> n25 -> n6 -> n29 -> n14
+n13 -> n25 -> n11 -> n15 -> n21
+
+n14 -> n24 -> n9 -> n17 -> n0
+n14 -> n29 -> n2
+n14 -> n29 -> n15 -> n21
+
+n15 -> n21 -> n17 -> n3
+n15 -> n29 -> n8
+n15 -> n11 -> n25 -> n16 -> n18
+n15 -> n28 -> n20
+n15 -> n21 -> n17 -> n27
+
+n16 -> n18 -> n26 -> n10 -> n7
+n16 -> n25 -> n11 -> n19
+n16 -> n23
+n16 -> n6 -> n29
+n16 -> n18 -> n26 -> n10 -> n7 -> n30
+
+n17 -> n3
+n17 -> n8
+n17 -> n27 -> n18
+n17 -> n9 -> n20
+n17 -> n27
+
+n18 -> n27 -> n17 -> n3
+n18 -> n16 -> n23 -> n8
+n18 -> n16 -> n6 -> n28 -> n20
+n18 -> n27
+
+n19 -> n17 -> n9
+n19 -> n12
+n19 -> n17
+n19 -> n11 -> n15 -> n22
+n19 -> n17 -> n9 -> n10 -> n26
+
+n20 -> n9 -> n17 -> n3
+n20 -> n9 -> n17 -> n8
+n20 -> n9 -> n10 -> n26 -> n18
+n20 -> n9 -> n10 -> n27
+
+n21 -> n15 -> n22 -> n10 -> n7
+n21 -> n17 -> n19
+n21 -> n17 -> n8 -> n23
+n21 -> n15 -> n29
+n21 -> n15 -> n22 -> n10 -> n7 -> n30
+
+n22 -> n10 -> n7
+n22 -> n0 -> n12 -> n19
+n22 -> n0 -> n17 -> n8 -> n23
+n22 -> n15 -> n29
+n22 -> n10 -> n7 -> n30
+
+n23 -> n8 -> n17 -> n0
+n23 -> n8 -> n29 -> n2
+n23 -> n8 -> n29 -> n14
+n23 -> n8 -> n17 -> n21
+
+n24 -> n9 -> n17 -> n3
+n24 -> n4 -> n29 -> n8
+n24 -> n9 -> n10 -> n26 -> n18
+n24 -> n9 -> n20
+n24 -> n9 -> n10 -> n27
+
+n25 -> n6 -> n28 -> n20 -> n9
+n25 -> n11 -> n19 -> n12
+n25 -> n11 -> n19 -> n17
+n25 -> n11 -> n15 -> n22
+n25 -> n16 -> n18 -> n26
+
+n26 -> n10 -> n7
+n26 -> n18 -> n27 -> n17 -> n19
+n26 -> n18 -> n16 -> n23
+n26 -> n1 -> n22 -> n15 -> n29
+n26 -> n10 -> n7 -> n30
+
+n27 -> n17 -> n0 -> n5
+n27 -> n17 -> n19 -> n11
+n27 -> n18 -> n16 -> n6 -> n28
+
+n28 -> n20 -> n9
+n28 -> n5 -> n0 -> n12
+n28 -> n5 -> n0 -> n17
+n28 -> n15 -> n22
+n28 -> n6 -> n16 -> n18 -> n26
+
+n29 -> n8 -> n17 -> n3
+n29 -> n8
+n29 -> n6 -> n16 -> n18
+n29 -> n28 -> n20
+n29 -> n8 -> n17 -> n27
+
+n30 -> n7 -> n10 -> n22 -> n1
+n30 -> n7 -> n10 -> n9 -> n24 -> n4
+n30 -> n7 -> n10 -> n9 -> n20 -> n28 -> n6
+n30 -> n7 -> n10 -> n22 -> n15
+n30 -> n7 -> n10 -> n9 -> n24
+
+
+;--------------------------------
+;        FINALIZING TRANSACTIONS
+;--------------------------------
+
+n0 has sold out
+
+n1 has sold out
+
+n2 has sold out
+
+n3 has sold out
+
+n4 has sold out
+
+n5 has sold out
+
+n6 wants to sells to n1
+n6 sets initial cost/unit to 1.49
+n16 mediates transaction, raising cost/unit to 1.639
+n18 mediates transaction, raising cost/unit to 1.8029
+n26 mediates transaction, raising cost/unit to 1.98319
+n1 buys 0 units of P5 from n6 for a total cost of 0
+n26 receives sum of 0 for mediation
+n18 receives sum of 0 for mediation
+n16 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 527.912)
+
+n6 wants to sells to n4
+n6 sets initial cost/unit to 1.49
+n29 mediates transaction, raising cost/unit to 1.639
+n4 buys 0 units of P5 from n6 for a total cost of 0
+n29 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 527.912)
+
+n6 wants to sells to n15
+n6 sets initial cost/unit to 1.49
+n28 mediates transaction, raising cost/unit to 1.639
+n15 buys 0 units of P5 from n6 for a total cost of 0
+n28 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 527.912)
+
+n6 wants to sells to n24
+n6 sets initial cost/unit to 1.49
+n29 mediates transaction, raising cost/unit to 1.639
+n4 mediates transaction, raising cost/unit to 1.8029
+n24 buys 0 units of P5 from n6 for a total cost of 0
+n4 receives sum of 0 for mediation
+n29 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 527.912)
+
+n7 has sold out
+
+n8 has sold out
+
+n9 has sold out
+
+n10 wants to sells to n13
+n10 sets initial cost/unit to 6.86
+n22 mediates transaction, raising cost/unit to 7.546
+n15 mediates transaction, raising cost/unit to 8.3006
+n11 mediates transaction, raising cost/unit to 9.13066
+n25 mediates transaction, raising cost/unit to 10.043726
+n13 buys 7 units of P0 from n10 for a total cost of 70.306082
+n25 receives sum of 6.391462 for mediation
+n11 receives sum of 5.81042 for mediation
+n15 receives sum of 5.2822 for mediation
+n22 receives sum of 4.802 for mediation
+n10 receives final payment of 48.02 (total wealth: 425.283)
+
+n10 wants to sells to n16
+n10 sets initial cost/unit to 6.86
+n26 mediates transaction, raising cost/unit to 7.546
+n18 mediates transaction, raising cost/unit to 8.3006
+n16 buys 0 units of P0 from n10 for a total cost of 0
+n18 receives sum of 0 for mediation
+n26 receives sum of 0 for mediation
+n10 receives final payment of 0 (total wealth: 425.283)
+
+n10 wants to sells to n25
+n10 sets initial cost/unit to 6.86
+n22 mediates transaction, raising cost/unit to 7.546
+n15 mediates transaction, raising cost/unit to 8.3006
+n11 mediates transaction, raising cost/unit to 9.13066
+n25 buys 0 units of P0 from n10 for a total cost of 0
+n11 receives sum of 0 for mediation
+n15 receives sum of 0 for mediation
+n22 receives sum of 0 for mediation
+n10 receives final payment of 0 (total wealth: 425.283)
+
+n11 has sold out
+
+n12 has sold out
+
+n13 has sold out
+
+n14 has sold out
+
+n15 has sold out
+
+n16 wants to sells to n7
+n16 sets initial cost/unit to 2.63
+n18 mediates transaction, raising cost/unit to 2.893
+n26 mediates transaction, raising cost/unit to 3.1823
+n10 mediates transaction, raising cost/unit to 3.50053
+n7 buys 0 units of P6 from n16 for a total cost of 0
+n10 receives sum of 0 for mediation
+n26 receives sum of 0 for mediation
+n18 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 122.059)
+
+n16 wants to sells to n19
+n16 sets initial cost/unit to 2.63
+n25 mediates transaction, raising cost/unit to 2.893
+n11 mediates transaction, raising cost/unit to 3.1823
+n19 buys 0 units of P6 from n16 for a total cost of 0
+n11 receives sum of 0 for mediation
+n25 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 122.059)
+
+n16 wants to sells to n23
+n16 sets initial cost/unit to 2.63
+n23 buys 0 units of P6 from n16 for a total cost of 0
+n16 receives final payment of 0 (total wealth: 122.059)
+
+n16 wants to sells to n29
+n16 sets initial cost/unit to 2.63
+n6 mediates transaction, raising cost/unit to 2.893
+n29 buys 0 units of P6 from n16 for a total cost of 0
+n6 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 122.059)
+
+n16 wants to sells to n30
+n16 sets initial cost/unit to 2.63
+n18 mediates transaction, raising cost/unit to 2.893
+n26 mediates transaction, raising cost/unit to 3.1823
+n10 mediates transaction, raising cost/unit to 3.50053
+n7 mediates transaction, raising cost/unit to 3.850583
+n30 buys 0 units of P6 from n16 for a total cost of 0
+n7 receives sum of 0 for mediation
+n10 receives sum of 0 for mediation
+n26 receives sum of 0 for mediation
+n18 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 122.059)
+
+n17 has sold out
+
+n18 wants to sells to n3
+n18 sets initial cost/unit to 8.95
+n27 mediates transaction, raising cost/unit to 9.845
+n17 mediates transaction, raising cost/unit to 10.8295
+n3 buys 7 units of P4 from n18 for a total cost of 75.8065
+n17 receives sum of 6.8915 for mediation
+n27 receives sum of 6.265 for mediation
+n18 receives final payment of 62.65 (total wealth: 352.45)
+
+n18 wants to sells to n8
+n18 sets initial cost/unit to 8.95
+n16 mediates transaction, raising cost/unit to 9.845
+n23 mediates transaction, raising cost/unit to 10.8295
+n8 buys 0 units of P4 from n18 for a total cost of 0
+n23 receives sum of 0 for mediation
+n16 receives sum of 0 for mediation
+n18 receives final payment of 0 (total wealth: 352.45)
+
+n18 wants to sells to n20
+n18 sets initial cost/unit to 8.95
+n16 mediates transaction, raising cost/unit to 9.845
+n6 mediates transaction, raising cost/unit to 10.8295
+n28 mediates transaction, raising cost/unit to 11.91245
+n20 buys 0 units of P4 from n18 for a total cost of 0
+n28 receives sum of 0 for mediation
+n6 receives sum of 0 for mediation
+n16 receives sum of 0 for mediation
+n18 receives final payment of 0 (total wealth: 352.45)
+
+n18 wants to sells to n27
+n18 sets initial cost/unit to 8.95
+n27 buys 3 units of P4 from n18 for a total cost of 26.85
+n18 receives final payment of 26.85 (total wealth: 379.3)
+
+n19 has sold out
+
+n20 has sold out
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n23 no longer needs any products
+
+n29 no longer needs any products
+
+n30 no longer needs any products
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n23 no longer needs any products
+
+n29 no longer needs any products
+
+n30 no longer needs any products
+
+n23 has sold out
+
+n24 wants to sells to n3
+n3 can't afford any more purchases
+
+n8 no longer needs any products
+
+n24 wants to sells to n18
+n24 sets initial cost/unit to 8.95
+n9 mediates transaction, raising cost/unit to 9.845
+n10 mediates transaction, raising cost/unit to 10.8295
+n26 mediates transaction, raising cost/unit to 11.91245
+n18 buys 0 units of P4 from n24 for a total cost of 0
+n26 receives sum of 0 for mediation
+n10 receives sum of 0 for mediation
+n9 receives sum of 0 for mediation
+n24 receives final payment of 0 (total wealth: 233.328)
+
+n20 no longer needs any products
+
+n27 no longer needs any products
+
+n25 has sold out
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n23 no longer needs any products
+
+n29 no longer needs any products
+
+n30 no longer needs any products
+
+n27 has sold out
+
+n28 has sold out
+
+n29 has sold out
+
+n1 no longer needs any products
+
+n4 no longer needs any products
+
+n30 wants to sells to n6
+n30 sets initial cost/unit to 1.49
+n7 mediates transaction, raising cost/unit to 1.639
+n10 mediates transaction, raising cost/unit to 1.8029
+n9 mediates transaction, raising cost/unit to 1.98319
+n20 mediates transaction, raising cost/unit to 2.181509
+n28 mediates transaction, raising cost/unit to 2.3996599
+n6 buys 0 units of P5 from n30 for a total cost of 0
+n28 receives sum of 0 for mediation
+n20 receives sum of 0 for mediation
+n9 receives sum of 0 for mediation
+n10 receives sum of 0 for mediation
+n7 receives sum of 0 for mediation
+n30 receives final payment of 0 (total wealth: 204.415)
+
+n15 no longer needs any products
+
+n24 no longer needs any products
+
+;--------------------------------
+;        PAYDAY
+;--------------------------------
+
+
+
+
+
+
+
+
+
+
+;--------------------------------
+;        SIMULATOR PHASE 6/10
+;--------------------------------
+
+
+;--------------------------------
+;        ESTABLISHING TRANSACTION PATH
+;--------------------------------
+
+n0 -> n22 -> n1
+n0 -> n5 -> n28 -> n29 -> n4
+n0 -> n5 -> n28 -> n6
+n0 -> n22 -> n15
+n0 -> n17 -> n9 -> n24
+
+n1 -> n22 -> n15 -> n29 -> n4
+n1 -> n22 -> n15 -> n28 -> n6
+n1 -> n22 -> n15
+n1 -> n22 -> n10 -> n9 -> n24
+
+n2 -> n29 -> n15 -> n22 -> n1
+n2 -> n29 -> n4
+n2 -> n29 -> n6
+n2 -> n29 -> n15
+n2 -> n29 -> n4 -> n24
+
+n3 -> n17 -> n9 -> n10 -> n7
+n3 -> n17 -> n19
+n3 -> n17 -> n8 -> n23
+n3 -> n17 -> n8 -> n29
+n3 -> n17 -> n9 -> n10 -> n7 -> n30
+
+n4 -> n24 -> n9 -> n10
+n4 -> n29 -> n6 -> n25 -> n13
+n4 -> n29 -> n6 -> n16
+n4 -> n29 -> n6 -> n25
+
+n5 -> n0 -> n22 -> n10
+n5 -> n28 -> n6 -> n25 -> n13
+n5 -> n28 -> n6 -> n16
+n5 -> n28 -> n6 -> n25
+
+n6 -> n16 -> n18 -> n26 -> n1
+n6 -> n29 -> n4
+n6 -> n28 -> n15
+n6 -> n29 -> n4 -> n24
+
+n7 -> n10 -> n9 -> n17 -> n19
+n7 -> n10 -> n9 -> n17 -> n8 -> n23
+n7 -> n10 -> n22 -> n15 -> n29
+n7 -> n30
+
+n8 -> n17 -> n9 -> n10
+n8 -> n23 -> n16 -> n25 -> n13
+n8 -> n23 -> n16
+n8 -> n23 -> n16 -> n25
+
+n9 -> n10 -> n7
+n9 -> n17 -> n19
+n9 -> n17 -> n8 -> n23
+n9 -> n20 -> n28 -> n29
+n9 -> n10 -> n7 -> n30
+
+n10 -> n22 -> n15 -> n11 -> n25 -> n13
+n10 -> n26 -> n18 -> n16
+n10 -> n22 -> n15 -> n11 -> n25
+
+n11 -> n15 -> n22 -> n0
+n11 -> n15 -> n29 -> n2
+n11 -> n15 -> n29 -> n14
+n11 -> n15 -> n21
+
+n12 -> n0 -> n17 -> n3
+n12 -> n0 -> n17 -> n8
+n12 -> n0 -> n17 -> n27 -> n18
+n12 -> n0 -> n5 -> n28 -> n20
+n12 -> n0 -> n17 -> n27
+
+n13 -> n25 -> n6 -> n28 -> n5 -> n0
+n13 -> n25 -> n6 -> n29 -> n2
+n13 -> n25 -> n6 -> n29 -> n14
+n13 -> n25 -> n11 -> n15 -> n21
+
+n14 -> n24 -> n9 -> n17 -> n0
+n14 -> n29 -> n2
+n14 -> n29 -> n15 -> n21
+
+n15 -> n21 -> n17 -> n3
+n15 -> n29 -> n8
+n15 -> n11 -> n25 -> n16 -> n18
+n15 -> n28 -> n20
+n15 -> n21 -> n17 -> n27
+
+n16 -> n18 -> n26 -> n10 -> n7
+n16 -> n25 -> n11 -> n19
+n16 -> n23
+n16 -> n6 -> n29
+n16 -> n18 -> n26 -> n10 -> n7 -> n30
+
+n17 -> n3
+n17 -> n8
+n17 -> n27 -> n18
+n17 -> n9 -> n20
+n17 -> n27
+
+n18 -> n27 -> n17 -> n3
+n18 -> n16 -> n23 -> n8
+n18 -> n16 -> n6 -> n28 -> n20
+n18 -> n27
+
+n19 -> n17 -> n9
+n19 -> n12
+n19 -> n17
+n19 -> n11 -> n15 -> n22
+n19 -> n17 -> n9 -> n10 -> n26
+
+n20 -> n9 -> n17 -> n3
+n20 -> n9 -> n17 -> n8
+n20 -> n9 -> n10 -> n26 -> n18
+n20 -> n9 -> n10 -> n27
+
+n21 -> n15 -> n22 -> n10 -> n7
+n21 -> n17 -> n19
+n21 -> n17 -> n8 -> n23
+n21 -> n15 -> n29
+n21 -> n15 -> n22 -> n10 -> n7 -> n30
+
+n22 -> n10 -> n7
+n22 -> n0 -> n12 -> n19
+n22 -> n0 -> n17 -> n8 -> n23
+n22 -> n15 -> n29
+n22 -> n10 -> n7 -> n30
+
+n23 -> n8 -> n17 -> n0
+n23 -> n8 -> n29 -> n2
+n23 -> n8 -> n29 -> n14
+n23 -> n8 -> n17 -> n21
+
+n24 -> n9 -> n17 -> n3
+n24 -> n4 -> n29 -> n8
+n24 -> n9 -> n10 -> n26 -> n18
+n24 -> n9 -> n20
+n24 -> n9 -> n10 -> n27
+
+n25 -> n6 -> n28 -> n20 -> n9
+n25 -> n11 -> n19 -> n12
+n25 -> n11 -> n19 -> n17
+n25 -> n11 -> n15 -> n22
+n25 -> n16 -> n18 -> n26
+
+n26 -> n10 -> n7
+n26 -> n18 -> n27 -> n17 -> n19
+n26 -> n18 -> n16 -> n23
+n26 -> n1 -> n22 -> n15 -> n29
+n26 -> n10 -> n7 -> n30
+
+n27 -> n17 -> n0 -> n5
+n27 -> n17 -> n19 -> n11
+n27 -> n18 -> n16 -> n6 -> n28
+
+n28 -> n20 -> n9
+n28 -> n5 -> n0 -> n12
+n28 -> n5 -> n0 -> n17
+n28 -> n15 -> n22
+n28 -> n6 -> n16 -> n18 -> n26
+
+n29 -> n8 -> n17 -> n3
+n29 -> n8
+n29 -> n6 -> n16 -> n18
+n29 -> n28 -> n20
+n29 -> n8 -> n17 -> n27
+
+n30 -> n7 -> n10 -> n22 -> n1
+n30 -> n7 -> n10 -> n9 -> n24 -> n4
+n30 -> n7 -> n10 -> n9 -> n20 -> n28 -> n6
+n30 -> n7 -> n10 -> n22 -> n15
+n30 -> n7 -> n10 -> n9 -> n24
+
+
+;--------------------------------
+;        FINALIZING TRANSACTIONS
+;--------------------------------
+
+n0 has sold out
+
+n1 has sold out
+
+n2 has sold out
+
+n3 has sold out
+
+n4 has sold out
+
+n5 has sold out
+
+n6 wants to sells to n1
+n6 sets initial cost/unit to 1.49
+n16 mediates transaction, raising cost/unit to 1.639
+n18 mediates transaction, raising cost/unit to 1.8029
+n26 mediates transaction, raising cost/unit to 1.98319
+n1 buys 0 units of P5 from n6 for a total cost of 0
+n26 receives sum of 0 for mediation
+n18 receives sum of 0 for mediation
+n16 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 677.312)
+
+n6 wants to sells to n4
+n6 sets initial cost/unit to 1.49
+n29 mediates transaction, raising cost/unit to 1.639
+n4 buys 0 units of P5 from n6 for a total cost of 0
+n29 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 677.312)
+
+n6 wants to sells to n15
+n6 sets initial cost/unit to 1.49
+n28 mediates transaction, raising cost/unit to 1.639
+n15 buys 0 units of P5 from n6 for a total cost of 0
+n28 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 677.312)
+
+n6 wants to sells to n24
+n6 sets initial cost/unit to 1.49
+n29 mediates transaction, raising cost/unit to 1.639
+n4 mediates transaction, raising cost/unit to 1.8029
+n24 buys 0 units of P5 from n6 for a total cost of 0
+n4 receives sum of 0 for mediation
+n29 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 677.312)
+
+n7 has sold out
+
+n8 has sold out
+
+n9 has sold out
+
+n10 wants to sells to n13
+n10 sets initial cost/unit to 6.86
+n22 mediates transaction, raising cost/unit to 7.546
+n15 mediates transaction, raising cost/unit to 8.3006
+n11 mediates transaction, raising cost/unit to 9.13066
+n25 mediates transaction, raising cost/unit to 10.043726
+n13 buys 3 units of P0 from n10 for a total cost of 30.131178
+n25 receives sum of 2.739198 for mediation
+n11 receives sum of 2.49018 for mediation
+n15 receives sum of 2.2638 for mediation
+n22 receives sum of 2.058 for mediation
+n10 receives final payment of 20.58 (total wealth: 461.263)
+
+n10 wants to sells to n16
+n10 sets initial cost/unit to 6.86
+n26 mediates transaction, raising cost/unit to 7.546
+n18 mediates transaction, raising cost/unit to 8.3006
+n16 buys 0 units of P0 from n10 for a total cost of 0
+n18 receives sum of 0 for mediation
+n26 receives sum of 0 for mediation
+n10 receives final payment of 0 (total wealth: 461.263)
+
+n10 wants to sells to n25
+n10 sets initial cost/unit to 6.86
+n22 mediates transaction, raising cost/unit to 7.546
+n15 mediates transaction, raising cost/unit to 8.3006
+n11 mediates transaction, raising cost/unit to 9.13066
+n25 buys 0 units of P0 from n10 for a total cost of 0
+n11 receives sum of 0 for mediation
+n15 receives sum of 0 for mediation
+n22 receives sum of 0 for mediation
+n10 receives final payment of 0 (total wealth: 461.263)
+
+n11 has sold out
+
+n12 has sold out
+
+n13 has sold out
+
+n14 has sold out
+
+n15 has sold out
+
+n16 wants to sells to n7
+n16 sets initial cost/unit to 2.63
+n18 mediates transaction, raising cost/unit to 2.893
+n26 mediates transaction, raising cost/unit to 3.1823
+n10 mediates transaction, raising cost/unit to 3.50053
+n7 buys 0 units of P6 from n16 for a total cost of 0
+n10 receives sum of 0 for mediation
+n26 receives sum of 0 for mediation
+n18 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 164.859)
+
+n16 wants to sells to n19
+n16 sets initial cost/unit to 2.63
+n25 mediates transaction, raising cost/unit to 2.893
+n11 mediates transaction, raising cost/unit to 3.1823
+n19 buys 0 units of P6 from n16 for a total cost of 0
+n11 receives sum of 0 for mediation
+n25 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 164.859)
+
+n16 wants to sells to n23
+n16 sets initial cost/unit to 2.63
+n23 buys 0 units of P6 from n16 for a total cost of 0
+n16 receives final payment of 0 (total wealth: 164.859)
+
+n16 wants to sells to n29
+n16 sets initial cost/unit to 2.63
+n6 mediates transaction, raising cost/unit to 2.893
+n29 buys 0 units of P6 from n16 for a total cost of 0
+n6 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 164.859)
+
+n16 wants to sells to n30
+n16 sets initial cost/unit to 2.63
+n18 mediates transaction, raising cost/unit to 2.893
+n26 mediates transaction, raising cost/unit to 3.1823
+n10 mediates transaction, raising cost/unit to 3.50053
+n7 mediates transaction, raising cost/unit to 3.850583
+n30 buys 0 units of P6 from n16 for a total cost of 0
+n7 receives sum of 0 for mediation
+n10 receives sum of 0 for mediation
+n26 receives sum of 0 for mediation
+n18 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 164.859)
+
+n17 has sold out
+
+n18 wants to sells to n3
+n3 can't afford any more purchases
+
+n18 wants to sells to n8
+n18 sets initial cost/unit to 8.95
+n16 mediates transaction, raising cost/unit to 9.845
+n23 mediates transaction, raising cost/unit to 10.8295
+n8 buys 0 units of P4 from n18 for a total cost of 0
+n23 receives sum of 0 for mediation
+n16 receives sum of 0 for mediation
+n18 receives final payment of 0 (total wealth: 524.5)
+
+n18 wants to sells to n20
+n18 sets initial cost/unit to 8.95
+n16 mediates transaction, raising cost/unit to 9.845
+n6 mediates transaction, raising cost/unit to 10.8295
+n28 mediates transaction, raising cost/unit to 11.91245
+n20 buys 0 units of P4 from n18 for a total cost of 0
+n28 receives sum of 0 for mediation
+n6 receives sum of 0 for mediation
+n16 receives sum of 0 for mediation
+n18 receives final payment of 0 (total wealth: 524.5)
+
+n18 wants to sells to n27
+n18 sets initial cost/unit to 8.95
+n27 buys 0 units of P4 from n18 for a total cost of 0
+n18 receives final payment of 0 (total wealth: 524.5)
+
+n19 has sold out
+
+n20 has sold out
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n23 no longer needs any products
+
+n29 no longer needs any products
+
+n30 no longer needs any products
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n23 no longer needs any products
+
+n29 no longer needs any products
+
+n30 no longer needs any products
+
+n23 has sold out
+
+n24 wants to sells to n3
+n3 can't afford any more purchases
+
+n8 no longer needs any products
+
+n24 wants to sells to n18
+n24 sets initial cost/unit to 8.95
+n9 mediates transaction, raising cost/unit to 9.845
+n10 mediates transaction, raising cost/unit to 10.8295
+n26 mediates transaction, raising cost/unit to 11.91245
+n18 buys 0 units of P4 from n24 for a total cost of 0
+n26 receives sum of 0 for mediation
+n10 receives sum of 0 for mediation
+n9 receives sum of 0 for mediation
+n24 receives final payment of 0 (total wealth: 338.528)
+
+n20 no longer needs any products
+
+n27 no longer needs any products
+
+n25 has sold out
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n23 no longer needs any products
+
+n29 no longer needs any products
+
+n30 no longer needs any products
+
+n27 has sold out
+
+n28 has sold out
+
+n29 has sold out
+
+n1 no longer needs any products
+
+n4 no longer needs any products
+
+n30 wants to sells to n6
+n30 sets initial cost/unit to 1.49
+n7 mediates transaction, raising cost/unit to 1.639
+n10 mediates transaction, raising cost/unit to 1.8029
+n9 mediates transaction, raising cost/unit to 1.98319
+n20 mediates transaction, raising cost/unit to 2.181509
+n28 mediates transaction, raising cost/unit to 2.3996599
+n6 buys 0 units of P5 from n30 for a total cost of 0
+n28 receives sum of 0 for mediation
+n20 receives sum of 0 for mediation
+n9 receives sum of 0 for mediation
+n10 receives sum of 0 for mediation
+n7 receives sum of 0 for mediation
+n30 receives final payment of 0 (total wealth: 273.815)
+
+n15 no longer needs any products
+
+n24 no longer needs any products
+
+;--------------------------------
+;        PAYDAY
+;--------------------------------
+
+
+
+
+
+
+
+
+
+
+;--------------------------------
+;        SIMULATOR PHASE 7/10
+;--------------------------------
+
+
+;--------------------------------
+;        ESTABLISHING TRANSACTION PATH
+;--------------------------------
+
+n0 -> n22 -> n1
+n0 -> n5 -> n28 -> n29 -> n4
+n0 -> n5 -> n28 -> n6
+n0 -> n22 -> n15
+n0 -> n17 -> n9 -> n24
+
+n1 -> n22 -> n15 -> n29 -> n4
+n1 -> n22 -> n15 -> n28 -> n6
+n1 -> n22 -> n15
+n1 -> n22 -> n10 -> n9 -> n24
+
+n2 -> n29 -> n15 -> n22 -> n1
+n2 -> n29 -> n4
+n2 -> n29 -> n6
+n2 -> n29 -> n15
+n2 -> n29 -> n4 -> n24
+
+n3 -> n17 -> n9 -> n10 -> n7
+n3 -> n17 -> n19
+n3 -> n17 -> n8 -> n23
+n3 -> n17 -> n8 -> n29
+n3 -> n17 -> n9 -> n10 -> n7 -> n30
+
+n4 -> n24 -> n9 -> n10
+n4 -> n29 -> n6 -> n25 -> n13
+n4 -> n29 -> n6 -> n16
+n4 -> n29 -> n6 -> n25
+
+n5 -> n0 -> n22 -> n10
+n5 -> n28 -> n6 -> n25 -> n13
+n5 -> n28 -> n6 -> n16
+n5 -> n28 -> n6 -> n25
+
+n6 -> n16 -> n18 -> n26 -> n1
+n6 -> n29 -> n4
+n6 -> n28 -> n15
+n6 -> n29 -> n4 -> n24
+
+n7 -> n10 -> n9 -> n17 -> n19
+n7 -> n10 -> n9 -> n17 -> n8 -> n23
+n7 -> n10 -> n22 -> n15 -> n29
+n7 -> n30
+
+n8 -> n17 -> n9 -> n10
+n8 -> n23 -> n16 -> n25 -> n13
+n8 -> n23 -> n16
+n8 -> n23 -> n16 -> n25
+
+n9 -> n10 -> n7
+n9 -> n17 -> n19
+n9 -> n17 -> n8 -> n23
+n9 -> n20 -> n28 -> n29
+n9 -> n10 -> n7 -> n30
+
+n10 -> n22 -> n15 -> n11 -> n25 -> n13
+n10 -> n26 -> n18 -> n16
+n10 -> n22 -> n15 -> n11 -> n25
+
+n11 -> n15 -> n22 -> n0
+n11 -> n15 -> n29 -> n2
+n11 -> n15 -> n29 -> n14
+n11 -> n15 -> n21
+
+n12 -> n0 -> n17 -> n3
+n12 -> n0 -> n17 -> n8
+n12 -> n0 -> n17 -> n27 -> n18
+n12 -> n0 -> n5 -> n28 -> n20
+n12 -> n0 -> n17 -> n27
+
+n13 -> n25 -> n6 -> n28 -> n5 -> n0
+n13 -> n25 -> n6 -> n29 -> n2
+n13 -> n25 -> n6 -> n29 -> n14
+n13 -> n25 -> n11 -> n15 -> n21
+
+n14 -> n24 -> n9 -> n17 -> n0
+n14 -> n29 -> n2
+n14 -> n29 -> n15 -> n21
+
+n15 -> n21 -> n17 -> n3
+n15 -> n29 -> n8
+n15 -> n11 -> n25 -> n16 -> n18
+n15 -> n28 -> n20
+n15 -> n21 -> n17 -> n27
+
+n16 -> n18 -> n26 -> n10 -> n7
+n16 -> n25 -> n11 -> n19
+n16 -> n23
+n16 -> n6 -> n29
+n16 -> n18 -> n26 -> n10 -> n7 -> n30
+
+n17 -> n3
+n17 -> n8
+n17 -> n27 -> n18
+n17 -> n9 -> n20
+n17 -> n27
+
+n18 -> n27 -> n17 -> n3
+n18 -> n16 -> n23 -> n8
+n18 -> n16 -> n6 -> n28 -> n20
+n18 -> n27
+
+n19 -> n17 -> n9
+n19 -> n12
+n19 -> n17
+n19 -> n11 -> n15 -> n22
+n19 -> n17 -> n9 -> n10 -> n26
+
+n20 -> n9 -> n17 -> n3
+n20 -> n9 -> n17 -> n8
+n20 -> n9 -> n10 -> n26 -> n18
+n20 -> n9 -> n10 -> n27
+
+n21 -> n15 -> n22 -> n10 -> n7
+n21 -> n17 -> n19
+n21 -> n17 -> n8 -> n23
+n21 -> n15 -> n29
+n21 -> n15 -> n22 -> n10 -> n7 -> n30
+
+n22 -> n10 -> n7
+n22 -> n0 -> n12 -> n19
+n22 -> n0 -> n17 -> n8 -> n23
+n22 -> n15 -> n29
+n22 -> n10 -> n7 -> n30
+
+n23 -> n8 -> n17 -> n0
+n23 -> n8 -> n29 -> n2
+n23 -> n8 -> n29 -> n14
+n23 -> n8 -> n17 -> n21
+
+n24 -> n9 -> n17 -> n3
+n24 -> n4 -> n29 -> n8
+n24 -> n9 -> n10 -> n26 -> n18
+n24 -> n9 -> n20
+n24 -> n9 -> n10 -> n27
+
+n25 -> n6 -> n28 -> n20 -> n9
+n25 -> n11 -> n19 -> n12
+n25 -> n11 -> n19 -> n17
+n25 -> n11 -> n15 -> n22
+n25 -> n16 -> n18 -> n26
+
+n26 -> n10 -> n7
+n26 -> n18 -> n27 -> n17 -> n19
+n26 -> n18 -> n16 -> n23
+n26 -> n1 -> n22 -> n15 -> n29
+n26 -> n10 -> n7 -> n30
+
+n27 -> n17 -> n0 -> n5
+n27 -> n17 -> n19 -> n11
+n27 -> n18 -> n16 -> n6 -> n28
+
+n28 -> n20 -> n9
+n28 -> n5 -> n0 -> n12
+n28 -> n5 -> n0 -> n17
+n28 -> n15 -> n22
+n28 -> n6 -> n16 -> n18 -> n26
+
+n29 -> n8 -> n17 -> n3
+n29 -> n8
+n29 -> n6 -> n16 -> n18
+n29 -> n28 -> n20
+n29 -> n8 -> n17 -> n27
+
+n30 -> n7 -> n10 -> n22 -> n1
+n30 -> n7 -> n10 -> n9 -> n24 -> n4
+n30 -> n7 -> n10 -> n9 -> n20 -> n28 -> n6
+n30 -> n7 -> n10 -> n22 -> n15
+n30 -> n7 -> n10 -> n9 -> n24
+
+
+;--------------------------------
+;        FINALIZING TRANSACTIONS
+;--------------------------------
+
+n0 has sold out
+
+n1 has sold out
+
+n2 has sold out
+
+n3 has sold out
+
+n4 has sold out
+
+n5 has sold out
+
+n6 wants to sells to n1
+n6 sets initial cost/unit to 1.49
+n16 mediates transaction, raising cost/unit to 1.639
+n18 mediates transaction, raising cost/unit to 1.8029
+n26 mediates transaction, raising cost/unit to 1.98319
+n1 buys 0 units of P5 from n6 for a total cost of 0
+n26 receives sum of 0 for mediation
+n18 receives sum of 0 for mediation
+n16 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 765.112)
+
+n6 wants to sells to n4
+n6 sets initial cost/unit to 1.49
+n29 mediates transaction, raising cost/unit to 1.639
+n4 buys 0 units of P5 from n6 for a total cost of 0
+n29 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 765.112)
+
+n6 wants to sells to n15
+n6 sets initial cost/unit to 1.49
+n28 mediates transaction, raising cost/unit to 1.639
+n15 buys 0 units of P5 from n6 for a total cost of 0
+n28 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 765.112)
+
+n6 wants to sells to n24
+n6 sets initial cost/unit to 1.49
+n29 mediates transaction, raising cost/unit to 1.639
+n4 mediates transaction, raising cost/unit to 1.8029
+n24 buys 0 units of P5 from n6 for a total cost of 0
+n4 receives sum of 0 for mediation
+n29 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 765.112)
+
+n7 has sold out
+
+n8 has sold out
+
+n9 has sold out
+
+n10 wants to sells to n13
+n10 sets initial cost/unit to 6.86
+n22 mediates transaction, raising cost/unit to 7.546
+n15 mediates transaction, raising cost/unit to 8.3006
+n11 mediates transaction, raising cost/unit to 9.13066
+n25 mediates transaction, raising cost/unit to 10.043726
+n13 buys 5 units of P0 from n10 for a total cost of 50.21863
+n25 receives sum of 4.56533 for mediation
+n11 receives sum of 4.1503 for mediation
+n15 receives sum of 3.773 for mediation
+n22 receives sum of 3.43 for mediation
+n10 receives final payment of 34.3 (total wealth: 669.563)
+
+n10 wants to sells to n16
+n10 sets initial cost/unit to 6.86
+n26 mediates transaction, raising cost/unit to 7.546
+n18 mediates transaction, raising cost/unit to 8.3006
+n16 buys 0 units of P0 from n10 for a total cost of 0
+n18 receives sum of 0 for mediation
+n26 receives sum of 0 for mediation
+n10 receives final payment of 0 (total wealth: 669.563)
+
+n10 wants to sells to n25
+n10 sets initial cost/unit to 6.86
+n22 mediates transaction, raising cost/unit to 7.546
+n15 mediates transaction, raising cost/unit to 8.3006
+n11 mediates transaction, raising cost/unit to 9.13066
+n25 buys 0 units of P0 from n10 for a total cost of 0
+n11 receives sum of 0 for mediation
+n15 receives sum of 0 for mediation
+n22 receives sum of 0 for mediation
+n10 receives final payment of 0 (total wealth: 669.563)
+
+n11 has sold out
+
+n12 has sold out
+
+n13 has sold out
+
+n14 has sold out
+
+n15 has sold out
+
+n16 wants to sells to n7
+n16 sets initial cost/unit to 2.63
+n18 mediates transaction, raising cost/unit to 2.893
+n26 mediates transaction, raising cost/unit to 3.1823
+n10 mediates transaction, raising cost/unit to 3.50053
+n7 buys 0 units of P6 from n16 for a total cost of 0
+n10 receives sum of 0 for mediation
+n26 receives sum of 0 for mediation
+n18 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 192.459)
+
+n16 wants to sells to n19
+n16 sets initial cost/unit to 2.63
+n25 mediates transaction, raising cost/unit to 2.893
+n11 mediates transaction, raising cost/unit to 3.1823
+n19 buys 0 units of P6 from n16 for a total cost of 0
+n11 receives sum of 0 for mediation
+n25 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 192.459)
+
+n16 wants to sells to n23
+n16 sets initial cost/unit to 2.63
+n23 buys 0 units of P6 from n16 for a total cost of 0
+n16 receives final payment of 0 (total wealth: 192.459)
+
+n16 wants to sells to n29
+n16 sets initial cost/unit to 2.63
+n6 mediates transaction, raising cost/unit to 2.893
+n29 buys 0 units of P6 from n16 for a total cost of 0
+n6 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 192.459)
+
+n16 wants to sells to n30
+n16 sets initial cost/unit to 2.63
+n18 mediates transaction, raising cost/unit to 2.893
+n26 mediates transaction, raising cost/unit to 3.1823
+n10 mediates transaction, raising cost/unit to 3.50053
+n7 mediates transaction, raising cost/unit to 3.850583
+n30 buys 0 units of P6 from n16 for a total cost of 0
+n7 receives sum of 0 for mediation
+n10 receives sum of 0 for mediation
+n26 receives sum of 0 for mediation
+n18 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 192.459)
+
+n17 has sold out
+
+n18 wants to sells to n3
+n18 sets initial cost/unit to 8.95
+n27 mediates transaction, raising cost/unit to 9.845
+n17 mediates transaction, raising cost/unit to 10.8295
+n3 buys 3 units of P4 from n18 for a total cost of 32.4885
+n17 receives sum of 2.9535 for mediation
+n27 receives sum of 2.685 for mediation
+n18 receives final payment of 26.85 (total wealth: 730.95)
+
+n18 wants to sells to n8
+n18 sets initial cost/unit to 8.95
+n16 mediates transaction, raising cost/unit to 9.845
+n23 mediates transaction, raising cost/unit to 10.8295
+n8 buys 0 units of P4 from n18 for a total cost of 0
+n23 receives sum of 0 for mediation
+n16 receives sum of 0 for mediation
+n18 receives final payment of 0 (total wealth: 730.95)
+
+n18 wants to sells to n20
+n18 sets initial cost/unit to 8.95
+n16 mediates transaction, raising cost/unit to 9.845
+n6 mediates transaction, raising cost/unit to 10.8295
+n28 mediates transaction, raising cost/unit to 11.91245
+n20 buys 0 units of P4 from n18 for a total cost of 0
+n28 receives sum of 0 for mediation
+n6 receives sum of 0 for mediation
+n16 receives sum of 0 for mediation
+n18 receives final payment of 0 (total wealth: 730.95)
+
+n18 wants to sells to n27
+n18 sets initial cost/unit to 8.95
+n27 buys 0 units of P4 from n18 for a total cost of 0
+n18 receives final payment of 0 (total wealth: 730.95)
+
+n19 has sold out
+
+n20 has sold out
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n23 no longer needs any products
+
+n29 no longer needs any products
+
+n30 no longer needs any products
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n23 no longer needs any products
+
+n29 no longer needs any products
+
+n30 no longer needs any products
+
+n23 has sold out
+
+n24 wants to sells to n3
+n3 can't afford any more purchases
+
+n8 no longer needs any products
+
+n24 wants to sells to n18
+n24 sets initial cost/unit to 8.95
+n9 mediates transaction, raising cost/unit to 9.845
+n10 mediates transaction, raising cost/unit to 10.8295
+n26 mediates transaction, raising cost/unit to 11.91245
+n18 buys 0 units of P4 from n24 for a total cost of 0
+n26 receives sum of 0 for mediation
+n10 receives sum of 0 for mediation
+n9 receives sum of 0 for mediation
+n24 receives final payment of 0 (total wealth: 361.928)
+
+n20 no longer needs any products
+
+n27 no longer needs any products
+
+n25 has sold out
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n23 no longer needs any products
+
+n29 no longer needs any products
+
+n30 no longer needs any products
+
+n27 has sold out
+
+n28 has sold out
+
+n29 has sold out
+
+n1 no longer needs any products
+
+n4 no longer needs any products
+
+n30 wants to sells to n6
+n30 sets initial cost/unit to 1.49
+n7 mediates transaction, raising cost/unit to 1.639
+n10 mediates transaction, raising cost/unit to 1.8029
+n9 mediates transaction, raising cost/unit to 1.98319
+n20 mediates transaction, raising cost/unit to 2.181509
+n28 mediates transaction, raising cost/unit to 2.3996599
+n6 buys 0 units of P5 from n30 for a total cost of 0
+n28 receives sum of 0 for mediation
+n20 receives sum of 0 for mediation
+n9 receives sum of 0 for mediation
+n10 receives sum of 0 for mediation
+n7 receives sum of 0 for mediation
+n30 receives final payment of 0 (total wealth: 392.615)
+
+n15 no longer needs any products
+
+n24 no longer needs any products
+
+;--------------------------------
+;        PAYDAY
+;--------------------------------
+
+
+
+
+
+
+
+
+
+
+;--------------------------------
+;        SIMULATOR PHASE 8/10
+;--------------------------------
+
+
+;--------------------------------
+;        ESTABLISHING TRANSACTION PATH
+;--------------------------------
+
+n0 -> n22 -> n1
+n0 -> n5 -> n28 -> n29 -> n4
+n0 -> n5 -> n28 -> n6
+n0 -> n22 -> n15
+n0 -> n17 -> n9 -> n24
+
+n1 -> n22 -> n15 -> n29 -> n4
+n1 -> n22 -> n15 -> n28 -> n6
+n1 -> n22 -> n15
+n1 -> n22 -> n10 -> n9 -> n24
+
+n2 -> n29 -> n15 -> n22 -> n1
+n2 -> n29 -> n4
+n2 -> n29 -> n6
+n2 -> n29 -> n15
+n2 -> n29 -> n4 -> n24
+
+n3 -> n17 -> n9 -> n10 -> n7
+n3 -> n17 -> n19
+n3 -> n17 -> n8 -> n23
+n3 -> n17 -> n8 -> n29
+n3 -> n17 -> n9 -> n10 -> n7 -> n30
+
+n4 -> n24 -> n9 -> n10
+n4 -> n29 -> n6 -> n25 -> n13
+n4 -> n29 -> n6 -> n16
+n4 -> n29 -> n6 -> n25
+
+n5 -> n0 -> n22 -> n10
+n5 -> n28 -> n6 -> n25 -> n13
+n5 -> n28 -> n6 -> n16
+n5 -> n28 -> n6 -> n25
+
+n6 -> n16 -> n18 -> n26 -> n1
+n6 -> n29 -> n4
+n6 -> n28 -> n15
+n6 -> n29 -> n4 -> n24
+
+n7 -> n10 -> n9 -> n17 -> n19
+n7 -> n10 -> n9 -> n17 -> n8 -> n23
+n7 -> n10 -> n22 -> n15 -> n29
+n7 -> n30
+
+n8 -> n17 -> n9 -> n10
+n8 -> n23 -> n16 -> n25 -> n13
+n8 -> n23 -> n16
+n8 -> n23 -> n16 -> n25
+
+n9 -> n10 -> n7
+n9 -> n17 -> n19
+n9 -> n17 -> n8 -> n23
+n9 -> n20 -> n28 -> n29
+n9 -> n10 -> n7 -> n30
+
+n10 -> n22 -> n15 -> n11 -> n25 -> n13
+n10 -> n26 -> n18 -> n16
+n10 -> n22 -> n15 -> n11 -> n25
+
+n11 -> n15 -> n22 -> n0
+n11 -> n15 -> n29 -> n2
+n11 -> n15 -> n29 -> n14
+n11 -> n15 -> n21
+
+n12 -> n0 -> n17 -> n3
+n12 -> n0 -> n17 -> n8
+n12 -> n0 -> n17 -> n27 -> n18
+n12 -> n0 -> n5 -> n28 -> n20
+n12 -> n0 -> n17 -> n27
+
+n13 -> n25 -> n6 -> n28 -> n5 -> n0
+n13 -> n25 -> n6 -> n29 -> n2
+n13 -> n25 -> n6 -> n29 -> n14
+n13 -> n25 -> n11 -> n15 -> n21
+
+n14 -> n24 -> n9 -> n17 -> n0
+n14 -> n29 -> n2
+n14 -> n29 -> n15 -> n21
+
+n15 -> n21 -> n17 -> n3
+n15 -> n29 -> n8
+n15 -> n11 -> n25 -> n16 -> n18
+n15 -> n28 -> n20
+n15 -> n21 -> n17 -> n27
+
+n16 -> n18 -> n26 -> n10 -> n7
+n16 -> n25 -> n11 -> n19
+n16 -> n23
+n16 -> n6 -> n29
+n16 -> n18 -> n26 -> n10 -> n7 -> n30
+
+n17 -> n3
+n17 -> n8
+n17 -> n27 -> n18
+n17 -> n9 -> n20
+n17 -> n27
+
+n18 -> n27 -> n17 -> n3
+n18 -> n16 -> n23 -> n8
+n18 -> n16 -> n6 -> n28 -> n20
+n18 -> n27
+
+n19 -> n17 -> n9
+n19 -> n12
+n19 -> n17
+n19 -> n11 -> n15 -> n22
+n19 -> n17 -> n9 -> n10 -> n26
+
+n20 -> n9 -> n17 -> n3
+n20 -> n9 -> n17 -> n8
+n20 -> n9 -> n10 -> n26 -> n18
+n20 -> n9 -> n10 -> n27
+
+n21 -> n15 -> n22 -> n10 -> n7
+n21 -> n17 -> n19
+n21 -> n17 -> n8 -> n23
+n21 -> n15 -> n29
+n21 -> n15 -> n22 -> n10 -> n7 -> n30
+
+n22 -> n10 -> n7
+n22 -> n0 -> n12 -> n19
+n22 -> n0 -> n17 -> n8 -> n23
+n22 -> n15 -> n29
+n22 -> n10 -> n7 -> n30
+
+n23 -> n8 -> n17 -> n0
+n23 -> n8 -> n29 -> n2
+n23 -> n8 -> n29 -> n14
+n23 -> n8 -> n17 -> n21
+
+n24 -> n9 -> n17 -> n3
+n24 -> n4 -> n29 -> n8
+n24 -> n9 -> n10 -> n26 -> n18
+n24 -> n9 -> n20
+n24 -> n9 -> n10 -> n27
+
+n25 -> n6 -> n28 -> n20 -> n9
+n25 -> n11 -> n19 -> n12
+n25 -> n11 -> n19 -> n17
+n25 -> n11 -> n15 -> n22
+n25 -> n16 -> n18 -> n26
+
+n26 -> n10 -> n7
+n26 -> n18 -> n27 -> n17 -> n19
+n26 -> n18 -> n16 -> n23
+n26 -> n1 -> n22 -> n15 -> n29
+n26 -> n10 -> n7 -> n30
+
+n27 -> n17 -> n0 -> n5
+n27 -> n17 -> n19 -> n11
+n27 -> n18 -> n16 -> n6 -> n28
+
+n28 -> n20 -> n9
+n28 -> n5 -> n0 -> n12
+n28 -> n5 -> n0 -> n17
+n28 -> n15 -> n22
+n28 -> n6 -> n16 -> n18 -> n26
+
+n29 -> n8 -> n17 -> n3
+n29 -> n8
+n29 -> n6 -> n16 -> n18
+n29 -> n28 -> n20
+n29 -> n8 -> n17 -> n27
+
+n30 -> n7 -> n10 -> n22 -> n1
+n30 -> n7 -> n10 -> n9 -> n24 -> n4
+n30 -> n7 -> n10 -> n9 -> n20 -> n28 -> n6
+n30 -> n7 -> n10 -> n22 -> n15
+n30 -> n7 -> n10 -> n9 -> n24
+
+
+;--------------------------------
+;        FINALIZING TRANSACTIONS
+;--------------------------------
+
+n0 has sold out
+
+n1 has sold out
+
+n2 has sold out
+
+n3 has sold out
+
+n4 has sold out
+
+n5 has sold out
+
+n6 wants to sells to n1
+n6 sets initial cost/unit to 1.49
+n16 mediates transaction, raising cost/unit to 1.639
+n18 mediates transaction, raising cost/unit to 1.8029
+n26 mediates transaction, raising cost/unit to 1.98319
+n1 buys 0 units of P5 from n6 for a total cost of 0
+n26 receives sum of 0 for mediation
+n18 receives sum of 0 for mediation
+n16 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 845.112)
+
+n6 wants to sells to n4
+n6 sets initial cost/unit to 1.49
+n29 mediates transaction, raising cost/unit to 1.639
+n4 buys 0 units of P5 from n6 for a total cost of 0
+n29 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 845.112)
+
+n6 wants to sells to n15
+n6 sets initial cost/unit to 1.49
+n28 mediates transaction, raising cost/unit to 1.639
+n15 buys 0 units of P5 from n6 for a total cost of 0
+n28 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 845.112)
+
+n6 wants to sells to n24
+n6 sets initial cost/unit to 1.49
+n29 mediates transaction, raising cost/unit to 1.639
+n4 mediates transaction, raising cost/unit to 1.8029
+n24 buys 0 units of P5 from n6 for a total cost of 0
+n4 receives sum of 0 for mediation
+n29 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 845.112)
+
+n7 has sold out
+
+n8 has sold out
+
+n9 has sold out
+
+n10 wants to sells to n13
+n10 sets initial cost/unit to 6.86
+n22 mediates transaction, raising cost/unit to 7.546
+n15 mediates transaction, raising cost/unit to 8.3006
+n11 mediates transaction, raising cost/unit to 9.13066
+n25 mediates transaction, raising cost/unit to 10.043726
+n13 buys 0 units of P0 from n10 for a total cost of 0
+n25 receives sum of 0 for mediation
+n11 receives sum of 0 for mediation
+n15 receives sum of 0 for mediation
+n22 receives sum of 0 for mediation
+n10 receives final payment of 0 (total wealth: 680.563)
+
+n10 wants to sells to n16
+n10 sets initial cost/unit to 6.86
+n26 mediates transaction, raising cost/unit to 7.546
+n18 mediates transaction, raising cost/unit to 8.3006
+n16 buys 0 units of P0 from n10 for a total cost of 0
+n18 receives sum of 0 for mediation
+n26 receives sum of 0 for mediation
+n10 receives final payment of 0 (total wealth: 680.563)
+
+n10 wants to sells to n25
+n10 sets initial cost/unit to 6.86
+n22 mediates transaction, raising cost/unit to 7.546
+n15 mediates transaction, raising cost/unit to 8.3006
+n11 mediates transaction, raising cost/unit to 9.13066
+n25 buys 0 units of P0 from n10 for a total cost of 0
+n11 receives sum of 0 for mediation
+n15 receives sum of 0 for mediation
+n22 receives sum of 0 for mediation
+n10 receives final payment of 0 (total wealth: 680.563)
+
+n11 has sold out
+
+n12 has sold out
+
+n13 has sold out
+
+n14 has sold out
+
+n15 has sold out
+
+n16 wants to sells to n7
+n16 sets initial cost/unit to 2.63
+n18 mediates transaction, raising cost/unit to 2.893
+n26 mediates transaction, raising cost/unit to 3.1823
+n10 mediates transaction, raising cost/unit to 3.50053
+n7 buys 0 units of P6 from n16 for a total cost of 0
+n10 receives sum of 0 for mediation
+n26 receives sum of 0 for mediation
+n18 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 321.059)
+
+n16 wants to sells to n19
+n16 sets initial cost/unit to 2.63
+n25 mediates transaction, raising cost/unit to 2.893
+n11 mediates transaction, raising cost/unit to 3.1823
+n19 buys 0 units of P6 from n16 for a total cost of 0
+n11 receives sum of 0 for mediation
+n25 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 321.059)
+
+n16 wants to sells to n23
+n16 sets initial cost/unit to 2.63
+n23 buys 0 units of P6 from n16 for a total cost of 0
+n16 receives final payment of 0 (total wealth: 321.059)
+
+n16 wants to sells to n29
+n16 sets initial cost/unit to 2.63
+n6 mediates transaction, raising cost/unit to 2.893
+n29 buys 0 units of P6 from n16 for a total cost of 0
+n6 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 321.059)
+
+n16 wants to sells to n30
+n16 sets initial cost/unit to 2.63
+n18 mediates transaction, raising cost/unit to 2.893
+n26 mediates transaction, raising cost/unit to 3.1823
+n10 mediates transaction, raising cost/unit to 3.50053
+n7 mediates transaction, raising cost/unit to 3.850583
+n30 buys 0 units of P6 from n16 for a total cost of 0
+n7 receives sum of 0 for mediation
+n10 receives sum of 0 for mediation
+n26 receives sum of 0 for mediation
+n18 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 321.059)
+
+n17 has sold out
+
+n18 wants to sells to n3
+n18 sets initial cost/unit to 8.95
+n27 mediates transaction, raising cost/unit to 9.845
+n17 mediates transaction, raising cost/unit to 10.8295
+n3 buys 2 units of P4 from n18 for a total cost of 21.659
+n17 receives sum of 1.969 for mediation
+n27 receives sum of 1.79 for mediation
+n18 receives final payment of 17.9 (total wealth: 763.05)
+
+n18 wants to sells to n8
+n18 sets initial cost/unit to 8.95
+n16 mediates transaction, raising cost/unit to 9.845
+n23 mediates transaction, raising cost/unit to 10.8295
+n8 buys 0 units of P4 from n18 for a total cost of 0
+n23 receives sum of 0 for mediation
+n16 receives sum of 0 for mediation
+n18 receives final payment of 0 (total wealth: 763.05)
+
+n18 wants to sells to n20
+n18 sets initial cost/unit to 8.95
+n16 mediates transaction, raising cost/unit to 9.845
+n6 mediates transaction, raising cost/unit to 10.8295
+n28 mediates transaction, raising cost/unit to 11.91245
+n20 buys 0 units of P4 from n18 for a total cost of 0
+n28 receives sum of 0 for mediation
+n6 receives sum of 0 for mediation
+n16 receives sum of 0 for mediation
+n18 receives final payment of 0 (total wealth: 763.05)
+
+n18 wants to sells to n27
+n18 sets initial cost/unit to 8.95
+n27 buys 0 units of P4 from n18 for a total cost of 0
+n18 receives final payment of 0 (total wealth: 763.05)
+
+n19 has sold out
+
+n20 has sold out
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n23 no longer needs any products
+
+n29 no longer needs any products
+
+n30 no longer needs any products
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n23 no longer needs any products
+
+n29 no longer needs any products
+
+n30 no longer needs any products
+
+n23 has sold out
+
+n24 wants to sells to n3
+n3 can't afford any more purchases
+
+n8 no longer needs any products
+
+n24 wants to sells to n18
+n24 sets initial cost/unit to 8.95
+n9 mediates transaction, raising cost/unit to 9.845
+n10 mediates transaction, raising cost/unit to 10.8295
+n26 mediates transaction, raising cost/unit to 11.91245
+n18 buys 0 units of P4 from n24 for a total cost of 0
+n26 receives sum of 0 for mediation
+n10 receives sum of 0 for mediation
+n9 receives sum of 0 for mediation
+n24 receives final payment of 0 (total wealth: 380.728)
+
+n20 no longer needs any products
+
+n27 no longer needs any products
+
+n25 has sold out
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n23 no longer needs any products
+
+n29 no longer needs any products
+
+n30 no longer needs any products
+
+n27 has sold out
+
+n28 has sold out
+
+n29 has sold out
+
+n1 no longer needs any products
+
+n4 no longer needs any products
+
+n30 wants to sells to n6
+n30 sets initial cost/unit to 1.49
+n7 mediates transaction, raising cost/unit to 1.639
+n10 mediates transaction, raising cost/unit to 1.8029
+n9 mediates transaction, raising cost/unit to 1.98319
+n20 mediates transaction, raising cost/unit to 2.181509
+n28 mediates transaction, raising cost/unit to 2.3996599
+n6 buys 0 units of P5 from n30 for a total cost of 0
+n28 receives sum of 0 for mediation
+n20 receives sum of 0 for mediation
+n9 receives sum of 0 for mediation
+n10 receives sum of 0 for mediation
+n7 receives sum of 0 for mediation
+n30 receives final payment of 0 (total wealth: 556.815)
+
+n15 no longer needs any products
+
+n24 no longer needs any products
+
+;--------------------------------
+;        PAYDAY
+;--------------------------------
+
+
+
+
+
+
+
+
+
+
+;--------------------------------
+;        SIMULATOR PHASE 9/10
+;--------------------------------
+
+
+;--------------------------------
+;        ESTABLISHING TRANSACTION PATH
+;--------------------------------
+
+n0 -> n22 -> n1
+n0 -> n5 -> n28 -> n29 -> n4
+n0 -> n5 -> n28 -> n6
+n0 -> n22 -> n15
+n0 -> n17 -> n9 -> n24
+
+n1 -> n22 -> n15 -> n29 -> n4
+n1 -> n22 -> n15 -> n28 -> n6
+n1 -> n22 -> n15
+n1 -> n22 -> n10 -> n9 -> n24
+
+n2 -> n29 -> n15 -> n22 -> n1
+n2 -> n29 -> n4
+n2 -> n29 -> n6
+n2 -> n29 -> n15
+n2 -> n29 -> n4 -> n24
+
+n3 -> n17 -> n9 -> n10 -> n7
+n3 -> n17 -> n19
+n3 -> n17 -> n8 -> n23
+n3 -> n17 -> n8 -> n29
+n3 -> n17 -> n9 -> n10 -> n7 -> n30
+
+n4 -> n24 -> n9 -> n10
+n4 -> n29 -> n6 -> n25 -> n13
+n4 -> n29 -> n6 -> n16
+n4 -> n29 -> n6 -> n25
+
+n5 -> n0 -> n22 -> n10
+n5 -> n28 -> n6 -> n25 -> n13
+n5 -> n28 -> n6 -> n16
+n5 -> n28 -> n6 -> n25
+
+n6 -> n16 -> n18 -> n26 -> n1
+n6 -> n29 -> n4
+n6 -> n28 -> n15
+n6 -> n29 -> n4 -> n24
+
+n7 -> n10 -> n9 -> n17 -> n19
+n7 -> n10 -> n9 -> n17 -> n8 -> n23
+n7 -> n10 -> n22 -> n15 -> n29
+n7 -> n30
+
+n8 -> n17 -> n9 -> n10
+n8 -> n23 -> n16 -> n25 -> n13
+n8 -> n23 -> n16
+n8 -> n23 -> n16 -> n25
+
+n9 -> n10 -> n7
+n9 -> n17 -> n19
+n9 -> n17 -> n8 -> n23
+n9 -> n20 -> n28 -> n29
+n9 -> n10 -> n7 -> n30
+
+n10 -> n22 -> n15 -> n11 -> n25 -> n13
+n10 -> n26 -> n18 -> n16
+n10 -> n22 -> n15 -> n11 -> n25
+
+n11 -> n15 -> n22 -> n0
+n11 -> n15 -> n29 -> n2
+n11 -> n15 -> n29 -> n14
+n11 -> n15 -> n21
+
+n12 -> n0 -> n17 -> n3
+n12 -> n0 -> n17 -> n8
+n12 -> n0 -> n17 -> n27 -> n18
+n12 -> n0 -> n5 -> n28 -> n20
+n12 -> n0 -> n17 -> n27
+
+n13 -> n25 -> n6 -> n28 -> n5 -> n0
+n13 -> n25 -> n6 -> n29 -> n2
+n13 -> n25 -> n6 -> n29 -> n14
+n13 -> n25 -> n11 -> n15 -> n21
+
+n14 -> n24 -> n9 -> n17 -> n0
+n14 -> n29 -> n2
+n14 -> n29 -> n15 -> n21
+
+n15 -> n21 -> n17 -> n3
+n15 -> n29 -> n8
+n15 -> n11 -> n25 -> n16 -> n18
+n15 -> n28 -> n20
+n15 -> n21 -> n17 -> n27
+
+n16 -> n18 -> n26 -> n10 -> n7
+n16 -> n25 -> n11 -> n19
+n16 -> n23
+n16 -> n6 -> n29
+n16 -> n18 -> n26 -> n10 -> n7 -> n30
+
+n17 -> n3
+n17 -> n8
+n17 -> n27 -> n18
+n17 -> n9 -> n20
+n17 -> n27
+
+n18 -> n27 -> n17 -> n3
+n18 -> n16 -> n23 -> n8
+n18 -> n16 -> n6 -> n28 -> n20
+n18 -> n27
+
+n19 -> n17 -> n9
+n19 -> n12
+n19 -> n17
+n19 -> n11 -> n15 -> n22
+n19 -> n17 -> n9 -> n10 -> n26
+
+n20 -> n9 -> n17 -> n3
+n20 -> n9 -> n17 -> n8
+n20 -> n9 -> n10 -> n26 -> n18
+n20 -> n9 -> n10 -> n27
+
+n21 -> n15 -> n22 -> n10 -> n7
+n21 -> n17 -> n19
+n21 -> n17 -> n8 -> n23
+n21 -> n15 -> n29
+n21 -> n15 -> n22 -> n10 -> n7 -> n30
+
+n22 -> n10 -> n7
+n22 -> n0 -> n12 -> n19
+n22 -> n0 -> n17 -> n8 -> n23
+n22 -> n15 -> n29
+n22 -> n10 -> n7 -> n30
+
+n23 -> n8 -> n17 -> n0
+n23 -> n8 -> n29 -> n2
+n23 -> n8 -> n29 -> n14
+n23 -> n8 -> n17 -> n21
+
+n24 -> n9 -> n17 -> n3
+n24 -> n4 -> n29 -> n8
+n24 -> n9 -> n10 -> n26 -> n18
+n24 -> n9 -> n20
+n24 -> n9 -> n10 -> n27
+
+n25 -> n6 -> n28 -> n20 -> n9
+n25 -> n11 -> n19 -> n12
+n25 -> n11 -> n19 -> n17
+n25 -> n11 -> n15 -> n22
+n25 -> n16 -> n18 -> n26
+
+n26 -> n10 -> n7
+n26 -> n18 -> n27 -> n17 -> n19
+n26 -> n18 -> n16 -> n23
+n26 -> n1 -> n22 -> n15 -> n29
+n26 -> n10 -> n7 -> n30
+
+n27 -> n17 -> n0 -> n5
+n27 -> n17 -> n19 -> n11
+n27 -> n18 -> n16 -> n6 -> n28
+
+n28 -> n20 -> n9
+n28 -> n5 -> n0 -> n12
+n28 -> n5 -> n0 -> n17
+n28 -> n15 -> n22
+n28 -> n6 -> n16 -> n18 -> n26
+
+n29 -> n8 -> n17 -> n3
+n29 -> n8
+n29 -> n6 -> n16 -> n18
+n29 -> n28 -> n20
+n29 -> n8 -> n17 -> n27
+
+n30 -> n7 -> n10 -> n22 -> n1
+n30 -> n7 -> n10 -> n9 -> n24 -> n4
+n30 -> n7 -> n10 -> n9 -> n20 -> n28 -> n6
+n30 -> n7 -> n10 -> n22 -> n15
+n30 -> n7 -> n10 -> n9 -> n24
+
+
+;--------------------------------
+;        FINALIZING TRANSACTIONS
+;--------------------------------
+
+n0 has sold out
+
+n1 has sold out
+
+n2 has sold out
+
+n3 has sold out
+
+n4 has sold out
+
+n5 has sold out
+
+n6 wants to sells to n1
+n6 sets initial cost/unit to 1.49
+n16 mediates transaction, raising cost/unit to 1.639
+n18 mediates transaction, raising cost/unit to 1.8029
+n26 mediates transaction, raising cost/unit to 1.98319
+n1 buys 0 units of P5 from n6 for a total cost of 0
+n26 receives sum of 0 for mediation
+n18 receives sum of 0 for mediation
+n16 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 896.312)
+
+n6 wants to sells to n4
+n6 sets initial cost/unit to 1.49
+n29 mediates transaction, raising cost/unit to 1.639
+n4 buys 0 units of P5 from n6 for a total cost of 0
+n29 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 896.312)
+
+n6 wants to sells to n15
+n6 sets initial cost/unit to 1.49
+n28 mediates transaction, raising cost/unit to 1.639
+n15 buys 0 units of P5 from n6 for a total cost of 0
+n28 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 896.312)
+
+n6 wants to sells to n24
+n6 sets initial cost/unit to 1.49
+n29 mediates transaction, raising cost/unit to 1.639
+n4 mediates transaction, raising cost/unit to 1.8029
+n24 buys 0 units of P5 from n6 for a total cost of 0
+n4 receives sum of 0 for mediation
+n29 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 896.312)
+
+n7 has sold out
+
+n8 has sold out
+
+n9 has sold out
+
+n10 wants to sells to n13
+n10 sets initial cost/unit to 6.86
+n22 mediates transaction, raising cost/unit to 7.546
+n15 mediates transaction, raising cost/unit to 8.3006
+n11 mediates transaction, raising cost/unit to 9.13066
+n25 mediates transaction, raising cost/unit to 10.043726
+n13 buys 0 units of P0 from n10 for a total cost of 0
+n25 receives sum of 0 for mediation
+n11 receives sum of 0 for mediation
+n15 receives sum of 0 for mediation
+n22 receives sum of 0 for mediation
+n10 receives final payment of 0 (total wealth: 688.563)
+
+n10 wants to sells to n16
+n10 sets initial cost/unit to 6.86
+n26 mediates transaction, raising cost/unit to 7.546
+n18 mediates transaction, raising cost/unit to 8.3006
+n16 buys 0 units of P0 from n10 for a total cost of 0
+n18 receives sum of 0 for mediation
+n26 receives sum of 0 for mediation
+n10 receives final payment of 0 (total wealth: 688.563)
+
+n10 wants to sells to n25
+n10 sets initial cost/unit to 6.86
+n22 mediates transaction, raising cost/unit to 7.546
+n15 mediates transaction, raising cost/unit to 8.3006
+n11 mediates transaction, raising cost/unit to 9.13066
+n25 buys 0 units of P0 from n10 for a total cost of 0
+n11 receives sum of 0 for mediation
+n15 receives sum of 0 for mediation
+n22 receives sum of 0 for mediation
+n10 receives final payment of 0 (total wealth: 688.563)
+
+n11 has sold out
+
+n12 has sold out
+
+n13 has sold out
+
+n14 has sold out
+
+n15 has sold out
+
+n16 wants to sells to n7
+n16 sets initial cost/unit to 2.63
+n18 mediates transaction, raising cost/unit to 2.893
+n26 mediates transaction, raising cost/unit to 3.1823
+n10 mediates transaction, raising cost/unit to 3.50053
+n7 buys 0 units of P6 from n16 for a total cost of 0
+n10 receives sum of 0 for mediation
+n26 receives sum of 0 for mediation
+n18 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 357.259)
+
+n16 wants to sells to n19
+n16 sets initial cost/unit to 2.63
+n25 mediates transaction, raising cost/unit to 2.893
+n11 mediates transaction, raising cost/unit to 3.1823
+n19 buys 0 units of P6 from n16 for a total cost of 0
+n11 receives sum of 0 for mediation
+n25 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 357.259)
+
+n16 wants to sells to n23
+n16 sets initial cost/unit to 2.63
+n23 buys 0 units of P6 from n16 for a total cost of 0
+n16 receives final payment of 0 (total wealth: 357.259)
+
+n16 wants to sells to n29
+n16 sets initial cost/unit to 2.63
+n6 mediates transaction, raising cost/unit to 2.893
+n29 buys 0 units of P6 from n16 for a total cost of 0
+n6 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 357.259)
+
+n16 wants to sells to n30
+n16 sets initial cost/unit to 2.63
+n18 mediates transaction, raising cost/unit to 2.893
+n26 mediates transaction, raising cost/unit to 3.1823
+n10 mediates transaction, raising cost/unit to 3.50053
+n7 mediates transaction, raising cost/unit to 3.850583
+n30 buys 0 units of P6 from n16 for a total cost of 0
+n7 receives sum of 0 for mediation
+n10 receives sum of 0 for mediation
+n26 receives sum of 0 for mediation
+n18 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 357.259)
+
+n17 has sold out
+
+n18 wants to sells to n3
+n18 sets initial cost/unit to 8.95
+n27 mediates transaction, raising cost/unit to 9.845
+n17 mediates transaction, raising cost/unit to 10.8295
+n3 buys 1 units of P4 from n18 for a total cost of 10.8295
+n17 receives sum of 0.9845 for mediation
+n27 receives sum of 0.895 for mediation
+n18 receives final payment of 8.95 (total wealth: 906.8)
+
+n18 wants to sells to n8
+n18 sets initial cost/unit to 8.95
+n16 mediates transaction, raising cost/unit to 9.845
+n23 mediates transaction, raising cost/unit to 10.8295
+n8 buys 0 units of P4 from n18 for a total cost of 0
+n23 receives sum of 0 for mediation
+n16 receives sum of 0 for mediation
+n18 receives final payment of 0 (total wealth: 906.8)
+
+n18 wants to sells to n20
+n18 sets initial cost/unit to 8.95
+n16 mediates transaction, raising cost/unit to 9.845
+n6 mediates transaction, raising cost/unit to 10.8295
+n28 mediates transaction, raising cost/unit to 11.91245
+n20 buys 0 units of P4 from n18 for a total cost of 0
+n28 receives sum of 0 for mediation
+n6 receives sum of 0 for mediation
+n16 receives sum of 0 for mediation
+n18 receives final payment of 0 (total wealth: 906.8)
+
+n18 wants to sells to n27
+n18 sets initial cost/unit to 8.95
+n27 buys 0 units of P4 from n18 for a total cost of 0
+n18 receives final payment of 0 (total wealth: 906.8)
+
+n19 has sold out
+
+n20 has sold out
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n23 no longer needs any products
+
+n29 no longer needs any products
+
+n30 no longer needs any products
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n23 no longer needs any products
+
+n29 no longer needs any products
+
+n30 no longer needs any products
+
+n23 has sold out
+
+n24 wants to sells to n3
+n3 can't afford any more purchases
+
+n8 no longer needs any products
+
+n24 wants to sells to n18
+n24 sets initial cost/unit to 8.95
+n9 mediates transaction, raising cost/unit to 9.845
+n10 mediates transaction, raising cost/unit to 10.8295
+n26 mediates transaction, raising cost/unit to 11.91245
+n18 buys 0 units of P4 from n24 for a total cost of 0
+n26 receives sum of 0 for mediation
+n10 receives sum of 0 for mediation
+n9 receives sum of 0 for mediation
+n24 receives final payment of 0 (total wealth: 407.728)
+
+n20 no longer needs any products
+
+n27 no longer needs any products
+
+n25 has sold out
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n23 no longer needs any products
+
+n29 no longer needs any products
+
+n30 no longer needs any products
+
+n27 has sold out
+
+n28 has sold out
+
+n29 has sold out
+
+n1 no longer needs any products
+
+n4 no longer needs any products
+
+n30 wants to sells to n6
+n30 sets initial cost/unit to 1.49
+n7 mediates transaction, raising cost/unit to 1.639
+n10 mediates transaction, raising cost/unit to 1.8029
+n9 mediates transaction, raising cost/unit to 1.98319
+n20 mediates transaction, raising cost/unit to 2.181509
+n28 mediates transaction, raising cost/unit to 2.3996599
+n6 buys 0 units of P5 from n30 for a total cost of 0
+n28 receives sum of 0 for mediation
+n20 receives sum of 0 for mediation
+n9 receives sum of 0 for mediation
+n10 receives sum of 0 for mediation
+n7 receives sum of 0 for mediation
+n30 receives final payment of 0 (total wealth: 734.215)
+
+n15 no longer needs any products
+
+n24 no longer needs any products
+
+;--------------------------------
+;        PAYDAY
+;--------------------------------
+
+
+
+
+
+
+
+
+
+
+;--------------------------------
+;        SIMULATOR PHASE 10/10
+;--------------------------------
+
+
+;--------------------------------
+;        ESTABLISHING TRANSACTION PATH
+;--------------------------------
+
+n0 -> n22 -> n1
+n0 -> n5 -> n28 -> n29 -> n4
+n0 -> n5 -> n28 -> n6
+n0 -> n22 -> n15
+n0 -> n17 -> n9 -> n24
+
+n1 -> n22 -> n15 -> n29 -> n4
+n1 -> n22 -> n15 -> n28 -> n6
+n1 -> n22 -> n15
+n1 -> n22 -> n10 -> n9 -> n24
+
+n2 -> n29 -> n15 -> n22 -> n1
+n2 -> n29 -> n4
+n2 -> n29 -> n6
+n2 -> n29 -> n15
+n2 -> n29 -> n4 -> n24
+
+n3 -> n17 -> n9 -> n10 -> n7
+n3 -> n17 -> n19
+n3 -> n17 -> n8 -> n23
+n3 -> n17 -> n8 -> n29
+n3 -> n17 -> n9 -> n10 -> n7 -> n30
+
+n4 -> n24 -> n9 -> n10
+n4 -> n29 -> n6 -> n25 -> n13
+n4 -> n29 -> n6 -> n16
+n4 -> n29 -> n6 -> n25
+
+n5 -> n0 -> n22 -> n10
+n5 -> n28 -> n6 -> n25 -> n13
+n5 -> n28 -> n6 -> n16
+n5 -> n28 -> n6 -> n25
+
+n6 -> n16 -> n18 -> n26 -> n1
+n6 -> n29 -> n4
+n6 -> n28 -> n15
+n6 -> n29 -> n4 -> n24
+
+n7 -> n10 -> n9 -> n17 -> n19
+n7 -> n10 -> n9 -> n17 -> n8 -> n23
+n7 -> n10 -> n22 -> n15 -> n29
+n7 -> n30
+
+n8 -> n17 -> n9 -> n10
+n8 -> n23 -> n16 -> n25 -> n13
+n8 -> n23 -> n16
+n8 -> n23 -> n16 -> n25
+
+n9 -> n10 -> n7
+n9 -> n17 -> n19
+n9 -> n17 -> n8 -> n23
+n9 -> n20 -> n28 -> n29
+n9 -> n10 -> n7 -> n30
+
+n10 -> n22 -> n15 -> n11 -> n25 -> n13
+n10 -> n26 -> n18 -> n16
+n10 -> n22 -> n15 -> n11 -> n25
+
+n11 -> n15 -> n22 -> n0
+n11 -> n15 -> n29 -> n2
+n11 -> n15 -> n29 -> n14
+n11 -> n15 -> n21
+
+n12 -> n0 -> n17 -> n3
+n12 -> n0 -> n17 -> n8
+n12 -> n0 -> n17 -> n27 -> n18
+n12 -> n0 -> n5 -> n28 -> n20
+n12 -> n0 -> n17 -> n27
+
+n13 -> n25 -> n6 -> n28 -> n5 -> n0
+n13 -> n25 -> n6 -> n29 -> n2
+n13 -> n25 -> n6 -> n29 -> n14
+n13 -> n25 -> n11 -> n15 -> n21
+
+n14 -> n24 -> n9 -> n17 -> n0
+n14 -> n29 -> n2
+n14 -> n29 -> n15 -> n21
+
+n15 -> n21 -> n17 -> n3
+n15 -> n29 -> n8
+n15 -> n11 -> n25 -> n16 -> n18
+n15 -> n28 -> n20
+n15 -> n21 -> n17 -> n27
+
+n16 -> n18 -> n26 -> n10 -> n7
+n16 -> n25 -> n11 -> n19
+n16 -> n23
+n16 -> n6 -> n29
+n16 -> n18 -> n26 -> n10 -> n7 -> n30
+
+n17 -> n3
+n17 -> n8
+n17 -> n27 -> n18
+n17 -> n9 -> n20
+n17 -> n27
+
+n18 -> n27 -> n17 -> n3
+n18 -> n16 -> n23 -> n8
+n18 -> n16 -> n6 -> n28 -> n20
+n18 -> n27
+
+n19 -> n17 -> n9
+n19 -> n12
+n19 -> n17
+n19 -> n11 -> n15 -> n22
+n19 -> n17 -> n9 -> n10 -> n26
+
+n20 -> n9 -> n17 -> n3
+n20 -> n9 -> n17 -> n8
+n20 -> n9 -> n10 -> n26 -> n18
+n20 -> n9 -> n10 -> n27
+
+n21 -> n15 -> n22 -> n10 -> n7
+n21 -> n17 -> n19
+n21 -> n17 -> n8 -> n23
+n21 -> n15 -> n29
+n21 -> n15 -> n22 -> n10 -> n7 -> n30
+
+n22 -> n10 -> n7
+n22 -> n0 -> n12 -> n19
+n22 -> n0 -> n17 -> n8 -> n23
+n22 -> n15 -> n29
+n22 -> n10 -> n7 -> n30
+
+n23 -> n8 -> n17 -> n0
+n23 -> n8 -> n29 -> n2
+n23 -> n8 -> n29 -> n14
+n23 -> n8 -> n17 -> n21
+
+n24 -> n9 -> n17 -> n3
+n24 -> n4 -> n29 -> n8
+n24 -> n9 -> n10 -> n26 -> n18
+n24 -> n9 -> n20
+n24 -> n9 -> n10 -> n27
+
+n25 -> n6 -> n28 -> n20 -> n9
+n25 -> n11 -> n19 -> n12
+n25 -> n11 -> n19 -> n17
+n25 -> n11 -> n15 -> n22
+n25 -> n16 -> n18 -> n26
+
+n26 -> n10 -> n7
+n26 -> n18 -> n27 -> n17 -> n19
+n26 -> n18 -> n16 -> n23
+n26 -> n1 -> n22 -> n15 -> n29
+n26 -> n10 -> n7 -> n30
+
+n27 -> n17 -> n0 -> n5
+n27 -> n17 -> n19 -> n11
+n27 -> n18 -> n16 -> n6 -> n28
+
+n28 -> n20 -> n9
+n28 -> n5 -> n0 -> n12
+n28 -> n5 -> n0 -> n17
+n28 -> n15 -> n22
+n28 -> n6 -> n16 -> n18 -> n26
+
+n29 -> n8 -> n17 -> n3
+n29 -> n8
+n29 -> n6 -> n16 -> n18
+n29 -> n28 -> n20
+n29 -> n8 -> n17 -> n27
+
+n30 -> n7 -> n10 -> n22 -> n1
+n30 -> n7 -> n10 -> n9 -> n24 -> n4
+n30 -> n7 -> n10 -> n9 -> n20 -> n28 -> n6
+n30 -> n7 -> n10 -> n22 -> n15
+n30 -> n7 -> n10 -> n9 -> n24
+
+
+;--------------------------------
+;        FINALIZING TRANSACTIONS
+;--------------------------------
+
+n0 has sold out
+
+n1 has sold out
+
+n2 has sold out
+
+n3 has sold out
+
+n4 has sold out
+
+n5 has sold out
+
+n6 wants to sells to n1
+n6 sets initial cost/unit to 1.49
+n16 mediates transaction, raising cost/unit to 1.639
+n18 mediates transaction, raising cost/unit to 1.8029
+n26 mediates transaction, raising cost/unit to 1.98319
+n1 buys 0 units of P5 from n6 for a total cost of 0
+n26 receives sum of 0 for mediation
+n18 receives sum of 0 for mediation
+n16 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 1063.51)
+
+n6 wants to sells to n4
+n6 sets initial cost/unit to 1.49
+n29 mediates transaction, raising cost/unit to 1.639
+n4 buys 0 units of P5 from n6 for a total cost of 0
+n29 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 1063.51)
+
+n6 wants to sells to n15
+n6 sets initial cost/unit to 1.49
+n28 mediates transaction, raising cost/unit to 1.639
+n15 buys 0 units of P5 from n6 for a total cost of 0
+n28 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 1063.51)
+
+n6 wants to sells to n24
+n6 sets initial cost/unit to 1.49
+n29 mediates transaction, raising cost/unit to 1.639
+n4 mediates transaction, raising cost/unit to 1.8029
+n24 buys 0 units of P5 from n6 for a total cost of 0
+n4 receives sum of 0 for mediation
+n29 receives sum of 0 for mediation
+n6 receives final payment of 0 (total wealth: 1063.51)
+
+n7 has sold out
+
+n8 has sold out
+
+n9 has sold out
+
+n10 wants to sells to n13
+n10 sets initial cost/unit to 6.86
+n22 mediates transaction, raising cost/unit to 7.546
+n15 mediates transaction, raising cost/unit to 8.3006
+n11 mediates transaction, raising cost/unit to 9.13066
+n25 mediates transaction, raising cost/unit to 10.043726
+n13 buys 0 units of P0 from n10 for a total cost of 0
+n25 receives sum of 0 for mediation
+n11 receives sum of 0 for mediation
+n15 receives sum of 0 for mediation
+n22 receives sum of 0 for mediation
+n10 receives final payment of 0 (total wealth: 755.763)
+
+n10 wants to sells to n16
+n10 sets initial cost/unit to 6.86
+n26 mediates transaction, raising cost/unit to 7.546
+n18 mediates transaction, raising cost/unit to 8.3006
+n16 buys 0 units of P0 from n10 for a total cost of 0
+n18 receives sum of 0 for mediation
+n26 receives sum of 0 for mediation
+n10 receives final payment of 0 (total wealth: 755.763)
+
+n10 wants to sells to n25
+n10 sets initial cost/unit to 6.86
+n22 mediates transaction, raising cost/unit to 7.546
+n15 mediates transaction, raising cost/unit to 8.3006
+n11 mediates transaction, raising cost/unit to 9.13066
+n25 buys 0 units of P0 from n10 for a total cost of 0
+n11 receives sum of 0 for mediation
+n15 receives sum of 0 for mediation
+n22 receives sum of 0 for mediation
+n10 receives final payment of 0 (total wealth: 755.763)
+
+n11 has sold out
+
+n12 has sold out
+
+n13 has sold out
+
+n14 has sold out
+
+n15 has sold out
+
+n16 wants to sells to n7
+n16 sets initial cost/unit to 2.63
+n18 mediates transaction, raising cost/unit to 2.893
+n26 mediates transaction, raising cost/unit to 3.1823
+n10 mediates transaction, raising cost/unit to 3.50053
+n7 buys 0 units of P6 from n16 for a total cost of 0
+n10 receives sum of 0 for mediation
+n26 receives sum of 0 for mediation
+n18 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 364.259)
+
+n16 wants to sells to n19
+n16 sets initial cost/unit to 2.63
+n25 mediates transaction, raising cost/unit to 2.893
+n11 mediates transaction, raising cost/unit to 3.1823
+n19 buys 0 units of P6 from n16 for a total cost of 0
+n11 receives sum of 0 for mediation
+n25 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 364.259)
+
+n16 wants to sells to n23
+n16 sets initial cost/unit to 2.63
+n23 buys 0 units of P6 from n16 for a total cost of 0
+n16 receives final payment of 0 (total wealth: 364.259)
+
+n16 wants to sells to n29
+n16 sets initial cost/unit to 2.63
+n6 mediates transaction, raising cost/unit to 2.893
+n29 buys 0 units of P6 from n16 for a total cost of 0
+n6 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 364.259)
+
+n16 wants to sells to n30
+n16 sets initial cost/unit to 2.63
+n18 mediates transaction, raising cost/unit to 2.893
+n26 mediates transaction, raising cost/unit to 3.1823
+n10 mediates transaction, raising cost/unit to 3.50053
+n7 mediates transaction, raising cost/unit to 3.850583
+n30 buys 0 units of P6 from n16 for a total cost of 0
+n7 receives sum of 0 for mediation
+n10 receives sum of 0 for mediation
+n26 receives sum of 0 for mediation
+n18 receives sum of 0 for mediation
+n16 receives final payment of 0 (total wealth: 364.259)
+
+n17 has sold out
+
+n18 wants to sells to n3
+n18 sets initial cost/unit to 8.95
+n27 mediates transaction, raising cost/unit to 9.845
+n17 mediates transaction, raising cost/unit to 10.8295
+n3 buys 2 units of P4 from n18 for a total cost of 21.659
+n17 receives sum of 1.969 for mediation
+n27 receives sum of 1.79 for mediation
+n18 receives final payment of 17.9 (total wealth: 938.7)
+
+n18 has sold out
+
+n19 has sold out
+
+n20 has sold out
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n23 no longer needs any products
+
+n29 no longer needs any products
+
+n30 no longer needs any products
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n23 no longer needs any products
+
+n29 no longer needs any products
+
+n30 no longer needs any products
+
+n23 has sold out
+
+n24 wants to sells to n3
+n24 sets initial cost/unit to 8.95
+n9 mediates transaction, raising cost/unit to 9.845
+n17 mediates transaction, raising cost/unit to 10.8295
+n3 buys 13 units of P4 from n24 for a total cost of 140.7835
+n17 receives sum of 12.7985 for mediation
+n9 receives sum of 11.635 for mediation
+n24 receives final payment of 116.35 (total wealth: 582.478)
+
+n24 wants to sells to n8
+n24 sets initial cost/unit to 8.95
+n4 mediates transaction, raising cost/unit to 9.845
+n29 mediates transaction, raising cost/unit to 10.8295
+n8 buys 0 units of P4 from n24 for a total cost of 0
+n29 receives sum of 0 for mediation
+n4 receives sum of 0 for mediation
+n24 receives final payment of 0 (total wealth: 582.478)
+
+n24 wants to sells to n18
+n24 sets initial cost/unit to 8.95
+n9 mediates transaction, raising cost/unit to 9.845
+n10 mediates transaction, raising cost/unit to 10.8295
+n26 mediates transaction, raising cost/unit to 11.91245
+n18 buys 0 units of P4 from n24 for a total cost of 0
+n26 receives sum of 0 for mediation
+n10 receives sum of 0 for mediation
+n9 receives sum of 0 for mediation
+n24 receives final payment of 0 (total wealth: 582.478)
+
+n24 wants to sells to n20
+n24 sets initial cost/unit to 8.95
+n9 mediates transaction, raising cost/unit to 9.845
+n20 buys 0 units of P4 from n24 for a total cost of 0
+n9 receives sum of 0 for mediation
+n24 receives final payment of 0 (total wealth: 582.478)
+
+n24 wants to sells to n27
+n24 sets initial cost/unit to 8.95
+n9 mediates transaction, raising cost/unit to 9.845
+n10 mediates transaction, raising cost/unit to 10.8295
+n27 buys 0 units of P4 from n24 for a total cost of 0
+n10 receives sum of 0 for mediation
+n9 receives sum of 0 for mediation
+n24 receives final payment of 0 (total wealth: 582.478)
+
+n25 has sold out
+
+n7 no longer needs any products
+
+n19 no longer needs any products
+
+n23 no longer needs any products
+
+n29 no longer needs any products
+
+n30 no longer needs any products
+
+n27 has sold out
+
+n28 has sold out
+
+n29 has sold out
+
+n1 no longer needs any products
+
+n4 no longer needs any products
+
+n30 wants to sells to n6
+n30 sets initial cost/unit to 1.49
+n7 mediates transaction, raising cost/unit to 1.639
+n10 mediates transaction, raising cost/unit to 1.8029
+n9 mediates transaction, raising cost/unit to 1.98319
+n20 mediates transaction, raising cost/unit to 2.181509
+n28 mediates transaction, raising cost/unit to 2.3996599
+n6 buys 0 units of P5 from n30 for a total cost of 0
+n28 receives sum of 0 for mediation
+n20 receives sum of 0 for mediation
+n9 receives sum of 0 for mediation
+n10 receives sum of 0 for mediation
+n7 receives sum of 0 for mediation
+n30 receives final payment of 0 (total wealth: 909.015)
+
+n15 no longer needs any products
+
+n24 no longer needs any products
+
+;--------------------------------
+;        PAYDAY
+;--------------------------------
+
+
+
+
+
+
+
+
+
+
+
+;--------------------------------
+;        ENDING SIMULATOR
+;--------------------------------
