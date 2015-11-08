@@ -125,13 +125,19 @@
 							$amount_to_buy = $desired_amount;
 						}
 
-						//	execute transaction : 	seller_node sells the quantity and receives the money, as does every intermediary node
-						//							buyer_node receives the quantity and spends the money
 						$final_cost = $amount_to_buy * $transaction_cost_piece;
-						$buyer_node['money'] -= $final_cost;
-						$buyer_node['needs_product_count'] -= $amount_to_buy;
+						$remaining_buyer_money = $buyer_node['money'] - $final_cost;
 
-						$transaction_log .= $buyer_node['name'] . ' buys ' . $amount_to_buy . ' units of ' . $buyer_node['needs_product'] . ' from ' . $seller_node['name'] . ' for a total cost of ' . $final_cost . "\n";
+						//if $remaining_buyer_money is not negative then the buyer can afford the products from the seller
+						if($remaining_buyer_money >= 0) {
+							$buyer_node['money'] = $remaining_buyer_money;
+							$buyer_node['needs_product_count'] -= $amount_to_buy;
+
+							$transaction_log .= $buyer_node['name'] . ' buys ' . $amount_to_buy . ' units of ' . $buyer_node['needs_product'] . ' from ' . $seller_node['name'] . ' for a total cost of ' . $final_cost . "\n";
+						} else {
+							//else if $remaining_buyer_money is negative than the buyer cannot afford the product from the seller		
+							$transaction_log .= $buyer_node['name']. " can't afford to buy product " . $buyer_node['needs_product'] . " from " . $seller_node['name'] . "\n";  
+ 						}
 
 						//	foreach intermediary node we need to calculate its cut of the total profit (which is 0.1 * the profit of the previous intermediary node)
 						$path_nodes = array_reverse ($path_nodes);
