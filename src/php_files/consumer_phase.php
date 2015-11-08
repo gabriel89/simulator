@@ -70,7 +70,6 @@
 				if ($buyer_node['needs_product_count'] === 0) {
 					// this buyer node no longer needs products
 					$transaction_log .= $buyer_node['name'] . " no longer needs any products\n\n";
-
 				} else {
 					// retrieve product the seller_node wants to sell
 					$product = execute_sql_and_return ('<simulator.php>', $con, "SELECT name, value FROM products WHERE name = '" . $seller_node['has_product'] . "'");
@@ -87,13 +86,11 @@
 					if ($max_affordable_quantity === 0) {
 						//	buyer cannot afford to buy anymore products
 						$transaction_log .= $buyer_node['name'] . " can't afford any more purchases\n\n";
-
 					} else {
 						$transaction_log .= $seller_node['name'] . " sets initial cost/unit to " . $transaction_cost_piece . "\n";
 
 						//	determine final transaction cost
 						foreach ($path_nodes as $intermediary) {
-
 							//	cost will be increased by 0.1 for each intermediary node involved in the transaction
 							if ($intermediary !== $seller_node['name'] && $intermediary !== $buyer_node['name']) {
 								$transaction_cost_piece = calculateNewPrice ($transaction_cost_piece);
@@ -129,11 +126,12 @@
 						$remaining_buyer_money = $buyer_node['money'] - $final_cost;
 
 						//if $remaining_buyer_money is not negative then the buyer can afford the products from the seller
-						if($remaining_buyer_money >= 0) {
+						if ($remaining_buyer_money >= 0) {
 							$buyer_node['money'] = $remaining_buyer_money;
 							$buyer_node['needs_product_count'] -= $amount_to_buy;
 
 							$transaction_log .= $buyer_node['name'] . ' buys ' . $amount_to_buy . ' units of ' . $buyer_node['needs_product'] . ' from ' . $seller_node['name'] . ' for a total cost of ' . $final_cost . "\n";
+						
 						} else {
 							//else if $remaining_buyer_money is negative than the buyer cannot afford the product from the seller		
 							$transaction_log .= $buyer_node['name']. " can't afford to buy product " . $buyer_node['needs_product'] . " from " . $seller_node['name'] . "\n";  
