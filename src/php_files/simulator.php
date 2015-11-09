@@ -74,20 +74,6 @@
 		unset ($consumer_path);
 	}
 
-	// function to return a list of shortest pathds to the respective $row['name'] node (which is the seller)
-	function getShortestPath ($con, $row, $nodes, $buyers) {
-		$list = [];
-
-		//	for each potential buyer, find the shortest path and add it to the list
-		while ($consumerNode = mysqli_fetch_assoc ($buyers)){
-			$my_res = BFS ($Q, $nodes, $row['name'], $consumerNode['name']);
-		}
-
-		$list = array_merge ($list, [$my_res]);
-
-		return $list;
-	}
-
 	// function to treat economic phase
 	function economicPhase ($con, $nodes) {
 		updateRevenue ();
