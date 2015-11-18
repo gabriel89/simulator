@@ -1,38 +1,30 @@
 <?php
-	//global declaration of heap
-	$Q = []; 
+	//global declaration of heap and product array
+	$Q = [];
+
+	$products = fetch_products_toArray(new mysqli('localhost', 'sim', 'sim', 'sim'));
 
 	function getConsumerPath ($con, $nodes) {
 		addToLog ("\n\n\n;--------------------------------\n;        ESTABLISHING TRANSACTION PATH\n;--------------------------------");
 
 		$consumer_path 	= [];
-		$nodes_array 	= [];
+		
 
-		foreach ($nodes as $nd){
-			$nodes_array = array_merge ($nodes_array, [$nd]);
-		}
+		
 
 		foreach ($nodes as $node) {
 			$Q = [];
 			$list 			= [];
-			$buyers_array 	= [];
-			$buyers 		= execute_sql_and_return ('<simulator.php>', $con, "SELECT name FROM nodes WHERE (needs_product = '".$node['has_product']."') AND (name <> '".$node['name']."')");
-
-			foreach ($buyers as $nd){
-				$buyers_array = array_merge ($buyers_array, [$nd]);
-			}
+			$buyers_array 	= getBuyers($node, $nodes);
 
 			foreach ($buyers_array as $buyer){
-				$list = array_merge ($list, array (BFS ($Q, $nodes_array, $node['name'], $buyer['name'])));
+				$list = array_merge ($list, array (BFS ($Q, $nodes, $node['name'], $buyer['name'])));
 			}
 			
 			$consumer_path = array_merge ($consumer_path, $list);
 
 			addToLog ("\n\n" . implode ("\n", str_replace (',', ' -> ' , $list)));
 		}
-
-		// unset large arrays that are not used anymore
-		unset ($nodes_array);
 
 		return $consumer_path;
 	}
@@ -43,13 +35,8 @@
 	function finalizeTransaction ($con, $nodes, $consumer_path) {
 		addToLog ("\n\n\n;--------------------------------\n;        FINALIZING TRANSACTIONS\n;--------------------------------\n\n");
 
-		$nodes_array 		= [];
 		$last_sold_out_msg 	= '';
 
-		foreach ($nodes as $nd) {
-			$nodes_array = array_merge ($nodes_array, [$nd]);
-		}
-		
 		// iterate through each set of paths | $consumer_path contains the set of every path to the potential buyers of each node
 		foreach ($consumer_path as $current_path) {
 
@@ -57,25 +44,25 @@
 			$inter_nodes = explode (',', $current_path);
 
 			// retrieve seller and buyer nodes from path
-			$seller_node = &$nodes_array[indexTo ($inter_nodes[0], $nodes_array)];	
+			$seller_node = &$nodes[indexTo ($inter_nodes[0], $nodes)];	
 			
 			//	check if the seller_node still has product to sell
 			if (check_seller_has_product ($seller_node)) {
 
 				$rev 		= array_reverse ($inter_nodes);
-				$buyer_node = &$nodes_array[indexTo ($rev[0], $nodes_array)];
+				$buyer_node = &$nodes[indexTo ($rev[0], $nodes)];
 
 				unset ($rev);
 				//	check if buyer still needs to purchase products
 				if (check_buyer_needs_product ($buyer_node)) {
 					// finalize transaction
-					complete_purchase ($inter_nodes, $buyer_node, $seller_node, $nodes_array, $con);
+					complete_purchase ($inter_nodes, $buyer_node, $seller_node, $nodes, $con);
 				}
 			}
 		}
 
 		//	update database with new values for money and product quantities
-		update_post_tranzaction ($con, $nodes_array);
+		update_post_tranzaction ($con, $nodes);
 	}
 
 
@@ -99,8 +86,8 @@
 
 	function get_initial_cost_ppc ($buyer_node, $con){
 		//	returns the value (float) of ONE instance of the product the buyer needs
-		$product = execute_sql_and_return ('<simulator.php>', $con, "SELECT name, value FROM products WHERE name = '" . $buyer_node['needs_product'] . "'");
-		$product = mysqli_fetch_array($product);
+		global $products;
+		$product = $products [(int) (substr ($buyer_node['has_product'], 1))];
 
 		return $product ['value'];
 	}
@@ -138,7 +125,7 @@
 		return $final_purchase_amount * $final_cost_ppc;
 	}
 
-	function complete_purchase (&$inter_nodes, &$buyer_node, &$seller_node, &$nodes_array, $con){
+	function complete_purchase (&$inter_nodes, &$buyer_node, &$seller_node, &$nodes, $con){
 		//	complete tranzaction ; after tranzaction is completed, each intermediary node involved in the transaction receives its share of the total profit
 		$initial_cost_ppc 		= get_initial_cost_ppc ($buyer_node, $con);
 		$final_cost_ppc 		= get_final_cost_ppc ($inter_nodes, $buyer_node, $seller_node, $initial_cost_ppc);
@@ -151,8 +138,8 @@
 		foreach ($inter_nodes as $intermediary){
 			// each intermediary node involved in the transaction will receive 10% of the final cost
 			if ($intermediary !== $seller_node['name'] && $intermediary !== $buyer_node['name']) {
-				$inter_node 			= &$nodes_array[indexTo ($intermediary, $nodes_array)];
-				$interm_profit 			= ($final_cost / 11);
+				$inter_node 			= &$nodes[indexTo ($intermediary, $nodes)];
+				$interm_profit 			= ($final_cost_whole / 11);
 				$inter_node['money']	+= $interm_profit;
 				$final_cost_whole 		-= $interm_profit;
 			}
@@ -164,8 +151,8 @@
 	//===========================================================================E=N=D==============================================================\\
 
 	//	update database with new values of product counts and moneys
-	function update_post_tranzaction ($con, $nodes_array){
-		foreach($nodes_array as $nd){
+	function update_post_tranzaction ($con, $nodes){
+		foreach($nodes as $nd){
 			execute_sql_and_return('<simulator.php>', $con, "UPDATE nodes SET has_product_count = ".$nd['has_product_count'].", needs_product_count = ".$nd['needs_product_count'].", money = ".$nd['money']." WHERE name = '" . $nd['name']. "'");
 		}
 	}
@@ -179,15 +166,13 @@
 
 	function BFS (&$Q, $nodes, $source, $end) {
 		// heap resetting ; the value for each node, except $source, will have its parent set to 0 (for testing)
-		$nodes_array = [];
 		
 		foreach ($nodes as $nd){
 			$Q[$nd['name']] = 0;
-			$nodes_array 	= array_merge ($nodes_array, [$nd]);
 		}
 
 		//	for all isolated nodes, initialize heap value with itself
-		foreach ($nodes_array as $nd){
+		foreach ($nodes as $nd){
 			if ($nd['link_to'] === "" || $nd['link_to'] === NULL){
 				$Q[$nd['name']] = $nd['name'];
 			}
@@ -197,7 +182,7 @@
 		$Q[$source] = $source;
 
 		// step 1 : populate the heap according to BFS algorithm
-		BFS_populate_heap($Q, $nodes_array, $source, $end);
+		BFS_populate_heap($Q, $nodes, $source, $end);
 
 		// step 2 : verify the heap to reconstruct the path
 		$result = BFS_get_path($Q, $source, $end);
@@ -218,7 +203,7 @@
 		addToLog (";--------------------------------\n;        PAYDAY\n;--------------------------------");
 
 		foreach ($nodes as $node) {
-			execute_sql ('<simulator.php>', $con, "UPDATE nodes SET money = '".($node['money'] + frand (20))."' WHERE id = '".$node['id']."'");
+			$node['money'] += frand (20);
 		}
 
 	}
@@ -309,4 +294,15 @@
 		}
 
 		return TRUE;
+	}
+
+	function getBuyers ($seller_node, $nodes){
+		$res = [];
+		foreach ($nodes as $nd){
+			if($nd['needs_product'] === $seller_node['has_product']){
+				$res = array_merge ($res, [$nd]);
+			}
+		}
+
+		return $res;
 	}

@@ -14,3 +14,24 @@
 		fclose ($file);
 	}
 
+	function fetch_nodes_toArray($con){
+		$nodes = execute_sql_and_return ($_SERVER['PHP_SELF'], $con, "SELECT * FROM nodes");
+		$nodes_array 	= [];
+
+		foreach ($nodes as $nd){
+			$nodes_array = array_merge ($nodes_array, [$nd]);
+		}
+
+		return $nodes_array;
+	}
+
+	function fetch_products_toArray($con){
+		$products = execute_sql_and_return ($_SERVER['PHP_SELF'], $con, "SELECT * FROM products");
+		$products_array 	= [];
+
+		foreach ($products as $nd){
+			$products_array = array_merge ($products_array, [$nd]);
+		}
+
+		return $products_array;
+	}

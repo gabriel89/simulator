@@ -43,7 +43,7 @@
 				}
 
 			// retrieve all nodes from the DB
-			$nodes = execute_sql_and_return ('<simulator.php>', $con, "SELECT * FROM nodes");
+			$nodes = fetch_nodes_toArray ($con);
 			
 			startSim ($con, $nodes, $exec_iterator, $exec_count);
 		}
