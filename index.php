@@ -154,8 +154,8 @@ var that = {init:function(){dom.find('.ctrl > a').live('click', that.menuClick) 
           <a href="#" id="popup_window" data-popup-target="#log-popup" class="showlogtext">show log</a>
           <br/>
           <hr/>
-          <a href="#" style="color:red;" class="init_product">1. init products</a>
-          <a href="#" style="color:red;" class="ForceInit">2. init nodes</a>
+          <a href="#" style="color:red;" class="init_products">1. init products</a>
+          <a href="#" style="color:red;" class="init_nodes">2. init nodes</a>
           <a href="#" style="color:red;" class="new" id="loadTreeData">3. reset</a>
         </div>
         <ul class="dialog"></ul>

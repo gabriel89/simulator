@@ -17,8 +17,7 @@
 	    die ("Connection failed: " . $conn->connect_error);
 	}
 
-	// truncate tables
-	mysqli_query ($con,'TRUNCATE TABLE products');
+	// truncate table
 	mysqli_query ($con,'TRUNCATE TABLE nodes');
 
 	$file 	= file_get_contents ('../../data/initializer.csv');
@@ -33,8 +32,6 @@
 	function read_CSV ($content, $con) {
 		$rows 			= explode ("\n", $content);
 		$headings 		= explode (";", $rows[0]);
-
-		generateProducts ($con);
 		
 		// pop empty element from the list
 		array_shift ($headings);
@@ -104,13 +101,3 @@
 
 		return trim (implode (',', $link_to), ',');
 	}
-
-	// function to generate products and their values
-	function generateProducts ($con) {
-		$prod_count = 7;
-
-		for ($i = 0; $i < $prod_count; $i++) {
-			execute_sql('<create_initial_arbor.php>', $con, "INSERT INTO products (name, value) VALUES ('P".$i."', '".frand()."')");
-		}
-	}
-	// end generate products

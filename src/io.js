@@ -56,12 +56,23 @@
 					$('#popuplogcontent').val($.ajax({type: 'GET', url: 'data/log.txt', async: false}).responseText);
 				}
 				// reads from initializer and stores it in the arbor.txt on load-link
-				else if (type == 'ForceInit') {
+				else if (type == 'init_products') {
 					// var initializer = $.ajax({type: 'GET', url: 'data/initializer.csv', async: false});
 					// var ri = readCSV_ND(initializer.responseText);
 					$.ajax({
 						type: "POST",
-						url: "src/php_files/create_initial_arbor.php",
+						url: "src/php_files/create_initial_products.php",
+						async: false,
+						success: function(e) {console.log('Stored a list of fresh products in the database');},
+						error: function(e) {console.log('Error storing a list of fresh products in the database');}
+					});
+				}
+				else if (type == 'init_nodes') {
+					// var initializer = $.ajax({type: 'GET', url: 'data/initializer.csv', async: false});
+					// var ri = readCSV_ND(initializer.responseText);
+					$.ajax({
+						type: "POST",
+						url: "src/php_files/create_initial_products.php",
 						async: false,
 						success: function() {console.log('Loaded fresh data from initializer.csv into database');},
 						error: function() {console.log('Error loading fresh data from initializer.csv into database');}
