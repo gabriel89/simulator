@@ -70,7 +70,7 @@
 			}
 		}
 
-		return that.init()    
+		return that.init();
 	}
 
 	function printOnStartClick() {
