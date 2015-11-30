@@ -127,7 +127,8 @@
 
 	function complete_purchase (&$inter_nodes, &$buyer_node, &$seller_node, &$nodes, $con){
 		//	complete tranzaction ; after tranzaction is completed, each intermediary node involved in the transaction receives its share of the total profit
-		foreach ($buyer_node as $product) {
+		$products = $buyer_node['needs_product'];
+		foreach ($products as $product) {
 			$initial_cost_ppc 		= get_initial_cost_ppc ($product, $con);
 			$final_cost_ppc 		= get_final_cost_ppc ($inter_nodes, $product, $seller_node, $initial_cost_ppc);
 			$final_purchase_amount 	= get_final_purchase_amount ($buyer_node, $product, $seller_node, $final_cost_ppc);
@@ -298,11 +299,52 @@
 		return TRUE;
 	}
 
-	function getBuyers ($seller_node, $nodes){
+	function getBuyers ($buyer_node, $nodes){
 		$res = [];
+		$prods = $buyer_node ['needs_product']; // lista de produse necesare
 		foreach ($nodes as $nd){
-			if($nd['needs_product'] === $seller_node['has_product']){
-				$res = array_merge ($res, [$nd]);
+			foreach ($prods as $prod){
+				// if the node we are looking at si selling a product needed by buyer_node, add the node name to the result
+				if ($nd ['has_product'] === $prod ['p_name']){ 
+					$res = array_merge ($res, [$nd ['name']]);
+				}
+			}
+		}
+		//array to hold numbers representing product ranks of the products sold
+		$ranks = [];
+		foreach($res as $r){
+			switch ($r ['p_rank']){
+				case 'high' : {
+					$ranks = array_merge($ranks, [3]);
+				} break;
+
+				case 'normal' : {
+					$ranks = array_merge($ranks, [2]);
+				} break;
+
+				case 'low' : {
+					$ranks = array_merge($ranks, [1]);
+				} break;
+
+				default : {
+					$ranks = array_merge($ranks, [-1]);
+				} break;
+			}
+		}
+		//bubble sort the seller nodes over product ranking
+
+		$n = sizeof ($ranks);
+		for($i = 0; $i < $n - 1; $i++){
+			for($j = $i + 1; $j < $n; $j++){
+				$aux = $res[$i];
+				$auxi = $ranks[$i];
+				if($ranks[$i] < $ranks[$j]){
+					$ranks[$i] = $ranks[$j];
+					$ranks[$j] = $auxi;
+
+					$res[$i] = $res[$j];
+					$res[$j] = $aux;
+				}
 			}
 		}
 
