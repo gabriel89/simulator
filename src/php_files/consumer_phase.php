@@ -53,10 +53,13 @@
 				$buyer_node = &$nodes[indexTo ($rev[0], $nodes)];
 
 				unset ($rev);
+				$products = $buyer_node['needs_product'];
+				foreach($products as $product) {
 				//	check if buyer still needs to purchase products
-				if (check_buyer_needs_product ($buyer_node)) {
-					// finalize transaction
-					complete_purchase ($inter_nodes, $buyer_node, $seller_node, $nodes, $con);
+					if (check_buyer_needs_product ($product)) {
+						// finalize transaction
+						complete_purchase ($inter_nodes, $buyer_node, $seller_node, $nodes, $con);
+					}
 				}
 			}
 		}
@@ -77,9 +80,9 @@
 		return FALSE;
 	}
 
-	function check_buyer_needs_product ($buyer_node){
+	function check_buyer_needs_product ($product){
 		//	returns TRUE if buyer still needs a quantity of product to buy (least amount is 0 -> returns FALSE)
-		if ($buyer_node ['needs_product_count'] > 0) return TRUE;
+		if ($product ['p_count'] > 0) return TRUE;
 
 		return FALSE;
 	}
