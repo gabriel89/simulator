@@ -87,7 +87,7 @@
 	function get_initial_cost_ppc ($buyer_node, $con){
 		//	returns the value (float) of ONE instance of the product the buyer needs
 		global $products;
-		$product = $products [(int) (substr ($buyer_node['has_product'], 1))];
+		$product = $products [(int) (substr ($buyer_node['needs_product'], 1))];
 
 		return $product ['value'];
 	}
@@ -135,7 +135,7 @@
 		$buyer_node ['needs_product_count']	-= $final_purchase_amount;
 		$buyer_node ['money']				-= $final_cost_whole;
 
-		foreach ($inter_nodes as $intermediary){
+		foreach (array_reverse($inter_nodes) as $intermediary){
 			// each intermediary node involved in the transaction will receive 10% of the final cost
 			if ($intermediary !== $seller_node['name'] && $intermediary !== $buyer_node['name']) {
 				$inter_node 			= &$nodes[indexTo ($intermediary, $nodes)];
