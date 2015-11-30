@@ -84,20 +84,20 @@
 		return FALSE;
 	}
 
-	function get_initial_cost_ppc ($buyer_node, $con){
+	function get_initial_cost_ppc ($product, $con){
 		//	returns the value (float) of ONE instance of the product the buyer needs
 		global $products;
-		$product = $products [(int) (substr ($buyer_node['needs_product'], 1))];
+		$product = $products [(int) (substr ($product['p_name'], 1))];
 
 		return $product ['value'];
 	}
 
-	function get_final_cost_ppc ($inter_nodes, $buyer_node, $seller_node, $initial_cost_ppc){
+	function get_final_cost_ppc ($inter_nodes, $product, $seller_node, $initial_cost_ppc){
 		//	returns the value (float) of ONE instance of product after it has passed through all intermediary nodes
 		$price = $initial_cost_ppc;
 
 		foreach ($inter_nodes as $intermediary) {
-			if ($intermediary !== $seller_node['name'] && $intermediary !== $buyer_node['name']) {
+			if ($intermediary !== $seller_node['name'] && $intermediary !== $product['p_name']) {
 				$price = calculateNewPrice ($price);
 			}
 		}
@@ -105,12 +105,12 @@
 		return $price;
 	}
 
-	function get_final_purchase_amount ($buyer_node, $seller_node, $final_cost_ppc){
+	function get_final_purchase_amount ($buyer_node, $product, $seller_node, $final_cost_ppc){
 		//	returns the amount (int) of product the buyer can afford to buy from seller at the final per-piece cost
 		$affordable_amount = (int) ($buyer_node ['money'] / $final_cost_ppc);
 
-		if ($affordable_amount > $buyer_node ['needs_product_count']){
-			$affordable_amount = $buyer_node ['needs_product_count'];
+		if ($affordable_amount > $product ['p_count']){
+			$affordable_amount = $product ['p_count'];
 		}
 
 		if ($affordable_amount <= $seller_node ['has_product_count']){
@@ -127,26 +127,28 @@
 
 	function complete_purchase (&$inter_nodes, &$buyer_node, &$seller_node, &$nodes, $con){
 		//	complete tranzaction ; after tranzaction is completed, each intermediary node involved in the transaction receives its share of the total profit
-		$initial_cost_ppc 		= get_initial_cost_ppc ($buyer_node, $con);
-		$final_cost_ppc 		= get_final_cost_ppc ($inter_nodes, $buyer_node, $seller_node, $initial_cost_ppc);
-		$final_purchase_amount 	= get_final_purchase_amount ($buyer_node, $seller_node, $final_cost_ppc);
-		$final_cost_whole 		= get_final_cost_whole ($final_purchase_amount, $final_cost_ppc);
+		foreach ($buyer_node as $product) {
+			$initial_cost_ppc 		= get_initial_cost_ppc ($product, $con);
+			$final_cost_ppc 		= get_final_cost_ppc ($inter_nodes, $product, $seller_node, $initial_cost_ppc);
+			$final_purchase_amount 	= get_final_purchase_amount ($buyer_node, $product, $seller_node, $final_cost_ppc);
+			$final_cost_whole 		= get_final_cost_whole ($final_purchase_amount, $final_cost_ppc);
 
-		$buyer_node ['needs_product_count']	-= $final_purchase_amount;
-		$buyer_node ['money']				-= $final_cost_whole;
+			$product ['p_count']	-= $final_purchase_amount;
+			$buyer_node ['money']				-= $final_cost_whole;
 
-		foreach (array_reverse($inter_nodes) as $intermediary){
-			// each intermediary node involved in the transaction will receive 10% of the final cost
-			if ($intermediary !== $seller_node['name'] && $intermediary !== $buyer_node['name']) {
-				$inter_node 			= &$nodes[indexTo ($intermediary, $nodes)];
-				$interm_profit 			= ($final_cost_whole / 11);
-				$inter_node['money']	+= $interm_profit;
-				$final_cost_whole 		-= $interm_profit;
+			foreach (array_reverse($inter_nodes) as $intermediary){
+				// each intermediary node involved in the transaction will receive 10% of the final cost
+				if ($intermediary !== $seller_node['name'] && $intermediary !== $product['p_name']) {
+					$inter_node 			= &$nodes[indexTo ($intermediary, $nodes)];
+					$interm_profit 			= ($final_cost_whole / 11);
+					$inter_node['money']	+= $interm_profit;
+					$final_cost_whole 		-= $interm_profit;
+				}
 			}
-		}
 
-		$seller_node ['has_product_count']	-= $final_purchase_amount;
-		$seller_node ['money']				+= $final_cost_whole;
+			$seller_node ['has_product_count']	-= $final_purchase_amount;
+			$seller_node ['money']				+= $final_cost_whole;
+		}
 	}
 	//===========================================================================E=N=D==============================================================\\
 
