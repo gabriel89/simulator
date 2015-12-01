@@ -159,7 +159,7 @@
 	//	update database with new values of product counts and moneys
 	function update_post_tranzaction ($con, $nodes){
 		foreach($nodes as $nd){
-			execute_sql_and_return('<simulator.php>', $con, "UPDATE nodes SET has_product_count = ".$nd['has_product_count'].", needs_product_count = ".$nd['needs_product_count'].", money = ".$nd['money']." WHERE name = '" . $nd['name']. "'");
+			execute_sql_and_return('<simulator.php>', $con, "UPDATE nodes SET has_product_count = ".$nd['has_product_count'].", money = ".$nd['money']." WHERE name = '" . $nd['name']. "'");
 		}
 	}
 	
@@ -238,7 +238,7 @@
 				$st_node_neighbours = $st_node_neighbours['link_to'];
 
 				//	transform the list into array for iteration
-				$s_n_n = explode(",", $st_node_neighbours);
+				$s_n_n = explode(',', $st_node_neighbours);
 				$st_node_neighbours = [];
 
 				//	filter out previously visited nodes
@@ -280,7 +280,7 @@
 		//	recursive call of function using $end's parent
 		$parent = BFS_get_path($Q, $start, $p_node);
 
-		return $parent . "," . $end;
+		return $parent . ',' . $end;
 	}
 
 	function indexTo ($node_name, $nodes) {

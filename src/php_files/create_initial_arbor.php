@@ -47,7 +47,7 @@
 			$has_prod 			= $has_prod_search->fetch_assoc()['name'];
 			$needs_prod 		= $needs_prod_search->fetch_assoc()['name'];
 
-			execute_sql('<create_initial_arbor.php>', $con, "INSERT INTO nodes (name, needs_product, needs_product_count, has_product, has_product_count, money) VALUES ('".trim ($value)."', '".trim ($needs_prod)."', '".frand (10)."', '".trim ($has_prod)."', '".frand (10)."', '".frand (10)."')");
+			execute_sql('<create_initial_arbor.php>', $con, "INSERT INTO nodes (name, needs_product, has_product, has_product_count, money) VALUES ('".trim ($value)."', '".trim ($needs_prod)."', '".trim ($has_prod)."', '".frand (10)."', '".frand (10)."')");
 		}
 
 		// also add the links
