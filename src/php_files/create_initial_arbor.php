@@ -39,15 +39,50 @@
 		// pop headings from the list
 		array_shift($rows);
 
+		// retrieve table of products
+		$products = fetch_products_toArray($con);
+
 		// add nodes to table, with extra data for each node
 		foreach ($headings as $value){
 			// select a random product
 			$has_prod_search 	= $con->query ("SELECT name FROM products ORDER BY RAND() LIMIT 1");
-			$needs_prod_search 	= $con->query ("SELECT name FROM products ORDER BY RAND() LIMIT 1");
 			$has_prod 			= $has_prod_search->fetch_assoc()['name'];
-			$needs_prod 		= $needs_prod_search->fetch_assoc()['name'];
+			
+			// select random number of products to be needed
+			$products_check = [];
+			for ($i = 0; $i < sizeof ($proucts); $i++){
+				$products_check[$i] = 0;
 
-			execute_sql('<create_initial_arbor.php>', $con, "INSERT INTO nodes (name, needs_product, has_product, has_product_count, money) VALUES ('".trim ($value)."', '".trim ($needs_prod)."', '".trim ($has_prod)."', '".frand (10)."', '".frand (10)."')");
+				// make sure the product the node produces will not be added to the needed products
+				if($products[$i]['name'] === $has_prod_search){
+					$products_check[$i] = 1;
+				}
+			}
+			// pick a random number of products to be chosen
+			$num_prods = frand (1, 0, sizeof ($products) - 1, 0);
+
+			// array to hold information regarding needed products
+			$needed_prods = [];
+
+			// pick random products by index from products array
+			for($i = 0; $i < $num_prods; $i++){
+				// pick a random index for retrieving product
+				$index = frand (1, 0, sizeof ($products) - 1, 0);
+
+				// check if product is valid for pick
+				if($products_check[$index] === 0){
+					// add selected product to needed products array
+					$needed_prods[$i]['p_name'] 	= $products[$index]['name'];
+					$needed_prods[$i]['value'] 		= $products[$index]['value'];
+					$needed_prods[$i]['p_rank'] 	= $products[$index]['rank'];
+				}
+				// if product not valid, roll back and try again 
+				else --$i;
+			}
+			// serialize the table
+			$needed_prods = serialize ($needed_prods);
+
+			execute_sql('<create_initial_arbor.php>', $con, "INSERT INTO nodes (name, needs_product, has_product, has_product_count, money) VALUES ('".trim ($value)."', '".trim ($needed_prods)."', '".trim ($has_prod)."', '".frand (10)."', '".frand (10)."')");
 		}
 
 		// also add the links

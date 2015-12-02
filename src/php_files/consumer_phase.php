@@ -305,6 +305,8 @@
 	function getBuyers ($buyer_node, $nodes){
 		$res = [];
 		$prods = $buyer_node ['needs_product']; // lista de produse necesare
+		$prods = unserialize ($prods);
+
 		foreach ($nodes as $nd){
 			foreach ($prods as $prod){
 				// if the node we are looking at si selling a product needed by buyer_node, add the node name to the result
