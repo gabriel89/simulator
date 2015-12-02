@@ -89,6 +89,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `value` float NOT NULL,
   `max_value` float NOT NULL,
   `misc` varchar(255) NOT NULL,
+  `rank` varchar(255),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=45 ;
 

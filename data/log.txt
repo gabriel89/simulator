@@ -2,7 +2,7 @@
 ;        INITIAL SETTINGS
 ;--------------------------------
 
-n0{hasProduct: [P4 (8.48)], needsProduct: [P4 (8.48)], money: 49.6}
+n0{hasProduct: [ ()], needsProduct: [a:27:{i:0;a:3:{s:6:"p_name";s:3:"P23";s:5:"value";s:4:"8.87";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:3:"P14";s:5:"value";s:4:"1.67";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:3:"P42";s:5:"value";s:4:"2.12";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name" ()], money: 65.8}
 
 n0--n5
 
@@ -12,33 +12,33 @@ n0--n12
 
 n0--n17
 
-n1{hasProduct: [P0 (8.11)], needsProduct: [P0 (8.11)], money: 27.2}
+n1{hasProduct: [P42 (7.18)], needsProduct: [a:30:{i:0;a:3:{s:6:"p_name";s:3:"P17";s:5:"value";s:4:"0.12";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:3:"P12";s:5:"value";s:4:"2.84";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:3:"P39";s:5:"value";s:4:"3.71";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name" ()], money: 86.5}
 
 n1--n22
 
 n1--n26
 
-n2{hasProduct: [P0 (8.11)], needsProduct: [P4 (8.48)], money: 63}
+n2{hasProduct: [P4 (1.86)], needsProduct: [a:40:{i:0;a:3:{s:6:"p_name";s:3:"P39";s:5:"value";s:4:"3.71";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:3:"P30";s:5:"value";s:4:"3.92";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:2:"P1";s:5:"value";s:4:"4.62";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name"; ()], money: 29.7}
 
 n2--n29
 
-n3{hasProduct: [P2 (2.33)], needsProduct: [P3 (7.58)], money: 13.7}
+n3{hasProduct: [P17 (6.08)], needsProduct: [a:3:{i:0;a:3:{s:6:"p_name";s:2:"P6";s:5:"value";s:4:"1.69";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:3:"P43";s:5:"value";s:4:"1.07";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:3:"P26";s:5:"value";s:4:"6.77";s:6:"p_rank";s:0:"";}} ()], money: 32.2}
 
 n3--n17
 
-n4{hasProduct: [P3 (7.58)], needsProduct: [P0 (8.11)], money: 86.4}
+n4{hasProduct: [P2 (4.37)], needsProduct: [a:45:{i:0;a:3:{s:6:"p_name";s:2:"P0";s:5:"value";s:4:"5.83";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:3:"P11";s:5:"value";s:4:"1.97";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:2:"P9";s:5:"value";s:4:"3.06";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name";s ()], money: 60.4}
 
 n4--n24
 
 n4--n29
 
-n5{hasProduct: [P0 (8.11)], needsProduct: [P0 (8.11)], money: 88.1}
+n5{hasProduct: [P8 (6.37)], needsProduct: [a:26:{i:0;a:3:{s:6:"p_name";s:3:"P11";s:5:"value";s:4:"1.97";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:2:"P9";s:5:"value";s:4:"3.06";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:0:"";s:5:"value";s:1:"0";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name";s:3:"P ()], money: 61.7}
 
 n5--n0
 
 n5--n28
 
-n6{hasProduct: [P5 (4.82)], needsProduct: [P5 (4.82)], money: 34}
+n6{hasProduct: [P33 (2.41)], needsProduct: [a:15:{i:0;a:3:{s:6:"p_name";s:3:"P18";s:5:"value";s:4:"5.75";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:3:"P26";s:5:"value";s:4:"6.77";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:3:"P35";s:5:"value";s:4:"0.76";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name" ()], money: 28.2}
 
 n6--n16
 
@@ -48,13 +48,13 @@ n6--n28
 
 n6--n29
 
-n7{hasProduct: [P5 (4.82)], needsProduct: [P3 (7.58)], money: 62.8}
+n7{hasProduct: [P17 (6.08)], needsProduct: [a:9:{i:0;a:3:{s:6:"p_name";s:3:"P23";s:5:"value";s:4:"8.87";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:3:"P11";s:5:"value";s:4:"1.97";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:2:"P8";s:5:"value";s:4:"8.37";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name";s ()], money: 34.2}
 
 n7--n10
 
 n7--n30
 
-n8{hasProduct: [P5 (4.82)], needsProduct: [P4 (8.48)], money: 13.7}
+n8{hasProduct: [P34 (0.49)], needsProduct: [a:30:{i:0;a:3:{s:6:"p_name";s:3:"P25";s:5:"value";s:4:"3.12";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:3:"P30";s:5:"value";s:4:"3.92";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:3:"P36";s:5:"value";s:4:"3.81";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name" ()], money: 27.9}
 
 n8--n17
 
@@ -62,7 +62,7 @@ n8--n23
 
 n8--n29
 
-n9{hasProduct: [P5 (4.82)], needsProduct: [P5 (4.82)], money: 55.3}
+n9{hasProduct: [P20 (2.98)], needsProduct: [a:3:{i:0;a:3:{s:6:"p_name";s:3:"P41";s:5:"value";s:4:"3.85";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:3:"P14";s:5:"value";s:4:"1.67";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:3:"P15";s:5:"value";s:4:"2.03";s:6:"p_rank";s:0:"";}} ()], money: 21.9}
 
 n9--n20
 
@@ -72,7 +72,7 @@ n9--n17
 
 n9--n24
 
-n10{hasProduct: [P3 (7.58)], needsProduct: [P3 (7.58)], money: 36.9}
+n10{hasProduct: [P3 (2.86)], needsProduct: [a:4:{i:0;a:3:{s:6:"p_name";s:3:"P31";s:5:"value";s:4:"5.68";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:3:"P16";s:5:"value";s:4:"8.74";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:2:"P6";s:5:"value";s:4:"1.69";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name";s ()], money: 24.9}
 
 n10--n7
 
@@ -84,7 +84,7 @@ n10--n26
 
 n10--n27
 
-n11{hasProduct: [P3 (7.58)], needsProduct: [P3 (7.58)], money: 3}
+n11{hasProduct: [P17 (6.08)], needsProduct: [a:28:{i:0;a:3:{s:6:"p_name";s:3:"P33";s:5:"value";s:4:"0.02";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:2:"P1";s:5:"value";s:4:"4.62";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:3:"P39";s:5:"value";s:4:"3.71";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name"; ()], money: 36}
 
 n11--n15
 
@@ -92,23 +92,23 @@ n11--n19
 
 n11--n25
 
-n12{hasProduct: [P1 (5.07)], needsProduct: [P1 (5.07)], money: 51.2}
+n12{hasProduct: [P36 (1.75)], needsProduct: [a:8:{i:0;a:3:{s:6:"p_name";s:3:"P37";s:5:"value";s:4:"4.04";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:0:"";s:5:"value";s:1:"0";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:3:"P22";s:5:"value";s:4:"4.64";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name";s:3:"P ()], money: 54.6}
 
 n12--n0
 
 n12--n19
 
-n13{hasProduct: [P0 (8.11)], needsProduct: [P3 (7.58)], money: 51.7}
+n13{hasProduct: [P32 (2.12)], needsProduct: [a:34:{i:0;a:3:{s:6:"p_name";s:3:"P42";s:5:"value";s:4:"2.12";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:3:"P15";s:5:"value";s:4:"2.03";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:3:"P37";s:5:"value";s:4:"4.04";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name" ()], money: 22.3}
 
 n13--n25
 
-n14{hasProduct: [P3 (7.58)], needsProduct: [P5 (4.82)], money: 38.1}
+n14{hasProduct: [P19 (8.68)], needsProduct: [a:3:{i:0;a:3:{s:6:"p_name";s:3:"P15";s:5:"value";s:4:"2.03";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:3:"P35";s:5:"value";s:4:"0.76";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:3:"P15";s:5:"value";s:4:"2.03";s:6:"p_rank";s:0:"";}} ()], money: 85}
 
 n14--n24
 
 n14--n29
 
-n15{hasProduct: [P4 (8.48)], needsProduct: [P4 (8.48)], money: 24.8}
+n15{hasProduct: [ ()], needsProduct: [a:23:{i:0;a:3:{s:6:"p_name";s:2:"P1";s:5:"value";s:4:"4.62";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:3:"P32";s:5:"value";s:4:"5.31";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:3:"P18";s:5:"value";s:4:"5.75";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name"; ()], money: 58}
 
 n15--n11
 
@@ -120,7 +120,7 @@ n15--n28
 
 n15--n29
 
-n16{hasProduct: [P4 (8.48)], needsProduct: [P2 (2.33)], money: 4.9}
+n16{hasProduct: [ ()], needsProduct: [a:15:{i:0;a:3:{s:6:"p_name";s:3:"P11";s:5:"value";s:4:"1.97";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:3:"P31";s:5:"value";s:4:"5.68";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:3:"P19";s:5:"value";s:4:"5.15";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name" ()], money: 10.6}
 
 n16--n6
 
@@ -130,7 +130,7 @@ n16--n23
 
 n16--n25
 
-n17{hasProduct: [P5 (4.82)], needsProduct: [P1 (5.07)], money: 25.5}
+n17{hasProduct: [P33 (2.41)], needsProduct: [a:17:{i:0;a:3:{s:6:"p_name";s:3:"P26";s:5:"value";s:4:"6.77";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:3:"P31";s:5:"value";s:4:"5.68";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:3:"P17";s:5:"value";s:4:"0.12";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name" ()], money: 37.2}
 
 n17--n3
 
@@ -146,7 +146,7 @@ n17--n21
 
 n17--n27
 
-n18{hasProduct: [P0 (8.11)], needsProduct: [P5 (4.82)], money: 45.2}
+n18{hasProduct: [P38 (8.38)], needsProduct: [a:5:{i:0;a:3:{s:6:"p_name";s:3:"P40";s:5:"value";s:4:"5.51";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:3:"P34";s:5:"value";s:4:"4.56";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:3:"P35";s:5:"value";s:4:"0.76";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name"; ()], money: 67.3}
 
 n18--n16
 
@@ -154,7 +154,7 @@ n18--n26
 
 n18--n27
 
-n19{hasProduct: [P1 (5.07)], needsProduct: [P6 (0.86)], money: 84.8}
+n19{hasProduct: [P35 (6.31)], needsProduct: [a:20:{i:0;a:3:{s:6:"p_name";s:3:"P19";s:5:"value";s:4:"5.15";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:3:"P15";s:5:"value";s:4:"2.03";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:3:"P24";s:5:"value";s:4:"6.54";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name" ()], money: 23.2}
 
 n19--n11
 
@@ -162,19 +162,19 @@ n19--n12
 
 n19--n17
 
-n20{hasProduct: [P2 (2.33)], needsProduct: [P3 (7.58)], money: 63.7}
+n20{hasProduct: [ ()], needsProduct: [a:24:{i:0;a:3:{s:6:"p_name";s:2:"P6";s:5:"value";s:4:"1.69";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:3:"P10";s:5:"value";s:4:"6.26";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:3:"P14";s:5:"value";s:4:"1.67";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name"; ()], money: 9}
 
 n20--n9
 
 n20--n28
 
-n21{hasProduct: [P6 (0.86)], needsProduct: [P6 (0.86)], money: 13.9}
+n21{hasProduct: [P8 (6.37)], needsProduct: [a:19:{i:0;a:3:{s:6:"p_name";s:3:"P32";s:5:"value";s:4:"5.31";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:0:"";s:5:"value";s:1:"0";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:2:"P4";s:5:"value";s:4:"5.71";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name";s:3:"P ()], money: 11.4}
 
 n21--n15
 
 n21--n17
 
-n22{hasProduct: [P1 (5.07)], needsProduct: [P2 (2.33)], money: 49.4}
+n22{hasProduct: [P11 (7.05)], needsProduct: [a:35:{i:0;a:3:{s:6:"p_name";s:3:"P39";s:5:"value";s:4:"3.71";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:2:"P3";s:5:"value";s:3:"0.5";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:3:"P33";s:5:"value";s:4:"0.02";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name";s ()], money: 36}
 
 n22--n0
 
@@ -184,13 +184,13 @@ n22--n15
 
 n22--n10
 
-n23{hasProduct: [P6 (0.86)], needsProduct: [P0 (8.11)], money: 58.3}
+n23{hasProduct: [P43 (2.24)], needsProduct: [a:16:{i:0;a:3:{s:6:"p_name";s:2:"P7";s:5:"value";s:4:"4.06";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:2:"P8";s:5:"value";s:4:"8.37";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:2:"P1";s:5:"value";s:4:"4.62";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name";s: ()], money: 16}
 
 n23--n8
 
 n23--n16
 
-n24{hasProduct: [P4 (8.48)], needsProduct: [P2 (2.33)], money: 53.5}
+n24{hasProduct: [P34 (0.49)], needsProduct: [a:31:{i:0;a:3:{s:6:"p_name";s:3:"P27";s:5:"value";s:4:"4.57";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:3:"P34";s:5:"value";s:4:"4.56";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:3:"P22";s:5:"value";s:4:"4.64";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name" ()], money: 2}
 
 n24--n4
 
@@ -198,7 +198,7 @@ n24--n14
 
 n24--n9
 
-n25{hasProduct: [P4 (8.48)], needsProduct: [P1 (5.07)], money: 14.6}
+n25{hasProduct: [P14 (0.75)], needsProduct: [a:29:{i:0;a:3:{s:6:"p_name";s:3:"P36";s:5:"value";s:4:"3.81";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:2:"P9";s:5:"value";s:4:"3.06";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:3:"P38";s:5:"value";s:4:"2.62";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name"; ()], money: 69.3}
 
 n25--n6
 
@@ -208,7 +208,7 @@ n25--n11
 
 n25--n16
 
-n26{hasProduct: [P5 (4.82)], needsProduct: [P6 (0.86)], money: 19.7}
+n26{hasProduct: [P15 (4.61)], needsProduct: [a:44:{i:0;a:3:{s:6:"p_name";s:3:"P32";s:5:"value";s:4:"5.31";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:3:"P21";s:5:"value";s:4:"2.18";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:3:"P16";s:5:"value";s:4:"8.74";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name" ()], money: 7.5}
 
 n26--n1
 
@@ -216,7 +216,7 @@ n26--n18
 
 n26--n10
 
-n27{hasProduct: [P5 (4.82)], needsProduct: [P1 (5.07)], money: 67.7}
+n27{hasProduct: [P35 (6.31)], needsProduct: [a:16:{i:0;a:3:{s:6:"p_name";s:3:"P33";s:5:"value";s:4:"0.02";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:3:"P39";s:5:"value";s:4:"3.71";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:2:"P7";s:5:"value";s:4:"4.06";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name"; ()], money: 68.3}
 
 n27--n18
 
@@ -224,7 +224,7 @@ n27--n10
 
 n27--n17
 
-n28{hasProduct: [P0 (8.11)], needsProduct: [P3 (7.58)], money: 12.2}
+n28{hasProduct: [P6 (7.08)], needsProduct: [a:37:{i:0;a:3:{s:6:"p_name";s:2:"P5";s:5:"value";s:4:"3.18";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:3:"P23";s:5:"value";s:4:"8.87";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:3:"P43";s:5:"value";s:4:"1.07";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name"; ()], money: 66.9}
 
 n28--n5
 
@@ -236,7 +236,7 @@ n28--n20
 
 n28--n29
 
-n29{hasProduct: [P1 (5.07)], needsProduct: [P3 (7.58)], money: 5.4}
+n29{hasProduct: [P5 (0.28)], needsProduct: [a:11:{i:0;a:3:{s:6:"p_name";s:2:"P3";s:5:"value";s:3:"0.5";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:3:"P38";s:5:"value";s:4:"2.62";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:3:"P25";s:5:"value";s:4:"3.12";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name";s ()], money: 6.6}
 
 n29--n2
 
@@ -252,7 +252,7 @@ n29--n6
 
 n29--n14
 
-n30{hasProduct: [P2 (2.33)], needsProduct: [P2 (2.33)], money: 86}
+n30{hasProduct: [P37 (6.2)], needsProduct: [a:5:{i:0;a:3:{s:6:"p_name";s:3:"P43";s:5:"value";s:4:"1.07";s:6:"p_rank";s:0:"";}i:1;a:3:{s:6:"p_name";s:3:"P22";s:5:"value";s:4:"4.64";s:6:"p_rank";s:0:"";}i:2;a:3:{s:6:"p_name";s:2:"P0";s:5:"value";s:4:"5.83";s:6:"p_rank";s:0:"";}i:3;a:3:{s:6:"p_name";s ()], money: 24.3}
 
 n30--n7
 
