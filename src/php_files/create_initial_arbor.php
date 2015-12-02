@@ -81,7 +81,6 @@
 			}
 			// serialize the table
 			$needed_prods = serialize ($needed_prods);
-			echo $needed_prods;
 			execute_sql('<create_initial_arbor.php>', $con, "INSERT INTO nodes (name, needs_product, has_product, has_product_count, money) VALUES ('".trim ($value)."', '".trim ($needed_prods)."', '".trim ($has_prod)."', '".frand (10)."', '".frand (10)."')");
 		}
 
