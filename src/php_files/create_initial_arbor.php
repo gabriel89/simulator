@@ -50,7 +50,7 @@
 			
 			// select random number of products to be needed
 			$products_check = [];
-			for ($i = 0; $i < sizeof ($products); $i++){
+			for ($i = 0; $i < sizeof ($proucts); $i++){
 				$products_check[$i] = 0;
 
 				// make sure the product the node produces will not be added to the needed products
@@ -74,13 +74,15 @@
 					// add selected product to needed products array
 					$needed_prods[$i]['p_name'] 	= $products[$index]['name'];
 					$needed_prods[$i]['value'] 		= $products[$index]['value'];
-					$needed_prods[$i]['p_rank'] 	= $products[$index]['rank'];
+					// generate rank randomly for product
+					$needed_prods[$i]['p_rank'] 	= int_to_rank (frand (1, 0, 2, 0));
 				}
 				// if product not valid, roll back and try again 
 				else --$i;
 			}
 			// serialize the table
 			$needed_prods = serialize ($needed_prods);
+
 			execute_sql('<create_initial_arbor.php>', $con, "INSERT INTO nodes (name, needs_product, has_product, has_product_count, money) VALUES ('".trim ($value)."', '".trim ($needed_prods)."', '".trim ($has_prod)."', '".frand (10)."', '".frand (10)."')");
 		}
 

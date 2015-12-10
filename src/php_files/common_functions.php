@@ -35,3 +35,13 @@
 
 		return $products_array;
 	}
+
+	function int_to_rank(int r){
+		switch(r){
+			case 0 : return "low";
+
+			case 1 : return "normal";
+
+			case 2 : return "high";
+		}
+	}
