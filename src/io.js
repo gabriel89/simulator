@@ -74,8 +74,8 @@
 						type: "POST",
 						url: "src/php_files/create_initial_arbor.php",
 						async: false,
-						success: function() {console.log('Loaded fresh data from initializer.csv into database');},
-						error: function() {console.log('Error loading fresh data from initializer.csv into database');}
+						success: function(e) {console.log('Loaded fresh data from initializer.csv into database');},
+						error: function(e) {console.log('Error loading fresh data from initializer.csv into database');}
 					});
 				}
 			}
