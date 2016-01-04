@@ -14,7 +14,7 @@
 		fclose ($file);
 	}
 
-	function fetch_nodes_toArray($con){
+	function fetch_nodes_toArray ($con){
 		$nodes = execute_sql_and_return ($_SERVER['PHP_SELF'], $con, "SELECT * FROM nodes");
 		$nodes_array 	= [];
 
@@ -25,7 +25,7 @@
 		return $nodes_array;
 	}
 
-	function fetch_products_toArray($con){
+	function fetch_products_toArray ($con){
 		$products = execute_sql_and_return ($_SERVER['PHP_SELF'], $con, "SELECT * FROM products");
 		$products_array 	= [];
 
@@ -36,7 +36,7 @@
 		return $products_array;
 	}
 
-	function int_to_rank(int r){
+	function int_to_rank ($r){
 		switch(r){
 			case 0 : return "low";
 
