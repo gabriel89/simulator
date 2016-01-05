@@ -50,7 +50,7 @@
 			
 			// select random number of products to be needed
 			$products_check = [];
-			for ($i = 0; $i < sizeof ($proucts); $i++){
+			for ($i = 0; $i < sizeof ($products); $i++){
 				$products_check[$i] = 0;
 
 				// make sure the product the node produces will not be added to the needed products
