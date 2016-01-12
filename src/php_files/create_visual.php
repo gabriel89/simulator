@@ -59,8 +59,7 @@
 			}
 
 			// set needsProducts list
-			$needs_product = explode (',', $row['needs_product']);
-			$needs_product = unserialize($needs_product[0]);
+			$needs_product = unserialize($row['needs_product']);
 				
 			if(isset($needs_product[0])) {
 				$needs_product = $needs_product[0];
