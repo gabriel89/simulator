@@ -39,7 +39,7 @@
 
 		while ($row = mysqli_fetch_assoc ($nodes)) {
 			$visual .= $row['name'] . '{';
-
+			
 			// check if node is producer
 			if ($row['is_producer']){
 				$visual .= 'color:red, shape:dot';
@@ -59,16 +59,19 @@
 			}
 
 			// set needsProducts list
-			$needs_product = explode (',', $row['needs_product']);
-			if (count ($needs_product) > 0) {
-				$concatenated = [];
-				$visual .= ', needsProduct: [';
+			$needs_product = unserialize($row['needs_product']);
+				
+			if(isset($needs_product[0])) {
+				$needs_product = $needs_product[0];
+				if (count ($needs_product) > 0) {
+					$concatenated = [];
+					$visual .= ', needsProduct: [';
+					foreach ($needs_product as $key => $value) {
+						$concatenated[$key] = "$value (" . $products[$needs_product["p_name"]] . ")";
+					}
 
-				foreach ($needs_product as $key => $value) {
-					$concatenated[$key] = "$value (" . $products[$value] . ")";
+					$visual .= implode (', ', $concatenated) . ']';
 				}
-
-				$visual .= implode (', ', $concatenated) . ']';
 			}
 
 			// set wealth
@@ -85,7 +88,6 @@
 			}
 
 	    }
-
 		return $visual;
 	}
 

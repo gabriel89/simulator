@@ -37,7 +37,7 @@
 	}
 
 	function int_to_rank ($r){
-		switch(r){
+		switch($r){
 			case 0 : return "low";
 
 			case 1 : return "normal";

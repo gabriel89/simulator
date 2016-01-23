@@ -50,7 +50,7 @@
 			
 			// select random number of products to be needed
 			$products_check = [];
-			for ($i = 0; $i < sizeof ($proucts); $i++){
+			for ($i = 0; $i < sizeof ($products); $i++){
 				$products_check[$i] = 0;
 
 				// make sure the product the node produces will not be added to the needed products
@@ -76,6 +76,7 @@
 					$needed_prods[$i]['value'] 		= $products[$index]['value'];
 					// generate rank randomly for product
 					$needed_prods[$i]['p_rank'] 	= int_to_rank (frand (1, 0, 2, 0));
+					$needed_prods[$i]['p_count']    = rand(1,99);
 				}
 				// if product not valid, roll back and try again 
 				else --$i;

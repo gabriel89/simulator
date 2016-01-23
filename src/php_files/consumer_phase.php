@@ -1,5 +1,7 @@
 <?php
 	//global declaration of heap and product array
+	include_once ('common_functions.php');
+	include_once ('sql_execute.php');
 	$Q = [];
 
 	$products = fetch_products_toArray(new mysqli('localhost', 'sim', 'sim', 'sim'));
@@ -8,15 +10,13 @@
 		addToLog ("\n\n\n;--------------------------------\n;        ESTABLISHING TRANSACTION PATH\n;--------------------------------");
 
 		$consumer_path 	= [];
-		
-
-		
 
 		foreach ($nodes as $node) {
 			$Q = [];
 			$list 			= [];
 			$buyers_array 	= getBuyers($node, $nodes);
 
+				var_dump($buyers_array);
 			foreach ($buyers_array as $buyer){
 				$list = array_merge ($list, array (BFS ($Q, $nodes, $node['name'], $buyer['name'])));
 			}
@@ -54,6 +54,7 @@
 
 				unset ($rev);
 				$products = $buyer_node['needs_product'];
+				$products = unserialize($products);
 				foreach($products as $product) {
 				//	check if buyer still needs to purchase products
 					if (check_buyer_needs_product ($product)) {
@@ -131,6 +132,7 @@
 	function complete_purchase (&$inter_nodes, &$buyer_node, &$seller_node, &$nodes, $con){
 		//	complete tranzaction ; after tranzaction is completed, each intermediary node involved in the transaction receives its share of the total profit
 		$products = $buyer_node['needs_product'];
+		$products = unserialize($products);
 		foreach ($products as $product) {
 			$initial_cost_ppc 		= get_initial_cost_ppc ($product, $con);
 			$final_cost_ppc 		= get_final_cost_ppc ($inter_nodes, $product, $seller_node, $initial_cost_ppc);
@@ -303,37 +305,37 @@
 	}
 
 	function getBuyers ($buyer_node, $nodes){
-		$res = [];
-		$prods = $buyer_node ['needs_product']; // lista de produse necesare
-		$prods = unserialize ($prods);
-
-		foreach ($nodes as $nd){
-			foreach ($prods as $prod){
-				// if the node we are looking at si selling a product needed by buyer_node, add the node name to the result
-				if ($nd ['has_product'] === $prod ['p_name']){ 
-					$res = array_merge ($res, [$nd ['name']]);
-				}
-			}
-		}
 		//array to hold numbers representing product ranks of the products sold
 		$ranks = [];
-		foreach($res as $r){
-			switch ($r ['p_rank']){
-				case 'high' : {
-					$ranks = array_merge($ranks, [3]);
-				} break;
+		$res = [];
+		$prods = $buyer_node ['needs_product']; // lista de produse necesare
+		if(isset($prods)) {
+			$prods = unserialize($prods);
 
-				case 'normal' : {
-					$ranks = array_merge($ranks, [2]);
-				} break;
+			foreach ($nodes as $nd){
+				foreach ($prods as $prod){
+					// if the node we are looking at is selling a product needed by buyer_node, add the node name to the result
+					if ($nd ['has_product'] === $prod ['p_name']){ 
+						$res[] = $nd;
+						switch ($prod ['p_rank']){
+							case 'high' : {
+								$ranks = array_merge($ranks, [3]);
+							} break;
 
-				case 'low' : {
-					$ranks = array_merge($ranks, [1]);
-				} break;
+							case 'normal' : {
+								$ranks = array_merge($ranks, [2]);
+							} break;
 
-				default : {
-					$ranks = array_merge($ranks, [-1]);
-				} break;
+							case 'low' : {
+								$ranks = array_merge($ranks, [1]);
+							} break;
+
+							default : {
+								$ranks = array_merge($ranks, [-1]);
+							} break;
+						}
+					}
+				}
 			}
 		}
 		//bubble sort the seller nodes over product ranking

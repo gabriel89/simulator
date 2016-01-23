@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `nodes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `link_to` varchar(255) DEFAULT NULL,
-  `needs_product` varchar(255) NOT NULL,
+  `needs_product` text NOT NULL,
   `has_product` varchar(255) NOT NULL,
   `has_product_count` int(11) NOT NULL DEFAULT '0',
   `money` float NOT NULL,
