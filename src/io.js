@@ -63,8 +63,8 @@
 						type: "POST",
 						url: "src/php_files/create_initial_products.php",
 						async: false,
-						success: function(e) {console.log('Stored a list of fresh products in the database');},
-						error: function(e) {console.log('Error storing a list of fresh products in the database');}
+						success: function(e) {console.log('Stored a list of fresh products in the database'); if (e) console.log(e);},
+						error: function(e) {console.log('Error storing a list of fresh products in the database'); if (e) console.log(e);}
 					});
 				}
 				else if (type == 'init_nodes') {
@@ -74,8 +74,8 @@
 						type: "POST",
 						url: "src/php_files/create_initial_arbor.php",
 						async: false,
-						success: function(e) {console.log('Loaded fresh data from initializer.csv into database');},
-						error: function(e) {console.log('Error loading fresh data from initializer.csv into database');}
+						success: function(e) {console.log('Loaded fresh data from initializer.csv into database'); if (e) console.log(e);},
+						error: function(e) {console.log('Error loading fresh data from initializer.csv into database'); if (e) console.log(e);}
 					});
 				}
 			}

@@ -45,11 +45,11 @@
 
 		// iterate through all the lines of the file
 		// line $i corresponds to $nodes[$i]'s $links
-		for($i = 0; $i < $node_count; $i++){
+		for ($i = 0; $i < $node_count; $i++) {
 			// get corresponding line
 			$line_links = explode(";", $lines[$i]);
 			// get rid of first element | REDUNDANT
-			array_shift[$links];
+			array_shift($line_links);
 
 			// prepare variables corresponding to table fields
 			$ID 		= '';
@@ -62,50 +62,49 @@
 			$ID = $i;
 
 			//set links
-			for($j = 0; $j < $node_count; $j++){
-				if($line_links[$j] != 0){
+			// TODO!: when a node has 0 links, $links will be empty and will cause an error
+			for ($j = 0; $j < $node_count; $j++) {
+				if ($line_links[$j] != 0) {
 					// node $i has link to node $j
 					$links .= $j . ',';
 				}
 			}
+
 			//remove tailing ','
-			$links = explode(",", $links);
-			$links=array_reverse($links);
-			array_shift($links);
-			$links=array_reverse($links);
-			$links = implode(",", $links);
+			$links = trim($links, ',');
+			
+			//set requests if $products is not an empty array
+			if (!empty($products)) {
+				for ($j = 0; $j < sizeof($products); $j++) {
+					//for each product randomize check for need and create specific request
+					if (floor(frand(3, 5, 7, 11)) % floor(frand(1, 3, 5, 7)) == 0){
+						//set product ID
+						$request = 'P'. $j . '|';
+						//set quantity
+						$request .= frand(10) . '|';
+						//set priority
+						$request .= (floor(frand(25)) % 3) . '^';
 
-			//set requests
-			for($j = 0; $j < sizeof($products); $j++){
-				//for each product randomize check for need and create specific request
-				if(floor(frand(3, 5, 7, 11)) % floor(frand(1, 3, 5, 7)) == 0){
-					//set product ID
-					$request = 'P'. $j . '|';
-					//set quantity
-					$request .= frand(10) . '|';
-					//set priority
-					$request .= (floor(frand(25)) % 3) . '^';
-
-					$requests .= $request;
+						$requests .= $request;
+					}
 				}
+				//remove tailing '^'
+				$requests = trim($requests, '^');
 			}
-			//remove tailing '^'
-			$requests = explode("^", $requests);
-			$requests=array_reverse($requests);
-			array_shift($requests);
-			$requests=array_reverse($requests);
-			$requests = implode("^", $requests);
 
 			//set serves and quantity
-			$serves = 'P' . floor(frand(sizeof($products)) % sizeof($products));
+			$serves = 'P' . (empty($products) ? 0 : floor(frand(sizeof($products)) % sizeof($products)));
 			$quantity = floor(frand(50));
-			// update global quantity for served product
+
+			// get product index
 			$productIndex = explode('P', $serves);
-			array_shift($productIndex);
-			$products[$productIndex]['global_quantity'] += $quantity;
+			
+			// update global quantity for served product
+			if (!empty($products))
+				$products[$productIndex[1]]['global_quantity'] += $quantity;
 
 			//commit to DB
-			execute_sql('<create_initial_arbor.php>', $con, "INSERT INTO nodes (ID, links, requests, serves, quantity) VALUES ('" . $i . ", " . $links . ", " . $requests . ", " . $serves . ", " . $quantity ."')");
+			execute_sql('<create_initial_arbor.php>', $con, "INSERT INTO nodes (ID, links, requests, serves, quantity) VALUES ('" . $ID . "', '" . $links . "', '" . $requests . "', '" . $serves . "', '" . $quantity ."')");
 		}
 
 		// unset large array to free up memory

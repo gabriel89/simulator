@@ -23,7 +23,7 @@
 
 	$file 	= file_get_contents ('../../data/initializer.csv');
 
-	generateProducts ($con);
+	generateProducts ($file, $con);
 
 	// close connection
 	$con->close();
@@ -42,13 +42,13 @@
 	}
 
 	// function to generate products and their values
-	function generateProducts ($con) {
+	function generateProducts ($file, $con) {
 		global $products;
 
 		$multiplier = 1.4;
 		$n_node = retrieveNodesCount ($file, $con);
 		for ($i = 0; $i < $n_node * $multiplier; $i++) {
-			execute_sql('<create_initial_products.php>', $con, "INSERT INTO products (name, base_cost, max_cost, global_quantity) VALUES ('P" . $i . "', '" . 0 . ", " . frand() . ", " . 0 . "')");
+			execute_sql('<create_initial_products.php>', $con, "INSERT INTO products (name, base_cost, max_cost, global_quantity) VALUES ('P" . $i . "', '" . 0 . "', '" . frand() . "', '" . 0 . "')");
 		}
 
 		$products = fetch_nodes_toArray ($con);
