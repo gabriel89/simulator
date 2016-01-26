@@ -2,11 +2,11 @@
 	//global declaration of heap and product array
 	include_once ('common_functions.php');
 	include_once ('sql_execute.php');
+	include_once ('globals.php');
 	$Q = [];
 
-	$products = fetch_products_toArray(new mysqli('localhost', 'sim', 'sim', 'sim'));
-
-	function getConsumerPath ($con, $nodes) {
+	function getConsumerPath ($con) {
+		global $nodes;
 		addToLog ("\n\n\n;--------------------------------\n;        ESTABLISHING TRANSACTION PATH\n;--------------------------------");
 
 		$consumer_path 	= [];

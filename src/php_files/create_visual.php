@@ -1,78 +1,42 @@
 <?php
 	// include files
 	include_once ('sql_execute.php');
+	include_once ('globals.php');
 
 	// connect to DB
 	$servername = "localhost";
 	$username 	= "sim";
 	$password 	= "sim";
 	$dbname 	= "sim";
-
-	// Create connection
-	$con = new mysqli ($servername, $username, $password, $dbname);
-
-	// Check connection
-	if ($con->connect_error) {
-	    die ("Connection failed: " . $conn->connect_error);
-	}
-
-	// retrieve a list of products and nodes
-	$nodes 		= execute_sql_and_return ('<create_visual.php>', $con, "SELECT * FROM nodes");
-	$products 	= execute_sql_and_return ('<create_visual.php>', $con, "SELECT name, value FROM products");
-
 	// retrieve procedural arbor to be able to visualize it
-	$arbor = createVisual ($nodes, createArrayFromObject ($products));
+	$arbor = createVisual ();
 
 	// write initial log
 	writeInitialLog ($arbor);
-
-	// close connection
-	$con->close ();
 
 	echo $arbor;
 
 	// ----------------------------------------------------------------------------------------------------------
 
 	// function to create the code for the visual representation of the arbor
-	function createVisual ($nodes, $products) {
+	function createVisual () {
+		global $nodes;
+		global $products;
 		$visual = '';
 
-		while ($row = mysqli_fetch_assoc ($nodes)) {
-			$visual .= $row['name'] . '{';
+		foreach ($nodes as $row) {
+			$visual .= 'n' . $row['ID'] . '{';
 			
 			// check if node is producer
 			if ($row['is_producer']){
 				$visual .= 'color:red, shape:dot';
 			}
+			// set serves
+			$serves = 'serves: ' . $row['serves'] . ',';
 
-			// set hasProducts list
-			$has_product = explode (',', $row['has_product']);
-			if (count ($has_product) > 0) {
-				$concatenated = [];
-				$visual .= 'hasProduct: [';
+			$visual .= $serves;
 
-				foreach ($has_product as $key => $value) {
-					$concatenated[$key] = "$value (" . $products[$value] . ")";
-				}
-
-				$visual .= implode (', ', $concatenated) . ']';
-			}
-
-			// set needsProducts list
-			$needs_product = unserialize($row['needs_product']);
-				
-			if(isset($needs_product[0])) {
-				$needs_product = $needs_product[0];
-				if (count ($needs_product) > 0) {
-					$concatenated = [];
-					$visual .= ', needsProduct: [';
-					foreach ($needs_product as $key => $value) {
-						$concatenated[$key] = "$value (" . $products[$needs_product["p_name"]] . ")";
-					}
-
-					$visual .= implode (', ', $concatenated) . ']';
-				}
-			}
+			$visual .= 'requests: ' . $row['requests'] . ',';
 
 			// set wealth
 			$visual .= ', money: ' . $row['money'];
@@ -81,9 +45,9 @@
 			$visual .= "}\n\n";
 
 			// set links
-			if (isset ($row['link_to'])) {
-				foreach (explode(',', $row['link_to']) as $value) {
-					$visual .= $row['name'] . "--$value\n\n";
+			if (isset ($row['links'])) {
+				foreach (explode(',', $row['links']) as $value) {
+					$visual .= 'n' . 	$row['ID'] . "--$value\n\n";
 				}
 			}
 

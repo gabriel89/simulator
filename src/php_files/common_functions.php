@@ -1,4 +1,6 @@
 <?php
+	include_once ('globals.php');
+
 	// random floating-point generator
 	function frand ($modifier = 1, $min = 0, $max = 9, $decimals = 2) {
 	 	$scale = pow (10, $decimals);
@@ -15,25 +17,36 @@
 	}
 
 	function fetch_nodes_toArray ($con){
-		$nodes = execute_sql_and_return ($_SERVER['PHP_SELF'], $con, "SELECT * FROM nodes");
-		$nodes_array 	= [];
+		global $nodes;
 
-		foreach ($nodes as $nd){
-			$nodes_array = array_merge ($nodes_array, [$nd]);
+		$nodes_result = execute_sql_and_return ($_SERVER['PHP_SELF'], $con, "SELECT * FROM nodes");
+		$nodes 	= [];
+
+		foreach ($nodes_result as $n_res){
+			$nodes = array_merge ($nodes, [$n_res]);
 		}
-
-		return $nodes_array;
 	}
 
 	function fetch_products_toArray ($con){
-		$products = execute_sql_and_return ($_SERVER['PHP_SELF'], $con, "SELECT * FROM products");
-		$products_array 	= [];
+		global $products;
 
-		foreach ($products as $nd){
-			$products_array = array_merge ($products_array, [$nd]);
+		$products_result = execute_sql_and_return ($_SERVER['PHP_SELF'], $con, "SELECT * FROM products");
+		$products 	= [];
+
+		foreach ($products_result as $p_res){
+			$products = array_merge ($products, [$p_res]);
+		}
+	}
+
+	function unserialize_requests($requests_string){
+		$result = [];
+		$result = explode ('^', $requests_string);
+
+		foreach($result as &$res){
+			$res = explode('|', $res);
 		}
 
-		return $products_array;
+		return $result;
 	}
 
 	function int_to_rank ($r){

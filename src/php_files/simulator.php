@@ -4,6 +4,7 @@
 	include_once ('common_functions.php');
 	include_once ('consumer_phase.php');
 	include_once ('economic_phase.php');
+	include_once ('globals.php');
 
 	// connect to DB
 	$servername = "localhost";
@@ -41,11 +42,8 @@
 				if (($pay_day > ($exec_count / 12)) && ($exec_iterator % $pay_day == 0)) {
 				    payDay ($con, $nodes);
 				}
-
-			// retrieve all nodes from the DB
-			$nodes = fetch_nodes_toArray ($con);
 			
-			startSim ($con, $nodes, $exec_iterator, $exec_count);
+			//startSim ($con, $nodes, $exec_iterator, $exec_count);
 		}
 
 		addToLog ("\n;--------------------------------\n;        ENDING SIMULATOR\n;--------------------------------\n");

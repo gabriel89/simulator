@@ -2,7 +2,3 @@
 ;        INITIAL SETTINGS
 ;--------------------------------
 
-n0{hasProduct: [P1 (0.69)], needsProduct: [P0 (1.78), 4.57 (1.78), low (1.78)], money: 20.4}
-
-n1{hasProduct: [P1 (0.69)], needsProduct: [P1 (0.69), 3.86 (0.69), high (0.69)], money: 49.3}
-

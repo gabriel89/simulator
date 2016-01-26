@@ -2,6 +2,7 @@
 	// include files
 	include_once ('sql_execute.php');
 	include_once ('common_functions.php');
+	include_once ('globals.php');
 
 	// connect to DB
 	$servername = "localhost";
@@ -21,9 +22,8 @@
 	mysqli_query ($con,'TRUNCATE TABLE products');
 
 	$file 	= file_get_contents ('../../data/initializer.csv');
-	$nodes 	= retrieveNodesCount ($file, $con);
 
-	generateProducts ($nodes, $con);
+	generateProducts ($con);
 
 	// close connection
 	$con->close();
@@ -42,11 +42,15 @@
 	}
 
 	// function to generate products and their values
-	function generateProducts ($nodes, $con) {
-		$multiplier = 1.4;
+	function generateProducts ($con) {
+		global $products;
 
-		for ($i = 0; $i < $nodes*$multiplier; $i++) {
-			execute_sql('<create_initial_arbor.php>', $con, "INSERT INTO products (name, value) VALUES ('P".$i."', '".frand()."')");
+		$multiplier = 1.4;
+		$n_node = retrieveNodesCount ($file, $con);
+		for ($i = 0; $i < $n_node * $multiplier; $i++) {
+			execute_sql('<create_initial_products.php>', $con, "INSERT INTO products (name, base_cost, max_cost, global_quantity) VALUES ('P" . $i . "', '" . 0 . ", " . frand() . ", " . 0 . "')");
 		}
+
+		$products = fetch_nodes_toArray ($con);
 	}
 	// end generate products
