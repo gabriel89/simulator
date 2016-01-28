@@ -67,7 +67,6 @@
 				    async: false,
 				    success: function(arbor) {
 				    	console.log('Reading arbor-structure from DB and writing inital log');
-				    	console.log(arbor);
 				    	$('#code').val(arbor);
 				   	},
 					error: function(e) {console.log('Error reading DB structure'); if (e) console.log(e);}
