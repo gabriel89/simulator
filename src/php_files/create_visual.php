@@ -1,6 +1,7 @@
 <?php
 	// include files
 	include_once ('sql_execute.php');
+	include_once ('common_functions.php');
 	include_once ('globals.php');
 
 	// connect to DB
@@ -8,38 +9,53 @@
 	$username 	= "sim";
 	$password 	= "sim";
 	$dbname 	= "sim";
+
+	// Create connection
+	$con = new mysqli ($servername, $username, $password, $dbname);
+
+	// Check connection
+	if ($con->connect_error) {
+	    die ("Connection failed: " . $conn->connect_error);
+	}
+
 	// retrieve procedural arbor to be able to visualize it
-	$arbor = createVisual ();
+	$arbor = createVisual ($con);
 
 	// write initial log
 	writeInitialLog ($arbor);
 
 	echo $arbor;
 
+	// close connection
+	$con->close();
+
 	// ----------------------------------------------------------------------------------------------------------
 
 	// function to create the code for the visual representation of the arbor
-	function createVisual () {
+	function createVisual ($con) {
 		global $nodes;
 		global $products;
 		$visual = '';
 
+		$nodes = fetch_nodes_toArray ($con); // global variable is empty
+		$products = fetch_products_toArray ($con); // global variable is empty
+
 		foreach ($nodes as $row) {
-			$visual .= 'n' . $row['ID'] . '{';
+			$visual .= 'n' . $row['id'] . '{';
 			
 			// check if node is producer
-			if ($row['is_producer']){
-				$visual .= 'color:red, shape:dot';
-			}
-			// set serves
-			$serves = 'serves: ' . $row['serves'] . ',';
+			// if ($row['is_producer']){
+			// 	$visual .= 'color:red, shape:dot';
+			// }
 
-			$visual .= $serves;
-
-			$visual .= 'requests: ' . $row['requests'] . ',';
+			// set serves and requests
+			if ($row['serves'])
+				$visual .= 'serves: ' . $row['serves'] . ',';
+			if ($row['requests'])
+				$visual .= ' requests: ' . $row['requests'] . ',';
 
 			// set wealth
-			$visual .= ', money: ' . $row['money'];
+			$visual .= ' money: ' . $row['money'];
 
 			// add new-lines
 			$visual .= "}\n\n";
@@ -47,11 +63,12 @@
 			// set links
 			if (isset ($row['links'])) {
 				foreach (explode(',', $row['links']) as $value) {
-					$visual .= 'n' . 	$row['ID'] . "--$value\n\n";
+					$visual .= 'n' . 	$row['id'] . "--n$value\n\n";
 				}
 			}
 
 	    }
+
 		return $visual;
 	}
 

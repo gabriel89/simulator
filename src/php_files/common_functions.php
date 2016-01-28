@@ -25,6 +25,8 @@
 		foreach ($nodes_result as $n_res){
 			$nodes = array_merge ($nodes, [$n_res]);
 		}
+
+		return $nodes;
 	}
 
 	function fetch_products_toArray ($con){
@@ -36,6 +38,8 @@
 		foreach ($products_result as $p_res){
 			$products = array_merge ($products, [$p_res]);
 		}
+
+		return $products;
 	}
 
 	function unserialize_requests($requests_string){

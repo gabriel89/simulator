@@ -2,3 +2,29 @@
 ;        INITIAL SETTINGS
 ;--------------------------------
 
+n0{serves: P0, money: 0}
+
+n0--n1
+
+n1{serves: P0, money: 0}
+
+n1--n0
+
+n2{serves: P0, money: 0}
+
+n2--n3
+
+n2--n4
+
+n3{serves: P0, money: 0}
+
+n3--n2
+
+n3--n4
+
+n4{serves: P0, money: 0}
+
+n4--n2
+
+n4--n3
+
