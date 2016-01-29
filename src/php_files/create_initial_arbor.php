@@ -21,8 +21,10 @@
 	// truncate table
 	mysqli_query ($con,'TRUNCATE TABLE nodes');
 
-	$file 	= file_get_contents ('../../data/initializer.csv');
-	$csv 	= read_CSV ($file, $con);
+	$file 		= file_get_contents ('../../data/initializer.csv');
+	$nodes 		= fetch_nodes_toArray($con);
+	$products 	= fetch_products_toArray($con); 
+	$csv 		= read_CSV ($file, $con);
 
 	// close connection
 	$con->close();
@@ -77,7 +79,7 @@
 			if (!empty($products)) {
 				for ($j = 0; $j < sizeof($products); $j++) {
 					//for each product randomize check for need and create specific request
-					if (floor(frand(3, 5, 7, 11)) % floor(frand(1, 3, 5, 7)) == 0){
+					if (floor(frand(3, 5, 7, 3)) % floor(frand(1, 3, 5, 2)) == 0){
 						//set product ID
 						$request = 'P'. $j . '|';
 						//set quantity
