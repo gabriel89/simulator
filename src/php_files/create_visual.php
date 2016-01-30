@@ -35,6 +35,7 @@
 	function createVisual ($con) {
 		global $nodes;
 		global $products;
+		$pairs = '';
 		$visual = '';
 
 		$nodes = fetch_nodes_toArray ($con); // global variable is empty
@@ -50,9 +51,9 @@
 
 			// set serves and requests
 			if ($row['serves'])
-				$visual .= 'serves: ' . $row['serves'] . ',';
+				$visual .= 'serves: ' . str_replace ('^', ', ', $row['serves']) . ',';
 			if ($row['requests'])
-				$visual .= ' requests: ' . $row['requests'] . ',';
+				$visual .= ' requests: ' . str_replace ('^', ', ', $row['requests']) . ',';
 
 			// set wealth
 			$visual .= ' money: ' . $row['money'];
@@ -63,7 +64,11 @@
 			// set links
 			if (isset ($row['links'])) {
 				foreach (explode(',', $row['links']) as $value) {
-					$visual .= 'n' . 	$row['id'] . "--n$value\n\n";
+					// hacky solution, but avoids duplicates by searching for a simple |n0-n1| pairs in a string
+					if (strpos($pairs, '|n' . $value . '-n' . $row['id'] . '|') === false){
+						$pairs .= '|n' . $row['id'] . '-n' . $value . '|';
+						$visual .= 'n' . $row['id'] . "--n$value\n\n";
+					}
 				}
 			}
 
