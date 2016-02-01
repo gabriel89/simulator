@@ -2,23 +2,23 @@
 ;        INITIAL SETTINGS
 ;--------------------------------
 
-n0{serves: P3, requests: P0|31.7|2, P5|85.3|2, money: 0}
+n0{serves: P3, requests: P0|73.1|2, P2|38.7|2, P3|47.5|2, P6|9.6|0, money: 0}
 
 n0--n1
 
 n0--n3
 
-n1{serves: P2, requests: P0|28.7|2, P3|86.4|1, P4|38.5|1, P6|47.7|2, money: 0}
+n1{serves: P6, requests: P1|68.1|2, money: 0}
 
-n2{serves: P2, requests: P0|29|0, P1|52.3|1, P3|40|1, P6|55.1|1, money: 0}
+n2{serves: P5, requests: P3|22.9|2, money: 0}
 
 n2--n3
 
 n2--n4
 
-n3{serves: P0, requests: P3|46|2, P6|53.7|2, money: 0}
+n3{serves: P2, money: 0}
 
 n3--n4
 
-n4{serves: P4, requests: P4|26.4|0, P6|11.1|0, money: 0}
+n4{serves: P3, requests: P0|85.4|0, P6|17.7|2, money: 0}
 

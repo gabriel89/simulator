@@ -42,6 +42,26 @@
 		return $products;
 	}
 
+	function checkNodesGlobalVariable ($con){
+		global $nodes;
+
+		if (empty($nodes)){
+			$nodes = fetch_nodes_toArray ($con);
+		}
+
+		return $nodes;
+	}
+
+	function checkProductsGlobalVariable ($con){
+		global $products;
+
+		if (empty($products)){
+			$products = fetch_products_toArray ($con);
+		}
+
+		return $products;
+	}
+
 	function unserialize_requests($requests_string){
 		$result = [];
 		$result = explode ('^', $requests_string);

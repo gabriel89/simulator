@@ -32,8 +32,8 @@
 
 	// retrieve number of nodes
 	function retrieveNodesCount ($content, $con) {
-		$rows 			= explode ("\n", $content);
-		$headings 		= explode (";", $rows[0]);
+		$rows 		= explode ("\n", $content);
+		$headings 	= explode (";", $rows[0]);
 		
 		// pop empty element from the list
 		array_shift ($headings);
@@ -43,10 +43,10 @@
 
 	// function to generate products and their values
 	function generateProducts ($file, $con) {
-		global $products;
-
+		$products 	= checkProductsGlobalVariable ($con);
 		$multiplier = 1.4;
-		$n_node = retrieveNodesCount ($file, $con);
+		$n_node 	= retrieveNodesCount ($file, $con);
+
 		for ($i = 0; $i < $n_node * $multiplier; $i++) {
 			execute_sql('<create_initial_products.php>', $con, "INSERT INTO products (name, base_cost, max_cost, global_quantity) VALUES ('P" . $i . "', '" . 0 . "', '" . frand() . "', '" . 0 . "')");
 		}

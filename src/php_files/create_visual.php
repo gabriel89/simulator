@@ -33,13 +33,10 @@
 
 	// function to create the code for the visual representation of the arbor
 	function createVisual ($con) {
-		global $nodes;
-		global $products;
-		$pairs = '';
-		$visual = '';
-
-		$nodes = fetch_nodes_toArray ($con); // global variable is empty
-		$products = fetch_products_toArray ($con); // global variable is empty
+		$nodes 		= checkNodesGlobalVariable ($con);
+		$products 	= checkProductsGlobalVariable ($con);
+		$pairs 		= '';
+		$visual 	= '';
 
 		foreach ($nodes as $row) {
 			$visual .= 'n' . $row['id'] . '{';
@@ -52,6 +49,7 @@
 			// set serves and requests
 			if ($row['serves'])
 				$visual .= 'serves: ' . str_replace ('^', ', ', $row['serves']) . ',';
+			
 			if ($row['requests'])
 				$visual .= ' requests: ' . str_replace ('^', ', ', $row['requests']) . ',';
 

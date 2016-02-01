@@ -21,10 +21,8 @@
 	// truncate table
 	mysqli_query ($con,'TRUNCATE TABLE nodes');
 
-	$file 		= file_get_contents ('../../data/initializer.csv');
-	$nodes 		= fetch_nodes_toArray($con);
-	$products 	= fetch_products_toArray($con); 
-	$csv 		= read_CSV ($file, $con);
+	// start reading CSV contents
+	read_CSV (file_get_contents ('../../data/initializer.csv'), $con);
 
 	// close connection
 	$con->close();
@@ -33,8 +31,8 @@
 
 	// function to read from csv file
 	function read_CSV ($content, $con) {
-		global $nodes;
-		global $products;
+		$nodes 		= checkNodesGlobalVariable ($con);
+		$products 	= checkProductsGlobalVariable ($con);
 
 		// get all the lines of the csv file
 		$lines = explode("\n", $content);
@@ -95,8 +93,8 @@
 			}
 
 			//set serves and quantity
-			$serves = 'P' . (empty($products) ? 0 : floor(frand(sizeof($products)) % sizeof($products)));
-			$quantity = floor(frand(50));
+			$serves 	= 'P' . (empty($products) ? 0 : floor(frand(sizeof($products)) % sizeof($products)));
+			$quantity 	= floor(frand(50));
 
 			// get product index
 			$productIndex = explode('P', $serves);

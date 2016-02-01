@@ -6,10 +6,10 @@
 	$Q = [];
 
 	function getConsumerPath ($con) {
-		global $nodes;
-		addToLog ("\n\n\n;--------------------------------\n;        ESTABLISHING TRANSACTION PATH\n;--------------------------------");
-
+		$nodes = checkNodesGlobalVariable ($con);
 		$consumer_path 	= [];
+
+		addToLog ("\n\n\n;--------------------------------\n;        ESTABLISHING TRANSACTION PATH\n;--------------------------------");
 
 		foreach ($nodes as $node) {
 			$Q = [];
@@ -89,11 +89,12 @@
 	}
 
 	function get_initial_cost_ppc ($product, $con){
+		$products = checkProductsGlobalVariable ($con);
+		
 		//	returns the value (float) of ONE instance of the product the buyer needs
-		global $products;
 		$product = $products [(int) (substr ($product['p_name'], 1))];
 
-		return $product ['value'];
+		return $product['value'];
 	}
 
 	function get_final_cost_ppc ($inter_nodes, $product, $seller_node, $initial_cost_ppc){
