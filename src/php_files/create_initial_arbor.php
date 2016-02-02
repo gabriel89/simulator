@@ -31,6 +31,9 @@
 
 	// function to read from csv file
 	function read_CSV ($content, $con) {
+		global $nodes;
+		global $products;
+
 		$nodes 		= checkNodesGlobalVariable ($con);
 		$products 	= checkProductsGlobalVariable ($con);
 
@@ -57,6 +60,7 @@
 			$requests 	= '';
 			$serves 	= '';
 			$quantity 	= '';
+			$money 		= '';
 
 			//set ID
 			$ID = $i;
@@ -81,7 +85,7 @@
 						//set product ID
 						$request = 'P'. $j . '|';
 						//set quantity
-						$request .= frand(10) . '|';
+						$request .= ceil(frand(10)) . '|';
 						//set priority
 						$request .= (floor(frand(25)) % 3) . '^';
 
@@ -93,18 +97,24 @@
 			}
 
 			//set serves and quantity
-			$serves 	= 'P' . (empty($products) ? 0 : floor(frand(sizeof($products)) % sizeof($products)));
-			$quantity 	= floor(frand(50));
-
-			// get product index
-			$productIndex = explode('P', $serves);
+			$idx = (empty($products) ? 0 : floor(frand(sizeof($products)) % sizeof($products)));
+			$serves 	= 'P' . $idx;
+			$quantity 	= floor(mt_rand(20, 70));
 			
 			// update global quantity for served product
-			if (!empty($products))
-				$products[$productIndex[1]]['global_quantity'] += $quantity;
+			$products[$idx]['global_quantity'] += $quantity;
 
+			// set money
+			$money = mt_rand(100, 200);
+			
 			//commit to DB
-			execute_sql('<create_initial_arbor.php>', $con, "INSERT INTO nodes (ID, links, requests, serves, quantity) VALUES ('" . $ID . "', '" . $links . "', '" . $requests . "', '" . $serves . "', '" . $quantity ."')");
+			execute_sql('<create_initial_arbor.php>', $con, "INSERT INTO nodes (ID, links, requests, serves, quantity, money) VALUES ('" . $ID . "', '" . $links . "', '" . $requests . "', '" . $serves . "', '" . $quantity ."', '" . $money ."')");
+		}
+		var_dump($products);
+		/// INSERET PRODUCTS CALCULATIONS HERE
+		foreach ($products as $p){
+			$base_cost = calc_base_cost($p['max_cost'], $p['global_quantity'], 1);
+			execute_sql('<create_initial_products.php>', $con, "UPDATE products SET base_cost='" . $base_cost . "', global_quantity='" . $p['global_quantity'] . "' WHERE name='" . $p['name'] . "'");
 		}
 
 		// unset large array to free up memory

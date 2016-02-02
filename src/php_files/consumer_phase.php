@@ -6,6 +6,7 @@
 	$Q = [];
 
 	function getConsumerPath ($con) {
+		global $nodes;
 		$nodes = checkNodesGlobalVariable ($con);
 		$consumer_path 	= [];
 

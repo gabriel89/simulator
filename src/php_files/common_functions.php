@@ -82,3 +82,8 @@
 			case 2 : return "high";
 		}
 	}
+
+	function calc_base_cost($max_cost, $global_quantity, $quality_factor){
+		return ($global_quantity == 0) ?  0 :
+		 ( $max_cost / $global_quantity ) * $quality_factor;
+	}

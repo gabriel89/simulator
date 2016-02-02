@@ -41,10 +41,8 @@
 		foreach ($nodes as $row) {
 			$visual .= 'n' . $row['id'] . '{';
 			
-			// check if node is producer
-			// if ($row['is_producer']){
-			// 	$visual .= 'color:red, shape:dot';
-			// }
+			//set node visual properties
+			$visual .= 'shape:dot, color:' . genColor($row['links']) . ', ';
 
 			// set serves and requests
 			if ($row['serves'])
@@ -65,7 +63,7 @@
 					// hacky solution, but avoids duplicates by searching for a simple |n0-n1| pairs in a string
 					if (strpos($pairs, '|n' . $value . '-n' . $row['id'] . '|') === false){
 						$pairs .= '|n' . $row['id'] . '-n' . $value . '|';
-						$visual .= 'n' . $row['id'] . "--n$value\n\n";
+						$visual .= 'n' . $row['id'] . "--n$value {color: #777777, weight: 1.5}\n\n";
 					}
 				}
 			}
@@ -96,3 +94,17 @@
 		fclose ($file);
 	}
 	// End write initial
+
+	function genColor($links){
+		$link_size = explode(',', $links);
+		$link_size = sizeof($link_size);
+		// link for gradient maker
+		// http://www.perbang.dk/rgbgradient/
+		$palette = ['#FF0000','#E2001C','#C60038','#AA0055','#8D0071','#71008D','#5500AA','#3800C6','#1C00E2','#0000FF'];
+
+		return $palette[ceil(9 * ($link_size / 6))];
+	}
+
+
+
+
