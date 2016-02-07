@@ -2,161 +2,243 @@
 ;        INITIAL SETTINGS
 ;--------------------------------
 
-n0{shape:dot, color:#7F7F7F, serves: P0, requests: P0|79|2, P1|1|0, P3|49|2, P11|1|2, P12|12|1, P14|79|0, P18|75|1, P24|87|1, P25|19|0, P26|33|2, P29|33|0, P31|32|2, P32|20|0, P34|10|1, P36|10|2, P38|19|0, P42|20|1, P43|52|0, money: 116}
+n0{shape:dot, color:#3333CC, serves: P24, requests: P2|4|1, P4|41|0, P5|50|0, P10|30|0, P13|41|2, P14|52|0, P17|48|0, P19|87|1, P21|58|1, P22|41|2, P25|64|2, P27|13|0, P28|69|1, P29|55|2, P38|62|1, P40|54|2, P42|76|1, P43|86|0, money: 196}
 
-n0--n5 {color: #777777, weight: 1.5}
+n0--n6 {color: #777777, weight: 1.5}
 
-n0--n12 {color: #777777, weight: 1.5}
+n0--n13 {color: #777777, weight: 1.5}
 
-n0--n17 {color: #777777, weight: 1.5}
+n0--n18 {color: #777777, weight: 1.5}
 
-n0--n22 {color: #777777, weight: 1.5}
+n0--n23 {color: #777777, weight: 1.5}
 
-n1{shape:dot, color:#1919E5, serves: P7, requests: P3|54|2, P7|20|0, P10|47|0, P11|54|1, P12|12|2, P15|2|0, P21|25|2, P29|25|1, P39|5|2, P40|5|0, P43|83|1, money: 182}
+n1{shape:dot, color:#666699, serves: P19, requests: P3|47|1, P4|2|0, P7|81|0, P9|76|1, P10|71|0, P18|63|0, P23|88|1, P33|3|1, P34|8|2, P39|44|1, P43|71|0, money: 172}
+
+n1--n5 {color: #777777, weight: 1.5}
+
+n1--n12 {color: #777777, weight: 1.5}
+
+n1--n17 {color: #777777, weight: 1.5}
 
 n1--n22 {color: #777777, weight: 1.5}
 
-n1--n26 {color: #777777, weight: 1.5}
+n1--n23 {color: #777777, weight: 1.5}
 
-n2{shape:dot, color:#0000FF, serves: P16, requests: P1|68|1, P2|43|1, P6|25|2, P9|33|2, P15|73|2, P18|6|0, P19|72|2, P20|12|2, P21|90|2, P22|32|2, P25|19|2, P32|3|0, P34|53|0, P42|90|0, money: 104}
+n1--n27 {color: #777777, weight: 1.5}
 
-n2--n29 {color: #777777, weight: 1.5}
+n2{shape:dot, color:#1919E5, serves: P1, requests: P5|7|0, P10|65|2, P11|65|0, P12|72|1, P15|80|0, P17|71|0, P18|21|0, P21|32|2, P25|82|2, P29|74|1, P32|55|2, P35|30|0, P39|59|0, P41|77|1, P43|80|0, money: 102}
 
-n3{shape:dot, color:#0000FF, serves: P13, requests: P4|53|1, P5|55|0, P13|49|1, P15|21|1, P23|71|2, P28|21|1, P29|8|2, P35|19|0, P36|33|2, P38|65|0, P41|10|0, P42|71|1, P43|8|1, money: 193}
+n2--n22 {color: #777777, weight: 1.5}
 
-n3--n17 {color: #777777, weight: 1.5}
+n2--n26 {color: #777777, weight: 1.5}
 
-n4{shape:dot, color:#1919E5, serves: P36, requests: P2|84|2, P3|15|1, P6|80|0, P8|15|1, P10|70|1, P13|40|1, P15|67|2, P16|57|0, P17|47|1, P20|18|2, P23|90|2, P27|1|1, P31|57|0, P32|50|0, P33|77|0, P39|24|2, money: 196}
+n2--n30 {color: #777777, weight: 1.5}
 
-n4--n24 {color: #777777, weight: 1.5}
+n3{shape:dot, color:#0000FF, serves: P11, requests: P2|52|1, P3|18|1, P5|77|0, P7|70|1, P11|75|1, P16|11|2, P17|44|1, P21|73|0, P24|48|0, P28|56|2, P30|76|0, P36|29|0, P42|89|0, P43|20|0, money: 130}
 
-n4--n29 {color: #777777, weight: 1.5}
+n3--n18 {color: #777777, weight: 1.5}
 
-n5{shape:dot, color:#1919E5, serves: P14, requests: P6|36|2, P13|33|2, P14|10|0, P15|68|2, P16|42|2, P17|70|0, P18|49|2, P21|2|1, P25|54|0, P26|16|2, P27|45|0, P34|47|1, P35|65|1, P36|10|2, P43|29|2, money: 127}
+n3--n29 {color: #777777, weight: 1.5}
 
-n5--n28 {color: #777777, weight: 1.5}
+n4{shape:dot, color:#1919E5, serves: P25, requests: P1|75|0, P2|79|0, P3|84|2, P4|3|0, P7|27|0, P8|41|1, P10|28|0, P13|33|0, P16|73|2, P20|72|2, P21|18|1, P23|33|1, P24|66|2, P32|55|1, P36|55|0, P41|83|1, P42|30|1, money: 113}
 
-n6{shape:dot, color:#7F7F7F, serves: P12, requests: P7|26|1, P15|23|1, P24|59|0, P27|68|2, P28|15|0, P34|15|1, P35|0|0, P39|2|1, money: 132}
+n4--n17 {color: #777777, weight: 1.5}
 
-n6--n16 {color: #777777, weight: 1.5}
+n4--n25 {color: #777777, weight: 1.5}
 
-n6--n25 {color: #777777, weight: 1.5}
+n4--n30 {color: #777777, weight: 1.5}
+
+n5{shape:dot, color:#1919E5, serves: P23, requests: P3|14|2, P5|85|2, P6|86|2, P9|11|0, P10|65|0, P11|35|1, P12|17|1, P14|79|1, P15|51|2, P16|9|0, P18|52|1, P20|29|0, P23|5|1, P26|76|1, P27|40|2, P29|43|2, P31|7|0, P34|78|1, P37|15|1, P38|36|1, P40|77|1, money: 185}
+
+n5--n24 {color: #777777, weight: 1.5}
+
+n5--n29 {color: #777777, weight: 1.5}
+
+n6{shape:dot, color:#666699, serves: P37, requests: P6|90|0, P7|79|2, P19|12|1, P22|23|2, P23|22|2, P25|86|1, P31|35|2, P39|64|1, P43|68|2, money: 155}
+
+n6--n17 {color: #777777, weight: 1.5}
+
+n6--n26 {color: #777777, weight: 1.5}
 
 n6--n28 {color: #777777, weight: 1.5}
 
 n6--n29 {color: #777777, weight: 1.5}
 
-n7{shape:dot, color:#1919E5, serves: P0, requests: P4|78|2, P9|82|2, P10|46|2, P13|71|0, P14|59|1, P20|26|0, P21|45|2, P25|40|2, P26|82|0, P29|11|1, P31|8|1, P32|87|1, P33|66|1, P38|57|2, money: 192}
+n6--n30 {color: #777777, weight: 1.5}
 
-n7--n10 {color: #777777, weight: 1.5}
+n7{shape:dot, color:#4C4CB2, serves: P36, requests: P2|83|1, P27|2|1, P29|29|0, P41|7|0, money: 152}
 
-n7--n30 {color: #777777, weight: 1.5}
+n7--n11 {color: #777777, weight: 1.5}
 
-n8{shape:dot, color:#4C4CB2, serves: P26, requests: P0|3|1, P7|85|1, P13|65|2, P14|48|1, P17|43|1, P20|83|0, P23|33|0, P25|78|2, P29|9|2, P37|40|0, P38|15|2, P39|45|2, P41|11|0, P42|73|2, money: 118}
+n7--n16 {color: #777777, weight: 1.5}
 
-n8--n17 {color: #777777, weight: 1.5}
+n7--n25 {color: #777777, weight: 1.5}
 
-n8--n23 {color: #777777, weight: 1.5}
+n7--n28 {color: #777777, weight: 1.5}
 
-n8--n29 {color: #777777, weight: 1.5}
+n7--n29 {color: #777777, weight: 1.5}
 
-n9{shape:dot, color:#7F7F7F, serves: P43, requests: P3|16|1, P4|76|1, P5|61|0, P7|22|2, P8|66|2, P9|38|2, P13|30|2, P14|32|0, P15|16|0, P18|1|1, P20|88|1, P21|13|1, P24|4|2, P26|36|1, P28|36|0, P30|67|1, P31|86|2, P34|38|1, P37|73|0, P41|90|1, money: 159}
+n8{shape:dot, color:#3333CC, serves: P7, requests: P5|43|1, P8|19|2, P15|24|2, P19|74|0, P23|79|2, P24|27|0, P25|34|0, P29|90|1, P31|72|0, P34|34|2, P37|76|2, P38|48|2, P43|58|0, money: 143}
 
-n9--n10 {color: #777777, weight: 1.5}
+n8--n10 {color: #777777, weight: 1.5}
+
+n8--n18 {color: #777777, weight: 1.5}
+
+n8--n24 {color: #777777, weight: 1.5}
+
+n8--n30 {color: #777777, weight: 1.5}
+
+n9{shape:dot, color:#7F7F7F, serves: P9, requests: P0|33|2, P7|27|0, P9|81|2, P12|40|2, P15|17|0, P16|55|0, P17|3|1, P27|52|1, P28|37|1, P30|75|1, P31|69|2, P32|23|0, P38|10|1, P40|6|2, money: 154}
+
+n9--n11 {color: #777777, weight: 1.5}
 
 n9--n17 {color: #777777, weight: 1.5}
 
-n9--n20 {color: #777777, weight: 1.5}
+n9--n18 {color: #777777, weight: 1.5}
 
-n9--n24 {color: #777777, weight: 1.5}
+n9--n21 {color: #777777, weight: 1.5}
 
-n10{shape:dot, color:#999966, serves: P27, requests: P11|1|1, P12|77|1, P14|33|2, P15|61|2, P18|69|2, P22|74|1, P25|74|2, P31|84|2, P39|24|2, money: 200}
+n9--n23 {color: #777777, weight: 1.5}
 
-n10--n22 {color: #777777, weight: 1.5}
+n9--n25 {color: #777777, weight: 1.5}
 
-n10--n26 {color: #777777, weight: 1.5}
+n9--n29 {color: #777777, weight: 1.5}
+
+n10{shape:dot, color:#999966, serves: P9, requests: P2|4|2, P4|42|0, P5|73|1, P10|33|2, P14|49|2, P16|28|1, P18|37|2, P20|90|1, P21|44|1, P25|14|0, P34|23|1, P36|40|1, P37|84|1, P38|32|0, money: 111}
+
+n10--n10 {color: #777777, weight: 1.5}
+
+n10--n17 {color: #777777, weight: 1.5}
+
+n10--n20 {color: #777777, weight: 1.5}
+
+n10--n23 {color: #777777, weight: 1.5}
+
+n10--n24 {color: #777777, weight: 1.5}
 
 n10--n27 {color: #777777, weight: 1.5}
 
-n11{shape:dot, color:#4C4CB2, serves: P21, requests: P0|54|1, P1|85|1, P2|76|1, P4|67|0, P7|84|2, P9|68|1, P12|66|0, P13|17|1, P19|54|1, P22|66|0, P24|67|0, P27|70|2, P32|39|2, P33|85|1, P35|82|1, P36|56|1, P38|6|0, P41|28|0, money: 198}
+n10--n28 {color: #777777, weight: 1.5}
 
-n11--n15 {color: #777777, weight: 1.5}
+n11{shape:dot, color:#7F7F7F, serves: P5, requests: P3|66|2, P6|87|2, P7|8|2, P13|7|1, P16|66|0, P17|81|2, P21|82|2, P22|78|0, P28|4|2, P31|22|1, P38|59|2, P42|30|0, money: 187}
 
-n11--n19 {color: #777777, weight: 1.5}
+n11--n16 {color: #777777, weight: 1.5}
 
-n11--n25 {color: #777777, weight: 1.5}
+n11--n20 {color: #777777, weight: 1.5}
 
-n12{shape:dot, color:#1919E5, serves: P29, requests: P0|39|0, P1|44|0, P2|13|0, P6|31|1, P9|66|1, P10|63|0, P11|78|0, P14|16|1, P15|82|1, P16|86|2, P19|48|2, P21|52|0, P22|39|2, P25|42|2, P26|10|1, P27|29|0, P34|81|1, P35|68|2, P36|13|0, P40|7|1, P41|57|2, P43|83|0, money: 195}
+n11--n22 {color: #777777, weight: 1.5}
+
+n11--n26 {color: #777777, weight: 1.5}
+
+n11--n27 {color: #777777, weight: 1.5}
+
+n12{shape:dot, color:#4C4CB2, serves: P2, requests: P3|57|1, P4|22|1, P7|14|0, P9|1|2, P11|22|2, P13|52|0, P15|31|0, P16|83|2, P17|59|1, P18|50|2, P27|30|1, P29|87|0, P31|70|0, P38|37|0, P40|17|2, money: 128}
+
+n12--n15 {color: #777777, weight: 1.5}
 
 n12--n19 {color: #777777, weight: 1.5}
 
-n13{shape:dot, color:#0000FF, serves: P21, requests: P3|67|0, P12|23|1, P13|78|0, P14|67|2, P15|20|2, P20|45|2, P27|22|1, P29|22|1, P31|40|2, P32|29|1, P35|24|0, money: 147}
+n12--n20 {color: #777777, weight: 1.5}
 
-n13--n25 {color: #777777, weight: 1.5}
+n12--n25 {color: #777777, weight: 1.5}
 
-n14{shape:dot, color:#1919E5, serves: P4, requests: P9|56|2, P12|59|0, P15|27|0, P20|8|1, P21|30|2, P25|76|2, P27|69|1, P30|8|0, P31|82|0, P34|90|1, P36|77|1, P38|90|0, money: 192}
+n13{shape:dot, color:#1919E5, serves: P26, requests: P3|32|0, P5|31|2, P7|16|1, P8|70|2, P9|21|2, P20|56|2, P22|31|0, P23|1|2, P24|76|0, P28|55|1, P29|84|2, P32|69|1, P33|36|2, P35|44|1, P40|88|0, P43|75|2, money: 155}
 
-n14--n24 {color: #777777, weight: 1.5}
+n13--n19 {color: #777777, weight: 1.5}
 
-n14--n29 {color: #777777, weight: 1.5}
+n13--n26 {color: #777777, weight: 1.5}
 
-n15{shape:dot, color:#999966, serves: P33, requests: P3|44|2, P5|43|1, P7|84|2, P9|48|0, P12|20|0, P14|53|1, P17|64|1, P22|89|2, P27|14|0, P28|41|2, P31|66|1, P34|20|2, P42|72|1, P43|14|2, money: 163}
+n14{shape:dot, color:#0000FF, serves: P30, requests: P0|51|0, P7|50|1, P9|36|2, P10|74|0, P19|75|2, P24|34|1, P26|76|1, P28|21|0, P32|17|0, P35|75|1, money: 115}
 
-n15--n21 {color: #777777, weight: 1.5}
+n14--n25 {color: #777777, weight: 1.5}
+
+n14--n30 {color: #777777, weight: 1.5}
+
+n15{shape:dot, color:#666699, serves: P12, requests: P1|54|0, P2|12|1, P7|32|2, P10|66|0, P16|63|2, P17|7|0, P18|81|2, P20|60|2, P21|18|2, P22|11|2, P23|70|0, P24|17|1, P26|25|2, P29|2|1, P33|24|1, P35|48|2, P38|83|0, P39|71|2, P40|69|1, P42|46|0, money: 198}
 
 n15--n22 {color: #777777, weight: 1.5}
 
-n15--n28 {color: #777777, weight: 1.5}
+n15--n23 {color: #777777, weight: 1.5}
+
+n15--n24 {color: #777777, weight: 1.5}
 
 n15--n29 {color: #777777, weight: 1.5}
 
-n16{shape:dot, color:#7F7F7F, serves: P2, requests: P2|48|1, P3|69|2, P5|52|2, P8|80|1, P11|24|2, P12|85|2, P15|19|2, P16|76|2, P17|81|2, P25|54|0, P26|72|2, P27|28|0, P29|25|1, P30|63|0, P31|67|1, P33|28|1, P35|79|0, P36|66|0, P42|80|0, money: 120}
+n15--n30 {color: #777777, weight: 1.5}
 
-n16--n18 {color: #777777, weight: 1.5}
+n16{shape:dot, color:#B2B24C, serves: P14, requests: P2|32|0, P8|81|0, P10|60|2, P11|83|1, P12|84|0, P17|83|1, P22|22|1, P24|54|1, P27|8|2, P31|24|0, P33|67|0, P34|27|2, P38|88|2, P40|47|2, money: 181}
 
-n16--n23 {color: #777777, weight: 1.5}
+n16--n19 {color: #777777, weight: 1.5}
 
-n16--n25 {color: #777777, weight: 1.5}
+n16--n21 {color: #777777, weight: 1.5}
 
-n17{shape:dot, color:#FFFF00, serves: P2, requests: P3|8|2, P15|61|2, P16|32|0, P22|3|0, P23|10|2, P28|73|2, P29|88|1, P35|74|2, P36|37|1, P37|34|0, P38|30|2, P41|29|1, money: 136}
+n16--n22 {color: #777777, weight: 1.5}
 
-n17--n19 {color: #777777, weight: 1.5}
+n16--n24 {color: #777777, weight: 1.5}
 
-n17--n21 {color: #777777, weight: 1.5}
+n16--n26 {color: #777777, weight: 1.5}
 
-n17--n27 {color: #777777, weight: 1.5}
+n16--n28 {color: #777777, weight: 1.5}
 
-n18{shape:dot, color:#4C4CB2, serves: P30, requests: P2|35|0, P5|8|0, P7|32|1, P9|50|2, P11|12|2, P12|30|0, P13|48|1, P14|15|2, P16|45|2, P19|39|1, P21|77|2, P25|41|0, P26|1|2, P30|48|1, P40|27|1, P42|10|2, P43|34|1, money: 183}
+n16--n29 {color: #777777, weight: 1.5}
 
-n18--n26 {color: #777777, weight: 1.5}
+n17{shape:dot, color:#FFFF00, serves: P32, requests: P5|2|2, P6|51|1, P7|6|1, P8|12|2, P22|16|0, P24|69|0, P27|21|2, P29|72|1, P31|40|1, P36|61|0, P41|52|0, P42|54|2, money: 121}
+
+n17--n18 {color: #777777, weight: 1.5}
+
+n17--n20 {color: #777777, weight: 1.5}
+
+n17--n22 {color: #777777, weight: 1.5}
+
+n17--n23 {color: #777777, weight: 1.5}
+
+n17--n25 {color: #777777, weight: 1.5}
+
+n17--n28 {color: #777777, weight: 1.5}
+
+n18{shape:dot, color:#B2B24C, serves: P29, requests: P0|17|2, P2|38|1, P3|30|0, P4|2|1, P6|54|2, P9|59|0, P15|12|2, P18|3|0, P20|13|0, P21|17|0, P22|67|1, P28|33|2, P29|52|1, P30|69|1, P31|74|1, P33|76|2, P39|36|1, money: 163}
+
+n18--n19 {color: #777777, weight: 1.5}
+
+n18--n21 {color: #777777, weight: 1.5}
 
 n18--n27 {color: #777777, weight: 1.5}
 
-n19{shape:dot, color:#4C4CB2, serves: P8, requests: P1|8|0, P6|72|1, P8|85|2, P9|28|0, P12|75|1, P13|50|0, P14|29|1, P15|47|2, P16|64|0, P24|73|1, P25|1|1, P27|20|2, P33|64|1, P40|14|0, P42|45|0, P43|38|2, money: 150}
+n18--n28 {color: #777777, weight: 1.5}
 
-n20{shape:dot, color:#1919E5, serves: P29, requests: P0|2|2, P4|66|1, P7|7|0, P8|64|0, P11|21|1, P12|67|0, P14|75|2, P15|39|2, P17|59|1, P22|8|1, P23|11|2, P24|4|2, P26|64|2, P28|43|0, P29|66|1, P35|68|0, P37|2|0, P40|43|0, money: 133}
+n19{shape:dot, color:#666699, serves: P14, requests: P0|22|0, P2|20|1, P4|88|0, P11|52|2, P14|9|1, P15|26|0, P16|69|2, P21|49|1, P22|43|2, P23|79|2, P27|70|1, P29|9|2, P30|10|0, P32|23|1, P38|10|2, P43|58|0, money: 198}
 
-n20--n28 {color: #777777, weight: 1.5}
+n19--n26 {color: #777777, weight: 1.5}
 
-n21{shape:dot, color:#1919E5, serves: P11, requests: P1|74|1, P2|51|0, P4|88|1, P6|21|0, P7|26|1, P8|20|1, P10|42|2, P13|73|2, P17|44|0, P24|56|2, P29|47|1, P38|2|0, P43|84|0, money: 116}
+n19--n27 {color: #777777, weight: 1.5}
 
-n22{shape:dot, color:#7F7F7F, serves: P9, requests: P0|72|0, P3|64|1, P4|90|0, P5|2|2, P6|45|1, P12|67|1, P23|86|2, P29|85|2, P32|22|1, P35|78|2, P38|19|0, P42|3|2, money: 118}
+n20{shape:dot, color:#4C4CB2, serves: P30, requests: P4|28|0, P7|72|1, P8|48|0, P9|15|1, P10|59|0, P19|30|0, P22|46|0, P23|17|2, P24|49|0, P27|71|1, P29|43|2, P30|22|1, P32|24|2, P34|34|0, P35|9|2, P38|83|1, P42|10|1, money: 163}
 
-n23{shape:dot, color:#1919E5, serves: P6, requests: P0|20|0, P1|54|0, P4|89|0, P10|24|0, P11|72|1, P12|70|1, P16|83|1, P18|22|1, P19|41|2, P23|83|1, P25|42|2, P26|18|0, P27|58|1, P28|71|0, P29|75|1, P31|31|2, P33|89|1, P36|26|0, P37|81|1, P43|34|1, money: 130}
+n20--n29 {color: #777777, weight: 1.5}
 
-n24{shape:dot, color:#4C4CB2, serves: P37, requests: P3|20|2, P7|7|0, P8|2|1, P9|5|2, P13|80|0, P14|75|2, P15|79|2, P22|46|2, P25|82|0, P27|61|1, P29|19|0, P30|86|2, P33|2|1, P34|35|0, money: 128}
+n21{shape:dot, color:#3333CC, serves: P16, requests: P0|28|2, P4|29|2, P7|5|2, P11|63|1, P12|88|1, P15|23|1, P17|22|1, P18|74|2, P23|44|1, P24|52|1, P27|40|0, P33|16|0, P34|16|0, money: 158}
 
-n25{shape:dot, color:#7F7F7F, serves: P14, requests: P8|41|2, P12|47|1, P21|53|0, P24|43|0, P29|2|0, P31|17|1, P33|89|0, P36|46|2, P38|52|1, P39|5|1, P40|32|0, P43|7|1, money: 102}
+n21--n28 {color: #777777, weight: 1.5}
 
-n26{shape:dot, color:#4C4CB2, serves: P3, requests: P1|2|1, P3|46|1, P7|5|0, P10|45|1, P11|79|0, P15|21|0, P19|52|1, P20|76|0, P24|79|1, P25|62|0, P27|72|2, P28|24|1, P29|10|0, P30|87|0, P32|50|2, P34|16|2, P41|22|1, P42|13|1, P43|90|2, money: 108}
+n22{shape:dot, color:#666699, serves: P18, requests: P3|81|1, P7|45|2, P8|36|0, P10|25|1, P13|1|1, P14|77|1, P15|22|0, P21|37|1, P23|27|2, P26|62|1, P27|21|2, P36|4|1, P40|23|1, P42|58|1, money: 195}
 
-n27{shape:dot, color:#4C4CB2, serves: P21, requests: P1|86|2, P7|32|1, P12|74|2, P14|12|2, P15|48|2, P17|6|0, P20|39|0, P21|75|1, P26|3|2, P30|88|1, P31|7|0, P32|46|2, P34|51|1, P35|74|1, P37|37|1, P38|15|1, P40|4|0, P42|40|1, money: 160}
+n23{shape:dot, color:#666699, serves: P10, requests: P3|18|2, P6|46|1, P8|38|2, P9|30|1, P10|12|2, P12|72|0, P16|70|2, P17|25|2, P20|45|0, P22|57|0, P25|16|2, P29|30|2, P30|35|0, P33|90|2, P34|79|0, P40|53|1, money: 121}
 
-n28{shape:dot, color:#999966, serves: P19, requests: P3|88|2, P8|41|2, P15|20|2, P16|24|2, P17|28|2, P18|62|1, P20|54|2, P21|19|0, P23|9|0, P24|27|2, P27|25|1, P39|55|0, P41|30|0, P42|81|0, money: 101}
+n24{shape:dot, color:#4C4CB2, serves: P16, requests: P2|23|1, P4|55|2, P5|21|1, P7|83|1, P11|54|0, P13|39|2, P19|76|1, P20|68|1, P21|8|0, P27|7|1, P28|31|1, P39|20|1, P42|13|1, money: 126}
 
-n28--n29 {color: #777777, weight: 1.5}
+n25{shape:dot, color:#666699, serves: P28, requests: P0|69|0, P2|37|1, P4|43|2, P7|78|2, P8|3|2, P9|63|2, P12|35|2, P13|79|2, P17|45|1, P24|70|2, P27|2|1, P30|32|2, P34|20|0, P35|88|0, P39|67|0, P40|84|1, P42|72|1, money: 125}
 
-n29{shape:dot, color:#FFFF00, serves: P39, requests: P7|34|2, P8|39|1, P10|14|0, P15|39|2, P18|44|1, P19|64|2, P23|9|0, P24|79|1, P28|65|1, P35|17|2, P39|88|1, P41|87|1, money: 195}
+n26{shape:dot, color:#666699, serves: P35, requests: P5|64|1, P14|50|0, P27|40|1, P29|22|1, P34|38|0, P36|83|0, P37|34|1, P39|1|1, P43|56|2, money: 127}
 
-n30{shape:dot, color:#0000FF, serves: P18, requests: P1|47|1, P2|40|0, P8|21|2, P11|25|1, P12|85|2, P13|11|1, P26|35|2, P30|43|0, P34|38|2, P38|17|0, P40|79|0, P41|88|2, P43|87|0, money: 186}
+n27{shape:dot, color:#4C4CB2, serves: P40, requests: P0|42|0, P1|26|1, P3|50|1, P7|61|0, P10|77|1, P12|56|2, P15|65|2, P16|71|0, P19|41|1, P24|71|0, P25|21|0, P30|43|0, P32|77|2, P39|8|2, P41|83|0, P42|39|1, money: 161}
+
+n28{shape:dot, color:#999966, serves: P0, requests: P3|67|0, P9|43|1, P11|78|1, P12|4|2, P13|28|1, P17|55|0, P20|40|2, P22|37|2, P24|85|1, P25|6|1, P27|30|2, P28|44|2, P32|72|1, P37|83|1, P39|57|2, P41|75|0, P43|55|2, money: 119}
+
+n28--n30 {color: #777777, weight: 1.5}
+
+n29{shape:dot, color:#B2B24C, serves: P23, requests: P4|47|0, P10|86|2, P14|72|0, P21|87|1, P22|35|1, P24|25|0, P26|57|1, P28|72|2, P29|58|1, P31|84|1, P37|83|0, P38|47|1, P39|81|1, money: 153}
+
+n29--n29 {color: #777777, weight: 1.5}
+
+n30{shape:dot, color:#7F7F7F, serves: P19, requests: P1|21|1, P8|43|1, P9|19|2, P11|55|1, P14|17|1, P25|31|0, P27|11|1, P28|71|0, P29|64|2, P30|42|1, P35|32|0, P37|11|2, P39|13|2, P42|38|0, P43|28|1, money: 144}
 

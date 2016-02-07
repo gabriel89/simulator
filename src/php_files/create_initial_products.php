@@ -33,6 +33,7 @@
 	// retrieve number of nodes
 	function retrieveNodesCount ($content, $con) {
 		$rows 		= explode ("\n", $content);
+		$rows 		= removeNormalizationFlag ($rows);
 		$headings 	= explode (";", $rows[0]);
 		
 		// pop empty element from the list
