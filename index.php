@@ -150,13 +150,13 @@ var that = {init:function(){dom.find('.ctrl > a').live('click', that.menuClick) 
     <div id="editor">
       <div class="io">
         <div class="ctrl" id="buttonsbar">
+          <a href="#" class="new" id="loadTreeData">create visual</a>
           <a href="#" data-started="true" id="start_stop" class="start">start</a>
           <a href="#" id="popup_window" data-popup-target="#log-popup" class="showlogtext">show log</a>
           <br/>
           <hr/>
-          <a href="#" style="color:red;" class="init_products">1. init products</a>
-          <a href="#" style="color:red;" class="init_nodes">2. init nodes</a>
-          <a href="#" style="color:red;" class="new" id="loadTreeData">3. reset</a>
+          <a href="#" style="color:red;" class="init_products">init products</a>
+          <a href="#" style="color:red;" class="init_nodes">init nodes</a>
         </div>
         <ul class="dialog"></ul>
       </div>
@@ -201,6 +201,7 @@ var that = {init:function(){dom.find('.ctrl > a').live('click', that.menuClick) 
   <script src="src/customization.js"></script> 
   <script src="src/halfviz.js"></script> 
   <script src="src/logpopup.js"></script>
+  <script src="src/check_for_normalization.js"></script>
   
 </body>
 </html>

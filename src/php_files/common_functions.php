@@ -83,7 +83,13 @@
 		}
 	}
 
-	function calc_base_cost($max_cost, $global_quantity, $quality_factor){
-		return ($global_quantity == 0) ?  0 :
-		 ( $max_cost / $global_quantity ) * $quality_factor;
+	function calc_base_cost($max_cost, $global_quantity, $quality_factor) {
+		return ($global_quantity == 0) ?  0 : ( $max_cost / $global_quantity ) * $quality_factor;
+	}
+
+	function removeNormalizationFlag ($lines) {
+		if (trim($lines[0]) == 'Normalized')
+			array_shift($lines);
+
+		return $lines;
 	}

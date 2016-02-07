@@ -40,11 +40,11 @@
 		// get all the lines of the csv file
 		$lines = explode("\n", $content);
 
+		// get rid of first line of the file within the varable
+		$lines = removeNormalizationFlag ($lines);
+
 		// get the number of nodes
 		$node_count = sizeof(explode(";", $lines[0])) - 1;
-
-		// get rid of first line of the file | DON'T NEED ANYMORE
-		array_shift($lines);
 
 		// iterate through all the lines of the file
 		// line $i corresponds to $nodes[$i]'s $links
@@ -110,7 +110,7 @@
 			//commit to DB
 			execute_sql('<create_initial_arbor.php>', $con, "INSERT INTO nodes (ID, links, requests, serves, quantity, money) VALUES ('" . $ID . "', '" . $links . "', '" . $requests . "', '" . $serves . "', '" . $quantity ."', '" . $money ."')");
 		}
-		var_dump($products);
+
 		/// INSERET PRODUCTS CALCULATIONS HERE
 		foreach ($products as $p){
 			$base_cost = calc_base_cost($p['max_cost'], $p['global_quantity'], 1);
