@@ -44,25 +44,27 @@
 
 	// function to write in the csv file the new content
 	function normalize_csv_file ($container) {
-		$myfile = fopen("../../data/initializer.csv", "w") or die("Unable to open file!");
+		$myfile = fopen ("../../data/initializer.csv", "w") or die("Unable to open file!");
 
 		fwrite($myfile, "Normalized\n");
 
-		for($i = 0; $i < $container['node_count']; $i++){
-			fwrite($myfile, ';n' . $i);
+		for ($i = 0; $i < $container['node_count']; $i++){
+			fwrite ($myfile, ';n' . $i);
 		}
 
-		fwrite($myfile, "\n");
+		fwrite ($myfile, "\n");
 
-		for($i = 0; $i < $container['node_count']; $i++){
-			fwrite($myfile, 'n' . $i . ';');
+		for ($i = 0; $i < $container['node_count']; $i++){
+			fwrite ($myfile, 'n' . $i . ';');
 			
 			for ($j = 0; $j < $container['node_count']; $j++) {
-				fwrite($myfile, $container['links'][$i][$j] . ';');
+				fwrite ($myfile, $container['links'][$i][$j] . ';');
 			}
 
-			fwrite($myfile, "\n");
+			// make sure we don't end up with a blank new-line
+			if ($i < $container['node_count']-1)
+				fwrite ($myfile, "\n");
 		}
 
-		fclose($myfile);
+		fclose ($myfile);
 	}

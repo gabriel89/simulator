@@ -46,6 +46,9 @@
 		// get the number of nodes
 		$node_count = sizeof(explode(";", $lines[0])) - 1;
 
+		// get rid of first line of the file | DON'T NEED ANYMORE
+		array_shift($lines);
+
 		// iterate through all the lines of the file
 		// line $i corresponds to $nodes[$i]'s $links
 		for ($i = 0; $i < $node_count; $i++) {
