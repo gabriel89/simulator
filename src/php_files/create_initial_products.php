@@ -46,10 +46,10 @@
 	function generateProducts ($file, $con) {
 		global $products;
 		$products 	= checkProductsGlobalVariable ($con);
-		$multiplier = 1.4;
+		$multiplier = 0.15;
 		$n_node 	= retrieveNodesCount ($file, $con);
 
-		for ($i = 0; $i < $n_node * $multiplier; $i++) {
+		for ($i = 0; $i < ceil($n_node * $multiplier); $i++) {
 			execute_sql('<create_initial_products.php>', $con, "INSERT INTO products (name, base_cost, max_cost, global_quantity) VALUES ('P" . $i . "', '" . 0 . "', '" . frand() . "', '" . 0 . "')");
 		}
 

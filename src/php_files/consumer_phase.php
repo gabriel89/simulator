@@ -7,19 +7,22 @@
 
 	function getConsumerPath ($con) {
 		global $nodes;
+
 		$nodes = checkNodesGlobalVariable ($con);
 		$consumer_path 	= [];
 
 		addToLog ("\n\n\n;--------------------------------\n;        ESTABLISHING TRANSACTION PATH\n;--------------------------------");
-
-		foreach ($nodes as $node) {
-			$Q = [];
+		
+		for($b = 0; $b < sizeof($nodes); $b++) {
 			$list 			= [];
-			$buyers_array 	= getBuyers($node, $nodes);
-
-				var_dump($buyers_array);
-			foreach ($buyers_array as $buyer){
-				$list = array_merge ($list, array (BFS ($Q, $nodes, $node['name'], $buyer['name'])));
+			$providers 		= getProviders($b);
+			
+			for ($p = 0; $p < sizeof($providers); $p++) {
+				if ($providers[$p] != null) {
+					$list = array_merge ($list, array (BFS ($b, $providers[$p])));
+				} else {
+					echo "<br />No providers found for $b <br /><br />";
+				}
 			}
 			
 			$consumer_path = array_merge ($consumer_path, $list);
@@ -160,44 +163,16 @@
 	}
 	//===========================================================================E=N=D==============================================================\\
 
+
+	//===================================================================================================
+	//            B F S   S E A R C H   A L G O R I T H M
+	//===================================================================================================
+
 	//	update database with new values of product counts and moneys
 	function update_post_tranzaction ($con, $nodes){
 		foreach($nodes as $nd){
 			execute_sql_and_return('<simulator.php>', $con, "UPDATE nodes SET has_product_count = ".$nd['has_product_count'].", money = ".$nd['money']." WHERE name = '" . $nd['name']. "'");
 		}
-	}
-	
-	// implementation of BREADTH-FIRST-SEARCH algorithm for unweighted graphs
-	// &$Q -> global variabl
-	//	refactorization of code to make code easier to manipulate
-	//	functions to add : 	check_seller_has_product (); checke reprezenting the heap containing parent nodes, indexed by child nodes_buyer_affords_product (); get_final_purchase_amount (); get_final_purchase_cost_ppc ();
-	//						intermediate_profit_get ();
-	// $Q structure : $Q[$child_node] -> $parent_node
-
-	function BFS (&$Q, $nodes, $source, $end) {
-		// heap resetting ; the value for each node, except $source, will have its parent set to 0 (for testing)
-		
-		foreach ($nodes as $nd){
-			$Q[$nd['name']] = 0;
-		}
-
-		//	for all isolated nodes, initialize heap value with itself
-		foreach ($nodes as $nd){
-			if ($nd['link_to'] === "" || $nd['link_to'] === NULL){
-				$Q[$nd['name']] = $nd['name'];
-			}
-		}
-		
-		//	the $source node will always have its parent set to itself ; this is the condition for ending the path search
-		$Q[$source] = $source;
-
-		// step 1 : populate the heap according to BFS algorithm
-		BFS_populate_heap($Q, $nodes, $source, $end);
-
-		// step 2 : verify the heap to reconstruct the path
-		$result = BFS_get_path($Q, $source, $end);
-
-		return $result;
 	}
 
 	// function to calculate the new price of a product, factoring in the old price + individual profit
@@ -218,63 +193,82 @@
 
 	}
 
+
+		// implementation of BREADTH-FIRST-SEARCH algorithm for unweighted graphs
+	// &$Q -> global variabl
+	//	refactorization of code to make code easier to manipulate
+	//	functions to add : 	check_seller_has_product (); checke reprezenting the heap containing parent nodes, indexed by child nodes_buyer_affords_product (); get_final_purchase_amount (); get_final_purchase_cost_ppc ();
+	//						intermediate_profit_get ();
+	// $Q structure : $Q[$child_node] -> $parent_node
+
+	function BFS ($source, $end) {
+		global $Q;
+		global $nodes;
+
+		// heap reset ; the value for each node, except $source, will have its parent set to 0 (for testing)		
+		for ($i = 0; $i < sizeof($nodes); $i++){
+			$Q[$i] = -1;
+		}
+		
+		//	the $source node will always have its parent set to itself ; this is the condition for ending the path search
+		$Q[$source] = $source;
+
+		// step 1 : populate the heap according to BFS algorithm
+		BFS_populate_heap($source, $end);
+
+		// step 2 : verify the heap to reconstruct the path
+		$result = BFS_get_path($source, $end);
+
+		return $result;
+	}
+
 	//	function to populate the heap according to BFS
 	//	$Q 				-> global heap
 	//	$nodes 			-> hash table containing all the nodes of the graph
-	//	$start_nodes 	-> list of nodes for which in the current iteration we search for neighbours
+	//	$node_start 	-> list of nodes for which in the current iteration we search for neighbours
 	//	$end 			-> the target node for which we are look for the path ; used for recursion loop exit
-	function BFS_populate_heap(&$Q, $nodes, $start_nodes, $end) {
-		//	test if the heap is full; this will ensure that for the same $source node, the function isn't recalled unnecessarily
-		if (!BFS_check_full_heap($Q)) {
-			// turn the starting node list into an array for iteration
-			$starts = explode(',', $start_nodes);
+	function BFS_populate_heap($node_start) {
+		global $Q;
+		global $nodes;
+		
+		//condition for stopping population of heap is a full heap
 
-			//	prepare the next set of starting nodes (this will consist of a list of the unvisited neighbours of this set of starting nodes)
-			$start_next = '';
+		$node_start = explode(',', $node_start);
+		//initialize starting nodes for next iteration
+		$node_next = '';
 
-			//	for every starting node, we search through all neighbours
-			foreach($starts as $st_node){
+		//iterate through starting nodes
+		//for each get closest neighbours and set their heap values
+		foreach ($node_start as $current){
+			//get links of current node
+			$links = $nodes[$current]['links'];
+			$links = explode(',', $links);
 
-				//	find the node adjacent to the name of this starting node
-				$st_node_neighbours = $nodes[indexTo ($st_node, $nodes)];
-
-				//	retrieve the list of its neighbours
-				$st_node_neighbours = $st_node_neighbours['link_to'];
-
-				//	transform the list into array for iteration
-				$s_n_n = explode(',', $st_node_neighbours);
-				$st_node_neighbours = [];
-
-				//	filter out previously visited nodes
-				foreach ($s_n_n as $snn) {
-					if ($Q[$snn] === 0) {
-						$st_node_neighbours = array_merge($st_node_neighbours, [$snn]);
-					}
-				}
-
-				// at this point, $st_node_neighbours contains all the neighbours of $st_node that HAVE NOT BEEN visited before
-				// iterate through these neighbours
-				foreach ($st_node_neighbours as $snn) {
-					//	set the parent of this neighbour to $st_node
-					$Q[$snn] = $st_node;
-
-					//	add this neighbour to the next set of starting nodes
-					$start_next = $start_next . ',' . $snn;
+			//iterate through current node's links
+			//if link hasn't been checked before, its value is set in the heap
+			foreach ($links as $link){
+				if ($Q[$link] < 0) {
+					$Q[$link] = $current;
+					$node_next .= $link . ',';
 				}
 			}
+		}
 
-			// due to concatenation with the starting value of $start_next which was "", an extra ',' is present in the list -> correction
-			$start_next = substr ($start_next, 1);
+		//get rid of trailing comma
+		$node_next = trim($node_next, ',');
 
-			// recursive call of function on the next set of starting nodes (the neighbours that were visited this iteration)
-			BFS_populate_heap($Q, $nodes, $start_next, $end);
+		//call function for next set of starting nodes
+		if (BFS_check_heap() === FALSE){
+			BFS_populate_heap($node_next);
 		}
 	}
 
 	//	function to return the shortest path from $start to $end
-	function BFS_get_path ($Q, $start, $end) {
+	function BFS_get_path ($start, $end) {
+		global $Q;
+
 		//	if $end's parent is itself, return $end ; this means we've reached the source node as it is the only one with this property
-		if ($Q[$end] === $end) {
+		if ($Q[$end] === $start) {
 			return $end;
 		}
 
@@ -282,80 +276,72 @@
 		$p_node = $Q[$end];
 
 		//	recursive call of function using $end's parent
-		$parent = BFS_get_path($Q, $start, $p_node);
+		$parent = BFS_get_path($start, $p_node);
 
-		return $parent . ',' . $end;
+		return $parent . '->' . $end;
 	}
 
-	function indexTo ($node_name, $nodes) {
-		$max_size = sizeof ($nodes);
-		for ($i = 0; $i < $max_size; $i++){
-			$nd = &$nodes[$i];
-			if ($node_name === $nd['name']) {
-				return $i;
-			}
-		}
-	}
+	function BFS_check_heap(){
+		global $Q;
 
-	function BFS_check_full_heap ($Q) {
-		foreach ($Q as $my_q) {
-			if ($my_q === 0)
-				return FALSE;
+		for ($i = 0; $i < sizeof($Q); $i++){
+			if ($Q[$i] < 0) return FALSE;
 		}
 
 		return TRUE;
 	}
 
-	function getBuyers ($buyer_node, $nodes){
-		//array to hold numbers representing product ranks of the products sold
-		$ranks = [];
-		$res = [];
-		$prods = $buyer_node ['needs_product']; // lista de produse necesare
-		if(isset($prods)) {
-			$prods = unserialize($prods);
+	//===================================================================================================
+	//            E N D   O F   B F S   S E A R C H   A L G O R I T H M
+	//===================================================================================================
 
-			foreach ($nodes as $nd){
-				foreach ($prods as $prod){
-					// if the node we are looking at is selling a product needed by buyer_node, add the node name to the result
-					if ($nd ['has_product'] === $prod ['p_name']){ 
-						$res[] = $nd;
-						switch ($prod ['p_rank']){
-							case 'high' : {
-								$ranks = array_merge($ranks, [3]);
-							} break;
+	function getProvidersOf($product_name){
+		global $nodes;
 
-							case 'normal' : {
-								$ranks = array_merge($ranks, [2]);
-							} break;
-
-							case 'low' : {
-								$ranks = array_merge($ranks, [1]);
-							} break;
-
-							default : {
-								$ranks = array_merge($ranks, [-1]);
-							} break;
-						}
-					}
-				}
-			}
-		}
-		//bubble sort the seller nodes over product ranking
-
-		$n = sizeof ($ranks);
-		for($i = 0; $i < $n - 1; $i++){
-			for($j = $i + 1; $j < $n; $j++){
-				$aux = $res[$i];
-				$auxi = $ranks[$i];
-				if($ranks[$i] < $ranks[$j]){
-					$ranks[$i] = $ranks[$j];
-					$ranks[$j] = $auxi;
-
-					$res[$i] = $res[$j];
-					$res[$j] = $aux;
-				}
+		$rez = '';
+		for ($i = 0; $i < sizeof($nodes); $i++){
+			if ($nodes[$i]['serves'] === $product_name){
+				$rez .= $i . ',';
 			}
 		}
 
-		return $res;
+		$rez = trim($rez, ',');
+		$rez = explode(',', $rez);
+
+		return $rez;
+	}
+
+	function getProviders ($buyer_node){
+		global $nodes;
+
+		//returns a list of other nodes which sell the products buyer_node requests
+		//the list is ordered by the priority of the request (most required -> least required)
+		$requests = $nodes[$buyer_node]['requests'];
+		$requests = explode('^', $requests);
+
+		if ($requests[0] === '') return '';
+
+		$max_priority = 0;
+
+		foreach ($requests as &$request) {
+			$request = explode('|', $request);
+
+			if ($request[2] > $max_priority) {
+				$max_priority = $request[2];
+			}
+		}
+
+		$rez = [];
+
+		while ($max_priority >= 0) {
+			foreach ($requests as $request) {
+				if ($request[2] === $max_priority) {
+					$rez = array_merge ($rez, getProvidersOf($request[0]));
+				}
+			}
+
+			$max_priority--;
+		}
+
+		return $rez;
 	}

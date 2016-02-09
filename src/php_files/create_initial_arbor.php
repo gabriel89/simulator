@@ -79,12 +79,21 @@
 
 			//remove tailing ','
 			$links = trim($links, ',');
+
+			//set serves and quantity
+			$idx = (empty($products) ? 0 : floor(frand(sizeof($products)) % sizeof($products)));
+			$serves 	= 'P' . $idx;
+			$quantity 	= floor(mt_rand(20, 70));
+			
+			// update global quantity for served product
+			$products[$idx]['global_quantity'] += $quantity;
 			
 			//set requests if $products is not an empty array
 			if (!empty($products)) {
 				for ($j = 0; $j < sizeof($products); $j++) {
-					//for each product randomize check for need and create specific request
-					if (floor(frand(3, 5, 7, 3)) % floor(frand(1, 3, 5, 2)) == 0){
+					//for each product randomize if product is requested
+					//a node may not request the product it produces
+					if ((floor(frand(3, 5, 7, 3)) % 2 == 0) && ($idx != $j)) {
 						//set product ID
 						$request = 'P'. $j . '|';
 						//set quantity
@@ -99,13 +108,15 @@
 				$requests = trim($requests, '^');
 			}
 
-			//set serves and quantity
-			$idx = (empty($products) ? 0 : floor(frand(sizeof($products)) % sizeof($products)));
-			$serves 	= 'P' . $idx;
-			$quantity 	= floor(mt_rand(20, 70));
-			
-			// update global quantity for served product
-			$products[$idx]['global_quantity'] += $quantity;
+			// REQUEST FAILSAFE
+			if ($requests === '') {
+				//set product ID
+				$requests = 'P' . generateProductFailSafe($i, $idx) . '|';
+				//set quantity
+				$requests .= ceil(frand(10)) . '|';
+				//set priority
+				$requests .= (floor(frand(25)) % 3);
+			}
 
 			// set money
 			$money = mt_rand(100, 200);
@@ -123,4 +134,18 @@
 		// unset large array to free up memory
 		unset ($rows);
 		unset ($headings);
+	}
+
+	function generateProductFailSafe($index, $serves) {
+		// function recursively generates a random product in the case where a node has no requests
+		global $nodes;
+
+		for ($i = 0; $i < sizeof($products); $i++) {
+			if (($serves != $i) && (floor(frand(3, 5, 7, 3)) % 2 == 0)) {
+				return $i;
+			}
+		}
+
+		// if no product was chosen, try again
+		return generateProductFailSafe($index, $serves);
 	}

@@ -31,42 +31,42 @@
 	// function to set iteration number of the 
 	function prepareSim ($exec_count, $con) {
 		addToLog ("\n\n\n\n\n\n\n\n\n\n\n;--------------------------------\n;        STARTING SIMULATOR\n;--------------------------------\n\n\n");
-
 		// calculate pay-day recurrence
 		$pay_day = floor ($exec_count / 12);
 
 		for ($exec_iterator = 1; $exec_iterator <= $exec_count; $exec_iterator++) {
 			// make sure we refresh the money only in 1/12th of the total number of iteration
-
+			
 			if ($pay_day > 0)
 				if (($pay_day > ($exec_count / 12)) && ($exec_iterator % $pay_day == 0)) {
 				    payDay ($con, $nodes);
 				}
 			
-			//startSim ($con, $nodes, $exec_iterator, $exec_count);
+			startSim ($con, $exec_iterator, $exec_count);
 		}
 
 		addToLog ("\n;--------------------------------\n;        ENDING SIMULATOR\n;--------------------------------\n");
 	}
 
 	// function to start the simulator iterating over the nodes in the graph
-	function startSim ($con, $nodes, $exec_iterator, $exec_count) {
+	function startSim ($con, $exec_iterator, $exec_count) {
 		addToLog (";--------------------------------\n;        SIMULATOR PHASE $exec_iterator/$exec_count\n;--------------------------------");
 		print_r ("On phase $exec_iterator/$exec_count\n");
 
-		consumerPhase ($con, $nodes);
-		economicPhase ($con, $nodes);
+		consumerPhase ($con);
+		//economicPhase ($con, $nodes);
 
 		addToLog ("\n\n\n\n\n\n\n\n\n\n\n");
 	}
 
 	// function to treat information related to the consumer phase
-	function consumerPhase ($con, $nodes) {
+	function consumerPhase ($con) {
+		global $nodes;
 		// retrieve a list of lists representing an economic path from producer to consumer
 		$consumer_path = getConsumerPath ($con, $nodes);
 
 		// make transaction for each possible consumer
-		finalizeTransaction ($con, $nodes, $consumer_path);
+		//finalizeTransaction ($con, $nodes, $consumer_path);
 
 		// unset $consumer_path array once it is not used anymore
 		unset ($consumer_path);
