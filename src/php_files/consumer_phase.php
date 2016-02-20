@@ -194,7 +194,7 @@
 	}
 
 
-		// implementation of BREADTH-FIRST-SEARCH algorithm for unweighted graphs
+	// implementation of BREADTH-FIRST-SEARCH algorithm for unweighted graphs
 	// &$Q -> global variabl
 	//	refactorization of code to make code easier to manipulate
 	//	functions to add : 	check_seller_has_product (); checke reprezenting the heap containing parent nodes, indexed by child nodes_buyer_affords_product (); get_final_purchase_amount (); get_final_purchase_cost_ppc ();

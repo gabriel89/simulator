@@ -136,9 +136,9 @@
 		unset ($headings);
 	}
 
+	// function recursively generates a random product in the case where a node has no requests
 	function generateProductFailSafe($index, $serves) {
-		// function recursively generates a random product in the case where a node has no requests
-		global $nodes;
+		global $products;
 
 		for ($i = 0; $i < sizeof($products); $i++) {
 			if (($serves != $i) && (floor(frand(3, 5, 7, 3)) % 2 == 0)) {
