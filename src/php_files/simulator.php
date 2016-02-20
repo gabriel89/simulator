@@ -62,11 +62,12 @@
 	// function to treat information related to the consumer phase
 	function consumerPhase ($con) {
 		global $nodes;
+
 		// retrieve a list of lists representing an economic path from producer to consumer
 		$consumer_path = getConsumerPath ($con, $nodes);
 
 		// make transaction for each possible consumer
-		//finalizeTransaction ($con, $nodes, $consumer_path);
+		finalizeTransaction ($con, $consumer_path);
 
 		// unset $consumer_path array once it is not used anymore
 		unset ($consumer_path);
@@ -80,7 +81,6 @@
 	}
 
 	function updateRevenue () {
-
 	}
 
 	// function to decide upon investment options
