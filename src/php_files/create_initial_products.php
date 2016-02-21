@@ -45,6 +45,7 @@
 	// function to generate products and their values
 	function generateProducts ($file, $con) {
 		global $products;
+		
 		$products 	= checkProductsGlobalVariable ($con);
 		$multiplier = 0.15;
 		$n_node 	= retrieveNodesCount ($file, $con);

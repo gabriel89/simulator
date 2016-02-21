@@ -88,6 +88,7 @@
 
 	function get_initial_cost_ppc ($product, $con){
 		global $products;
+		
 		$products = checkProductsGlobalVariable ($con);
 		
 		foreach ($products as $temp) {

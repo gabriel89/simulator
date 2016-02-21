@@ -63,6 +63,8 @@
 	function consumerPhase ($con) {
 		global $nodes;
 
+		$nodes = checkNodesGlobalVariable ($con);
+
 		// retrieve a list of lists representing an economic path from producer to consumer
 		$consumer_path = getConsumerPath ($con, $nodes);
 
