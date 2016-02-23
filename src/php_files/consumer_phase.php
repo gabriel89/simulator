@@ -31,14 +31,6 @@
 
 		return $consumer_path;
 	}
-	$servername = "localhost";
-	$username 	= "sim";
-	$password 	= "sim";
-	$dbname 	= "sim";
-
-	// Create connection
-	$con = new mysqli ($servername, $username, $password, $dbname);
-	finalizeTransaction($con, getConsumerPath($con));
 	// function to finalize transaction:
 	// for each element of $consumer_path we need to sell the product from the producer (first node) to the consumer (last node)
 	// each intermediate node will add a personal profit to the total value of the previous node, thus product final price = initial price + profit node1 + profit node2 + ...
