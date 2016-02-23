@@ -31,7 +31,14 @@
 
 		return $consumer_path;
 	}
+	$servername = "localhost";
+	$username 	= "sim";
+	$password 	= "sim";
+	$dbname 	= "sim";
 
+	// Create connection
+	$con = new mysqli ($servername, $username, $password, $dbname);
+	finalizeTransaction($con, getConsumerPath($con));
 	// function to finalize transaction:
 	// for each element of $consumer_path we need to sell the product from the producer (first node) to the consumer (last node)
 	// each intermediate node will add a personal profit to the total value of the previous node, thus product final price = initial price + profit node1 + profit node2 + ...
@@ -69,7 +76,7 @@
 			}
 		}
 		//	update database with new values for money and product quantities
-		update_post_tranzaction ($con, $nodes);
+		update_post_tranzaction ($con);
 	}
 
 	//	refactorization of code to make code easier to manipulate
@@ -136,25 +143,26 @@
 		$products = $buyer_node['requests'];
 		$products = unserialize_requests($products);
 
-		foreach ($products as &$product) {
-			$initial_cost_ppc 		= get_initial_cost_ppc ($product, $con);
-			$final_cost_ppc 		= get_final_cost_ppc ($inter_nodes, $product, $seller_node, $initial_cost_ppc);
-			$final_purchase_amount 	= get_final_purchase_amount ($buyer_node, $product, $seller_node, $final_cost_ppc);
+		for($i = 0; $i < sizeof($products) ; $i++){
+			$initial_cost_ppc 		= get_initial_cost_ppc ($products[$i], $con);
+			$final_cost_ppc 		= get_final_cost_ppc ($inter_nodes, $products[$i], $seller_node, $initial_cost_ppc);
+			$final_purchase_amount 	= get_final_purchase_amount ($buyer_node, $products[$i], $seller_node, $final_cost_ppc);
 			$final_cost_whole 		= get_final_cost_whole ($final_purchase_amount, $final_cost_ppc);
 			$result 				= ''; 
 
-			$product [1]			-= $final_purchase_amount;
+			$products[$i][1]		-= $final_purchase_amount;
 			$buyer_node ['money'] 	-= $final_cost_whole;
 
-			for ($i=0; $i < sizeof($products); $i++) { 
-				$result .= implode('|', $products[$i])."^";
+			for ($j=0; $j < sizeof($products); $j++) { 
+				$result .= implode('|', $products[$j])."^";
 			}
 
+			//update buyers requests with new values 
 			$buyer_node ['requests'] = substr($result, 0, -1);
 
 			foreach (array_reverse($inter_nodes) as $intermediary){
 				// each intermediary node involved in the transaction will receive 10% of the final cost
-				if ($intermediary !== $seller_node['id'] && $intermediary !== $product[0]) {
+				if ($intermediary !== $seller_node['id'] && $intermediary !== $products[$i][0]) {
 					$inter_node 			= $nodes[$intermediary];
 					$interm_profit 			= ($final_cost_whole / 11);
 					$inter_node['money']	+= $interm_profit;
@@ -174,9 +182,10 @@
 	//===================================================================================================
 
 	//	update database with new values of product counts and moneys
-	function update_post_tranzaction ($con, $nodes){
+	function update_post_tranzaction ($con){
+		global $nodes;
 		foreach($nodes as $nd){
-			execute_sql_and_return('<simulator.php>', $con, "UPDATE nodes SET quantity = ".$nd['quantity'].", money = ".$nd['money']." WHERE id = '" . $nd['id']. "'");
+			execute_sql_and_return('<simulator.php>', $con, "UPDATE nodes SET requests = '".$nd['requests']."', quantity = ".$nd['quantity'].", money = ".$nd['money']." WHERE id = '" . $nd['id']. "'");
 		}
 	}
 
