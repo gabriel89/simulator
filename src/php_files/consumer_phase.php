@@ -67,6 +67,9 @@
 				}
 			}
 		}
+		// calculate the global quantity for each product
+		calculate_product_quantity($con);
+
 		//	update database with new values for money and product quantities
 		update_post_tranzaction ($con);
 	}
@@ -166,6 +169,37 @@
 			$seller_node ['money']		+= $final_cost_whole;
 		}
 	}
+
+	function calculate_product_quantity($con) {
+		global $nodes;
+		global $products;
+
+		$products = fetch_products_toArray($con);
+
+		//reset the global quantity
+		for ($i=0; $i < sizeof($products) - 1; $i++) { 
+			$products[$i]['global_quantity'] = 0;
+		}
+
+		//calculate the global quantity for each product
+		for ($i=0; $i < sizeof($nodes) - 1; $i++) {
+			for ($j=0; $j < sizeof($products) - 1; $j++) { 
+				if($products[$j]['name'] == $nodes[$i]['serves']) {
+					$products[$j]['global_quantity'] += $nodes[$i]['quantity'];
+				}
+			 } 
+		}
+		
+		//calculate the base_cost 
+		for ($i=0; $i < sizeof($products); $i++) {
+			if($products[$i]['global_quantity'] == 0) {
+				$products[$i]['base_cost'] = $products[$i]['max_cost'];
+			}
+			else { 
+			$products[$i]['base_cost'] = $products[$i]['max_cost'] / $products[$i]['global_quantity'];
+			}
+		}
+	}
 	//===========================================================================E=N=D==============================================================\\
 
 
@@ -176,8 +210,13 @@
 	//	update database with new values of product counts and moneys
 	function update_post_tranzaction ($con){
 		global $nodes;
+		global $products;
+
 		foreach($nodes as $nd){
 			execute_sql_and_return('<simulator.php>', $con, "UPDATE nodes SET requests = '".$nd['requests']."', quantity = ".$nd['quantity'].", money = ".$nd['money']." WHERE id = '" . $nd['id']. "'");
+		}
+		foreach ($products as $prod) {
+			execute_sql_and_return('<simulator.php>', $con, "UPDATE products SET base_cost = ".$prod['base_cost'].", global_quantity = ".$prod['global_quantity']." WHERE name = '".$prod['name']."'");
 		}
 	}
 
