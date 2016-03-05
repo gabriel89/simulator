@@ -88,15 +88,15 @@
 		return ($product [1] > 0);
 	}
 
-	function get_initial_cost_ppc ($product, $con){
+	function get_initial_cost_ppc ($product, $seller_node, $con){
 		global $products;
-		
+
 		$products = checkProductsGlobalVariable ($con);
 		
 		foreach ($products as $temp) {
 			if($temp["name"] == $product[0]) {
 			//	returns the value (float) of ONE instance of the product the buyer needs
-				return $temp["base_cost"];
+				return $temp["base_cost"] * $seller_node["product_quality"];
 			}
 		}
 	}
@@ -139,7 +139,7 @@
 		$products = unserialize_requests($products);
 
 		for($i = 0; $i < sizeof($products) ; $i++){
-			$initial_cost_ppc 		= get_initial_cost_ppc ($products[$i], $con);
+			$initial_cost_ppc 		= get_initial_cost_ppc ($products[$i], $seller_node, $con);
 			$final_cost_ppc 		= get_final_cost_ppc ($inter_nodes, $products[$i], $seller_node, $initial_cost_ppc);
 			$final_purchase_amount 	= get_final_purchase_amount ($buyer_node, $products[$i], $seller_node, $final_cost_ppc);
 			$final_cost_whole 		= get_final_cost_whole ($final_purchase_amount, $final_cost_ppc);
