@@ -79,7 +79,7 @@
 	function economicPhase ($con, $nodes) {
 		updateRevenue ();
 
-		decideUponInvestment ();
+		decideUponInvestment();
 	}
 
 	function updateRevenue () {
@@ -87,15 +87,10 @@
 
 	// function to decide upon investment options
 	function decideUponInvestment () {
-		investInLink ();
-
-		investInProduction ();
-	}
-
-	// function to set attributes in order to add a new link to the graph
-	function investInLink () {
-	}
-
-	// function set attributes in order to improve production
-	function investInProduction () {
+		//investment is decided in regard to the minimum cost of the investment option
+		//ex: if production costs more than links => chose links
+		//ex2: if 
+		MAYBE investInProduction();
+		MAYBE investInLinks();
+		MAYBE investInExpansion();
 	}

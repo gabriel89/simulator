@@ -14,3 +14,45 @@
 		}
 		print_r("\n\n");
 	}
+
+//---------------------------------I-N-V-E-S-T-M-E-N-T---O-P-T-I-O-N-S----------------------------------
+
+	function investInProduction($idx){
+		global $nodes;
+		global $products;
+	}
+	//---------------   LINK INVESTMENT FUNCTION   ---------------\\
+	function investInLinks($idx){
+		global $nodes;
+		global $products;
+
+		// picks a list of nodes that produce a requested product with which to link
+		// a link cost a big sum of money
+		// link cost is influenced by production quality of the desired node
+		// ex: base link cost == baseLinkCost; node has production quality of 0.78 => linkCost = baseLinkCost * 1.78;
+		// has following subfunctions: 	getSingleLinkInvestmentCost($node A, $node B), getLinkInvestmentCost($idx),
+		//								link($node A, $node B), getLinkTargets($idx)
+	}
+
+	//--------------   LINK INVESTMENT SUBFUNCTIONS   ---------------\\
+	// returns an array containing the nodes that idx would link to
+	function getLinkTargets($idx){
+
+	}
+	// returns the cost of linking node A to node B
+	function getSingleLinkInvestmentCost($nodeA, $nodeB){
+
+	}
+	// returns the cost of linking node at idx with all selected link targets
+	function getLinkInvestmentCost($idx){
+
+	}
+	// links node A to node B : adds B to A's links and vise-versa, removes the link cost from A's money
+	function link($nodeA, $nodeB){
+
+	}
+
+	function investInExpansion($idx){
+		global $nodes;
+		global $products;
+	}
