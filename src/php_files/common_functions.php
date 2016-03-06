@@ -93,3 +93,51 @@
 
 		return $lines;
 	}
+
+	function getProvidersOf($product_name){
+		global $nodes;
+
+		$rez = '';
+		for ($i = 0; $i < sizeof($nodes); $i++){
+			if ($nodes[$i]['serves'] === $product_name)
+				$rez .= $i . ',';
+		}
+
+		$rez = trim($rez, ',');
+		$rez = explode(',', $rez);
+
+		return $rez;
+	}
+
+	function getProviders ($buyer_node){
+		global $nodes;
+
+		//returns a list of other nodes which sell the products buyer_node requests
+		//the list is ordered by the priority of the request (most required -> least required)
+		$requests = $nodes[$buyer_node]['requests'];
+		$requests = explode('^', $requests);
+
+		if ($requests[0] === '') return '';
+
+		$max_priority = 0;
+
+		foreach ($requests as &$request) {
+			$request = explode('|', $request);
+
+			if ($request[2] > $max_priority)
+				$max_priority = $request[2];
+		}
+
+		$rez = [];
+
+		while ($max_priority >= 0) {
+			foreach ($requests as $request) {
+				if ($request[2] === $max_priority)
+					$rez = array_merge ($rez, getProvidersOf($request[0]));
+			}
+
+			$max_priority--;
+		}
+
+		return $rez;
+	}
