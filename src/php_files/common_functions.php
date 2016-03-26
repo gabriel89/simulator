@@ -141,3 +141,19 @@
 
 		return $rez;
 	}
+
+
+	// returns the cost of linking to node B
+	function getSingleLinkCost($baseCost, $target){
+		
+		// final link cost is dependant on the supplier's production quality
+		// could also depend on length of previous transaction path (the longer it was, the more it will cost)
+		global $nodes;
+
+		$links = $nodes[$target]['links'];
+		$links = explode(',',  $links);
+
+		$linkCost = $baseCost * (1 + $nodes[$target]['productionQuality'] + (sizeof($links) / (sizeof($nodes) - 1)));
+
+		return $linkCost;
+	}

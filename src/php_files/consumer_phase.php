@@ -77,7 +77,6 @@
 	//	refactorization of code to make code easier to manipulate
 	//	functions to add : 	check_seller_has_product (); check_buyer_affords_product (); get_final_purchase_amount (); get_final_purchase_cost_ppc ();
 	//						intermediate_profit_get (); check_buyer_needs_product ()
-	//===============================================================R=E=F=A=C=T=O=R=I=Z=A=T=I=ON===================================================\\
 	function check_seller_has_product ($seller_node){
 		//	returns TRUE if seller has a positive amount of product to sell (least amount is 0 -> returns FALSE)
 		return ($seller_node['quantity'] > 0);
