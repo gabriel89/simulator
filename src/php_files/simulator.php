@@ -90,23 +90,32 @@
 	function economicPhase ($con, $nodes) {
 		updateRevenue ();
 
-		decideUponInvestment ();
+		decideUponInvestment();
 	}
 
 	function updateRevenue () {
 	}
 
 	// function to decide upon investment options
-	function decideUponInvestment () {
-		investInLink ();
+	function decideUponInvestment ($idx) {
+		//investment is decided in regard to the minimum cost of the investment option
+		//ex: if production costs more than links => chose links
+		//ex2: if 
+		/*
+		MAYBE investInProduction();
+		MAYBE investInLinks();
+		MAYBE investInExpansion();
+		*/
+		$linkTargets = getLinkTargets ($idx);
+		$linkInvestmentCost = getLinkInvestmentCost ($idx);
+		// investment decision is made based upon the minimum investment cost
+		// 0 == LINKS
+		// 1 == PRODUCTION
+		// 2 == EXPANSION
+		// 3 == RESIGNATION
+		$investmentDecision = 0; 
 
-		investInProduction ();
-	}
-
-	// function to set attributes in order to add a new link to the graph
-	function investInLink () {
-	}
-
-	// function set attributes in order to improve production
-	function investInProduction () {
+		if ($investmentDecision === 0){
+			investInLinks ($idx, $linkTargets);
+		}
 	}
