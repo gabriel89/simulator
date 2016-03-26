@@ -8,5 +8,5 @@
 
 	// execution of sql command return value
 	function execute_sql_and_return ($file, $con, $sql) {
-		return mysqli_query($con, $sql);
+			return mysqli_query($con, $sql);
 	}
