@@ -1,4 +1,7 @@
 <?php
+	// increase maximum execution time (in seconds, 300 seconds = 5 minutes)
+	ini_set('max_execution_time', 300);
+
 	// include files
 	include_once ('sql_execute.php');
 	include_once ('common_functions.php');
@@ -20,21 +23,17 @@
 	    die ("Connection failed: " . $conn->connect_error);
 	}
 	
-	//place this before any script you want to calculate time
-$time_start = microtime(true); 
-
+	// start measurement of code execution time
+	$time_start = microtime(true); 
 
 	// start simulator by setting the execution number
-	prepareSim (100, $con);
+	prepareSim (150, $con);
 	
+	// end measurement of code execution time
 	$time_end = microtime(true);
 
-//dividing with 60 will give the execution time in minutes other wise seconds
-$execution_time = ($time_end - $time_start)/60;
-
-//execution time of the script
-echo '<b>Total Execution Time:</b> '.$execution_time.' Mins';
-
+	//execution time of the script in
+	echo 'Simulator runtime: ' . ((($time_end - $time_start) < 60) ? (($time_end - $time_start) . ' seconds') : (($time_end - $time_start) / 60) . ' minutes');
 	// close connection
 	$con->close ();
 
