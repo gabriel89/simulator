@@ -34,4 +34,5 @@
 		if($investmentDecision === 2){
 			investInExpansion ($idx, $expansionTarget, $expansionCost);
 		}
+		
 	}
