@@ -32,25 +32,27 @@
 					return false;
 				}
 				else if (type == 'start'){
-					if ($('#start_stop').data('started')){
-						// set html property
-						$('#start_stop').data('started', false).text('stop');
+					printOnStartClick();
 
-						// print status
-						console.log('Clicked on START');
+					//if ($('#start_stop').data('started')){
+					//	// set html property
+					//	$('#start_stop').data('started', false).text('stop');
+					
+					//	// print status
+					//	console.log('Clicked on START');
 
-						// myVar = setInterval(function(){ printOnStartClick() }, 1000);
-						printOnStartClick();
-					} else {
-						// set html property
-						$('#start_stop').data('started', true).text('start');
+					//	// myVar = setInterval(function(){ printOnStartClick() }, 1000);
+					//	printOnStartClick();
+					//} else {
+					//	// set html property
+					//	$('#start_stop').data('started', true).text('start');
 
-						// end cycle
-						clearInterval(myVar);
+					//	// end cycle
+					//	clearInterval(myVar);
 
-						// print status
-						console.log('Clicked on STOP');
-					}
+					//	// print status
+					//	console.log('Clicked on STOP');
+					//}
 				}
 				else if (type == 'showlogtext') {
 					$('#popuplogcontent').val($.ajax({type: 'GET', url: 'data/log.txt', async: false}).responseText);

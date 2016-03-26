@@ -1,6 +1,6 @@
 <?php
 	// increase maximum execution time (in seconds, 300 seconds = 5 minutes)
-	ini_set('max_execution_time', 300);
+	ini_set('max_execution_time', 900);
 
 	// include files
 	include_once ('sql_execute.php');
@@ -27,13 +27,13 @@
 	$time_start = microtime(true); 
 
 	// start simulator by setting the execution number
-	prepareSim (150, $con);
+	prepareSim (15, $con);
 	
 	// end measurement of code execution time
 	$time_end = microtime(true);
 
 	//execution time of the script in
-	echo 'Simulator runtime: ' . ((($time_end - $time_start) < 60) ? (($time_end - $time_start) . ' seconds') : (($time_end - $time_start) / 60) . ' minutes');
+	echo 'Simulator ended successfully after ' . ((($time_end - $time_start) < 60) ? (($time_end - $time_start) . ' seconds') : (($time_end - $time_start) / 60) . ' minutes');
 	// close connection
 	$con->close ();
 
