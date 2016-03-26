@@ -58,13 +58,14 @@
 			array_shift($line_links);
 
 			// prepare variables corresponding to table fields
-			$ID 		= '';
-			$links 		= '';
-			$requests 	= '';
-			$serves 	= '';
-			$quantity 	= '';
-			$money 		= '';
-
+			$ID 				= '';
+			$links 				= '';
+			$requests 			= '';
+			$serves 			= '';
+			$quantity 			= '';
+			$money 				= '';
+			$product_quality 	= '';
+			$pay_up				= '';
 			//set ID
 			$ID = $i;
 
@@ -120,9 +121,10 @@
 
 			// set money
 			$money = mt_rand(100, 200);
-			
+			$product_quality = frand(1,0.1,1,2);
+			$pay_up = frand(1,0.1,1,2);
 			//commit to DB
-			execute_sql('<create_initial_arbor.php>', $con, "INSERT INTO nodes (ID, links, requests, serves, quantity, money) VALUES ('" . $ID . "', '" . $links . "', '" . $requests . "', '" . $serves . "', '" . $quantity ."', '" . $money ."')");
+			execute_sql('<create_initial_arbor.php>', $con, "INSERT INTO nodes (ID, links, requests, serves, quantity, money, product_quality, pay_up) VALUES ('" . $ID . "', '" . $links . "', '" . $requests . "', '" . $serves . "', '" . $quantity ."', '" . $money ."', '".$product_quality."', '".$pay_up."')");
 		}
 
 		/// INSERET PRODUCTS CALCULATIONS HERE

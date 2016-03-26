@@ -33,6 +33,8 @@ CREATE TABLE IF NOT EXISTS `nodes` (
   `serves` varchar(255) NOT NULL,
   `quantity` int(11) NOT NULL DEFAULT '0',
   `money` float NOT NULL,
+  `product_quality` float NOT NULL,
+  `pay_up` float NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_2` (`id`),
   KEY `id` (`id`)
@@ -42,9 +44,9 @@ CREATE TABLE IF NOT EXISTS `nodes` (
 -- Dumping data for table `nodes`
 --
 
-INSERT INTO `nodes` (`id`, `links`, `requests`, `serves`, `quantity`, `money`) VALUES
-(0, '1', '', 'P0', 235, 0),
-(1, '0', '', 'P0', 362, 0);
+INSERT INTO `nodes` (`id`, `links`, `requests`, `serves`, `quantity`, `money`, `product_quality`, `pay_up`) VALUES
+(0, '1', '', 'P0', 235, 0, 1, 0.2),
+(1, '0', '', 'P0', 362, 0, 0.5, 0.3);
 
 -- --------------------------------------------------------
 
@@ -72,26 +74,6 @@ INSERT INTO `products` (`id`, `name`, `base_cost`, `max_cost`, `global_quantity`
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `test`
---
-
-CREATE TABLE IF NOT EXISTS `test` (
-  `ID` int(10) unsigned NOT NULL,
-  `nbr` varchar(1024) DEFAULT NULL,
-  UNIQUE KEY `ID_2` (`ID`),
-  KEY `ID` (`ID`),
-  KEY `ID_3` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `test`
---
-
-INSERT INTO `test` (`ID`, `nbr`) VALUES
-(0, '1,2'),
-(1, '0'),
-(2, '0,1');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
