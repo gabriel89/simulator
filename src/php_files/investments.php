@@ -45,7 +45,7 @@
 		$linkTargets = [];
 
 		for($i = 0; $i < sizeof($requestSuppliers); $i++){
-			if (frand ((int)(mt_rand (0, $production_count)) % 7 == 0){
+			if ((int)(mt_rand (0, $production_count)) % 7 == 0){
 				$linkTargets = array($linkTargets, [$requestSuppliers[$i]]);
 			}
 		}
