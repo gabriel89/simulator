@@ -22,7 +22,7 @@
 
 	// start simulator by setting the execution number
 	prepareSim (10, $con);
-
+	
 	// close connection
 	$con->close ();
 
@@ -95,7 +95,5 @@
 	// function to set attributes in order to add a new link to the graph
 	function investInLink () {
 	}
-
 	// function set attributes in order to improve production
-	function investInProduction () {
-	}
+	

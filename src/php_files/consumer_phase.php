@@ -69,9 +69,40 @@
 		}
 		// calculate the global quantity for each product
 		calculate_product_quantity($con);
-
+		//investInProductQuality();
 		//	update database with new values for money and product quantities
 		update_post_tranzaction ($con);
+	}
+
+	function investInProductQuality () {
+		global $nodes;
+		global $products;
+		for ($i = 0 ; $i < sizeof($nodes); $i++) {
+			//	if the product quality the node serves is at its finest the node can't invest in the increase of the product quality
+			if($nodes[$i]['product_quality'] == 0.99) {
+				return;
+			}
+			else{
+				$initialNode = $nodes[$i];
+				$nodes[$i]['product_quality'] += ($nodes[$i]['money'] * 5 / 100) / 100;
+				$result = simulateInvestment($nodes[$i]['id']);
+				
+				if($result['money'] > $initialNode['money']) {
+					return true;
+				}
+
+				else {
+					$nodes[$i] = $initialNode;
+					return false;
+				}
+			}
+		}
+	}
+
+	function simulateInvestment($idx) {
+		global $nodes;
+
+		return $nodes[$idx];
 	}
 
 	//	refactorization of code to make code easier to manipulate
