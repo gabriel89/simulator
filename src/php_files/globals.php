@@ -1,5 +1,14 @@
 <?php
 	include_once ('common_functions.php');
+	$null_refs = [];
+	/*
+	after a node will resign it's index will be added in this array
+	so that it won't be necessary to remove the node from the database
+	when a node will want to be added the null_refs will be looked in and 
+	searched for positions where there is an empty position in the nodes array
+	and the new node will be inserted in that index
+	*/
+
 
 	$nodes = [];
 	/*
