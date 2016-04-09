@@ -75,7 +75,7 @@
 		//	update database with new values for money and product quantities
 		update_post_tranzaction ($con);
 	}
-
+	
 	//	refactorization of code to make code easier to manipulate
 	//	functions to add : 	check_seller_has_product (); check_buyer_affords_product (); get_final_purchase_amount (); get_final_purchase_cost_ppc ();
 	//						intermediate_profit_get (); check_buyer_needs_product ()

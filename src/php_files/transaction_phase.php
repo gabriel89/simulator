@@ -144,4 +144,50 @@
 		// if no product was chosen, try again
 		return generateProductFailSafe($serves);
 	}
+
+	function createNewNode() {
+		global $nodes;
+		global $products;
+
+		$node['id'] = sizeof($nodes);
+		$node['serves'] = 'P'.rand(0, sizeof($products) - 1);
+		$node['product_quality']= frand(1,0.1,1,2);
+		$node['quantity'] = floor(mt_rand(20, 70));
+		$node['money'] = mt_rand(100, 200);
+		$node['pay_up'] = frand(1,0.1,1,2);
+
+		$requests = '';
+		if (!empty($products)) {
+			for ($j = 0; $j < sizeof($products); $j++) {
+				//for each product randomize if product is requested
+				//a node may not request the product it produces
+				if ((floor(frand(3, 5, 7, 3)) % 2 == 0) && ($node['serves'] != $products[$j]['name'])) {
+					//set product ID
+					$request = 'P'. $j . '|';
+					//set quantity
+					$request .= ceil(frand(10)) . '|';
+					//set priority
+					$request .= (floor(frand(25)) % 3) . '^';
+					$requests .= $request;
+				}
+			}
+			//remove tailing '^'
+			$requests = trim($requests, '^');
+		}
+		// REQUEST FAILSAFE
+		if ($requests === '') {
+			//set product ID
+			$requests = 'P' . generateProductFailSafe($node['serves']) . '|';
+			//set quantity
+			$requests .= ceil(frand(10)) . '|';
+			//set priority
+			$requests .= (floor(frand(25)) % 3);
+		}
+		
+		//here we set what requests, serves, product_quality,links and quantity the node will have
+		$node['requests'] = $requests;
+
+		array_push($nodes, $node);
+		$nodes[sizeof($nodes) - 1]['links'] = generateLinks($node['id']);
+	}
 ?>
