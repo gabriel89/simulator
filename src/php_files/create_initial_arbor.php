@@ -142,6 +142,8 @@
 	function generateProductFailSafe($index, $serves) {
 		global $products;
 
+		return floor(frand(1, 0, sizeof($products) - 1, 0));
+
 		for ($i = 0; $i < sizeof($products); $i++) {
 			if (($serves != $i) && (floor(frand(3, 5, 7, 3)) % 2 == 0)) {
 				return $i;

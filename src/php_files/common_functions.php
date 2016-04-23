@@ -153,7 +153,7 @@
 		$links = $nodes[$target]['links'];
 		$links = explode(',',  $links);
 
-		$linkCost = $baseCost * (1 + $nodes[$target]['productionQuality'] + (sizeof($links) / (sizeof($nodes) - 1)));
+		$linkCost = $baseCost * (1 + $nodes[$target]['production_quality'] + (sizeof($links) / (sizeof($nodes) - 1)));
 
 		return $linkCost;
 	}

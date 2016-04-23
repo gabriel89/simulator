@@ -1,6 +1,6 @@
 <?php
 	include_once ('globals.php');
-	include_once ('common_functions');
+	include_once ('common_functions.php');
 
 //---------------------------------I-N-V-E-S-T-M-E-N-T---O-P-T-I-O-N-S----------------------------------
 
@@ -31,7 +31,7 @@
 
 		// completes the linking of node at idx with all link targets
 		foreach ($linkTargets as $linkTarget){
-			link ($idx, $linkTarget);
+			linkNodes ($idx, $linkTarget);
 		}
 
 		$nodes[$idx]['money'] -= $investmentCost;
@@ -54,13 +54,13 @@
 	}
 
 	// links node A to node B : adds B to A's links and vise-versa, removes the link cost from A's money
-	function link($nodeA, $nodeB){
+	function linkNodes($nodeA, $nodeB){
 		global $nodes;
 
 		$nodes[$nodeA]['links'] .= (',' . $nodeB);
 		$nodes[$nodeB]['links'] .= (',' . $nodeA);
 
-		$nodes[$nodeA]['money'] -= getSingleLinkInvestmentCost ($nodeA, $nodeB);
+		$nodes[$nodeA]['money'] -= getSingleLinkCost (100, $nodeB);
 	}
 
 	//------------- EXPANSION INVESTMENT FUNCTIONS -----------------------
@@ -69,6 +69,7 @@
 		global $products;
 
 		$index = getNextInsertIndex();
+		addToLog("next index is " + $index);
 
 		$serves = frand (1, 0, sizeof($products), 0);
 
@@ -93,17 +94,7 @@
 			$requests = trim($requests, '^');
 		}
 
-		$links = '';
-
-		for ($j = 0; $j < $node_count; $j++) {
-			if ($line_links[$j] != 0) {
-				// node $i has link to node $j
-				$links .= $j . ',';
-			}
-		}
-
-		//remove tailing ','
-		$links = trim($links, ',');
+		$links = '' + $idx;
 
 		$productionQuality = frand(1, 0.1, 1, 2);
 
@@ -113,25 +104,18 @@
 		$rez['links'] = $links;
 		$rez['parent'] = $idx;
 		$rez['money'] = frand(1, 100, 300, 2);
+		$rez['production_quality'] = 0.2;
 		$rez['quantity'] = floor(frand(1, 10, 100, 0));
 
 		return $rez;
 	}
 
-	function getExpansionInvestmentCost($investmentTarget){
+	function getExpansionInvestmentCost($investmentTarget, $idx){
 		global $nodes;
 
-		$links = $investmentTarget['links'];
-		$links = explode(',', $links);
-		$linkCost = 0;
+		$moneyCost = $investmentTarget['money'] + 100;
 
-		foreach($links as $link){
-			$linkCost += getSingleLinkInvestmentCost(100, $link);
-		}
-
-		$moneyCost = $investmentTarget['money'];
-
-		return $linkCost + $moneyCost;
+		return $moneyCost;
 	}
 
 	function investInExpansion($idx, $investmentTarget, $investmentCost){
@@ -141,10 +125,10 @@
 		$nodes[$idx]['links'] .= ',' . $insertId;
 		$nodes[$idx]['money'] -= $investmentCost;
 
-		$nodes[$insertId]['id'] = $investmentTarget['id'];
-		$nodes[$insertId]['parent'] = $investmentTarget['parent'];
-		$nodes[$insertId]['money'] = $investmentTarget['money'];
-		$nodes[$insertId]['serves'] = $investmentTarget['serves'];
-		$nodes[$insertId]['quantity'] = $investmentTarget['quantity'];
-		$nodes[$insertId]['links'] = $investmentTarget['links'] . ',' . $idx;
+		$nodes[$insertId] = $investmentTarget;
+	}
+
+	function getNextInsertIndex(){
+		global $nodes;
+		return sizeof($nodes);
 	}

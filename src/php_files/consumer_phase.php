@@ -3,6 +3,7 @@
 	include_once ('common_functions.php');
 	include_once ('sql_execute.php');
 	include_once ('globals.php');
+	include_once('investments.php');
 	$Q = [];
 
 	function getConsumerPath ($con) {
@@ -41,6 +42,7 @@
 		$last_sold_out_msg 	= '';
 
 		// iterate through each set of paths | $consumer_path contains the set of every path to the potential buyers of each node
+		/*
 		foreach ($consumer_path as $current_path) {
 
 			// retrieve the names of the nodes involved in this transaction | the first node is the seller | the last node is the buyer
@@ -71,7 +73,7 @@
 		calculate_product_quantity($con);
 
 		//	update database with new values for money and product quantities
-		update_post_tranzaction ($con);
+		update_post_tranzaction ($con);*/
 	}
 
 	//	refactorization of code to make code easier to manipulate
