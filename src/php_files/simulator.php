@@ -27,13 +27,16 @@
 	$time_start = microtime(true); 
 
 	// start simulator by setting the execution number
-	prepareSim (15, $con);
-	
+
 	// end measurement of code execution time
 	$time_end = microtime(true);
 
 	//execution time of the script in
 	echo 'Simulator ended successfully after ' . ((($time_end - $time_start) < 60) ? (($time_end - $time_start) . ' seconds') : (($time_end - $time_start) / 60) . ' minutes');
+
+	prepareSim (10, $con);
+	
+
 	// close connection
 	$con->close ();
 
@@ -88,6 +91,3 @@
 
 	function updateRevenue () {
 	}
-
-	// function to decide upon investment options
-	
