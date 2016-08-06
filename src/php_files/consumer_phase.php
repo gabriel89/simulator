@@ -35,17 +35,12 @@
 
 		return $consumer_path;
 	}
-	// function to finalize transaction:
-	// for each element of $consumer_path we need to sell the product from the producer (first node) to the consumer (last node)
-	// each intermediate node will add a personal profit to the total value of the previous node, thus product final price = initial price + profit node1 + profit node2 + ...
-	function finalizeTransaction ($con, $consumer_path) {
-		global $nodes;
-		addToLog ("\n\n\n;--------------------------------\n;        FINALIZING TRANSACTIONS\n;--------------------------------\n\n");
-
-		$last_sold_out_msg 	= '';
-
+	
+	//function that simulates a transaction:
+	//this function is used to get the best decision a node can make
+	function simulateTransaction ($nodes, $consumer_path) {
 		// iterate through each set of paths | $consumer_path contains the set of every path to the potential buyers of each node
-		/*
+		
 		foreach ($consumer_path as $current_path) {
 
 			// retrieve the names of the nodes involved in this transaction | the first node is the seller | the last node is the buyer
@@ -72,10 +67,98 @@
 				}
 			}
 		}
+	}
+	
+	// function to finalize transaction:
+	// for each element of $consumer_path we need to sell the product from the producer (first node) to the consumer (last node)
+	// each intermediate node will add a personal profit to the total value of the previous node, thus product final price = initial price + profit node1 + profit node2 + ...
+	function finalizeTransaction ($con, $consumer_path) {
+		global $nodes;
+		addToLog ("\n\n\n;--------------------------------\n;        FINALIZING TRANSACTIONS\n;--------------------------------\n\n");
+
+		$last_sold_out_msg 	= '';
+
+		// iterate through each set of paths | $consumer_path contains the set of every path to the potential buyers of each node
+		
+		foreach ($consumer_path as $current_path) {
+
+			// retrieve the names of the nodes involved in this transaction | the first node is the seller | the last node is the buyer
+			$inter_nodes = explode ('->', $current_path);
+			// retrieve seller and buyer nodes from path
+			$seller_node = $nodes[array_reverse($inter_nodes)[0]];
+			//	check if the seller_node still has product to sell
+			if (check_seller_has_product ($seller_node)) {
+				$buyer_node = $nodes[$inter_nodes[0]];
+
+				$products = $buyer_node['requests'];
+				$products = unserialize_requests($products);
+
+				foreach ($products as $product) {
+					if($product[0] == $seller_node['serves']) {
+						//	check if buyer still needs to purchase products
+						if (check_buyer_needs_product ($product)) {
+							// finalize transaction
+							complete_purchase ($inter_nodes, $buyer_node, $seller_node, $con);
+							$nodes[$seller_node["id"]] = $seller_node;
+							$nodes[$buyer_node["id"]] = $buyer_node;
+						}
+					}
+				}
+			}
+			
+			$tempNode =  $seller_node;
+			$simNodes =  $nodes;
+			$numberOfSimulations = 2;
+			
+			investInProductQuality($seller_node["id"]);
+			for($i = 0 ; $i < $numberOfSimulations ; $i++) {
+				simulateTransaction($simNodes, $consumer_path);
+			}
+			
+			$investInProductQualityNode =  $seller_node;
+			$seller_node =  $tempNode;
+			$nodes =  $simNodes;
+			
+			changeProduct($seller_node["id"]);
+			for($i = 0 ; $i < $numberOfSimulations ; $i++) {
+				simulateTransaction($simNodes, $consumer_path);
+			}
+			
+			$changeProductNode =  $seller_node;
+			$seller_node =  $tempNode;
+			$nodes =  $simNodes;
+			
+			generateLinks($seller_node["id"]);
+			for($i = 0 ; $i < $numberOfSimulations ; $i++) {
+				simulateTransaction($simNodes, $consumer_path);
+			}
+			
+			$generateLinksNode =  $seller_node;
+			$seller_node =  $tempNode;
+			$nodes =  $simNodes;
+			
+			if($investInProductQualityNode["money"] > $changeProductNode["money"] && $changeProductNode["money"] > $generateLinksNode["money"]) {
+				$seller_node = $investInProductQualityNode;
+			} else if($investInProductQualityNode["money"] < $changeProductNode["money"] && $changeProductNode["money"] < $generateLinksNode["money"]) {
+				$seller_node = $generateLinksNode;
+			} else {
+				$seller_node = $changeProductNode;
+			}
+			
+			// if(rand(0, count($nodes)) % rand(0, count($nodes))) {
+				// createNewNode();
+			// }
+			
+			// for($i = 0; $i < count($nodes); $i++) {
+				// if($nodes[$i]["money"] == 0 && $nodes[$i]["quantity"] === 0) {
+					// removeNode($nodes[$i]["id"]);
+				// }
+			// }
+		}
 		// calculate the global quantity for each product
 		calculate_product_quantity($con);
 		//	update database with new values for money and product quantities
-		update_post_tranzaction ($con);*/
+		update_post_tranzaction ($con);
 	}
 	
 	//	refactorization of code to make code easier to manipulate
